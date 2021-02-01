@@ -1,0 +1,78 @@
+@font-face {
+  font-family: 'NanumSquare_acB';
+  src : url(./fonts/NanumSquare_acB.ttf)
+  format('truetype')
+}
+
+@font-face {
+  font-family: 'NanumSquare_acEB';
+  src : url(./fonts/NanumSquare_acEB.ttf)
+  format('truetype')
+}
+
+@font-face {
+  font-family: 'NanumSquare_acL';
+  src : url(./fonts/NanumSquare_acL.ttf)
+  format('truetype')
+}
+
+@font-face {
+  font-family: 'NanumSquare_acR';
+  src : url(./fonts/NanumSquare_acR.ttf)
+  format('truetype')
+}
+
+
+@font-face {
+  font-family: 'Seoul';
+  src : url(./fonts/Seoul.ttf)
+  format('truetype')
+}
+
+@font-face {
+  font-family: 'GrenzeGotisch-ExtraLight';
+  src : url(./fonts/GrenzeGotisch-ExtraLight.ttf)
+  format('truetype')
+}
+
+@font-face {
+  font-family: 'GrenzeGotisch-Light';
+  src : url(./fonts/GrenzeGotisch-Light.ttf)
+  format('truetype')
+}
+
+@font-face {
+  font-family: 'GrenzeGotisch-Regular';
+  src : url(./fonts/GrenzeGotisch-Regular.ttf)
+  format('truetype')
+}
+
+@font-face {
+  font-family: 'GrenzeGotisch-Thin';
+  src : url(./fonts/GrenzeGotisch-Thin.ttf)
+  format('truetype')
+}
+
+@font-face {
+  font-family: 'NanumSquare_acB';
+  src : url(./fonts/NanumSquare_acB.ttf)
+  format('truetype')
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap');
+
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
