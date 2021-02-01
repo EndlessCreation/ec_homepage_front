@@ -1,60 +1,64 @@
 import React from 'react';
 import styled from 'styled-components';
-import Device from '../Device';
+import Size from '../Size';
 
 
 //항목의 text부분
 const Text = styled.div`
+
 padding-top: 33px;
 width: 110px;
 height: 74px;
 margin: 0 auto;
 
-font: var(--unnamed-font-style-normal) normal normal 16px/28px var(--unnamed-font-family-nanumsquare);
-letter-spacing: var(--unnamed-character-spacing-0);
-color: var(--unnamed-color-232323);
+font-family: NanumSquareR;
+font-size: 1rem;
+font-weight: normal;
+font-stretch: normal;
+font-style: normal;
+line-height: 1.75;
+letter-spacing: normal;
 text-align: center;
-font: normal normal normal 20px/28px NanumSquare;
-letter-spacing: 0px;
 color: #232323;
-opacity: 1;
 
 display: none;
 
-@media only screen and ${Device.device.tablet}
+@media screen and ${Size.device.tablet}
 {
   padding-top: 36px;
   width: 76px;
   height: 69px;
 margin: 0 auto;
 
-font: var(--unnamed-font-style-normal) normal normal 16px/28px var(--unnamed-font-family-nanumsquare);
-letter-spacing: var(--unnamed-character-spacing-0);
-color: var(--unnamed-color-232323);
+font-family: NanumSquareR;
+font-size: 0.938rem;
+font-weight: normal;
+font-stretch: normal;
+font-style: normal;
+line-height: 1.73;
+letter-spacing: normal;
 text-align: center;
-font: normal normal normal 15px NanumSquare;
-letter-spacing: 0px;
 color: #232323;
-opacity: 1;
 
 display: none;
 }
 
-@media only screen and ${Device.device.moblie}
+@media screen and ${Size.device.moblie}
 {
   padding-top: 25px;
   width: 69px;
   height: 64px;
 margin: 0 auto;
 
-font: var(--unnamed-font-style-normal) normal normal 16px/28px var(--unnamed-font-family-nanumsquare);
-letter-spacing: var(--unnamed-character-spacing-0);
-color: var(--unnamed-color-232323);
+font-family: NanumSquareR;
+font-size: 1rem;
+font-weight: normal;
+font-stretch: normal;
+font-style: normal;
+line-height: 1.75;
+letter-spacing: normal;
 text-align: center;
-font: normal normal normal 11px NanumSquare;
-letter-spacing: 0px;
 color: #232323;
-opacity: 1;
 
 display: none;
 }
@@ -89,7 +93,7 @@ opacity: 1;
 justify-content: space-between;
 margin-bottom: 16px;
 
-@media only screen and ${Device.device.tablet}
+@media screen and ${Size.device.tablet}
 {
   display: flex;
 flex-direction: row;
@@ -118,7 +122,7 @@ margin-bottom: 16px;
 
 
 
-@media only screen and ${Device.device.moblie}
+@media screen and ${Size.device.moblie}
 {
   display: flex;
 flex-direction: row;

@@ -1,34 +1,28 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Size from '../Size';
 import Manager from '../atoms/Manager';
-import { ManaProvider } from '../states/ManaState';
-import Device from '../Device';
 
-const ManBox = styled.div`
+const FlexBox = styled.div`
+
 width: 848px;
 padding-top: 72px;
-padding-right: 23.2291667%;
-padding-left: 32.6041667%;
+padding-left: 22.166666667%;
 
-margin: 0 auto;
 
-@media only screen and ${Device.device.tablet}{
-
+@media screen and ${Size.device.tablet}{
   width: 608px;
   padding-top: 56px;
-  padding-right: 10.178117048346055979643765%;
-  padding-left: 10.178117048346055979643765%;
+  padding-left: 0%;
 
   margin: 0 auto;
 }
 
-@media only screen and ${Device.device.moblie}{
+@media screen and ${Size.device.moblie}{
 
   width: 304px;
   padding-top: 54px;
-  padding-right: 7.777777777777777777777777%;
-  padding-left: 7.777777777777777777777777%;
+  padding-left: 0%;
 
   margin: 0 auto;
 }
@@ -36,11 +30,9 @@ margin: 0 auto;
 
 function Management(){
     return(
-      <ManBox>
-        <ManaProvider>
+      <FlexBox>
           <Manager/>
-        </ManaProvider>
-      </ManBox>
+      </FlexBox>
     )
 }
 

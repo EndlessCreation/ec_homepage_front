@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {useStudState} from '../states/StudState';
 import StudInfo from './StudInfo';
+import Size from '../Size';
 
 const Circle = styled.div`
 display: flex;
@@ -10,6 +11,7 @@ flex-wrap: wrap;
 
 justify-content: space-between;
 margin-bottom: 16px;
+
 `
 
 function StuCircle(){

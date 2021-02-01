@@ -3,38 +3,29 @@ import styled from 'styled-components';
 
 import StuCircle from '../atoms/StuCircle';
 import {StudProvider} from '../states/StudState';
-import Device from '../Device';
+import Size from '../Size';
 
 const StudBox = styled.div`
 width: 848px;
-height: 500px;
-
 padding-top: 72px;
-padding-right: 23.2291667%;
-padding-left: 32.6041667%;
+padding-left: 22.166666667%;
 
-margin: 0 auto;
-@media only screen and ${Device.device.tablet}{
+
+@media screen and ${Size.device.tablet}{
 
   width: 608px;
-  height: 296px;
   padding-top: 56px;
-  padding-right: 80px;
-  padding-left: 80px;
+  padding-left: 0%;
 
-  margin: 0 auto;
 }
 
-@media only screen and ${Device.device.moblie}{
+@media screen and ${Size.device.moblie}{
 
   width: 303px;
-  height: 408px;
   
-  padding-top: 56px;
-  padding-right: 28px;
-  padding-left: 28px;
+  padding-top: 54px;
+  padding-left: 0%;
 
-  margin: 0 auto;
 }
 `
 
