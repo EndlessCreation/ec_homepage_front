@@ -1,20 +1,37 @@
 import React from 'react';
 import styled from 'styled-components';
-import ContentECPick from '../templates/ContentECPick';
-import ContentIntro from '../templates/ContentIntro';
-import ContentProject from '../templates/ContentProject';
+import EntireBox from '../templates/EntireBox'
+
+const Header=styled.div`
+  color:white;
+  background:black;
+  width:100%;
+  height:120px;
+`;
 
 const MainBlock=styled.div`
-    height:2189px;
-`
+    width:100%;
+    height:calc(100vh-120px);
+`;
+
+const Footer=styled.div`
+  color:white;
+  background:black;
+  width:100%;
+  height:419px;
+`;
+
 
 function ProjectPage(){
     return(
+        <>
+        <Header>Header</Header>
         <MainBlock>
-            <ContentIntro></ContentIntro>
-            <ContentECPick></ContentECPick>
-            <ContentProject></ContentProject>
+            <EntireBox />
         </MainBlock>
+        <Footer>Footer
+        </Footer>
+        </>
     );
 }
 

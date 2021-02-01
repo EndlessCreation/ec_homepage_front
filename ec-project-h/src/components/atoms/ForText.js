@@ -8,8 +8,8 @@ const Text =styled.div`
     opacity: 1;
 `;
 
-function TextForMiddle({children}){
+function ForText({children}){
     return <Text>{children}</Text>;
 }
 
-export default TextForMiddle;
+export default ForText;
