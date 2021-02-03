@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import MenuList from "../molecules/MenuList";
+import { useBtnState } from "../../Context/MainContext";
 
 const MenuShow = styled.ul`
   display: flex;
@@ -18,25 +19,26 @@ const MenuShow = styled.ul`
   }
   @media screen and (max-width: 1280px) {
     display: none;
+    ${(props) =>
+      props.active &&
+      css`
+        display: flex;
+        flex-direction: column;
+        font-size: 28px;
+        height: 50%;
+        li:nth-child(1) {
+          padding-top: 130px;
+        }
+        li:not(:nth-child(1)) {
+          padding-left: 0px;
+          padding-top: 28px;
+        }
+      `}
   }
-  ${(props) =>
-    props.active &&
-    css`
-      display: flex;
-      flex-direction: column;
-      font-size: 28px;
-      height: 70%;
-      li:nth-child(1) {
-        padding-top: 130px;
-      }
-      li:not(:nth-child(1)) {
-        padding-left: 0px;
-        padding-top: 28px;
-      }
-    `}
 `;
 
-function NavbarMenu({ active }) {
+function NavbarMenu() {
+  const active = useBtnState();
   return (
     <MenuShow active={active}>
       <MenuList />
