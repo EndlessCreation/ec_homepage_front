@@ -37,6 +37,21 @@ const NavbarTemplate = styled.div`
         padding-top: 24px;
       `}
   }
+  @media screen and (max-width: 767px) {
+    padding-left: 28px;
+    padding-right: 28px;
+    height: 72px;
+    ${(props) =>
+      props.active &&
+      css`
+        height: 100%;
+        background-color: #232323;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        padding-top: 20px;
+      `}
+  }
 `;
 function MainNavbar() {
   const active = useBtnState();

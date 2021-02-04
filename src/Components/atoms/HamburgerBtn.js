@@ -32,6 +32,7 @@ const Button = styled.div`
   @media screen and (max-width: 1280px) {
     display: block;
     top: 25px;
+    right: 100px;
   }
   ${(props) =>
     props.active &&
@@ -52,6 +53,9 @@ const Button = styled.div`
         opacity: 0;
       }
     `}
+  @media screen and (max-width:767px) {
+    right: 60px;
+  }
 `;
 
 function HamburgerBtn() {

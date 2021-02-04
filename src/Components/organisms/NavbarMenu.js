@@ -17,7 +17,7 @@ const MenuShow = styled.ul`
   li:nth-child(4) {
     opacity: 0.2;
   }
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: 1279px) {
     display: none;
     ${(props) =>
       props.active &&
@@ -35,6 +35,24 @@ const MenuShow = styled.ul`
         }
       `}
   }
+  @media screen and (max-width: 767px) {
+    ${(props) =>
+      props.active &&
+      css`
+        display: flex;
+        flex-direction: column;
+        font-size: 24px;
+        height: 50%;
+        li:nth-child(1) {
+          padding-top: 96px;
+          padding-left: 60px;
+        }
+        li:not(:nth-child(1)) {
+          padding-left: 60px;
+          padding-top: 24px;
+        }
+      `}
+  } ;
 `;
 
 function NavbarMenu() {
