@@ -13,9 +13,6 @@ function Main() {
     <MainProvider>
       <MainNavbar />
       <MainHeader />
-      <MainAboutEC />
-      <MainActivity />
-      <MainProject />
     </MainProvider>
   );
 }
