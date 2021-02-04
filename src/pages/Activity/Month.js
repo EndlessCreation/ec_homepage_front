@@ -37,6 +37,7 @@ const MonthGrid = styled.div`
     grid-column: 1;
     grid-row: 3;
     font-size: 16px;
+    line-height: 1.5;
     font-family: NanumSquareRegular;
   }
 `;
