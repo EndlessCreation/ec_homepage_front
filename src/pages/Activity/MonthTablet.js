@@ -8,8 +8,9 @@ const MonthGridTablet = styled.div`
   .component {
     display: grid;
     grid-template-rows: 27fr 35fr 68fr;
-    grid-template-columns: 8rem;
-    padding: 14px;
+    grid-template-columns: 7rem;
+    padding-right: 40px;
+    padding-bottom :32px;
   }
 
   .month {
@@ -148,7 +149,7 @@ function MonthListTablet() {
   ];
 
   return (
-    <WrapperTablet background={"#e3dfde"} title="Monthly">
+    <WrapperTablet background={"#f2f2f2"} title="Monthly">
       <FlexBox>
         <div class="box-container">
           {months.map((month) => (
