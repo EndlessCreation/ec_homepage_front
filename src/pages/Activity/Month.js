@@ -148,7 +148,7 @@ function MonthList() {
   ];
 
   return (
-    <WrapperPC background={"#e3dfde"} title="Monthly">
+    <WrapperPC background={"#f2f2f2"} title="Monthly">
       <FlexBox>
         <div class="box-container">
           {months.map((month) => (
