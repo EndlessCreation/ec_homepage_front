@@ -1,11 +1,15 @@
 import React from "react";
-import styled from "styled-components";
-
+import styled, { css } from "styled-components";
+import { useBtnState } from "../../Context/MainContext";
+import Linkitem from "../atoms/LinkItem";
 const NavList = styled.li`
   list-style: none;
-  a {
-    text-decoration: none;
-    color: #101010;
+  @media screen and (max-width: 1280px) {
+    ${(props) =>
+      props.active &&
+      css`
+        color: #fff;
+      `}
   }
 `;
 
@@ -19,21 +23,16 @@ const ArrowRightShow = styled.span`
 `;
 
 function MenuList() {
+  const active = useBtnState();
   return (
     <>
-      <NavList>
-        <a href="#">Activity</a>
-      </NavList>
-      <NavList>
-        <a href="#">Project</a>
-      </NavList>
-      <NavList>
-        <a href="#">Member</a>
-      </NavList>
-      <NavList>
-        <a href="#">Community</a>
+      <Linkitem to={"/Activity"}>Activity</Linkitem>
+      <Linkitem to={"/Project"}>Project</Linkitem>
+      <Linkitem to={"/Member"}>Member</Linkitem>
+      <NavList active={active}>
+        Community
         <ArrowRightShow>
-          <img src="images/RightArrow.png" />
+          <img src="images/RightArrow.png" alt="RightArrow" />
         </ArrowRightShow>
       </NavList>
     </>
