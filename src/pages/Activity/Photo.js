@@ -4,9 +4,10 @@ import WrapperPC from './WrapperPC';
 import { AiOutlineRight,AiOutlineLeft } from "react-icons/ai";
 import { darken, lighten } from 'polished';
 
-const PhotoContainer = styled.div`  //현재상태의 이미지만 보여줄 div
-    position: relative;
+const ShowContainer = styled.div`  //현재상태의 이미지만 보여줄 div
+    width :816px;
     overflow: hidden; // 선을 넘어간 이미지들은 보이지 않도록 
+
  `;
 
 const Button = styled.button`
@@ -25,12 +26,20 @@ const Button = styled.button`
     }
 `;
 
+const PhotoContainer = styled.div`
+    .photo-container{
+        display: flex;
+        flex-direction: column;  // 아래로 정렬
+        flex-wrap: nowrap;  // 공간이 없을때 자동 줄바꿈
+    }
+`;
+
 const PhotoBox = styled.div`
 
-      .photo-container{
+      .photo-box{
         display: flex;
         flex-direction: row;  // 옆으로 정렬
-        flex-wrap: wrap;  // 공간이 없을때 자동 줄바꿈
+        flex-wrap: nowrap;  // 공간이 없을때 자동 줄바꿈
         justify-content: flex-start;
 
       }
@@ -47,7 +56,7 @@ const PhotoBox = styled.div`
 function Photo({photo}){
     return (
         <div>
-            <img src={photo.src} alt='이미지내용' width='408fr' height='306fr'/>
+            <img src={photo.src} alt='이미지내용' width='408px' height='306px'/>
         </div>
     );
 }
@@ -96,7 +105,7 @@ export default function PhotoList() {
 
     const [currentSlide, setCurrentSlide] = useState(0);
 
-    const photoNum = useState(0);
+    const photoNum = photos.length
 
     const slideRef = useRef(null);
 
@@ -123,65 +132,29 @@ export default function PhotoList() {
 
     return (
         <WrapperPC background={'white'} title='Photo' >
-        <PhotoContainer>
-        <PhotoBox ref={slideRef}>
-            <div class ='photo-container'>
-                {photos.map(photo => (
-                <Photo photo={photo} class='photo'/>
-                ))}
+        <ShowContainer>
+        <PhotoContainer  ref={slideRef}>
+            <div class='photo-container'>
+            <PhotoBox>
+                <div class ='photo-box'>
+                    {photos.slice(1,photoNum/2+1).map(photo => (
+                        <Photo photo={photo} class='photo'/>
+                    ))} 
+                </div>
+            </PhotoBox>
+            <PhotoBox>
+                <div class ='photo-box'>
+                    {photos.slice(photoNum/2,photoNum).map(photo => (
+                        <Photo photo={photo} class='photo'/>
+                    ))} 
+                </div>
+            </PhotoBox>
             </div>
- 
-        </PhotoBox>
         </PhotoContainer>
-
+        </ShowContainer>
         <Button onClick={prevSlide}><AiOutlineLeft/>{currentSlide+1}   /</Button>
         <Button onClick={nextSlide}>{TOTAL_SLIDES+1}<AiOutlineRight/></Button>
         
         </WrapperPC>
     );
     }
-
-
-
-// function PhotoList(){
-
-    // const photos = [
-    //     {
-    //         src : 'https://user-images.githubusercontent.com/28949182/106359735-db734000-6357-11eb-9948-0dd51fdcd205.PNG'
-
-    //     },
-    //     {
-    //         src : 'https://user-images.githubusercontent.com/28949182/106359756-f6de4b00-6357-11eb-9a1b-18dcfae5a4f5.PNG'
-
-    //     },
-    //     {
-    //         src : 'https://user-images.githubusercontent.com/28949182/106359735-db734000-6357-11eb-9948-0dd51fdcd205.PNG'
-
-    //     },
-    //     {
-    //         src : 'https://user-images.githubusercontent.com/28949182/106359756-f6de4b00-6357-11eb-9a1b-18dcfae5a4f5.PNG'
-
-    //     },
-    // ];
-
-//     return(
-//         <WrapperPC background={'white'} title='Photo' >
-//             <PhotoBox>
-//                 <div class ='photo-container'>
-//                 {photos.map(photo => (
-//                 <Photo photo={photo} class='photo'/>
-//                 ))}
-//                 </div>
-//             </PhotoBox>
-//             <Button>
-//                 <AiOutlineLeft/>
-//             </Button>
-//             <Button>
-//                 <AiOutlineRight/>
-//             </Button>
-//         </WrapperPC>
-
-//     );
-// }
-
-//export default PhotoList;

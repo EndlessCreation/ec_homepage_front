@@ -7,7 +7,7 @@ const WrapperStyleTablet = styled.div`
 
     .wrapper {
         display: grid;
-        grid-template-columns: 80fr 676fr 120fr ;
+        grid-template-columns: 80fr 716fr 80fr ;
         grid-template-rows : 80fr 42fr 56fr 580fr;
         grid-auto-rows: minmax(100px, auto);    # 최소크기는 100px 이되, 창이 이보다 작아지면 자동으로
         position: absolute; 
@@ -20,7 +20,7 @@ const WrapperStyleTablet = styled.div`
       .title {
         grid-column: 2;
         grid-row: 2;
-        font-size: 28px;
+        font-size: 24px;
         //font-weight: 800;
         top:0; left: 0;
         color: black;
