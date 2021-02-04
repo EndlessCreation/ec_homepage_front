@@ -38,6 +38,7 @@ const MonthGridTablet = styled.div`
     grid-row: 3;
     font-size: 14px;
     font-family: NanumSquareRegular;
+    line-height: 1.5;
   }
 `;
 

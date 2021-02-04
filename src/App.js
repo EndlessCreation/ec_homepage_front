@@ -1,11 +1,13 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
+
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Main from "./pages/Main/Main";
 import Activity from "./pages/Activity/Activity";
 import Project from "./pages/Project/ProjectPage";
 import Member from "./pages/Member/Template";
+
 const GlobalStyle = createGlobalStyle`
   body{
     margin:0;
