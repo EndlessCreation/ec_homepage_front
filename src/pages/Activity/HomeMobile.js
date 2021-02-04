@@ -6,8 +6,8 @@ const Grid = styled.div`
 
     .wrapper {
         display: grid;
-        grid-template-columns: 80fr 688fr;
-        grid-template-rows : 180fr 54fr 24fr 48fr 80fr;
+        grid-template-columns: 28fr 332fr ;
+        grid-template-rows : 196fr 54fr 19fr 48fr 72fr;
         
         grid-auto-rows: minmax(100px, auto);    # 최소크기는 100px 이되, 창이 이보다 작아지면 자동으로 
       }
@@ -26,14 +26,14 @@ const Grid = styled.div`
         grid-column: 2;
         grid-row: 4;
         font-size: 18px;
-        font-weight: 400;
+        // font-weight: 400;
         line-height: 1.5;
         font-family: NanumSqaureExtraBold;
       }
 
 `;
 
-function HomeTablet({ name, explain, explain2 }) {
+function HomeMobile({ name, explain, explain2 }) {
   return (
     <Grid>
       <div class="wrapper">
@@ -48,9 +48,9 @@ function HomeTablet({ name, explain, explain2 }) {
   );
 }
 
-HomeTablet.defaultProps = {
+HomeMobile.defaultProps = {
   name: "A",
   explain: "2021년",
 };
 
-export default HomeTablet;
+export default HomeMobile;

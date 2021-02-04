@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
-import NavbarMain from "../../Common/atoms/NavbarMain";
-import NavbarMenu from "../../Common/organisms/NavbarMenu";
+import NavbarMain from "../../Components/atoms/NavbarMain"
+import NavbarMenu from "../../Components/organisms/NavbarMenu";
 /* 상단 고정 네이게이션 바 Template*/
 const NavbarTemplate = styled.div`
   position: fixed;

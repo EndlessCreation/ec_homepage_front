@@ -1,14 +1,14 @@
 import React  from 'react';
 import styled from 'styled-components';
 
-const WrapperStyleTablet = styled.div`
-    display: grid;
+const WrapperStyleMobile = styled.div`
+display: grid;
     background: ${(props) => props.background || "skyblue"};
 
     .wrapper {
         display: grid;
-        grid-template-columns: 80fr 676fr 120fr ;
-        grid-template-rows : 80fr 42fr 56fr 580fr;
+        grid-template-columns: 28fr 304fr  28fr ;
+        grid-template-rows :60fr 35fr 54fr 680fr;
         grid-auto-rows: minmax(100px, auto);    # 최소크기는 100px 이되, 창이 이보다 작아지면 자동으로
         position: absolute; 
         top:0; 
@@ -35,21 +35,19 @@ const WrapperStyleTablet = styled.div`
 
 `;
 
-function WrapperTablet({children, title,background}) {
+function WrapperMobile({children, title,background}) {
 
     return (
         <>
     {/* <GlobalStyle/> */}
-    <WrapperStyleTablet background={ background }>
+    <WrapperStyleMobile background={ background }>
         <div class ='wrapper'>
           <div class='title'>{title}</div>
           <div class='paragraph'>{children}</div>
         </div>
-    </WrapperStyleTablet>
+    </WrapperStyleMobile>
     </>
-
-    )
-    ;
+    );
   }
   
-  export default WrapperTablet;
+  export default WrapperMobile;

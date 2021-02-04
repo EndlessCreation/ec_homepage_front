@@ -1,16 +1,16 @@
 import React ,{ useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import WrapperPC from './WrapperPC';
+import WrapperTablet from './WrapperTablet';
 import { AiOutlineRight,AiOutlineLeft } from "react-icons/ai";
 import { darken, lighten } from 'polished';
 
-const ShowContainer = styled.div`  //현재상태의 이미지만 보여줄 div
-    width :816px;
+const ShowContainerTablet = styled.div`  //현재상태의 이미지만 보여줄 div
+    width :592px;
     overflow: hidden; // 선을 넘어간 이미지들은 보이지 않도록 
 
  `;
 
-const Button = styled.button`
+const ButtonTablet = styled.button`
     background:white;
     display: inline-flex;
     outline: none;
@@ -26,7 +26,7 @@ const Button = styled.button`
     }
 `;
 
-const PhotoContainer = styled.div`
+const PhotoContainerTablet = styled.div`
     .photo-container{
         display: flex;
         flex-direction: column;  // 아래로 정렬
@@ -34,7 +34,7 @@ const PhotoContainer = styled.div`
     }
 `;
 
-const PhotoBox = styled.div`
+const PhotoBoxTablet = styled.div`
 
       .photo-box{
         display: flex;
@@ -56,14 +56,14 @@ const PhotoBox = styled.div`
 function Photo({photo}){
     return (
         <div>
-            <img src={photo.src} alt='이미지내용' width='408px' height='306px'/>
+            <img src={photo.src} alt='이미지내용' width='296px' height='222px'/>
         </div>
     );
 }
 
 
 const TOTAL_SLIDES = 8;
-export default function PhotoList() {
+export default function PhotoListTablet() {
 
     const photos = [
         {
@@ -131,30 +131,30 @@ export default function PhotoList() {
     }, [currentSlide]);
 
     return (
-        <WrapperPC background={'white'} title='Photo' >
-        <ShowContainer>
-        <PhotoContainer  ref={slideRef}>
+        <WrapperTablet background={'white'} title='Photo' >
+        <ShowContainerTablet>
+        <PhotoContainerTablet  ref={slideRef}>
             <div class='photo-container'>
-            <PhotoBox>
+            <PhotoBoxTablet>
                 <div class ='photo-box'>
                     {photos.slice(1,photoNum/2+1).map(photo => (
                         <Photo photo={photo} class='photo'/>
                     ))} 
                 </div>
-            </PhotoBox>
-            <PhotoBox>
+            </PhotoBoxTablet>
+            <PhotoBoxTablet>
                 <div class ='photo-box'>
                     {photos.slice(photoNum/2,photoNum).map(photo => (
                         <Photo photo={photo} class='photo'/>
                     ))} 
                 </div>
-            </PhotoBox>
+            </PhotoBoxTablet>
             </div>
-        </PhotoContainer>
-        </ShowContainer>
-        <Button onClick={prevSlide}><AiOutlineLeft/>{currentSlide+1}   /</Button>
-        <Button onClick={nextSlide}>{TOTAL_SLIDES+1}<AiOutlineRight/></Button>
+        </PhotoContainerTablet>
+        </ShowContainerTablet>
+        <ButtonTablet onClick={prevSlide}><AiOutlineLeft/>{currentSlide+1}   /</ButtonTablet>
+        <ButtonTablet onClick={nextSlide}>{TOTAL_SLIDES+1}<AiOutlineRight/></ButtonTablet>
         
-        </WrapperPC>
+        </WrapperTablet>
     );
     }

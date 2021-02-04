@@ -26,9 +26,9 @@ const Grid = styled.div`
         grid-column: 2;
         grid-row: 4;
         font-size: 24px;
-        font-weight: 400;
+        // font-weight: 400;
         line-height: 1.5;
-        font-family: NanumSquareExtraBold;
+        font-family: NanumSqaureExtraBold;
       }
 
 `;

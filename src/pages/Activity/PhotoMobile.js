@@ -1,16 +1,16 @@
 import React ,{ useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import WrapperPC from './WrapperPC';
+import WrapperMobile from './WrapperMobile';
 import { AiOutlineRight,AiOutlineLeft } from "react-icons/ai";
 import { darken, lighten } from 'polished';
 
-const ShowContainer = styled.div`  //현재상태의 이미지만 보여줄 div
-    width :816px;
+const ShowContainerMobile = styled.div`  //현재상태의 이미지만 보여줄 div
+    width :304px;
     overflow: hidden; // 선을 넘어간 이미지들은 보이지 않도록 
 
  `;
 
-const Button = styled.button`
+const ButtonMobile = styled.button`
     background:white;
     display: inline-flex;
     outline: none;
@@ -26,7 +26,7 @@ const Button = styled.button`
     }
 `;
 
-const PhotoContainer = styled.div`
+const PhotoContainerMobile = styled.div`
     .photo-container{
         display: flex;
         flex-direction: column;  // 아래로 정렬
@@ -34,7 +34,7 @@ const PhotoContainer = styled.div`
     }
 `;
 
-const PhotoBox = styled.div`
+const PhotoBoxMobile = styled.div`
 
       .photo-box{
         display: flex;
@@ -56,7 +56,7 @@ const PhotoBox = styled.div`
 function Photo({photo}){
     return (
         <div>
-            <img src={photo.src} alt='이미지내용' width='408px' height='306px'/>
+            <img src={photo.src} alt='이미지내용' width='304px' height='228px'/>
         </div>
     );
 }
@@ -131,30 +131,30 @@ export default function PhotoList() {
     }, [currentSlide]);
 
     return (
-        <WrapperPC background={'white'} title='Photo' >
-        <ShowContainer>
-        <PhotoContainer  ref={slideRef}>
+        <WrapperMobile background={'white'} title='Photo' >
+        <ShowContainerMobile>
+        <PhotoContainerMobile  ref={slideRef}>
             <div class='photo-container'>
-            <PhotoBox>
+            <PhotoBoxMobile>
                 <div class ='photo-box'>
                     {photos.slice(1,photoNum/2+1).map(photo => (
                         <Photo photo={photo} class='photo'/>
                     ))} 
                 </div>
-            </PhotoBox>
-            <PhotoBox>
+            </PhotoBoxMobile>
+            <PhotoBoxMobile>
                 <div class ='photo-box'>
                     {photos.slice(photoNum/2,photoNum).map(photo => (
                         <Photo photo={photo} class='photo'/>
                     ))} 
                 </div>
-            </PhotoBox>
+            </PhotoBoxMobile>
             </div>
-        </PhotoContainer>
-        </ShowContainer>
-        <Button onClick={prevSlide}><AiOutlineLeft/>{currentSlide+1}   /</Button>
-        <Button onClick={nextSlide}>{TOTAL_SLIDES+1}<AiOutlineRight/></Button>
+        </PhotoContainerMobile>
+        </ShowContainerMobile>
+        <ButtonMobile onClick={prevSlide}><AiOutlineLeft/>{currentSlide+1}   /</ButtonMobile>
+        <ButtonMobile onClick={nextSlide}>{TOTAL_SLIDES+1}<AiOutlineRight/></ButtonMobile>
         
-        </WrapperPC>
+        </WrapperMobile>
     );
     }
