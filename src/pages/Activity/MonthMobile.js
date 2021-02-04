@@ -9,7 +9,8 @@ const MonthGridMobile = styled.div`
     display: grid;
     grid-template-rows: 27fr 35fr 68fr;
     grid-template-columns: 6rem;
-    padding: 3px;
+    padding: 5px;
+    padding-bottom: 20px; 
   }
 
   .month {
@@ -37,6 +38,7 @@ const MonthGridMobile = styled.div`
     grid-column: 1;
     grid-row: 3;
     font-size: 14px;
+    line-height: 1.5;
     font-family: NanumSquareRegular;
   }
 `;
