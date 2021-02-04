@@ -3,14 +3,21 @@ import styled from 'styled-components';
 
 const IntroText=styled.div
 `
-font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-bold) 24px/40px var(--unnamed-font-family-nanumsquare);
-letter-spacing: var(--unnamed-character-spacing-0);
-color: var(--unnamed-color-101010);
+@media screen and (min-width:1280px){
 text-align: left;
 font: normal normal bold 24px/40px NanumSquare;
 letter-spacing: 0px;
 color: #101010;
 opacity: 1;
+}
+
+@media screen and (max-width:1279px){
+    text-align:left;
+    font: normal normal bold 18px/28px NanumSquare;
+    letter-spacing:0px;
+    color:#101010;
+    opactiy:1;
+}
 `;
 
 function ForIntroText(){
