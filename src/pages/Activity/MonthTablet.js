@@ -9,7 +9,7 @@ const MonthGridTablet = styled.div`
     display: grid;
     grid-template-rows: 27fr 35fr 68fr;
     grid-template-columns: 8rem;
-    padding: 16px;
+    padding: 14px;
   }
 
   .month {
