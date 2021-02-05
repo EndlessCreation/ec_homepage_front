@@ -1,6 +1,6 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
-import Activity from "./pages/Activity/Activity";
+import Template from "./pages/Member/Template";
 const GlobalStyle = createGlobalStyle`
   body{
     margin:0;
@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Activity />
+      <Template />
     </>
   );
 }

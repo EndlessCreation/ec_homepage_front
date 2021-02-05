@@ -1,156 +1,214 @@
-import React from "react";
+import React, { Component } from "react";
+import Slider from "react-slick";
 import styled from "styled-components";
-import Size from "../../Size";
+import StuCircle from './StuCircle';
+import './Slide.css';
+import Size from '../../Size';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import {useMediaQuery} from 'react-responsive';
 
 //항목의 text부분
 const Text = styled.div`
-  padding-top: 33px;
-  width: 110px;
-  height: 74px;
+padding-top: 33px;
+width: 10px;
+height: 10px;
+margin: 0 auto;
+font-family: NanumSquareR;
+font-size: 1rem;
+font-weight: normal;
+font-stretch: normal;
+font-style: normal;
+line-height: 1.75;
+letter-spacing: normal;
+background: var(--unnamed-color-b0b0b0) 0% 0% no-repeat padding-box;
+color: #232323;
+display: none;
+`;
+
+
+const studs = [
+    {
+      id: 1,
+      name: '일개발',
+      tech: 'JAVA',
+      tech2: '안드로이드',
+      part: true
+    },
+    {
+        id: 2,
+        name: '이개발',
+        tech: '안드로이드',
+        tech2: 'C++',
+        part: false
+    },
+    {
+        id: 3,
+        name: '삼개발',
+        tech: 'JAVA',
+        tech2: '서버',
+        part: false
+    },
+    {
+        id: 4,
+        name: '사개발',
+        tech: 'JAVA',
+        tech2: '프론트엔드',
+        part: false
+    },
+    {
+      id: 5,
+      name: '오개발',
+      tech: 'JAVA',
+      part: true
+    },
+    {
+    id: 6,
+    name: '육개발',
+    tech: 'JAVA',
+    tech2: '보안',
+    part: false
+    },
+  {
+    id: 7,
+    name: '칠개발',
+    tech: 'JAVA',
+    part: true
+  },
+  {
+    id: 8,
+    name: '팔개발',
+    tech: 'JAVA',
+    part: false
+  },
+  {
+    id: 9,
+    name: '구개발',
+    tech: 'JAVA',
+    part: false
+  },
+  {
+    id: 10,
+    name: '십개발',
+    tech: 'JAVA',
+    part: false
+  },
+  {
+    id: 11,
+    name: '십일개발',
+    tech: 'JAVA',
+    part: true
+  },
+  {
+    id: 12,
+    name: '십이개발',
+    tech: 'JAVA',
+    part: false
+  },
+  {
+    id: 13,
+    name: '십삼개발',
+    tech: 'JAVA',
+    part: false
+  },
+  {
+    id: 14,
+    name: '십사개발',
+    tech: 'JAVA',
+    part: false
+  },
+  {
+    id: 15,
+    name: '십오개발',
+    tech: 'JAVA',
+    part: false
+  },
+  {
+    id: 16,
+    name: '십육개발',
+    tech: 'JAVA',
+    part: false
+  },
+  {
+    id: 17,
+    name: '십칠칠개발',
+    tech: 'JAVA',
+    part: false
+  }
+];
+
+const Block = styled.div`
+width: 848px;
+margin: 0 auto;
+
+@media screen and ${Size.device.tablet}
+{
+  width: 608px;
   margin: 0 auto;
-
-  font-family: NanumSquareR;
-  font-size: 1rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.75;
-  letter-spacing: normal;
-  text-align: center;
-  color: #232323;
-
-  display: none;
-
-  @media screen and ${Size.device.tablet} {
-    padding-top: 36px;
-    width: 76px;
-    height: 69px;
-    margin: 0 auto;
-
-    font-family: NanumSquareR;
-    font-size: 0.938rem;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.73;
-    letter-spacing: normal;
-    text-align: center;
-    color: #232323;
-
-    display: none;
-  }
-
-  @media screen and ${Size.device.moblie} {
-    padding-top: 25px;
-    width: 69px;
-    height: 64px;
-    margin: 0 auto;
-
-    font-family: NanumSquareR;
-    font-size: 1rem;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.75;
-    letter-spacing: normal;
-    text-align: center;
-    color: #232323;
-
-    display: none;
-  }
-`;
-
-//하나의 항목의 block 스타일링 , <<그냥 학생일경우>>
-const StudInfoBlock = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-
-  width: 156px;
-  height: 156px;
-  background: var(--unnamed-color-f2f2f2) 0% 0% no-repeat padding-box;
-  background: #f2f2f2 0% 0% no-repeat padding-box;
-  border-radius: 68px;
-  opacity: 1;
-
-  /* pc버전 : hover */
-  &:hover {
-    background: var(--unnamed-color-b0b0b0) 0% 0% no-repeat padding-box;
-    background: #b0b0b0 0% 0% no-repeat padding-box;
-
-    //hover하면 Text내용 보여주기
-    ${Text} {
-      display: initial;
-    }
-  }
-
-  justify-content: space-between;
-  margin-bottom: 16px;
-
-  @media screen and ${Size.device.tablet} {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    width: 140px;
-    height: 140px;
-    background: var(--unnamed-color-f2f2f2) 0% 0% no-repeat padding-box;
-    background: #f2f2f2 0% 0% no-repeat padding-box;
-    border-radius: 68px;
-    opacity: 1;
-
-    &:active {
-      background: var(--unnamed-color-b0b0b0) 0% 0% no-repeat padding-box;
-      background: #b0b0b0 0% 0% no-repeat padding-box;
-
-      // Text내용 보여주기
-      ${Text} {
-        display: initial;
-      }
-    }
-    justify-content: space-between;
-    margin-bottom: 16px;
-  }
-
-  @media screen and ${Size.device.moblie} {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-
-    width: 93px;
-    height: 93px;
-    background: var(--unnamed-color-f2f2f2) 0% 0% no-repeat padding-box;
-    background: #f2f2f2 0% 0% no-repeat padding-box;
-    border-radius: 68px;
-    opacity: 1;
-
-    &:active {
-      background: var(--unnamed-color-b0b0b0) 0% 0% no-repeat padding-box;
-      background: #b0b0b0 0% 0% no-repeat padding-box;
-
-      // Text내용 보여주기
-      ${Text} {
-        display: initial;
-      }
-    }
-    justify-content: space-between;
-    margin-bottom: 16px;
-  }
-`;
-
-function StudInfo({ id, name, tech, tech2 }) {
-  return (
-    <StudInfoBlock>
-      <Text>
-        {name}
-        <br />
-        {tech}
-        <br />
-        {tech2}
-      </Text>
-    </StudInfoBlock>
-  );
 }
 
-/* React.memo -> 다른 항목이 업데이트 될 때, 불필요한 렌더링을 방지하여 성능을 최적화 */
-export default React.memo(StudInfo);
+@media screen and ${Size.device.moblie}
+{
+  width: 303px;
+  margin: 0 auto;
+}
+`
+function StudInfo(){
+  const isPc = useMediaQuery({
+    query: '(min-width: 1280px)'
+  })
+  const isTablet = useMediaQuery({query: '(min-width: 640px) and (max-width: 1279px)'})
+  const isMoblie = useMediaQuery({query:  '(max-width: 639px)'})
+
+  const settings = {
+    dots : true,
+    infinite: false, // 무한으로 즐기게
+    slidesToShow: 5, 
+    speed: 500,
+    rows: 3, // 3행
+  }
+
+  const settingsforTablet = {
+    dots : true,
+    infinite: false, // 무한으로 즐기게
+    slidesToShow: 4, 
+    speed: 500,
+    rows: 2,
+  }
+
+  const settingsforMoblie = {
+    dots : true,
+    infinite: false, // 무한으로 즐기게
+    slidesToShow: 3, 
+    speed: 500,
+    rows: 4,
+  }
+
+  return (
+    <Block>
+        {isPc&&<Slider {...settings}>
+          {studs.map(stud => {
+              return (
+                  <StuCircle key={stud.id} />
+              );}
+          )}
+        </Slider>}
+        {isTablet&&<Slider {...settingsforTablet}>
+          {studs.map(stud => {
+              return (
+                  <StuCircle key={stud.id} />
+              );}
+          )}
+        </Slider>}
+        {isMoblie&&<Slider {...settingsforMoblie}>
+          {studs.map(stud => {
+              return (
+                  <StuCircle key={stud.id} />
+              );}
+          )}
+        </Slider>}
+    </Block>
+  )
+}
+
+export default StudInfo;

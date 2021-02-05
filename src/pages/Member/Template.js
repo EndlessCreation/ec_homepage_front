@@ -159,6 +159,7 @@ const GradBox = styled.div`
   background: #f2f2f2 0% 0% no-repeat padding-box;
 `;
 
+
 function Template() {
   return (
     <>

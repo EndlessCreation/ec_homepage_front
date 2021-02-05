@@ -21,6 +21,7 @@ const FlexBox = styled.div`
   }
 `;
 
+
 function Management() {
   return (
     <FlexBox>
