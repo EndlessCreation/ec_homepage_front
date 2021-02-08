@@ -12,6 +12,17 @@ const ContentBlock = styled.div`
   display: flex;
   box-sizing: border-box;
   padding-top: 63px;
+  @media screen and (max-width: 1279px) {
+    width: 100%;
+    height: 399px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 56px;
+  }
+  @media screen and (max-width: 767px) {
+    height: 560px;
+    flex-direction: column;
+  }
 `;
 
 function AboutEcContents() {

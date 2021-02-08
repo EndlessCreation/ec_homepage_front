@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import MainAboutEcText from "../../Components/atoms/MainAboutEcText";
-import AboutEcMain from "../../Components/atoms/AboutEcMain";
+import AboutEcTextBox from "../../Components/organisms/AboutEcTextBox";
 import AboutEcVideo from "../../Components/atoms/AboutEcVideo";
 import AboutEcContents from "../../Components/organisms/AboutEcContents";
 const AboutEcBlock = styled.div`
@@ -14,6 +13,9 @@ const AboutEcBlock = styled.div`
   @media screen and (max-width: 1279px) {
     height: 1001px;
   }
+  @media screen and (max-width: 767px) {
+    height: 1028px;
+  }
 `;
 
 const AboutEcContainer = styled.div`
@@ -23,12 +25,15 @@ const AboutEcContainer = styled.div`
   padding-right: 40px;
   margin: 0 auto;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
   @media screen and (max-width: 1279px) {
     max-width: 640px;
     padding-left: 16px;
     padding-right: 16px;
+  }
+  @media screen and (max-width: 767px) {
+    max-width: 320px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 `;
 
@@ -36,8 +41,7 @@ function MainAboutEC() {
   return (
     <AboutEcBlock>
       <AboutEcContainer>
-        <MainAboutEcText />
-        <AboutEcMain />
+        <AboutEcTextBox />
         <AboutEcVideo />
         <AboutEcContents />
       </AboutEcContainer>

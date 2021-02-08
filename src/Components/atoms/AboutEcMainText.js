@@ -13,6 +13,19 @@ const TextBlock = styled.div`
     width: 72px;
     background-color: #232323;
   }
+  @media screen and (max-width: 1279px) {
+    font-size: 21px;
+    line-height: 31px;
+    ::after {
+      margin-top: 13px;
+    }
+    @media screen and (max-width: 767px) {
+      font-size: 20px;
+      line-height: 30px;
+      grid-column: 3 / span 1;
+      grid-row: 1 / span 1;
+    }
+  }
 `;
 function AboutEcMainText({ children }) {
   return <TextBlock>{children}</TextBlock>;
