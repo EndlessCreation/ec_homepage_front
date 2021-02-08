@@ -8,6 +8,7 @@ const BoxforEcPick=styled.div`
     background: #FFFFFF 0% 0% no-repeat padding-box;
     opacity: 1;
 }
+<<<<<<< HEAD
 @media screen and (max-width:1279px){
     width:288px;
     height:216px;
@@ -15,6 +16,15 @@ const BoxforEcPick=styled.div`
     opacity: 1;
     margin-bottom:16px;
 }
+=======
+
+    @media screen and (max-width:1279px){
+    width:288px;
+    height:216px;
+    background:#FFFFFF;
+    margin-bottom:16px;
+    }
+>>>>>>> develop
 `;
 
 

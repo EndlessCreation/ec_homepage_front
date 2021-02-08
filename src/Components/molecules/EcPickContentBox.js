@@ -32,13 +32,17 @@ const BlockforEcPick=styled.div`
     overflow:hidden;
 }
 
+<<<<<<< HEAD
 @media screen and (min-width:640px) and (max-width:1279px){
+=======
+@media screen and (min-width:768px) and (max-width:1279px){
+>>>>>>> develop
   padding-left: 2.5%;
   padding-bottom:89px;
   overflow:hidden;
 }
 
-@media screen and (max-width:639px){
+@media screen and (max-width:767px){
   padding-left: 2.5%;
 padding-bottom:64px;
 overflow:hidden;
@@ -51,8 +55,8 @@ function ECPickContentBox(){
   const isPc = useMediaQuery({
     query: '(min-width: 1280px)'
     })
-    const isTablet = useMediaQuery({ query: '(min-width: 640px) and (max-width:1279px)' })
-    const isMobile = useMediaQuery({ query: ' (max-width: 639px)' })
+    const isTablet = useMediaQuery({ query: '(min-width: 768px) and (max-width:1279px)' })
+    const isMobile = useMediaQuery({ query: ' (max-width: 767px)' })
 
 
     const settings = {
