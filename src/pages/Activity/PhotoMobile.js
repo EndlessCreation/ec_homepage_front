@@ -15,14 +15,14 @@ const ButtonMobile = styled.button`
     display: inline-flex;
     outline: none;
     border: none;
-    // border-radius: 4px;
-    color:  black;
+    color:  #A9A9A9;
+    font-size:18px;
 
     &:hover {
         color: ${lighten(0.1, 'black')};
     }
     &:active {
-        color: ${darken(0.1, '#A9A9A9')};
+        color: ${darken(0.1, 'black')};
     }
 `;
 
@@ -51,13 +51,18 @@ const PhotoBoxMobile = styled.div`
 
 `;
 
+const PhotoOne = styled.div`
+      .photo{
+        margin-bottom:16px;
+      }
 
+`;
 
 function Photo({photo}){
     return (
-        <div>
-            <img src={photo.src} alt='이미지내용' width='304px' height='228px'/>
-        </div>
+        <PhotoOne>
+            <img src={photo.src} alt='이미지내용' width='304px' height='228px' class='photo'/>
+        </PhotoOne>
     );
 }
 
@@ -131,7 +136,7 @@ export default function PhotoList() {
     }, [currentSlide]);
 
     return (
-        <WrapperMobile background={'white'} title='Photo' >
+        <WrapperMobile background={'white'} title='Photo' grid-template-rows={"60fr 35fr 54fr 572fr"}>
         <ShowContainerMobile>
         <PhotoContainerMobile  ref={slideRef}>
             <div class='photo-container'>

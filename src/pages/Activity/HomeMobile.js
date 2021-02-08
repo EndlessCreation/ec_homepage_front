@@ -1,12 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 
+const Container=styled.div`
+    max-width: 320px;
+    margin:0 auto;
+    height:100%;
+`;
+
+
 const Grid = styled.div`
     display: grid;
 
     .wrapper {
         display: grid;
-        grid-template-columns: 28fr 332fr ;
+        grid-template-columns: 8fr 312fr  ;
         grid-template-rows : 196fr 54fr 19fr 48fr 72fr;
         
         grid-auto-rows: minmax(100px, auto);    # 최소크기는 100px 이되, 창이 이보다 작아지면 자동으로 
@@ -35,6 +42,7 @@ const Grid = styled.div`
 
 function HomeMobile({ name, explain, explain2 }) {
   return (
+    <Container>
     <Grid>
       <div class="wrapper">
         <div class="title"> {name} </div>
@@ -45,6 +53,7 @@ function HomeMobile({ name, explain, explain2 }) {
         </div>
       </div>
     </Grid>
+    </Container>
   );
 }
 

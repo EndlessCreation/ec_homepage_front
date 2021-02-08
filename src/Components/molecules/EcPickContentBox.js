@@ -31,12 +31,7 @@ const BlockforEcPick=styled.div`
     padding-bottom:120px;
     overflow:hidden;
 }
-
-<<<<<<< HEAD
-@media screen and (min-width:640px) and (max-width:1279px){
-=======
 @media screen and (min-width:768px) and (max-width:1279px){
->>>>>>> develop
   padding-left: 2.5%;
   padding-bottom:89px;
   overflow:hidden;

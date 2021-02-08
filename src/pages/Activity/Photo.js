@@ -5,24 +5,24 @@ import { AiOutlineRight,AiOutlineLeft } from "react-icons/ai";
 import { darken, lighten } from 'polished';
 
 const ShowContainer = styled.div`  //현재상태의 이미지만 보여줄 div
-    width :816px;
+    width :880px;
     overflow: hidden; // 선을 넘어간 이미지들은 보이지 않도록 
 
  `;
-
+ 
 const Button = styled.button`
     background:white;
     display: inline-flex;
     outline: none;
     border: none;
-    // border-radius: 4px;
-    color:  black;
+    color:  #A9A9A9;
+    font-size:24px;
 
     &:hover {
         color: ${lighten(0.1, 'black')};
     }
     &:active {
-        color: ${darken(0.1, '#A9A9A9')};
+        color: ${darken(0.1, 'black')};
     }
 `;
 
@@ -35,7 +35,7 @@ const PhotoContainer = styled.div`
 `;
 
 const PhotoBox = styled.div`
-
+      
       .photo-box{
         display: flex;
         flex-direction: row;  // 옆으로 정렬
@@ -44,20 +44,33 @@ const PhotoBox = styled.div`
 
       }
 
-      .photo {
-        list-style: none;
-        flex: 0 0 50%;
+`;
+
+const PhotoOne = styled.div`
+      .photo{
+        margin-right:32px;
+        margin-bottom:32px;
       }
 
 `;
 
+const Page = styled.div`
+    float:left;
+    width :266px;
+    height : 650px;
+
+    .page{
+        margin-top : 616px;
+    }
+
+`;
 
 
 function Photo({photo}){
     return (
-        <div>
-            <img src={photo.src} alt='이미지내용' width='408px' height='306px'/>
-        </div>
+        <PhotoOne>
+            <img src={photo.src} alt='이미지내용' width='408px' height='306px' class='photo'/>
+        </PhotoOne>
     );
 }
 
@@ -131,7 +144,15 @@ export default function PhotoList() {
     }, [currentSlide]);
 
     return (
-        <WrapperPC background={'white'} title='Photo' >
+        <>
+        <WrapperPC background={'white'} title='Photo'>
+        <Page>
+            <div class='page'>
+            <Button onClick={prevSlide}><AiOutlineLeft/>{currentSlide+1}   /</Button>
+            <Button onClick={nextSlide}>{TOTAL_SLIDES+1}<AiOutlineRight/></Button>
+            </div>
+        </Page>
+
         <ShowContainer>
         <PhotoContainer  ref={slideRef}>
             <div class='photo-container'>
@@ -152,9 +173,10 @@ export default function PhotoList() {
             </div>
         </PhotoContainer>
         </ShowContainer>
-        <Button onClick={prevSlide}><AiOutlineLeft/>{currentSlide+1}   /</Button>
-        <Button onClick={nextSlide}>{TOTAL_SLIDES+1}<AiOutlineRight/></Button>
-        
         </WrapperPC>
+
+
+        
+        </>
     );
     }

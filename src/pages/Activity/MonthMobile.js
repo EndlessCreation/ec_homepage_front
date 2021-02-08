@@ -7,10 +7,10 @@ const MonthGridMobile = styled.div`
 
   .component {
     display: grid;
-    grid-template-rows: 27fr 35fr 68fr;
+    grid-template-rows: 27fr 20fr 68fr;
     grid-template-columns: 6rem;
-    padding: 5px;
-    padding-bottom: 20px; 
+    padding-right: 8px;
+    padding-bottom: 34px; 
   }
 
   .month {
@@ -37,7 +37,7 @@ const MonthGridMobile = styled.div`
   .detail {
     grid-column: 1;
     grid-row: 3;
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.5;
     font-family: NanumSquareRegular;
   }
@@ -76,7 +76,7 @@ function MonthListMobile() {
       name: "January",
       detail1: "월별활동 설명글하나",
       detail2: "월별활동 설명글",
-      detail3: "월별활동 설명글",
+      detail3: "희망 스터디 개설",
     },
 
     {
@@ -149,7 +149,7 @@ function MonthListMobile() {
   ];
 
   return (
-    <WrapperMobile background={"#e3dfde"} title="Monthly">
+    <WrapperMobile background={"#f2f2f2"} title="Monthly">
       <FlexBox>
         <div class="box-container">
           {months.map((month) => (
