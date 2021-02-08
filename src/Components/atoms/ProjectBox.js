@@ -4,12 +4,19 @@ import Modal from './Modal';
 
 const BoxforProject=styled.div`
 
+<<<<<<< HEAD
 @media screen and (min-width:1280px){
+=======
+@media screen and (max-width:1920px){
+>>>>>>> ac259fa89582fdebcb5a3033460967d6734f294e
 width: 198px;
 height: 198px;
 background: #F2F2F2 0% 0% no-repeat padding-box;
 opacity: 1;
+<<<<<<< HEAD
 margin-bottom:32px;
+=======
+>>>>>>> ac259fa89582fdebcb5a3033460967d6734f294e
 }
 
 @media screen and (max-width: 1279px){

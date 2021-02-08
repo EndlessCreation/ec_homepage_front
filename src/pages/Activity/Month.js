@@ -37,11 +37,14 @@ const MonthGrid = styled.div`
     grid-column: 1;
     grid-row: 3;
     font-size: 16px;
+    line-height: 1.5;
     font-family: NanumSquareRegular;
   }
 `;
 
 const FlexBox = styled.div`
+  margin-left:266px;  // 옆에 칸 띄우기
+
   .box-container {
     display: flex;
     flex-direction: row; // 옆으로 정렬
@@ -147,7 +150,7 @@ function MonthList() {
   ];
 
   return (
-    <WrapperPC background={"#e3dfde"} title="Monthly">
+    <WrapperPC background={"#f2f2f2"} title="Monthly">
       <FlexBox>
         <div class="box-container">
           {months.map((month) => (

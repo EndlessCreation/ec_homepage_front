@@ -17,6 +17,7 @@ const BoxforEcPick=styled.div`
     }
 `;
 
+
 function EcPickBox(){
     return <BoxforEcPick />;
 }

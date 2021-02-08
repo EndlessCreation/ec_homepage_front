@@ -1,12 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
+const Container=styled.div`
+    max-width:1280px;
+    padding-left :40px;
+    padding-right :40px;
+    margin:0 auto;
+    height:100%;
+`;
+
 const Grid = styled.div`
     display: grid;
 
     .wrapper {
         display: grid;
-        grid-template-columns: 618fr 1302fr ;
+        grid-template-columns: 258fr 942fr ;
         grid-template-rows : 254fr 95fr 8fr 66fr 130fr;
         
         grid-auto-rows: minmax(100px, auto);    # 최소크기는 100px 이되, 창이 이보다 작아지면 자동으로 
@@ -26,15 +34,16 @@ const Grid = styled.div`
         grid-column: 2;
         grid-row: 4;
         font-size: 24px;
-        font-weight: 400;
+        // font-weight: 400;
         line-height: 1.5;
-        font-family: NanumSquareExtraBold;
+        font-family: NanumSqaureExtraBold;
       }
 
 `;
 
 function Home({ name, explain, explain2 }) {
   return (
+    <Container>
     <Grid>
       <div class="wrapper">
         <div class="title"> {name} </div>
@@ -45,6 +54,7 @@ function Home({ name, explain, explain2 }) {
         </div>
       </div>
     </Grid>
+    </Container>
   );
 }
 
