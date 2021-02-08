@@ -221,7 +221,6 @@ z-index: 2;
 font-size: 24px;
 `
 
-
 function StudInfo(){
   const isPc = useMediaQuery({
     query: '(min-width: 1280px)'
@@ -243,7 +242,7 @@ function StudInfo(){
 
   const settings = {
     dots : false,
-    infinite: false, // 무한으로 즐기게
+    infinite: false, 
     slidesToShow: 5, 
     speed: 500,
     rows: 3, // 3행
