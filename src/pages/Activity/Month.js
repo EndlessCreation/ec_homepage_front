@@ -43,6 +43,8 @@ const MonthGrid = styled.div`
 `;
 
 const FlexBox = styled.div`
+  margin-left:266px;  // 옆에 칸 띄우기
+
   .box-container {
     display: flex;
     flex-direction: row; // 옆으로 정렬

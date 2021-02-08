@@ -39,9 +39,11 @@ const WrapperStylePC = styled.div`
       }
 
       .paragraph{
-        grid-column: 3;
+        grid-column: 2/4;
         grid-row: 4;
       }
+
+
 
 `;
 
@@ -57,6 +59,7 @@ function WrapperPC({children, title,background}) {
           <div class='paragraph'>{children}</div>
         </div>
     </WrapperStylePC>
+
     </Container>
     </>
 

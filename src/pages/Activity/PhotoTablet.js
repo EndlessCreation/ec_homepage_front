@@ -5,7 +5,7 @@ import { AiOutlineRight,AiOutlineLeft } from "react-icons/ai";
 import { darken, lighten } from 'polished';
 
 const ShowContainerTablet = styled.div`  //현재상태의 이미지만 보여줄 div
-    width :592px;
+    width :624px;
     overflow: hidden; // 선을 넘어간 이미지들은 보이지 않도록 
 
  `;
@@ -15,16 +15,15 @@ const ButtonTablet = styled.button`
     display: inline-flex;
     outline: none;
     border: none;
-    // border-radius: 4px;
-    color:  black;
+    color:  #A9A9A9;
+    font-size:18px;
 
     &:hover {
         color: ${lighten(0.1, 'black')};
     }
     &:active {
-        color: ${darken(0.1, '#A9A9A9')};
-    }
-`;
+        color: ${darken(0.1, 'black')};
+}`
 
 const PhotoContainerTablet = styled.div`
     .photo-container{
@@ -51,13 +50,21 @@ const PhotoBoxTablet = styled.div`
 
 `;
 
+const PhotoOne = styled.div`
+      .photo{
+        margin-bottom:16px;
+        margin-left:16px;
+      }
+
+`;
+
 
 
 function Photo({photo}){
     return (
-        <div>
-            <img src={photo.src} alt='이미지내용' width='296px' height='222px'/>
-        </div>
+        <PhotoOne>
+            <img src={photo.src} alt='이미지내용' width='296px' height='222px' class='photo'/>
+        </PhotoOne>
     );
 }
 
