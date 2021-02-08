@@ -7,65 +7,8 @@ import Size from '../../Size';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import {useMediaQuery} from 'react-responsive';
-
-//항목의 text부분
-const Text = styled.div`
-padding-top: 26px;
-width: 82px;
-height: 74px;
-margin: 0 auto;
-
-font: var(--unnamed-font-style-normal) normal normal 16px/28px var(--unnamed-font-family-nanumsquare);
-letter-spacing: var(--unnamed-character-spacing-0);
-color: var(--unnamed-color-232323);
-text-align: center;
-font: normal normal normal 16px/28px NanumSquare;
-letter-spacing: 0px;
-color: #232323;
-opacity: 1;
-
-display: none;
-
-@media screen and ${Size.device.tablet}
-{
-  padding-top: 18px;
-  width: 75px;
-  height: 60px;
-margin: 0 auto;
-
-font-family: NanumSquareR;
-font-size: 0.875rem;
-font-weight: normal;
-font-stretch: normal;
-font-style: normal;
-line-height: 1.57;
-letter-spacing: normal;
-text-align: center;
-color: #232323;
-
-display: none;
-}
-
-@media screen and ${Size.device.moblie}
-{
-  padding-top: 12px;
-  width: 50px;
-  height: 40px;
-margin: 0 auto;
-
-font: var(--unnamed-font-style-normal) normal normal 16px/28px var(--unnamed-font-family-nanumsquare);
-letter-spacing: var(--unnamed-character-spacing-0);
-color: var(--unnamed-color-232323);
-text-align: center;
-font: normal normal normal 8px/15px NanumSquare;
-letter-spacing: 0px;
-color: #232323;
-opacity: 1;
-
-display: none;
-}
-
-`;
+import {FiChevronLeft} from 'react-icons/fi';
+import {FiChevronRight} from 'react-icons/fi';
 
 const grads = [
   {
@@ -181,23 +124,73 @@ const grads = [
   position: '프론트엔드',
   grade: '9기',
   company: 'NAVER'
+},
+{
+  id: 17,
+  name: '십이개발',
+  position: '프론트엔드',
+  grade: '9기',
+  company: 'NAVER'
 }
 ];
 
 const Block = styled.div`
 width: 848px;
 margin: 0 auto;
+.slick-prev{
+  transform : translate(-250px, 117px);
+  z-index: 2;
+  position: absolute;
+  opacity: 1;
+  color: #c4c4c4;
+}
+.slick-next{
+  z-index: 2;
+  position: absolute;
+  opacity: 1;
+  color: #c4c4c4;
+  transform : translate(-1050px, 117px);
+}
+
 
 @media screen and ${Size.device.tablet}
 {
   width: 608px;
   margin: 0 auto;
+  .slick-prev{
+    transform : translate(510px, -218px);
+    z-index: 2;
+    position: absolute;
+    opacity: 1;
+    color: #c4c4c4;
+  }
+  .slick-next{
+    z-index: 2;
+    position: absolute;
+    opacity: 1;
+    color: #c4c4c4;
+    transform : translate(-45px, -218px);
+  }
 }
 
 @media screen and ${Size.device.moblie}
 {
   width: 304px;
   margin: 0 auto;
+  .slick-prev{
+    transform : translate(250px, -258px);
+    z-index: 2;
+    position: absolute;
+    opacity: 1;
+    color: #c4c4c4;
+  }
+  .slick-next{
+    z-index: 2;
+    position: absolute;
+    opacity: 1;
+    color: #c4c4c4;
+    transform : translate(-28px, -258px);
+  }
 }
 `
 function GradInfo(){
@@ -208,28 +201,37 @@ function GradInfo(){
   const isMoblie = useMediaQuery({query:  '(max-width: 639px)'})
 
   const settings = {
-    dots : true,
+    dots : false,
     infinite: false, // 무한으로 즐기게
     slidesToShow: 6, 
     slidesToScroll: 1,
     speed: 500,
     rows: 2, // 3행
+    slidesToScroll: 6,
+    prevArrow : <FiChevronLeft type='button' class='slick-prev' />,
+    nextArrow : <FiChevronRight type='button' class='slick-next' />
   }
 
   const settingsforTablet = {
-    dots : true,
+    dots : false,
     infinite: false, // 무한으로 즐기게
     slidesToShow: 5, 
     speed: 500,
     rows: 2,
+    slidesToScroll: 5,
+    prevArrow : <FiChevronLeft type='button' class='slick-prev' />,
+    nextArrow : <FiChevronRight type='button' class='slick-next' />
   }
 
   const settingsforMoblie = {
-    dots : true,
+    dots : false,
     infinite: false, // 무한으로 즐기게
     slidesToShow: 4, 
     speed: 500,
     rows: 4,
+    slidesToScroll: 4,
+    prevArrow : <FiChevronLeft type='button' class='slick-prev' />,
+    nextArrow : <FiChevronRight type='button' class='slick-next' />
   }
 
   return (
@@ -237,21 +239,21 @@ function GradInfo(){
         {isPc&&<Slider {...settings}>
           {grads.map(grad => {
               return (
-                  <GradCircle key={grad.id} />
+                  <GradCircle grad={grad} />
               );}
           )}
         </Slider>}
         {isTablet&&<Slider {...settingsforTablet}>
           {grads.map(grad => {
               return (
-                  <GradCircle key={grad.id} />
+                  <GradCircle grad={grad} />
               );}
           )}
         </Slider>}
         {isMoblie&&<Slider {...settingsforMoblie}>
           {grads.map(grad => {
               return (
-                  <GradCircle key={grad.id} />
+                  <GradCircle grad={grad} />
               );}
           )}
         </Slider>}
