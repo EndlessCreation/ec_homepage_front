@@ -10,6 +10,7 @@ import {useMediaQuery} from 'react-responsive';
 import {FiChevronLeft} from 'react-icons/fi';
 import {FiChevronRight} from 'react-icons/fi';
 
+
 const Block = styled.div`
 width: 848px;
 margin: 0 auto;
@@ -71,10 +72,10 @@ margin: 0 auto;
 const studs = [
     {
       id: 1,
-      name: '일개발',
+      name: 'AAAAAAAAAA',
       grade: '25기',
-      tech: 'JAVA',
-      tech2: '안드로이드',
+      tech: 'JASDJ',
+      tech2: '안드로이드안드로이',
       part: true
     },
     {
@@ -202,6 +203,27 @@ transform : translate(-252px, 468px);
 color: #c4c4c4;
 opacity: 1;
 font-size: 24px;
+
+@media screen and ${Size.device.tablet}
+{
+  position: absolute;
+  transform : translate(510px, -92.5px);
+  color: #c4c4c4;
+  opacity: 1;
+  z-index: 2;
+  font-size: 18px;
+}
+
+@media screen and ${Size.device.moblie}
+{
+  position: absolute;
+  transform : translate(245px, -93px);
+  color: #c4c4c4;
+  opacity: 1;
+  z-index: 2;
+  font-size: 18px;
+}
+
 `
 const Slash = styled.div`
 position: absolute;
@@ -210,6 +232,26 @@ color: #c4c4c4;
 opacity: 1;
 z-index: 2;
 font-size: 22px;
+
+@media screen and ${Size.device.tablet}
+{
+  position: absolute;
+  transform : translate(534px, -92.5px);
+  color: #c4c4c4;
+  opacity: 1;
+  z-index: 2;
+  font-size: 18px;
+}
+
+@media screen and ${Size.device.moblie}
+{
+  position: absolute;
+  transform : translate(260px, -93px);
+  color: #c4c4c4;
+  opacity: 1;
+  z-index: 2;
+  font-size: 18px;
+}
 `
 
 const NextPages = styled.div`
@@ -219,6 +261,26 @@ color: #c4c4c4;
 opacity: 1;
 z-index: 2;
 font-size: 24px;
+
+@media screen and ${Size.device.tablet}
+{
+  position: absolute;
+  transform : translate(553px, -92.5px);
+  color: #c4c4c4;
+  opacity: 1;
+  z-index: 2;
+  font-size: 18px;
+}
+
+@media screen and ${Size.device.moblie}
+{
+  position: absolute;
+  transform : translate(271px, -93px);
+  color: #c4c4c4;
+  opacity: 1;
+  z-index: 2;
+  font-size: 18px;
+}
 `
 
 function StudInfo(){
@@ -228,17 +290,11 @@ function StudInfo(){
   const isTablet = useMediaQuery({query: '(min-width: 640px) and (max-width: 1279px)'})
   const isMoblie = useMediaQuery({query:  '(max-width: 639px)'})
 
-  const Totalslides = Math.ceil(studs.length/15);
+  const PCTotalslides = Math.ceil(studs.length/15);
+  const TABLETTotalslides = Math.ceil(studs.length/8);
+  const MOBLIETotalslides = Math.ceil(studs.length/12);
 
   const [number, setNumber] = useState(1);
- 
-  const onIncrease = () => {
-    setNumber(prevNumber => prevNumber + 1);
-  }
-
-  const onDecrease = () => {
-    setNumber(prevNumber => prevNumber - 1);
-  }
 
   const settings = {
     dots : false,
@@ -247,8 +303,16 @@ function StudInfo(){
     speed: 500,
     rows: 3, // 3행
     slidesToScroll: 5,
-    prevArrow : <FiChevronLeft type='button' class='slick-prev' onClick={onDecrease}/>,
-    nextArrow : <FiChevronRight type='button' class='slick-next' onClick={onIncrease}/> 
+    prevArrow : <FiChevronLeft type='button' class='slick-prev'/>,
+    nextArrow : <FiChevronRight type='button' class='slick-next'/>,
+    afterChange : () => {
+      if(PCTotalslides==number)
+      {
+        setNumber(prevNumber=>prevNumber - 1);
+      }
+      else
+        setNumber(prevNumber => prevNumber + 1);
+    }
   }
 
 
@@ -260,7 +324,15 @@ function StudInfo(){
     rows: 2,
     slidesToScroll: 4,
     prevArrow : <FiChevronLeft type='button' class='slick-prev' />,
-    nextArrow : <FiChevronRight type='button' class='slick-next' />
+    nextArrow : <FiChevronRight type='button' class='slick-next' />,
+    afterChange : () => {
+      if(TABLETTotalslides==number)
+      {
+        setNumber(prevNumber=>prevNumber - 1);
+      }
+      else
+      setNumber(prevNumber => prevNumber + 1);
+    }
   }
 
   const settingsforMoblie = {
@@ -270,15 +342,25 @@ function StudInfo(){
     speed: 500,
     rows: 4,
     slidesToScroll: 3,
-    prevArrow : <FiChevronLeft type='button' class='slick-prev' onClick={onDecrease}/>,
-    nextArrow : <FiChevronRight type='button' class='slick-next' onClick={onIncrease}/>
+    prevArrow : <FiChevronLeft type='button' class='slick-prev' />,
+    nextArrow : <FiChevronRight type='button' class='slick-next' />,
+    afterChange : () => {
+      if(MOBLIETotalslides==number)
+      {
+        setNumber(prevNumber=>prevNumber - 1);
+      }
+      else
+      setNumber(prevNumber => prevNumber + 1);
+    }
   }
 
   return (
     <Block>
         <PrevPages>{number}</PrevPages>
         <Slash>/</Slash>
-        <NextPages>{Totalslides}</NextPages>
+        {isPc&&<NextPages>{PCTotalslides}</NextPages>}
+        {isMoblie&&<NextPages>{MOBLIETotalslides}</NextPages>}
+        {isTablet&&<NextPages>{TABLETTotalslides}</NextPages>}
         {isPc&&<Slider {...settings}>       
           {studs.map(stud => {
               return (

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 import GradCircle from './GradCircle';
@@ -13,10 +13,10 @@ import {FiChevronRight} from 'react-icons/fi';
 const grads = [
   {
     id: 1,
-    name: '일개발',
-    position: '백엔드',
-    grade: '1기',
-    company: 'SAMSUNG'
+    name: 'Abacdfrgd',
+    position: '백엔드백엔드백엔',
+    grade: '22기',
+    company: 'SAMSUNGSAMS'
 
   },
   {
@@ -193,12 +193,108 @@ margin: 0 auto;
   }
 }
 `
+
+const PrevPages = styled.div`
+position: absolute;
+z-index: 2;
+transform : translate(-252px, 252px);
+color: #c4c4c4;
+opacity: 1;
+font-size: 24px;
+
+@media screen and ${Size.device.tablet}
+{
+  position: absolute;
+  transform : translate(510px, -92.5px);
+  color: #c4c4c4;
+  opacity: 1;
+  z-index: 2;
+  font-size: 18px;
+}
+
+@media screen and ${Size.device.moblie}
+{
+  position: absolute;
+  transform : translate(245px, -93px);
+  color: #c4c4c4;
+  opacity: 1;
+  z-index: 2;
+  font-size: 18px;
+}
+
+`
+const Slash = styled.div`
+position: absolute;
+transform : translate(-232px, 252px);
+color: #c4c4c4;
+opacity: 1;
+z-index: 2;
+font-size: 22px;
+
+@media screen and ${Size.device.tablet}
+{
+  position: absolute;
+  transform : translate(534px, -92.5px);
+  color: #c4c4c4;
+  opacity: 1;
+  z-index: 2;
+  font-size: 18px;
+}
+
+@media screen and ${Size.device.moblie}
+{
+  position: absolute;
+  transform : translate(260px, -93px);
+  color: #c4c4c4;
+  opacity: 1;
+  z-index: 2;
+  font-size: 18px;
+}
+`
+
+const NextPages = styled.div`
+position: absolute;
+transform : translate(-214px, 252px);
+color: #c4c4c4;
+opacity: 1;
+z-index: 2;
+font-size: 24px;
+
+@media screen and ${Size.device.tablet}
+{
+  position: absolute;
+  transform : translate(553px, -92.5px);
+  color: #c4c4c4;
+  opacity: 1;
+  z-index: 2;
+  font-size: 18px;
+}
+
+@media screen and ${Size.device.moblie}
+{
+  position: absolute;
+  transform : translate(271px, -93px);
+  color: #c4c4c4;
+  opacity: 1;
+  z-index: 2;
+  font-size: 18px;
+}
+`
+
+
 function GradInfo(){
   const isPc = useMediaQuery({
     query: '(min-width: 1280px)'
   })
   const isTablet = useMediaQuery({query: '(min-width: 640px) and (max-width: 1279px)'})
   const isMoblie = useMediaQuery({query:  '(max-width: 639px)'})
+
+  
+  const PCTotalslides = Math.ceil(grads.length/12);
+  const TABLETTotalslides = Math.ceil(grads.length/10);
+  const MOBLIETotalslides = Math.ceil(grads.length/16);
+  
+  const [number, setNumber] = useState(1);
 
   const settings = {
     dots : false,
@@ -209,7 +305,15 @@ function GradInfo(){
     rows: 2, // 3행
     slidesToScroll: 6,
     prevArrow : <FiChevronLeft type='button' class='slick-prev' />,
-    nextArrow : <FiChevronRight type='button' class='slick-next' />
+    nextArrow : <FiChevronRight type='button' class='slick-next' />,
+    afterChange : () => {
+      if(PCTotalslides==number)
+      {
+        setNumber(prevNumber=>prevNumber - 1);
+      }
+      else
+        setNumber(prevNumber => prevNumber + 1);
+    }
   }
 
   const settingsforTablet = {
@@ -220,7 +324,15 @@ function GradInfo(){
     rows: 2,
     slidesToScroll: 5,
     prevArrow : <FiChevronLeft type='button' class='slick-prev' />,
-    nextArrow : <FiChevronRight type='button' class='slick-next' />
+    nextArrow : <FiChevronRight type='button' class='slick-next' />,
+    afterChange : () => {
+      if(TABLETTotalslides==number)
+      {
+        setNumber(prevNumber=>prevNumber - 1);
+      }
+      else
+      setNumber(prevNumber => prevNumber + 1);
+    }
   }
 
   const settingsforMoblie = {
@@ -231,11 +343,25 @@ function GradInfo(){
     rows: 4,
     slidesToScroll: 4,
     prevArrow : <FiChevronLeft type='button' class='slick-prev' />,
-    nextArrow : <FiChevronRight type='button' class='slick-next' />
+    nextArrow : <FiChevronRight type='button' class='slick-next' />,
+    afterChange : () => {
+      if(MOBLIETotalslides==number)
+      {
+        setNumber(prevNumber=>prevNumber - 1);
+      }
+      else
+      setNumber(prevNumber => prevNumber + 1);
+    }
   }
 
   return (
     <Block>
+        <PrevPages>{number}</PrevPages>
+        <Slash>/</Slash>
+        {isPc&&<NextPages>{PCTotalslides}</NextPages>}
+        {isMoblie&&<NextPages>{MOBLIETotalslides}</NextPages>}
+        {isTablet&&<NextPages>{TABLETTotalslides}</NextPages>}
+
         {isPc&&<Slider {...settings}>
           {grads.map(grad => {
               return (
