@@ -4,28 +4,17 @@ import WrapperMobile from './WrapperMobile';
 import { AiOutlineRight,AiOutlineLeft } from "react-icons/ai";
 import { darken, lighten } from 'polished';
 
-const ShowContainerMobile = styled.div`  //현재상태의 이미지만 보여줄 div
+import { usePhotoState } from "./PhotoProvider";
+
+//현재상태의 이미지만 보여줄 container
+const ShowContainerMobile = styled.div` 
     width :304px;
     overflow: hidden; // 선을 넘어간 이미지들은 보이지 않도록 
 
  `;
 
-const ButtonMobile = styled.button`
-    background:white;
-    display: inline-flex;
-    outline: none;
-    border: none;
-    color:  #A9A9A9;
-    font-size:18px;
 
-    &:hover {
-        color: ${lighten(0.1, 'black')};
-    }
-    &:active {
-        color: ${darken(0.1, 'black')};
-    }
-`;
-
+// 두줄을 아래로 정렬
 const PhotoContainerMobile = styled.div`
     .photo-container{
         display: flex;
@@ -34,6 +23,8 @@ const PhotoContainerMobile = styled.div`
     }
 `;
 
+
+// 사진 옆으로 정렬
 const PhotoBoxMobile = styled.div`
 
       .photo-box{
@@ -51,11 +42,38 @@ const PhotoBoxMobile = styled.div`
 
 `;
 
+// 이미지 하나하나의 스타일
 const PhotoOne = styled.div`
       .photo{
         margin-bottom:16px;
       }
 
+`;
+
+// 페이지 넘기는 버튼
+const ButtonMobile = styled.button`
+    background:white;
+    display: inline-flex;
+    outline: none;
+    border: none;
+    color:  #A9A9A9;
+    font-size:18px;
+
+    &:hover {
+        color: ${lighten(0.1, 'black')};
+    }
+    &:active {
+        color: ${darken(0.1, 'black')};
+    }
+`;
+
+
+// page 넘겨주는 버튼 위치
+const Page = styled.div`
+    float:right;
+    width :120px;
+    height : 79px;
+    padding-top : 10px;
 `;
 
 function Photo({photo}){
@@ -67,50 +85,13 @@ function Photo({photo}){
 }
 
 
-const TOTAL_SLIDES = 8;
 export default function PhotoList() {
 
-    const photos = [
-        {
-            src : 'https://user-images.githubusercontent.com/28949182/106359735-db734000-6357-11eb-9948-0dd51fdcd205.PNG'
-
-        },
-        {
-            src : 'https://user-images.githubusercontent.com/28949182/106359756-f6de4b00-6357-11eb-9a1b-18dcfae5a4f5.PNG'
-
-        },
-        {
-            src : 'https://user-images.githubusercontent.com/28949182/106359735-db734000-6357-11eb-9948-0dd51fdcd205.PNG'
-
-        },
-        {
-            src : 'https://user-images.githubusercontent.com/28949182/106359756-f6de4b00-6357-11eb-9a1b-18dcfae5a4f5.PNG'
-
-        },
-        {
-            src : 'https://user-images.githubusercontent.com/28949182/106359735-db734000-6357-11eb-9948-0dd51fdcd205.PNG'
-
-        },
-        {
-            src : 'https://user-images.githubusercontent.com/28949182/106359756-f6de4b00-6357-11eb-9a1b-18dcfae5a4f5.PNG'
-
-        },
-        {
-            src : 'https://user-images.githubusercontent.com/28949182/106359735-db734000-6357-11eb-9948-0dd51fdcd205.PNG'
-
-        },
-        {
-            src : 'https://user-images.githubusercontent.com/28949182/106359756-f6de4b00-6357-11eb-9a1b-18dcfae5a4f5.PNG'
-
-        },
-
-    ];
-
-
+    const photos = usePhotoState();   // 상태 값 불러오기~
+    const photoNum = photos.length;
+    const TOTAL_SLIDES = Math.floor(photoNum/2)-1;
 
     const [currentSlide, setCurrentSlide] = useState(0);
-
-    const photoNum = photos.length
 
     const slideRef = useRef(null);
 
@@ -136,7 +117,12 @@ export default function PhotoList() {
     }, [currentSlide]);
 
     return (
-        <WrapperMobile background={'white'} title='Photo' grid-template-rows={"60fr 35fr 54fr 572fr"}>
+        <WrapperMobile background={'white'} title='Photo'  row={'2/5'}>
+        <Page>
+            <ButtonMobile onClick={prevSlide}><AiOutlineLeft/>{currentSlide+1}   /</ButtonMobile>
+            <ButtonMobile onClick={nextSlide}>{TOTAL_SLIDES+1}<AiOutlineRight/></ButtonMobile>
+        </Page>
+
         <ShowContainerMobile>
         <PhotoContainerMobile  ref={slideRef}>
             <div class='photo-container'>
@@ -157,9 +143,7 @@ export default function PhotoList() {
             </div>
         </PhotoContainerMobile>
         </ShowContainerMobile>
-        <ButtonMobile onClick={prevSlide}><AiOutlineLeft/>{currentSlide+1}   /</ButtonMobile>
-        <ButtonMobile onClick={nextSlide}>{TOTAL_SLIDES+1}<AiOutlineRight/></ButtonMobile>
-        
+  
         </WrapperMobile>
     );
     }
