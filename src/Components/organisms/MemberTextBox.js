@@ -1,31 +1,32 @@
 import React from "react";
 import styled from "styled-components";
-
 import MainText from "../atoms/MainText";
 import MainSubText from "../atoms/MainSubText";
+
 const TextBlock = styled.div`
   width: 100%;
-  height: 254px;
+  height: 293px;
   display: flex;
   @media screen and (max-width: 1279px) {
-    height: 250px;
+    height: 213px;
   }
 
   @media screen and (max-width: 767px) {
-    height: 237px;
+    height: 265px;
     flex-direction: column;
   }
 `;
-function ProjectTextBos() {
+function MemberTextBox() {
   return (
     <TextBlock>
-      <MainText url={"/Project"}>Project</MainText>
+      <MainText url={"/Member"}>Member</MainText>
       <MainSubText>
-        31기수에 이르기까지 그동안 EC선배들이 했던 프로젝트들이에요! 너무 많아서
-        몇 가지만 골라봤어요
+        EC에는 여러분의 성장을 도와줄
+        <br />
+        든든한 운영진과 멋진 선배들이 있어요!
       </MainSubText>
     </TextBlock>
   );
 }
 
-export default ProjectTextBos;
+export default MemberTextBox;

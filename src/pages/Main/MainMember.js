@@ -1,23 +1,23 @@
 import React from "react";
 import styled from "styled-components";
+import MemberTextBox from "../../Components/organisms/MemberTextBox";
+import MemberContents from "../../Components/organisms/MemberContents";
 
-import ProjectTextBox from "../../Components/organisms/ProjectTextBox";
-import ProjectContents from "../../Components/organisms/ProjectContents";
-const ProjectBlock = styled.div`
+const MemberBlock = styled.div`
   width: 100%;
-  height: 752px;
+  height: 841px;
   margin: 0;
   padding: 0;
-  background-color: #f2f2f2;
+  background-color: #fff;
   @media screen and (max-width: 1279px) {
-    height: 846px;
+    height: 629px;
   }
   @media screen and (max-width: 767px) {
-    height: 841px;
+    height: 969px;
   }
 `;
 
-const ProjectContainer = styled.div`
+const MemberContainer = styled.div`
   max-width: 1280px;
   height: 100%;
   padding-left: 40px;
@@ -35,15 +35,16 @@ const ProjectContainer = styled.div`
     padding-right: 8px;
   }
 `;
-function MainProject() {
+
+function MainMember() {
   return (
-    <ProjectBlock>
-      <ProjectContainer>
-        <ProjectTextBox />
-        <ProjectContents />
-      </ProjectContainer>
-    </ProjectBlock>
+    <MemberBlock>
+      <MemberContainer>
+        <MemberTextBox />
+        <MemberContents />
+      </MemberContainer>
+    </MemberBlock>
   );
 }
 
-export default MainProject;
+export default MainMember;

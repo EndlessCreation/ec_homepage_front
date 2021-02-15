@@ -1,31 +1,29 @@
 import React from "react";
 import styled from "styled-components";
-
 import MainText from "../atoms/MainText";
 import MainSubText from "../atoms/MainSubText";
+
 const TextBlock = styled.div`
   width: 100%;
-  height: 254px;
+  height: 220px;
   display: flex;
   @media screen and (max-width: 1279px) {
-    height: 250px;
+    height: 180px;
   }
 
   @media screen and (max-width: 767px) {
-    height: 237px;
+    height: 209px;
     flex-direction: column;
   }
 `;
-function ProjectTextBos() {
+
+function ContactTextBox() {
   return (
     <TextBlock>
-      <MainText url={"/Project"}>Project</MainText>
-      <MainSubText>
-        31기수에 이르기까지 그동안 EC선배들이 했던 프로젝트들이에요! 너무 많아서
-        몇 가지만 골라봤어요
-      </MainSubText>
+      <MainText>Contact</MainText>
+      <MainSubText>궁금한게 있다면 언제든지 편하게 연락주세요!</MainSubText>
     </TextBlock>
   );
 }
 
-export default ProjectTextBos;
+export default ContactTextBox;

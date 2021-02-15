@@ -21,7 +21,7 @@ const TextBlock = styled.div`
   div a {
     text-decoration: none;
     position: absolute;
-    top: -10px;
+    top: -5px;
     color: #afafaf;
   }
   div svg {
@@ -31,27 +31,41 @@ const TextBlock = styled.div`
   @media screen and (max-width: 1279px) {
     width: 208px;
     font-size: 28px;
-    list-style: 42px;
+    line-height: 42px;
     padding-top: 80px;
+    div a {
+      top: -3px;
+    }
+    div svg {
+      top: 11px;
+    }
   }
 
   @media screen and (max-width: 767px) {
     width: 100%;
     height: auto;
     font-size: 24px;
-    list-style: 35px;
+    line-height: 35px;
     padding-top: 60px;
+    div a {
+      top: -2px;
+    }
+    div svg {
+      top: 8px;
+    }
   }
 `;
 function MainText({ children, url }) {
   return (
     <TextBlock>
       {children}
-      <div>
-        <Link to={url}>
-          View Detail <BsArrowRight />
-        </Link>
-      </div>
+      {url && (
+        <div>
+          <Link to={url}>
+            View Detail <BsArrowRight />
+          </Link>
+        </div>
+      )}
     </TextBlock>
   );
 }
