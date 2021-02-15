@@ -215,7 +215,7 @@ font-size: 24px;
 @media screen and ${Size.device.moblie}
 {
   position: absolute;
-  transform : translate(245px, -93px);
+  transform : translate(245px, -94px);
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
@@ -244,7 +244,7 @@ font-size: 22px;
 @media screen and ${Size.device.moblie}
 {
   position: absolute;
-  transform : translate(260px, -93px);
+  transform : translate(260px, -94px);
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
@@ -273,7 +273,7 @@ font-size: 24px;
 @media screen and ${Size.device.moblie}
 {
   position: absolute;
-  transform : translate(271px, -93px);
+  transform : translate(271px, -94px);
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
@@ -294,7 +294,7 @@ function GradInfo(){
   const TABLETTotalslides = Math.ceil(grads.length/10);
   const MOBLIETotalslides = Math.ceil(grads.length/16);
   
-  const [number, setNumber] = useState(1);
+  const [number, setNumber] = useState({currentPage:1});
 
   const settings = {
     dots : false,
@@ -306,13 +306,13 @@ function GradInfo(){
     slidesToScroll: 6,
     prevArrow : <FiChevronLeft type='button' class='slick-prev' />,
     nextArrow : <FiChevronRight type='button' class='slick-next' />,
-    afterChange : () => {
-      if(PCTotalslides==number)
+    afterChange : (currentPage) => {
+      if(currentPage!==0)
       {
-        setNumber(prevNumber=>prevNumber - 1);
+        setNumber({currentPage: currentPage-1});
       }
       else
-        setNumber(prevNumber => prevNumber + 1);
+      setNumber({currentPage:1});
     }
   }
 
@@ -325,13 +325,13 @@ function GradInfo(){
     slidesToScroll: 5,
     prevArrow : <FiChevronLeft type='button' class='slick-prev' />,
     nextArrow : <FiChevronRight type='button' class='slick-next' />,
-    afterChange : () => {
-      if(TABLETTotalslides==number)
+    afterChange : (currentPage) => {
+      if(currentPage!==0)
       {
-        setNumber(prevNumber=>prevNumber - 1);
+        setNumber({currentPage: currentPage-2});
       }
       else
-      setNumber(prevNumber => prevNumber + 1);
+      setNumber({currentPage:1});
     }
   }
 
@@ -344,19 +344,19 @@ function GradInfo(){
     slidesToScroll: 4,
     prevArrow : <FiChevronLeft type='button' class='slick-prev' />,
     nextArrow : <FiChevronRight type='button' class='slick-next' />,
-    afterChange : () => {
-      if(MOBLIETotalslides==number)
+    afterChange : (currentPage) => {
+      if(currentPage!==0)
       {
-        setNumber(prevNumber=>prevNumber - 1);
+        setNumber({currentPage: currentPage+1});
       }
       else
-      setNumber(prevNumber => prevNumber + 1);
+      setNumber({currentPage:1});
     }
   }
 
   return (
     <Block>
-        <PrevPages>{number}</PrevPages>
+        <PrevPages>{number.currentPage}</PrevPages>
         <Slash>/</Slash>
         {isPc&&<NextPages>{PCTotalslides}</NextPages>}
         {isMoblie&&<NextPages>{MOBLIETotalslides}</NextPages>}

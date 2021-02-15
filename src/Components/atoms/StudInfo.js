@@ -294,7 +294,7 @@ function StudInfo(){
   const TABLETTotalslides = Math.ceil(studs.length/8);
   const MOBLIETotalslides = Math.ceil(studs.length/12);
 
-  const [number, setNumber] = useState(1);
+  const [number, setNumber] = useState({currentPage:1});
 
   const settings = {
     dots : false,
@@ -305,13 +305,13 @@ function StudInfo(){
     slidesToScroll: 5,
     prevArrow : <FiChevronLeft type='button' class='slick-prev'/>,
     nextArrow : <FiChevronRight type='button' class='slick-next'/>,
-    afterChange : () => {
-      if(PCTotalslides==number)
+    afterChange : (currentPage) => {
+      if(currentPage!==0)
       {
-        setNumber(prevNumber=>prevNumber - 1);
+        setNumber({currentPage: currentPage+1});
       }
       else
-        setNumber(prevNumber => prevNumber + 1);
+      setNumber({currentPage:1});
     }
   }
 
@@ -325,13 +325,13 @@ function StudInfo(){
     slidesToScroll: 4,
     prevArrow : <FiChevronLeft type='button' class='slick-prev' />,
     nextArrow : <FiChevronRight type='button' class='slick-next' />,
-    afterChange : () => {
-      if(TABLETTotalslides==number)
+    afterChange : (currentPage) => {
+      if(currentPage!==0)
       {
-        setNumber(prevNumber=>prevNumber - 1);
+        setNumber({currentPage: currentPage-2});
       }
       else
-      setNumber(prevNumber => prevNumber + 1);
+      setNumber({currentPage:1});
     }
   }
 
@@ -344,19 +344,19 @@ function StudInfo(){
     slidesToScroll: 3,
     prevArrow : <FiChevronLeft type='button' class='slick-prev' />,
     nextArrow : <FiChevronRight type='button' class='slick-next' />,
-    afterChange : () => {
-      if(MOBLIETotalslides==number)
+    afterChange : (currentPage) => {
+      if(currentPage!==0)
       {
-        setNumber(prevNumber=>prevNumber - 1);
+        setNumber({currentPage});
       }
       else
-      setNumber(prevNumber => prevNumber + 1);
+      setNumber({currentPage:1});
     }
   }
 
   return (
     <Block>
-        <PrevPages>{number}</PrevPages>
+        <PrevPages>{number.currentPage}</PrevPages>
         <Slash>/</Slash>
         {isPc&&<NextPages>{PCTotalslides}</NextPages>}
         {isMoblie&&<NextPages>{MOBLIETotalslides}</NextPages>}
