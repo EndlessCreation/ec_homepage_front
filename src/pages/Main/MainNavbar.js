@@ -1,7 +1,18 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import NavbarMain from "../../Common/atoms/NavbarMain";
 import NavbarMenu from "../../Common/organisms/NavbarMenu";
+=======
+import React from "react";
+import styled, { css } from "styled-components";
+
+import { useBtnState } from "../../Context/MainContext";
+import NavbarMain from "../../Components/atoms/NavbarMain";
+import NavbarMenu from "../../Components/organisms/NavbarMenu";
+import HamburgerBtn from "../../Components/atoms/HamburgerBtn";
+
+>>>>>>> 587162f714bc9f29704b543a3352e4d42395d674
 /* 상단 고정 네이게이션 바 Template*/
 const NavbarTemplate = styled.div`
   position: fixed;
@@ -21,6 +32,7 @@ const NavbarTemplate = styled.div`
     padding-left: 80px;
     padding-right: 70px;
     height: 84px;
+<<<<<<< HEAD
   }
   ${(props) =>
     props.active &&
@@ -82,6 +94,46 @@ function MainNavbar() {
         </a>
       </HamburgerBtn>
     </NavbarTemplate>
+=======
+
+    ${(props) =>
+      props.active &&
+      css`
+        height: 100%;
+        background-color: #232323;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        padding-top: 24px;
+      `}
+  }
+  @media screen and (max-width: 767px) {
+    padding-left: 28px;
+    padding-right: 28px;
+    height: 72px;
+    ${(props) =>
+      props.active &&
+      css`
+        height: 100%;
+        background-color: #232323;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        padding-top: 20px;
+      `}
+  }
+`;
+function MainNavbar() {
+  const active = useBtnState();
+  return (
+    <>
+      <NavbarTemplate active={active}>
+        <NavbarMain />
+        <NavbarMenu />
+        <HamburgerBtn />
+      </NavbarTemplate>
+    </>
+>>>>>>> 587162f714bc9f29704b543a3352e4d42395d674
   );
 }
 

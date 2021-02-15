@@ -21,7 +21,10 @@ const FlexBox = styled.div`
   }
 `;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 587162f714bc9f29704b543a3352e4d42395d674
 function Management() {
   return (
     <FlexBox>

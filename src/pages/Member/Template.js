@@ -159,7 +159,10 @@ const GradBox = styled.div`
   background: #f2f2f2 0% 0% no-repeat padding-box;
 `;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 587162f714bc9f29704b543a3352e4d42395d674
 function Template() {
   return (
     <>
