@@ -1,23 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 
-import ProjectTextBox from "../../Components/organisms/ProjectTextBox";
-import ProjectContents from "../../Components/organisms/ProjectContents";
-const ProjectBlock = styled.div`
+import ContactTextBox from "../../Components/organisms/ContactTextBox";
+import ContactContents from "../../Components/organisms/ContactContents";
+
+const ContactBlock = styled.div`
   width: 100%;
-  height: 752px;
+  height: 507px;
   margin: 0;
   padding: 0;
   background-color: #f2f2f2;
   @media screen and (max-width: 1279px) {
-    height: 846px;
+    height: 414px;
   }
   @media screen and (max-width: 767px) {
-    height: 841px;
+    height: 555px;
   }
 `;
-
-const ProjectContainer = styled.div`
+const ContactContainer = styled.div`
   max-width: 1280px;
   height: 100%;
   padding-left: 40px;
@@ -35,15 +35,15 @@ const ProjectContainer = styled.div`
     padding-right: 8px;
   }
 `;
-function MainProject() {
+function MainContact() {
   return (
-    <ProjectBlock>
-      <ProjectContainer>
-        <ProjectTextBox />
-        <ProjectContents />
-      </ProjectContainer>
-    </ProjectBlock>
+    <ContactBlock>
+      <ContactContainer>
+        <ContactTextBox />
+        <ContactContents />
+      </ContactContainer>
+    </ContactBlock>
   );
 }
 
-export default MainProject;
+export default MainContact;

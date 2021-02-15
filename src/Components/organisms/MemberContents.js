@@ -1,33 +1,31 @@
 import React from "react";
 import styled from "styled-components";
-
-import SlideShow from "../molecules/SliderShow";
+import MainMemberBox from "../molecules/MainMemberBox";
 const ContentsBlock = styled.div`
-  width: 848px;
-  height: 378px;
+  width: 880px;
+  height: 548px;
   margin-left: 22.16%;
   margin-right: 7%;
-  background-color: #f2f2f2;
-  overflow: hidden;
   @media screen and (max-width: 1279px) {
     width: 100%;
-    height: 596px;
+    height: 416px;
     margin-left: 0;
+    margin-right: 0;
   }
   @media screen and (max-width: 767px) {
     width: 100%;
-    height: 548px;
-    margin-top: 64px;
+    height: 704px;
     margin-left: 0;
+    margin-right: 0;
   }
 `;
 
-function ProjectContents() {
+function MemberContents() {
   return (
     <ContentsBlock>
-      <SlideShow />
+      <MainMemberBox />
     </ContentsBlock>
   );
 }
 
-export default ProjectContents;
+export default MemberContents;
