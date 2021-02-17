@@ -1,6 +1,7 @@
 import React  from 'react';
 import styled from 'styled-components';
 
+
 const Container=styled.div`
     max-width: 640px;
     padding-left :16px;
@@ -39,18 +40,18 @@ const WrapperStyleTablet = styled.div`
 
       .paragraph{
         grid-column: 1;
-        grid-row: 4;
+        grid-row:  ${(props) => props.row || "4"};
       }
 
 `;
 
-function WrapperTablet({children, title,background}) {
+function WrapperTablet({children, title,background, row}) {
 
     return (
         <>
     {/* <GlobalStyle/> */}
     <Container background={ background }> 
-    <WrapperStyleTablet background={ background }>
+    <WrapperStyleTablet background={ background }  row={row}>
         <div class ='wrapper'>
           <div class='title'>{title}</div>
           <div class='paragraph'>{children}</div>

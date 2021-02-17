@@ -16,7 +16,7 @@ display: grid;
     .wrapper {
         display: grid;
         grid-template-columns: 8fr 312fr ;
-        grid-template-rows : ${(props) => props.rows || "60fr 35fr 54fr 680fr"};
+        grid-template-rows : 60fr 35fr 54fr 680fr;
         grid-auto-rows: minmax(100px, auto);    # 최소크기는 100px 이되, 창이 이보다 작아지면 자동으로
         position: absolute; 
         top:0; 
@@ -38,19 +38,19 @@ display: grid;
 
       .paragraph{
         grid-column: 2;
-        grid-row: 4;
+        grid-row:  ${(props) => props.row || "4"};
       }
 
 `;
 
-function WrapperMobile({children, title,background, rows}) {
+function WrapperMobile({children, title,background, row}) {
 
     return (
         <>
     {/* <GlobalStyle/> */}
     <Container background={ background }>
-    <WrapperStyleMobile background={ background }>
-        <div class ='wrapper' grid-template-rows ={rows}>
+    <WrapperStyleMobile background={ background }  row ={row}>
+        <div class ='wrapper'>
           <div class='title'>{title}</div>
           <div class='paragraph'>{children}</div>
         </div>
