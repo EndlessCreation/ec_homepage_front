@@ -25,12 +25,24 @@ const items = [
   { id: 10 },
 ];
 
-const BlockforEcPickContent=styled.div`
-    padding-left: 23%;
+const BlockforEcPick=styled.div`
+@media screen and (min-width:1280px){
+    padding-left: 266px;
+    width:848px;
     padding-bottom:120px;
     overflow:hidden;
-`;
+}
+@media screen and (min-width:768px) and (max-width:1279px){
+  padding-bottom:89px;
+  overflow:hidden;
+}
 
+@media screen and (max-width:767px){
+padding-bottom:64px;
+overflow:hidden;
+}
+
+`;
 
 function ECPickContentBox(){
     const settingsforPC = {
@@ -38,7 +50,7 @@ function ECPickContentBox(){
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 2.1,
+        slidesToShow: 2,
         slidesToScroll: 1,
         arrows: true,
         autoplay:true,
@@ -53,15 +65,31 @@ function ECPickContentBox(){
     const isTablet = useMediaQuery({ query: '(min-width: 640px) and (max-width:1239px)' })
     const isMobile = useMediaQuery({ query: '(min-width: 360px) and (max-width: 639px)' })
     return (
-        <BlockforEcPickContent>
-            {isPc&&<StyledSlider {...settingsforPC}>
+      <BlockforEcPick>
+      <SliderBox>
+        {isPc&&<StyledSlider {...settings}>
+        {items.map(item => {
+          return (
+              <EcPickBox key={item.id} />
+          );
+        })}
+      </StyledSlider>}
+      {isTablet&&<StyledSlider rows="2" {...settingsforTablet}>
+        {items.map(item => {
+          return (
+              <EcPickBox key={item.id} />
+          );
+        })}
+      </StyledSlider>}
+      {isMobile&&<StyledSlider rows="2" {...settingsforMobile}>
             {items.map(item => {
               return (
                   <EcPickBox key={item.id} />
               );
             })}
           </StyledSlider>}
-        </BlockforEcPickContent>
+          </SliderBox>
+        </BlockforEcPick>
     );  
 }
 
