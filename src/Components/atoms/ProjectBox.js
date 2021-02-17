@@ -5,8 +5,8 @@ import Modal from './Modal';
 const BoxforProject=styled.div`
 
 @media screen and (min-width:1280px){
-width: 198px;
-height: 198px;
+width: 188px;
+height: 188px;
 background: #F2F2F2 0% 0% no-repeat padding-box;
 opacity: 1;
 margin-bottom:32px;
@@ -18,6 +18,7 @@ margin-bottom:32px;
 height: 140px;
 background: #F2F2F2 0% 0% no-repeat padding-box;
 opacity: 1;
+margin-bottom:16px;
 }
 
 
