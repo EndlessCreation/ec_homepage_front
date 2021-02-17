@@ -5,12 +5,9 @@ import Size from '../../Size';
 //항목의 text부분
 const Text = styled.div`
 position: absolute;
-padding-top: 26px;
-width: 128px;
-height: 128px;
 margin: 0 auto;
-vertical-align: middle;
 text-align: center;
+flex: 1;
 
 font: var(--unnamed-font-style-normal) normal normal 16px/28px var(--unnamed-font-family-nanumsquare);
 letter-spacing: var(--unnamed-character-spacing-0);
@@ -20,15 +17,11 @@ letter-spacing: 0px;
 color: #232323;
 opacity: 1;
 
-display: none;
 
 @media screen and ${Size.device.tablet}
 {
     position: absolute;
-vertical-align: middle;
-  padding-top: 22px;
-  width: 112px;
-  height: 112px;
+
 margin: 0 auto;
 
 font-family: NanumSquareR;
@@ -41,16 +34,12 @@ letter-spacing: normal;
 text-align: center;
 color: #232323;
 
-display: none;
 }
 
 @media screen and ${Size.device.moblie}
 {
 position: absolute;
-vertical-align: middle;
-  padding-top: 12px;
-  width: 67px;
-  height: 67px;
+
 margin: 0 auto;
 
 font: var(--unnamed-font-style-normal) normal normal 16px/28px var(--unnamed-font-family-nanumsquare);
@@ -61,7 +50,6 @@ font: normal normal normal 8px/15px NanumSquare;
 color: #232323;
 opacity: 1;
 
-display: none;
 }
 
 `;
@@ -71,34 +59,25 @@ width: 128px;
 height: 128px;
 opacity: 1;
 margin-bottom: 16px;
+display: flex;
+justify-content: center;
+align-items: center;
 
 border-radius: 54px;
 background-color: #ffffff;
 
-/* pc버전 : hover */
-&:hover {
-  background: var(--unnamed-color-b0b0b0) 0% 0% no-repeat padding-box;
-  background: #B0B0B0 0% 0% no-repeat padding-box;
-  ${Text}{
-    display: initial;
-}
 }
 @media screen and ${Size.device.tablet}
 {
     width: 112px;
     height: 112px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
-    border-radius: 54px;
+    border-radius: 48px;
     opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
-    /* moblie버전 : hover */
-    &:active {
-        background: var(--unnamed-color-b0b0b0) 0% 0% no-repeat padding-box;
-        background: #B0B0B0 0% 0% no-repeat padding-box;
-        ${Text}{
-            display: initial;
-        }
-    }    
 }
 
 @media screen and ${Size.device.moblie}
@@ -106,22 +85,24 @@ background-color: #ffffff;
     width: 67px;
     height: 67px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
-    border-radius: 54px;
+    border-radius: 28px;
     opacity: 1;
-    
-    /* moblie버전 : hover */
-    &:active {
-        background: var(--unnamed-color-b0b0b0) 0% 0% no-repeat padding-box;
-        background: #B0B0B0 0% 0% no-repeat padding-box;
-        ${Text}{
-            display: initial;
-        }
-    }    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      
 }
 `;
 
 function GradCircle({grad}){
-    return <GradInfoBlock><Text>{grad.name} {grad.grade}</Text><br /><Text>{grad.position}</Text><br/><Text>{grad.company}</Text></GradInfoBlock>;
+    return (
+    <GradInfoBlock>
+        <Text>
+        {grad.name} {grad.grade}
+        <br />
+        {grad.position}
+        </Text>
+    </GradInfoBlock>);
 }
 
 export default GradCircle;

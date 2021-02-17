@@ -15,7 +15,7 @@ const Block = styled.div`
 width: 848px;
 margin: 0 auto;
 .slick-prev{
-  transform : translate(-250px, 218px);
+  transform : translate(-200px, 218px);
   z-index: 2;
   position: absolute;
   opacity: 1;
@@ -26,7 +26,7 @@ margin: 0 auto;
   position: absolute;
   opacity: 1;
   color: #c4c4c4;
-  transform : translate(-1050px, 218px);
+  transform : translate(-990px, 218px);
 }
 
 @media screen and ${Size.device.tablet}
@@ -53,7 +53,7 @@ margin: 0 auto;
   width: 303px;
   margin: 0 auto;
   .slick-prev{
-    transform : translate(250px, -300px);
+    transform : translate(230px, -300px);
     z-index: 2;
     position: absolute;
     opacity: 1;
@@ -72,10 +72,10 @@ margin: 0 auto;
 const studs = [
     {
       id: 1,
-      name: 'AAAAAAAAAA',
+      name: '일개발',
       grade: '25기',
-      tech: 'JASDJ',
-      tech2: '안드로이드안드로이',
+      tech: 'JAVA',
+      tech2: '안드로이드',
       part: true
     },
     {
@@ -199,7 +199,7 @@ const studs = [
 const PrevPages = styled.div`
 position: absolute;
 z-index: 2;
-transform : translate(-252px, 468px);
+transform : translate(-200px, 468px);
 color: #c4c4c4;
 opacity: 1;
 font-size: 24px;
@@ -217,7 +217,7 @@ font-size: 24px;
 @media screen and ${Size.device.moblie}
 {
   position: absolute;
-  transform : translate(245px, -93px);
+  transform : translate(230px, -93px);
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
@@ -227,7 +227,7 @@ font-size: 24px;
 `
 const Slash = styled.div`
 position: absolute;
-transform : translate(-232px, 468px);
+transform : translate(-178px, 468px);
 color: #c4c4c4;
 opacity: 1;
 z-index: 2;
@@ -246,7 +246,7 @@ font-size: 22px;
 @media screen and ${Size.device.moblie}
 {
   position: absolute;
-  transform : translate(260px, -93px);
+  transform : translate(249px, -93px);
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
@@ -256,7 +256,7 @@ font-size: 22px;
 
 const NextPages = styled.div`
 position: absolute;
-transform : translate(-214px, 468px);
+transform : translate(-157px, 468px);
 color: #c4c4c4;
 opacity: 1;
 z-index: 2;
@@ -275,7 +275,7 @@ font-size: 24px;
 @media screen and ${Size.device.moblie}
 {
   position: absolute;
-  transform : translate(271px, -93px);
+  transform : translate(266px, -93px);
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;

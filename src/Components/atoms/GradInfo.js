@@ -13,8 +13,8 @@ import {FiChevronRight} from 'react-icons/fi';
 const grads = [
   {
     id: 1,
-    name: 'Abacdfrgd',
-    position: '백엔드백엔드백엔',
+    name: '일개발',
+    position: '백엔드',
     grade: '22기',
     company: 'SAMSUNGSAMS'
 
@@ -138,7 +138,7 @@ const Block = styled.div`
 width: 848px;
 margin: 0 auto;
 .slick-prev{
-  transform : translate(-250px, 117px);
+  transform : translate(-200px, 117px);
   z-index: 2;
   position: absolute;
   opacity: 1;
@@ -149,7 +149,7 @@ margin: 0 auto;
   position: absolute;
   opacity: 1;
   color: #c4c4c4;
-  transform : translate(-1050px, 117px);
+  transform : translate(-990px, 117px);
 }
 
 
@@ -178,7 +178,7 @@ margin: 0 auto;
   width: 304px;
   margin: 0 auto;
   .slick-prev{
-    transform : translate(250px, -258px);
+    transform : translate(230px, -258px);
     z-index: 2;
     position: absolute;
     opacity: 1;
@@ -197,7 +197,7 @@ margin: 0 auto;
 const PrevPages = styled.div`
 position: absolute;
 z-index: 2;
-transform : translate(-252px, 252px);
+transform : translate(-200px, 252px);
 color: #c4c4c4;
 opacity: 1;
 font-size: 24px;
@@ -215,7 +215,7 @@ font-size: 24px;
 @media screen and ${Size.device.moblie}
 {
   position: absolute;
-  transform : translate(245px, -94px);
+  transform : translate(230px, -94px);
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
@@ -225,7 +225,7 @@ font-size: 24px;
 `
 const Slash = styled.div`
 position: absolute;
-transform : translate(-232px, 252px);
+transform : translate(-178px, 252px);
 color: #c4c4c4;
 opacity: 1;
 z-index: 2;
@@ -244,7 +244,7 @@ font-size: 22px;
 @media screen and ${Size.device.moblie}
 {
   position: absolute;
-  transform : translate(260px, -94px);
+  transform : translate(249px, -94px);
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
@@ -254,7 +254,7 @@ font-size: 22px;
 
 const NextPages = styled.div`
 position: absolute;
-transform : translate(-214px, 252px);
+transform : translate(-157px, 252px);
 color: #c4c4c4;
 opacity: 1;
 z-index: 2;
@@ -273,7 +273,7 @@ font-size: 24px;
 @media screen and ${Size.device.moblie}
 {
   position: absolute;
-  transform : translate(271px, -94px);
+  transform : translate(266px, -94px);
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
