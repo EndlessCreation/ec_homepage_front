@@ -7,19 +7,19 @@ const Container=styled.div`
 
 @media screen and (min-width:1280px)
 {
-    max-width:1280px;
+    max-width:1200px;
     margin:0 auto;
     height:1038px;
 }
 
 @media screen and (min-width:768px) and (max-width:1279px){
-    max-width:640px;
+    max-width:608px;
     margin:0 auto;
     height: 750px;
 }
 
 @media screen and (max-width:767px){
-    max-width:320px;
+    max-width:304px;
     margin:0 auto;
     height:719px;
 }

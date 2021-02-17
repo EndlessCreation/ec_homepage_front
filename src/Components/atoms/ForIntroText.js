@@ -6,7 +6,7 @@ const IntroText=styled.div
 
 @media screen and (min-width:1280px)
 {
-    font-family: NanumSquareB;
+  font-family: NanumSquareBold;
   font-size: 24px;
   font-weight: normal;
   font-stretch: normal;
@@ -17,7 +17,7 @@ const IntroText=styled.div
   color: #101010;
 }
 @media screen and (min-width:768px) and (max-width:1279px){
-    font-family: NanumSquareR;
+    font-family: NanumSquareRegular;
     font-size: 18px;
     font-weight: normal;
     font-stretch: normal;
@@ -29,7 +29,7 @@ const IntroText=styled.div
 }
 
 @media screen and (max-width:767px){
-    font-family: NanumSquareR;
+    font-family: NanumSquareRegular;
   font-size: 18px;
   font-weight: normal;
   font-stretch: normal;
