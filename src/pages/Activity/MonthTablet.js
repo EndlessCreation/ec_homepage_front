@@ -1,18 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import WrapperTablet from "./WrapperTablet";
-<<<<<<< HEAD
-=======
-import { useMonthState } from "./MonthProvider";
-
-const Back = styled.div`
-  width: 100%;
-  height: 758px;
-  margin: 0;
-  padding: 0;
-  background-color: #f2f2f2;
-`;
->>>>>>> 587162f714bc9f29704b543a3352e4d42395d674
 
 const MonthGridTablet = styled.div`
   display: grid;
@@ -20,14 +8,8 @@ const MonthGridTablet = styled.div`
   .component {
     display: grid;
     grid-template-rows: 27fr 35fr 68fr;
-<<<<<<< HEAD
     grid-template-columns: 8rem;
     padding: 16px;
-=======
-    grid-template-columns: 7rem;
-    padding-right: 40px;
-    padding-bottom :32px;
->>>>>>> 587162f714bc9f29704b543a3352e4d42395d674
   }
 
   .month {
@@ -56,10 +38,6 @@ const MonthGridTablet = styled.div`
     grid-row: 3;
     font-size: 14px;
     font-family: NanumSquareRegular;
-<<<<<<< HEAD
-=======
-    line-height: 1.5;
->>>>>>> 587162f714bc9f29704b543a3352e4d42395d674
   }
 `;
 
@@ -91,7 +69,6 @@ function Month({ month }) {
 }
 
 function MonthListTablet() {
-<<<<<<< HEAD
   const months = [
     {
       name: "January",
@@ -171,12 +148,6 @@ function MonthListTablet() {
 
   return (
     <WrapperTablet background={"#e3dfde"} title="Monthly">
-=======
-  const months =useMonthState()
-  return (
-    <Back>
-    <WrapperTablet background={"#f2f2f2"} title="Monthly">
->>>>>>> 587162f714bc9f29704b543a3352e4d42395d674
       <FlexBox>
         <div class="box-container">
           {months.map((month) => (
@@ -185,10 +156,6 @@ function MonthListTablet() {
         </div>
       </FlexBox>
     </WrapperTablet>
-<<<<<<< HEAD
-=======
-    </Back>
->>>>>>> 587162f714bc9f29704b543a3352e4d42395d674
   );
 }
 

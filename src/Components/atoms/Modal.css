@@ -6,41 +6,17 @@
   bottom: 0;
   left: 0;
   z-index: 99;
-<<<<<<< HEAD
   background: #232323;
-=======
-  background: rgb(25, 25, 25, 0.64);
->>>>>>> 587162f714bc9f29704b543a3352e4d42395d674
 }
 .modal button {
   outline: none;
   border: 0;
 }
-<<<<<<< HEAD
 .modal > section {
   width: 608px;
   margin: 0 auto;
   background-color: #fff;
   overflow: hidden;
-=======
-
-@media screen and (min-width: 768px) {
-  .modal > section {
-    width: 608px;
-    margin: 0 auto;
-    background-color: #fff;
-    overflow: hidden;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .modal > section {
-    width: 336px;
-    margin: 0 auto;
-    background-color: #fff;
-    overflow: hidden;
-  }
->>>>>>> 587162f714bc9f29704b543a3352e4d42395d674
 }
 .modal > section > header {
   position: relative;

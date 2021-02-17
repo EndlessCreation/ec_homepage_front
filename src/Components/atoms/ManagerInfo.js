@@ -320,15 +320,9 @@ function ManagerInfo() {
       name: "김건훈",
       grad: "27기",
       position: "회장",
-<<<<<<< HEAD
       hash1: "#ABCDEFGHIJKLM",
       hash2: "#해시태그그그그",
       hash3: "#해시태그그그그",
-=======
-      hash1: "#해시태그",
-      hash2: "#해시태그",
-      hash3: "#해시태그",
->>>>>>> 587162f714bc9f29704b543a3352e4d42395d674
       part: true,
     },
     {

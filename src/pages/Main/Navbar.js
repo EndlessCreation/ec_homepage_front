@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+ import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import { useMediaQuery } from "react-responsive";
 
@@ -19,7 +19,6 @@ const NavigationBar = styled.div`
     padding-right: 70px;
     z-index: 3;
   }
-
   .navMain {
     display: inline-block;
     font-size: 24px;

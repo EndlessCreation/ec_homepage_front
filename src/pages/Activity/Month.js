@@ -1,19 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import WrapperPC from "./WrapperPC";
-<<<<<<< HEAD
-=======
-import { useMonthState } from "./MonthProvider";
-
-const Back = styled.div`
-    width: 100%;
-    height: 915px;
-    margin: 0;
-    padding: 0;
-    background-color: #f2f2f2;
-`;
-
->>>>>>> 587162f714bc9f29704b543a3352e4d42395d674
 
 const MonthGrid = styled.div`
   display: grid;
@@ -50,20 +37,11 @@ const MonthGrid = styled.div`
     grid-column: 1;
     grid-row: 3;
     font-size: 16px;
-<<<<<<< HEAD
-=======
-    line-height: 1.5;
->>>>>>> 587162f714bc9f29704b543a3352e4d42395d674
     font-family: NanumSquareRegular;
   }
 `;
 
 const FlexBox = styled.div`
-<<<<<<< HEAD
-=======
-  margin-left:266px;  // 옆에 칸 띄우기
-
->>>>>>> 587162f714bc9f29704b543a3352e4d42395d674
   .box-container {
     display: flex;
     flex-direction: row; // 옆으로 정렬
@@ -91,7 +69,6 @@ function Month({ month }) {
 }
 
 function MonthList() {
-<<<<<<< HEAD
   const months = [
     {
       name: "January",
@@ -171,14 +148,6 @@ function MonthList() {
 
   return (
     <WrapperPC background={"#e3dfde"} title="Monthly">
-=======
- 
-  const months = useMonthState();   // 상태 값 불러오기~
-
-  return (
-    <Back>
-    <WrapperPC background={"#f2f2f2"} title="Monthly">
->>>>>>> 587162f714bc9f29704b543a3352e4d42395d674
       <FlexBox>
         <div class="box-container">
           {months.map((month) => (
@@ -187,10 +156,6 @@ function MonthList() {
         </div>
       </FlexBox>
     </WrapperPC>
-<<<<<<< HEAD
-=======
-    </Back>
->>>>>>> 587162f714bc9f29704b543a3352e4d42395d674
   );
 }
 
