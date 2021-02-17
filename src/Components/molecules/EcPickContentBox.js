@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import EcPickBox from '../atoms/EcPickBox';
-import { useMediaQuery } from 'react-responsive'
+import {useMediaQuery} from 'react-responsive';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -10,6 +10,17 @@ const StyledSlider = styled(Slider)`
     .slick-slide div{
       outline: none;
     }
+`;
+
+const SliderBox=styled.div`
+@media screen and (max-width:1280px)
+{
+    width:870px;
+}
+@media screen and (min-width:768px) and (max-width:1279px)
+{
+  width:592px;
+}
 `;
 
 const items = [
@@ -25,43 +36,101 @@ const items = [
   { id: 10 },
 ];
 
-const BlockforEcPickContent=styled.div`
-    padding-left: 23%;
+const BlockforEcPick=styled.div`
+@media screen and (min-width:1280px){
+    padding-left: 266px;
+    width:848px;
     padding-bottom:120px;
     overflow:hidden;
+}
+@media screen and (min-width:768px) and (max-width:1279px){
+  padding-bottom:89px;
+  overflow:hidden;
+}
+@media screen and (max-width:767px){
+padding-bottom:64px;
+overflow:hidden;
+}
 `;
 
 
+
 function ECPickContentBox(){
-    const settingsforPC = {
+  const isPc = useMediaQuery({
+    query: '(min-width: 1280px)'
+    })
+    const isTablet = useMediaQuery({ query: '(min-width: 768px) and (max-width:1279px)' })
+    const isMobile = useMediaQuery({ query: ' (max-width: 767px)' })
+
+
+    const settings = {
         adaptiveHeight:true,
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 2.1,
+        slidesToShow: 2,
         slidesToScroll: 1,
-        arrows: true,
+        arrows: false,
         autoplay:true,
         autoplaySpeed:2500,
         pauseOnHover:true,
-        centerMode: true,
+        centerMode: false,
       };
+
+      const settingsforTablet={
+        adaptiveHeight:true,
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        arrows: false,
+        autoplay:true,
+        autoplaySpeed:2500,
+        pauseOnHover:true,
+        centerMode: false,
+      };
+
+      const settingsforMobile={
+        adaptiveHeight:true,
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1.029,
+        slidesToScroll: 1,
+        arrows: false,
+        autoplay:true,
+        autoplaySpeed:2500,
+        pauseOnHover:true,
+        centerMode: false,
+      }
        
-   const isPc = useMediaQuery({
-    query: '(min-width: 1280px)'
-    })
-    const isTablet = useMediaQuery({ query: '(min-width: 640px) and (max-width:1239px)' })
-    const isMobile = useMediaQuery({ query: '(min-width: 360px) and (max-width: 639px)' })
     return (
-        <BlockforEcPickContent>
-            {isPc&&<StyledSlider {...settingsforPC}>
+        <BlockforEcPick>
+          <SliderBox>
+            {isPc&&<StyledSlider {...settings}>
             {items.map(item => {
               return (
                   <EcPickBox key={item.id} />
               );
             })}
           </StyledSlider>}
-        </BlockforEcPickContent>
+          {isTablet&&<StyledSlider rows="2" {...settingsforTablet}>
+            {items.map(item => {
+              return (
+                  <EcPickBox key={item.id} />
+              );
+            })}
+          </StyledSlider>}
+          {isMobile&&<StyledSlider rows="2" {...settingsforMobile}>
+            {items.map(item => {
+              return (
+                  <EcPickBox key={item.id} />
+              );
+            })}
+          </StyledSlider>}
+          </SliderBox>
+        </BlockforEcPick>
     );  
 }
 
