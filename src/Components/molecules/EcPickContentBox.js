@@ -12,6 +12,17 @@ const StyledSlider = styled(Slider)`
     }
 `;
 
+const SliderBox=styled.div`
+@media screen and (max-width:1280px)
+{
+    width:870px;
+}
+@media screen and (min-width:768px) and (max-width:1279px)
+{
+  width:592px;
+}
+`;
+
 const items = [
   { id: 1 },
   { id: 2 },
@@ -27,18 +38,17 @@ const items = [
 
 const BlockforEcPick=styled.div`
 @media screen and (min-width:1280px){
-    padding-left: 23%;
+    padding-left: 266px;
+    width:848px;
     padding-bottom:120px;
     overflow:hidden;
 }
 @media screen and (min-width:768px) and (max-width:1279px){
-  padding-left: 2.5%;
   padding-bottom:89px;
   overflow:hidden;
 }
 
 @media screen and (max-width:767px){
-  padding-left: 2.5%;
 padding-bottom:64px;
 overflow:hidden;
 }
@@ -59,7 +69,7 @@ function ECPickContentBox(){
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 2.245,
+        slidesToShow: 2,
         slidesToScroll: 1,
         arrows: false,
         autoplay:true,
@@ -73,7 +83,7 @@ function ECPickContentBox(){
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 2.055,
+        slidesToShow: 2,
         slidesToScroll: 1,
         arrows: false,
         autoplay:true,
@@ -98,6 +108,7 @@ function ECPickContentBox(){
        
     return (
         <BlockforEcPick>
+          <SliderBox>
             {isPc&&<StyledSlider {...settings}>
             {items.map(item => {
               return (
@@ -119,6 +130,7 @@ function ECPickContentBox(){
               );
             })}
           </StyledSlider>}
+          </SliderBox>
         </BlockforEcPick>
     );  
 }
