@@ -1,10 +1,11 @@
 import React ,{ useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import WrapperMobile from './WrapperMobile';
+import WrapperMobile from './organisms/WrapperMobile';
 import { AiOutlineRight,AiOutlineLeft } from "react-icons/ai";
 import { darken, lighten } from 'polished';
+import { usePhotoState } from "../../Context/PhotoProvider";
 
-import { usePhotoState } from "./PhotoProvider";
+// import { usePhotoState } from "./PhotoProvider";
 
 //현재상태의 이미지만 보여줄 container
 const ShowContainerMobile = styled.div` 

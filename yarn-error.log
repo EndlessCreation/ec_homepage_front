@@ -1,6 +1,7 @@
 Arguments: 
   E:\nodejs\node.exe E:\yarn\bin\yarn.js
 
+
 PATH: 
   C:\Users\MiSung\Anaconda3\condabin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Java\jdk1.8.0_151\bin;E:\app\user\product\11.2.0\dbhome_1\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\PROGRA~2\IVIFOU~1\VISA\WinNT\Bin;C:\WINDOWS\System32\OpenSSH\;E:\nodejs\;E:\yarn\bin\;E:\git\Git\cmd;C:\Users\MiSung\Anaconda3;C:\Users\MiSung\Anaconda3\Scripts;C:\Users\MiSung\Anaconda3\Library\bin;C:\Users\MiSung\AppData\Local\atom\app-1.34.0\resources\app\apm\bin;C:\Users\MiSung\AppData\Local\Microsoft\WindowsApps;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;E:\vsCode\Microsoft VS Code\bin;C:\Users\MiSung\AppData\Roaming\npm;C:\Users\MiSung\AppData\Local\Yarn\bin;C:\ProgramData\MiSung\atom\bin;C:\Users\MiSung\AppData\Local\Microsoft\WindowsApps;;
 
@@ -8,6 +9,7 @@ Yarn version:
   1.22.4
 
 Node version: 
+
   14.4.0
 
 Platform: 
@@ -25,6 +27,7 @@ Trace:
       at IncomingMessage.emit (events.js:327:22)
       at endReadableNT (_stream_readable.js:1224:12)
       at processTicksAndRejections (internal/process/task_queues.js:84:21)
+
 
 npm manifest: 
   {
@@ -46,8 +49,10 @@ npm manifest:
       "react-dom": "^17.0.1",
       "react-icons": "^4.1.0",
       "react-responsive": "^8.2.0",
+
       "react-router-dom": "^5.2.0",
       "react-scripts": "^4.0.2",
+
       "react-slick": "^0.28.0",
       "slick-carousel": "^1.8.1",
       "styled-components": "^5.2.1",
@@ -84,3 +89,4 @@ yarn manifest:
 
 Lockfile: 
   No lockfile
+

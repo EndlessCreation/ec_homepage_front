@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import WrapperTablet from "./WrapperTablet";
-import { useMonthState } from "./MonthProvider";
+import WrapperTablet from "./organisms/WrapperTablet";
+import { useMonthState } from "../../Context/MonthProvider";
 
 const Back = styled.div`
   width: 100%;
@@ -19,7 +19,7 @@ const MonthGridTablet = styled.div`
     grid-template-rows: 27fr 35fr 68fr;
     grid-template-columns: 7rem;
     padding-right: 40px;
-    padding-bottom :32px;
+    padding-bottom: 32px;
   }
 
   .month {
@@ -80,18 +80,18 @@ function Month({ month }) {
 }
 
 function MonthListTablet() {
-  const months =useMonthState()
+  const months = useMonthState();
   return (
     <Back>
-    <WrapperTablet background={"#f2f2f2"} title="Monthly">
-      <FlexBox>
-        <div class="box-container">
-          {months.map((month) => (
-            <Month month={month} class="month-elem" />
-          ))}
-        </div>
-      </FlexBox>
-    </WrapperTablet>
+      <WrapperTablet background={"#f2f2f2"} title="Monthly">
+        <FlexBox>
+          <div class="box-container">
+            {months.map((month) => (
+              <Month month={month} class="month-elem" />
+            ))}
+          </div>
+        </FlexBox>
+      </WrapperTablet>
     </Back>
   );
 }

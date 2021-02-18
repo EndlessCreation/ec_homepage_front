@@ -20,12 +20,10 @@ const NavbarTemplate = styled.div`
   padding-left: 70px;
   padding-right: 70px;
   z-index: 3;
-
   @media screen and (max-width: 1280px) {
     padding-left: 80px;
     padding-right: 70px;
     height: 84px;
-
     ${(props) =>
       props.active &&
       css`
