@@ -1,12 +1,13 @@
 import React from "react";
 
 import { MainProvider } from "../../Context/MainContext";
+import MainNavbar from "./MainNavbar";
 import MainHeader from "./MainHeader";
 import MainAboutEC from "./MainAboutEC";
 import MainActivity from "./MainActivity";
 import MainProject from "./MainProject";
-
-import MainNavbar from "./MainNavbar";
+import MainMember from "./MainMember";
+import MainContact from "./MainContact";
 
 function Main() {
   return (
@@ -16,6 +17,8 @@ function Main() {
       <MainAboutEC />
       <MainActivity />
       <MainProject />
+      <MainMember />
+      <MainContact />
     </MainProvider>
   );
 }

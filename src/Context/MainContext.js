@@ -132,7 +132,6 @@ export async function getEcpick(dispatch) {
   dispatch({ type: "GET_ECPICK" });
   try {
     const response = await axios.get("http://localhost:4000/ecpick");
-    console.log(response.data);
     dispatch({ type: "GET_ECPICK_SUCCESS", data: response.data });
   } catch (e) {
     dispatch({ type: "GET_ECPICK_ERROR", error: e });

@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import IntroContainer from "../../Components/organisms/IntroContainer";
-import EcPickContainer from "../../Components/organisms/EcPickContainer";
-import ProjectContainer from "../../Components/organisms/ProjectContainer";
+import IntroContainer from "./organisms/IntroContainer";
+import EcPickContainer from "./organisms/EcPickContainer";
+import ProjectContainer from "./organisms/ProjectContainer";
 
 
 

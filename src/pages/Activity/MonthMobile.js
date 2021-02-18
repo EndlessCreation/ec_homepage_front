@@ -1,6 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import WrapperMobile from "./WrapperMobile";
+import WrapperMobile from "./organisms/WrapperMobile";
+import { useMonthState } from "../../Context/MonthProvider";
+
+const Back = styled.div`
+  width: 100%;
+  height: 849px;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}`;
 
 const MonthGridMobile = styled.div`
   display: grid;
@@ -71,84 +80,10 @@ function Month({ month }) {
 }
 
 function MonthListMobile() {
-  const months = [
-    {
-      name: "January",
-      detail1: "월별활동 설명글하나",
-      detail2: "월별활동 설명글",
-      detail3: "희망 스터디 개설",
-    },
-
-    {
-      name: "February",
-      detail1: "월별활동 설명글",
-      detail2: "월별활동 설명글",
-      detail3: "월별활동 설명글",
-    },
-    {
-      name: "March",
-      detail1: "월별활동 설명글",
-      detail2: "월별활동 설명글",
-      detail3: "월별활동 설명글",
-    },
-    {
-      name: "April",
-      detail1: "월별활동 설명글하나둘셋",
-      detail2: "월별활동 설명글",
-      detail3: "월별활동 설명글",
-    },
-    {
-      name: "May",
-      detail1: "월별활동 설명글",
-      detail2: "월별활동 설명글",
-      detail3: "월별활동 설명글",
-    },
-    {
-      name: "June",
-      detail1: "월별활동 설명글",
-      detail2: "월별활동 설명글",
-      detail3: "월별활동 설명글",
-    },
-    {
-      name: "July",
-      detail1: "월별활동 설명글",
-      detail2: "월별활동 설명글",
-      detail3: "월별활동 설명글",
-    },
-
-    {
-      name: "August",
-      detail1: "월별활동 설명글",
-      detail2: "월별활동 설명글",
-      detail3: "월별활동 설명글",
-    },
-    {
-      name: "September",
-      detail1: "월별활동 설명글",
-      detail2: "월별활동 설명글",
-      detail3: "월별활동 설명글",
-    },
-    {
-      name: "October",
-      detail1: "월별활동 설명글",
-      detail2: "월별활동 설명글",
-      detail3: "월별활동 설명글",
-    },
-    {
-      name: "November",
-      detail1: "월별활동 설명글",
-      detail2: "월별활동 설명글",
-      detail3: "월별활동 설명글",
-    },
-    {
-      name: "December",
-      detail1: "월별활동 설명글",
-      detail2: "월별활동 설명글",
-      detail3: "월별활동 설명글",
-    },
-  ];
+  const months = useMonthState();   // 상태 값 불러오기~
 
   return (
+    <Back>
     <WrapperMobile background={"#f2f2f2"} title="Monthly">
       <FlexBox>
         <div class="box-container">
@@ -158,6 +93,7 @@ function MonthListMobile() {
         </div>
       </FlexBox>
     </WrapperMobile>
+    </Back>
   );
 }
 

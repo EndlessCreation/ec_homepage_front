@@ -1,6 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import WrapperTablet from "./WrapperTablet";
+import WrapperTablet from "./organisms/WrapperTablet";
+import { useMonthState } from "../../Context/MonthProvider";
+
+const Back = styled.div`
+  width: 100%;
+  height: 758px;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+`;
 
 const MonthGridTablet = styled.div`
   display: grid;
@@ -10,7 +19,7 @@ const MonthGridTablet = styled.div`
     grid-template-rows: 27fr 35fr 68fr;
     grid-template-columns: 7rem;
     padding-right: 40px;
-    padding-bottom :32px;
+    padding-bottom: 32px;
   }
 
   .month {
@@ -71,93 +80,19 @@ function Month({ month }) {
 }
 
 function MonthListTablet() {
-  const months = [
-    {
-      name: "January",
-      detail1: "월별활동 설명글하나둘셋",
-      detail2: "월별활동 설명글",
-      detail3: "월별활동 설명글",
-    },
-
-    {
-      name: "February",
-      detail1: "월별활동 설명글하나둘셋",
-      detail2: "월별활동 설명글",
-      detail3: "월별활동 설명글",
-    },
-    {
-      name: "March",
-      detail1: "월별활동 설명글하나둘셋",
-      detail2: "월별활동 설명글",
-      detail3: "월별활동 설명글",
-    },
-    {
-      name: "April",
-      detail1: "월별활동 설명글하나둘셋",
-      detail2: "월별활동 설명글",
-      detail3: "월별활동 설명글",
-    },
-    {
-      name: "May",
-      detail1: "월별활동 설명글",
-      detail2: "월별활동 설명글",
-      detail3: "월별활동 설명글",
-    },
-    {
-      name: "June",
-      detail1: "월별활동 설명글",
-      detail2: "월별활동 설명글",
-      detail3: "월별활동 설명글",
-    },
-    {
-      name: "July",
-      detail1: "월별활동 설명글",
-      detail2: "월별활동 설명글",
-      detail3: "월별활동 설명글",
-    },
-
-    {
-      name: "August",
-      detail1: "월별활동 설명글",
-      detail2: "월별활동 설명글",
-      detail3: "월별활동 설명글",
-    },
-    {
-      name: "September",
-      detail1: "월별활동 설명글",
-      detail2: "월별활동 설명글",
-      detail3: "월별활동 설명글",
-    },
-    {
-      name: "October",
-      detail1: "월별활동 설명글",
-      detail2: "월별활동 설명글",
-      detail3: "월별활동 설명글",
-    },
-    {
-      name: "November",
-      detail1: "월별활동 설명글",
-      detail2: "월별활동 설명글",
-      detail3: "월별활동 설명글",
-    },
-    {
-      name: "December",
-      detail1: "월별활동 설명글",
-      detail2: "월별활동 설명글",
-      detail3: "월별활동 설명글",
-    },
-  ];
-
+  const months = useMonthState();
   return (
-    <WrapperTablet background={"#f2f2f2"} title="Monthly">
-      <FlexBox>
-        <div class="box-container">
-          {months.map((month) => (
-            <Month month={month} class="month-elem" />
-          ))}
-        </div>
-      </FlexBox>
-    </WrapperTablet>
+    <Back>
+      <WrapperTablet background={"#f2f2f2"} title="Monthly">
+        <FlexBox>
+          <div class="box-container">
+            {months.map((month) => (
+              <Month month={month} class="month-elem" />
+            ))}
+          </div>
+        </FlexBox>
+      </WrapperTablet>
+    </Back>
   );
 }
 

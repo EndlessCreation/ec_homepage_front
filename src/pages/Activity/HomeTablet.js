@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const Container=styled.div`
-    max-width: 640px;
-    padding-left :16px;
-    padding-right :16px;
-    margin:0 auto;
-    height:100%;
+const Container = styled.div`
+  max-width: 640px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: 0 auto;
+  height: 100%;
 `;
-
 
 const GridTablet = styled.div`
     display: grid;
@@ -35,7 +34,7 @@ const GridTablet = styled.div`
         font-size: 18px;
         font-weight: 400;
         line-height: 1.5;
-        font-family: NanumSqaureExtraBold;
+        font-family: NanumSquareRegular;
       }
 
 `;
@@ -43,16 +42,16 @@ const GridTablet = styled.div`
 function HomeTablet({ name, explain, explain2 }) {
   return (
     <Container>
-    <GridTablet>
-      <div class="wrapper">
-        <div class="title"> {name} </div>
-        <div class="paragraph">
-          {explain}
-          <br />
-          {explain2}
+      <GridTablet>
+        <div class="wrapper">
+          <div class="title"> {name} </div>
+          <div class="paragraph">
+            {explain}
+            <br />
+            {explain2}
+          </div>
         </div>
-      </div>
-    </GridTablet>
+      </GridTablet>
     </Container>
   );
 }

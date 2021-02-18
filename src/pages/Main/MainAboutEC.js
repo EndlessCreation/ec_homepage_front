@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import AboutEcTextBox from "../../Components/organisms/AboutEcTextBox";
-import AboutEcVideo from "../../Components/atoms/AboutEcVideo";
-import AboutEcContents from "../../Components/organisms/AboutEcContents";
+import AboutEcTextBox from "./organisms/AboutEcTextBox";
+import AboutEcVideo from "./atoms/AboutEcVideo";
+import AboutEcContents from "./organisms/AboutEcContents";
 const AboutEcBlock = styled.div`
   width: 100%;
   height: 1299px;

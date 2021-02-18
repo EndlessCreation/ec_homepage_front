@@ -2,9 +2,9 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 import { useBtnState } from "../../Context/MainContext";
-import NavbarMain from "../../Components/atoms/NavbarMain";
-import NavbarMenu from "../../Components/organisms/NavbarMenu";
-import HamburgerBtn from "../../Components/atoms/HamburgerBtn";
+import NavbarMain from "./atoms/NavbarMain";
+import NavbarMenu from "./organisms/NavbarMenu";
+import HamburgerBtn from "./atoms/HamburgerBtn";
 
 /* 상단 고정 네이게이션 바 Template*/
 const NavbarTemplate = styled.div`
@@ -20,12 +20,10 @@ const NavbarTemplate = styled.div`
   padding-left: 70px;
   padding-right: 70px;
   z-index: 3;
-
   @media screen and (max-width: 1280px) {
     padding-left: 80px;
     padding-right: 70px;
     height: 84px;
-
     ${(props) =>
       props.active &&
       css`
