@@ -1,10 +1,10 @@
 import React ,{ useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import WrapperPC from './WrapperPC';
+import WrapperPC from './organisms/WrapperPC';
 import { AiOutlineRight,AiOutlineLeft } from "react-icons/ai";
 import { darken, lighten } from 'polished';
+import { usePhotoState } from "../../Context/PhotoProvider";
 
-import { usePhotoState } from "./PhotoProvider";
 // import { usePhotoState, usePhotoDispatch ,getPhotos} from "./GetApi";
 
 //현재상태의 이미지만 보여줄 container

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import WrapperTablet from "./WrapperTablet";
-import { useMonthState } from "./MonthProvider";
+import WrapperTablet from "./organisms/WrapperTablet";
+import { useMonthState } from "../../Context/MonthProvider";
 
 const Back = styled.div`
   width: 100%;

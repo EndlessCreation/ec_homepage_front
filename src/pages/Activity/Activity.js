@@ -12,8 +12,8 @@ import Footer from './Footer';
 import FooterMobile from './FooterMobile';
 import FooterTablet from './FooterTablet';
 
-import {PhotoProvider} from './PhotoProvider';
-import {MonthProvider} from './MonthProvider';
+import {PhotoProvider} from '../../Context/PhotoProvider';
+import {MonthProvider} from '../../Context/MonthProvider';
 
 import { MainProvider } from "../../Context/MainContext";
 import MainNavbar from "../Main/MainNavbar";
@@ -34,10 +34,11 @@ const Mobile = ({ children }) => {
   const isMobile = useMediaQuery({ maxWidth: 767 })
   return isMobile ? children : null
 }
-const Default = ({ children }) => {
-  const isNotMobile = useMediaQuery({ minWidth: 768 })
-  return isNotMobile ? children : null
-}
+
+// const Default = ({ children }) => {
+//   const isNotMobile = useMediaQuery({ minWidth: 768 })
+//   return isNotMobile ? children : null
+// }
 
 
 function Activity() {
