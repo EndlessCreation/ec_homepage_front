@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Main from "./pages/Main/Main";
 import Activity from "./pages/Activity/Activity";
 import Project from "./pages/Project/ProjectPage";
-import Member from "./pages/Member/Template";
+import Member from "./pages/Member/Template/Template";
 
 const GlobalStyle = createGlobalStyle`
   body{

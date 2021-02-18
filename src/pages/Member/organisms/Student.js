@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import StudSlide from '../molecules/StudSlide';
-import Size from '../../Size';
+import Size from '../../../Size';
 
 const StudBox = styled.div`
 width: 848px;

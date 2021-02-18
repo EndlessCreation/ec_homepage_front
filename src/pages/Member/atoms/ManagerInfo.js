@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Size from "../../Size";
+import Size from "../../../Size";
 
 const Img = styled.div`
   position: relative;
