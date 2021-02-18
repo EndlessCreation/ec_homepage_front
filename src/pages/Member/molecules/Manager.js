@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ManagerInfo from './ManagerInfo';
+import ManagerInfo from '../atoms/ManagerInfo';
 
 const Box = styled.div`
 display: flex;

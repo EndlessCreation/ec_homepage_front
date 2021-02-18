@@ -27,7 +27,3 @@ code {
   font-family: "Kanit-Regular";
   src: url("./fonts/Kanit-Regular.ttf") format("truetype");
 }
-@font-face {
-  font-family: "NanumSqaureBold";
-  src: url("./fonts/NanumSquareBold.ttf") format("truetype");
-}

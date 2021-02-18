@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import Size from "../../Size";
-
-import Intro from "../../Components/organisms/Intro";
-import Management from "../../Components/organisms/Management";
-import Student from "../../Components/organisms/Student";
-import Graduate from "../../Components/organisms/Graduate";
+import Size from "../../../Size";
+import Navbar from "../../Main/Navbar";
+import Intro from "../molecules/Intro";
+import Management from "../organisms/Management";
+import Student from "../organisms/Student";
+import Graduate from "../organisms/Graduate";
 
 const TopGray = styled.div`
   width: 100%;
@@ -22,11 +22,8 @@ const TopWhite = styled.div`
   opacity: 1;
 `;
 
-const Header = styled.div`
-  max-width: 1280px;
+const HeaderBox = styled.div`
   margin: 0 auto;
-  padding-left: 3.125%;
-  padding-right: 3.125%;
   height: 120px;
   opacity: 1;
   font: bold;
@@ -103,6 +100,7 @@ const TextBox = styled.div`
   text-align: left;
   color: #101010;
   height: 48px;
+  padding-left: 40px;
   @media screen and ${Size.device.tablet} {
     font-family: Kanit;
     font-size: 1.75rem;
@@ -113,17 +111,7 @@ const TextBox = styled.div`
     letter-spacing: normal;
     text-align: left;
     color: #101010;
-  }
-  @media moblie and ${Size.device.tablet} {
-    font-family: Kanit;
-    font-size: 1.75rem;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
-    text-align: left;
-    color: #101010;
+    padding-left: 0px;
   }
   @media moblie and ${Size.device.moblie} {
     font-family: Kanit;
@@ -135,6 +123,7 @@ const TextBox = styled.div`
     letter-spacing: normal;
     text-align: left;
     color: #101010;
+    padding-left: 0px;
   }
 `;
 
@@ -159,13 +148,13 @@ const GradBox = styled.div`
   background: #f2f2f2 0% 0% no-repeat padding-box;
 `;
 
+
 function Template() {
   return (
     <>
-      {/* 
-    <TopGray>
-      <Header>Header</Header>
-    </TopGray> */}
+    <HeaderBox>
+    <Navbar />
+    </HeaderBox>
 
       <TopWhite>
         <WhiteContainer>

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 const IntroText=styled.div
 `
-
 @media screen and (min-width:1280px)
 {
   font-family: NanumSquareBold;

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Size from "../../Size";
+import Size from "../../../Size";
 
 const Img = styled.div`
   position: relative;
@@ -14,7 +14,7 @@ const Img = styled.div`
     width: 117px;
     height: 117px;
     background: #d0d0d0 0% 0% no-repeat padding-box;
-    border-radius: 80px;
+    border-radius: 51px;
     opacity: 1;
   }
 
@@ -22,32 +22,62 @@ const Img = styled.div`
     width: 114px;
     height: 114px;
     background: #d0d0d0 0% 0% no-repeat padding-box;
-    border-radius: 80px;
+    border-radius: 48px;
     opacity: 1;
   }
 `;
 
 //파트장 Img
 const Part = styled.div`
-  position: relative;
+  position: absolute;
   width: 36px;
   height: 36px;
-  background: #a0a0a0 0% 0% no-repeat padding-box;
+  background: #232323;
   border-radius: 83px;
   opacity: 1;
-  z-index: 5;
+  z-index: 2;
   display: block;
   align-items: center;
   justify-content: center;
 
+    font-family: Kanit;
+    font-size: 24px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.46;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+
   @media only screen and ${Size.device.tablet} {
     width: 30px;
     height: 30px;
+
+    font-family: Kanit;
+    font-size: 20px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.46;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
   }
 
   @media only screen and ${Size.device.moblie} {
     width: 26px;
     height: 26px;
+
+    font-family: Kanit;
+    font-size: 18px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.46;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
   }
 `;
 
@@ -296,7 +326,7 @@ function Managers({ mana }) {
       <InfoBox>
         <Img>
           {(function () {
-            if (mana.part) return <Part />;
+            if (mana.part) return <Part>P</Part>;
           })()}
         </Img>
         <TextBox>
@@ -320,9 +350,9 @@ function ManagerInfo() {
       name: "김건훈",
       grad: "27기",
       position: "회장",
-      hash1: "#해시태그",
-      hash2: "#해시태그",
-      hash3: "#해시태그",
+      hash1: "#ABCDEFGHIJKLM",
+      hash2: "#해시태그그그그",
+      hash3: "#해시태그그그그",
       part: true,
     },
     {

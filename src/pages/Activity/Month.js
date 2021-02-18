@@ -49,7 +49,6 @@ const MonthGrid = styled.div`
     grid-column: 1;
     grid-row: 3;
     font-size: 16px;
-    line-height: 1.5;
     font-family: NanumSquareRegular;
   }
 `;
@@ -58,8 +57,6 @@ const BarStyle = styled.div`
   padding-top : 7px;
 ;`
 const FlexBox = styled.div`
-  margin-left:266px;  // 옆에 칸 띄우기
-
   .box-container {
     display: flex;
     flex-direction: row; // 옆으로 정렬
@@ -87,12 +84,85 @@ function Month({ month }) {
 }
 
 function MonthList() {
- 
-  const months = useMonthState();   // 상태 값 불러오기~
+  const months = [
+    {
+      name: "January",
+      detail1: "월별활동 설명글하나둘셋",
+      detail2: "월별활동 설명글",
+      detail3: "월별활동 설명글",
+    },
+
+    {
+      name: "February",
+      detail1: "월별활동 설명글하나둘셋",
+      detail2: "월별활동 설명글",
+      detail3: "월별활동 설명글",
+    },
+    {
+      name: "March",
+      detail1: "월별활동 설명글하나둘셋",
+      detail2: "월별활동 설명글",
+      detail3: "월별활동 설명글",
+    },
+    {
+      name: "April",
+      detail1: "월별활동 설명글하나둘셋",
+      detail2: "월별활동 설명글",
+      detail3: "월별활동 설명글",
+    },
+    {
+      name: "May",
+      detail1: "월별활동 설명글",
+      detail2: "월별활동 설명글",
+      detail3: "월별활동 설명글",
+    },
+    {
+      name: "June",
+      detail1: "월별활동 설명글",
+      detail2: "월별활동 설명글",
+      detail3: "월별활동 설명글",
+    },
+    {
+      name: "July",
+      detail1: "월별활동 설명글",
+      detail2: "월별활동 설명글",
+      detail3: "월별활동 설명글",
+    },
+
+    {
+      name: "August",
+      detail1: "월별활동 설명글",
+      detail2: "월별활동 설명글",
+      detail3: "월별활동 설명글",
+    },
+    {
+      name: "September",
+      detail1: "월별활동 설명글",
+      detail2: "월별활동 설명글",
+      detail3: "월별활동 설명글",
+    },
+    {
+      name: "October",
+      detail1: "월별활동 설명글",
+      detail2: "월별활동 설명글",
+      detail3: "월별활동 설명글",
+    },
+    {
+      name: "November",
+      detail1: "월별활동 설명글",
+      detail2: "월별활동 설명글",
+      detail3: "월별활동 설명글",
+    },
+    {
+      name: "December",
+      detail1: "월별활동 설명글",
+      detail2: "월별활동 설명글",
+      detail3: "월별활동 설명글",
+    },
+  ];
 
   return (
-    <Back>
-    <WrapperPC background={"#f2f2f2"} title="Monthly">
+    <WrapperPC background={"#e3dfde"} title="Monthly">
       <FlexBox>
         <div class="box-container">
           {months.map((month) => (
@@ -101,7 +171,6 @@ function MonthList() {
         </div>
       </FlexBox>
     </WrapperPC>
-    </Back>
   );
 }
 

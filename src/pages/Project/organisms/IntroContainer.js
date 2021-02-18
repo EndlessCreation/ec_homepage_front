@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import IntroContentBox from '../molecules/IntroContentBox';
 
 const Container=styled.div`
-
 @media screen and (min-width:1280px)
 {
     max-width:1200px;

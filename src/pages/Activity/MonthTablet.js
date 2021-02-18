@@ -17,9 +17,8 @@ const MonthGridTablet = styled.div`
   .component {
     display: grid;
     grid-template-rows: 27fr 35fr 68fr;
-    grid-template-columns: 7rem;
-    padding-right: 40px;
-    padding-bottom :32px;
+    grid-template-columns: 8rem;
+    padding: 16px;
   }
 
   .month {
@@ -48,7 +47,6 @@ const MonthGridTablet = styled.div`
     grid-row: 3;
     font-size: 14px;
     font-family: NanumSquareRegular;
-    line-height: 1.5;
   }
 `;
 
@@ -80,10 +78,85 @@ function Month({ month }) {
 }
 
 function MonthListTablet() {
-  const months =useMonthState()
+  const months = [
+    {
+      name: "January",
+      detail1: "월별활동 설명글하나둘셋",
+      detail2: "월별활동 설명글",
+      detail3: "월별활동 설명글",
+    },
+
+    {
+      name: "February",
+      detail1: "월별활동 설명글하나둘셋",
+      detail2: "월별활동 설명글",
+      detail3: "월별활동 설명글",
+    },
+    {
+      name: "March",
+      detail1: "월별활동 설명글하나둘셋",
+      detail2: "월별활동 설명글",
+      detail3: "월별활동 설명글",
+    },
+    {
+      name: "April",
+      detail1: "월별활동 설명글하나둘셋",
+      detail2: "월별활동 설명글",
+      detail3: "월별활동 설명글",
+    },
+    {
+      name: "May",
+      detail1: "월별활동 설명글",
+      detail2: "월별활동 설명글",
+      detail3: "월별활동 설명글",
+    },
+    {
+      name: "June",
+      detail1: "월별활동 설명글",
+      detail2: "월별활동 설명글",
+      detail3: "월별활동 설명글",
+    },
+    {
+      name: "July",
+      detail1: "월별활동 설명글",
+      detail2: "월별활동 설명글",
+      detail3: "월별활동 설명글",
+    },
+
+    {
+      name: "August",
+      detail1: "월별활동 설명글",
+      detail2: "월별활동 설명글",
+      detail3: "월별활동 설명글",
+    },
+    {
+      name: "September",
+      detail1: "월별활동 설명글",
+      detail2: "월별활동 설명글",
+      detail3: "월별활동 설명글",
+    },
+    {
+      name: "October",
+      detail1: "월별활동 설명글",
+      detail2: "월별활동 설명글",
+      detail3: "월별활동 설명글",
+    },
+    {
+      name: "November",
+      detail1: "월별활동 설명글",
+      detail2: "월별활동 설명글",
+      detail3: "월별활동 설명글",
+    },
+    {
+      name: "December",
+      detail1: "월별활동 설명글",
+      detail2: "월별활동 설명글",
+      detail3: "월별활동 설명글",
+    },
+  ];
+
   return (
-    <Back>
-    <WrapperTablet background={"#f2f2f2"} title="Monthly">
+    <WrapperTablet background={"#e3dfde"} title="Monthly">
       <FlexBox>
         <div class="box-container">
           {months.map((month) => (
@@ -92,7 +165,6 @@ function MonthListTablet() {
         </div>
       </FlexBox>
     </WrapperTablet>
-    </Back>
   );
 }
 

@@ -47,12 +47,12 @@ const BlockforEcPick=styled.div`
   padding-bottom:89px;
   overflow:hidden;
 }
-
 @media screen and (max-width:767px){
 padding-bottom:64px;
 overflow:hidden;
 }
 `;
+
 
 
 

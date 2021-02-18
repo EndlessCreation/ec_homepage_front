@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Modal from './Modal';
 
 const BoxforProject=styled.div`
-
 @media screen and (min-width:1280px){
 width: 188px;
 height: 188px;
