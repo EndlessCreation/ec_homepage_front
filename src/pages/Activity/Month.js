@@ -1,6 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import WrapperPC from "./WrapperPC";
+import WrapperPC from "./organisms/WrapperPC";
+
+import { useMonthState } from "../../Context/MonthProvider";
+
+const Back = styled.div`
+    width: 100%;
+    height: 915px;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+`;
+
 
 const MonthGrid = styled.div`
   display: grid;
@@ -31,6 +42,7 @@ const MonthGrid = styled.div`
     height: 3px;
     margin-left: 0px;
     margin-right: 0px;
+    margin-top:1px;
   }
 
   .detail {
@@ -41,6 +53,9 @@ const MonthGrid = styled.div`
   }
 `;
 
+const BarStyle = styled.div`
+  padding-top : 7px;
+;`
 const FlexBox = styled.div`
   .box-container {
     display: flex;
@@ -55,7 +70,7 @@ function Month({ month }) {
     <MonthGrid>
       <div class="component">
         <div class="month">{month.name}</div>
-        <hr class="bar"></hr>
+        <BarStyle><hr class="bar"></hr></BarStyle>
         <div class="detail">
           {month.detail1}
           <br />

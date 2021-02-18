@@ -6,7 +6,7 @@ const Grid = styled.div`
 
     .wrapper {
         display: grid;
-        grid-template-columns: 618fr 1302fr ;
+        grid-template-columns: 306fr 894fr ;
         grid-template-rows : 254fr 95fr 8fr 66fr 130fr;
         
         grid-auto-rows: minmax(100px, auto);    # 최소크기는 100px 이되, 창이 이보다 작아지면 자동으로 
@@ -28,7 +28,7 @@ const Grid = styled.div`
         font-size: 24px;
         font-weight: 400;
         line-height: 1.5;
-        font-family: NanumSquareExtraBold;
+        font-family: NanumSqaureBold;
       }
 
 `;

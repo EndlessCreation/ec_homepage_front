@@ -1,6 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import WrapperTablet from "./WrapperTablet";
+import WrapperTablet from "./organisms/WrapperTablet";
+import { useMonthState } from "../../Context/MonthProvider";
+
+const Back = styled.div`
+  width: 100%;
+  height: 758px;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+`;
 
 const MonthGridTablet = styled.div`
   display: grid;

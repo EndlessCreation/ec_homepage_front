@@ -1,10 +1,9 @@
 import React ,{ useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import WrapperTablet from './WrapperTablet';
+import WrapperTablet from './organisms/WrapperTablet';
 import { AiOutlineRight,AiOutlineLeft } from "react-icons/ai";
 import { darken, lighten } from 'polished';
-
-import { usePhotoState } from "./PhotoProvider";
+import { usePhotoState } from "../../Context/PhotoProvider";
 
 //현재상태의 이미지만 보여줄 container
 const ShowContainerTablet = styled.div` 

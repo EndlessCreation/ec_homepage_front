@@ -28,7 +28,7 @@ const Grid = styled.div`
         font-size: 18px;
         font-weight: 400;
         line-height: 1.5;
-        font-family: NanumSquareExtraBold;
+        font-family: NanumSquareRegular;
       }
 
 `;
