@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import { useBtnState } from "../../Context/MainContext";
+import { useBtnState } from "../../../Context/MainContext";
 import Linkitem from "../atoms/LinkItem";
 const NavList = styled.li`
   list-style: none;

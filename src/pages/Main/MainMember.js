@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import MemberTextBox from "../../Components/organisms/MemberTextBox";
-import MemberContents from "../../Components/organisms/MemberContents";
+import MemberTextBox from "./organisms/MemberTextBox";
+import MemberContents from "./organisms/MemberContents";
 
 const MemberBlock = styled.div`
   width: 100%;

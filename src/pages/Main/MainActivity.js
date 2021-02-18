@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import ActivityTextBox from "../../Components/organisms/ActivityTextBox";
-import ActivityContents from "../../Components/organisms/ActivityContents";
+import ActivityTextBox from "./organisms/ActivityTextBox";
+import ActivityContents from "./organisms/ActivityContents";
 const ActivityBlock = styled.div`
   width: 100%;
   height: 683px;

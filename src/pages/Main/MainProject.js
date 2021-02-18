@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import ProjectTextBox from "../../Components/organisms/ProjectTextBox";
-import ProjectContents from "../../Components/organisms/ProjectContents";
+import ProjectTextBox from "./organisms/ProjectTextBox";
+import ProjectContents from "./organisms/ProjectContents";
 const ProjectBlock = styled.div`
   width: 100%;
   height: 752px;

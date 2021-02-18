@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import MainBanner from "../../Components/organisms/MainBanner";
-import MainBannerForm from "../../Components/atoms/MainBannerForm";
+import MainBanner from "./organisms/MainBanner";
+import MainBannerForm from "./atoms/MainBannerForm";
 const HeaderBlock = styled.div`
   max-width: 1280px;
   height: 717px;

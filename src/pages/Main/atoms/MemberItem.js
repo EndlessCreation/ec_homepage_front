@@ -6,8 +6,8 @@ const Text = styled.div`
   font-family: NanumSquareRegualr;
   font-size: 16px;
   line-height: 28px;
-  color: #232323;
-  background-color: #b0b0b0;
+  color: #fff;
+  background-color: #101010;
   border-radius: 83px;
   display: flex;
   opacity: 0;
@@ -45,11 +45,11 @@ const ItemBox = styled.div`
   }
   :hover {
     ${Text} {
-      opacity: 1;
+      opacity: 0.72;
       transition: all 0.5s;
     }
     img {
-      opacity: 0;
+      opacity: 1;
       transition: all 0.5s;
     }
   }

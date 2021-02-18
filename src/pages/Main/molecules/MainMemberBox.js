@@ -6,7 +6,7 @@ import {
   useExecutiveState,
   useExecutiveDispatch,
   getExecutive,
-} from "../../Context/MainContext";
+} from "../../../Context/MainContext";
 
 const MemberBlock = styled.div`
   max-width: 880px;
