@@ -4,6 +4,7 @@ import TextBox from '../molecules/TextBox';
 import ProjectContentBox from '../molecules/ProjectContentBox';
 
 const Container=styled.div`
+
 @media screen and (min-width:1280px)
 {
     max-width:1200px;
