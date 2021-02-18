@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import Size from "../../Size";
-import Navbar from "../Main/Navbar";
-import Intro from "../../Components/organisms/Intro";
-import Management from "../../Components/organisms/Management";
-import Student from "../../Components/organisms/Student";
-import Graduate from "../../Components/organisms/Graduate";
+import Size from "../../../Size";
+import Navbar from "../../Main/Navbar";
+import Intro from "../molecules/Intro";
+import Management from "../organisms/Management";
+import Student from "../organisms/Student";
+import Graduate from "../organisms/Graduate";
 
 const TopGray = styled.div`
   width: 100%;
