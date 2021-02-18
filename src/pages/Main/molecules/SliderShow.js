@@ -9,7 +9,7 @@ import {
   useExecutiveState,
   useExecutiveDispatch,
   getEcpick,
-} from "../../Context/MainContext";
+} from "../../../Context/MainContext";
 
 //동적으로 영역 너비 설정 완료
 const SlideBlock = styled.div`
@@ -52,6 +52,7 @@ function SliderShow() {
   console.log("슬라이드시작됨");
   const [currentSlide, setCurrentSlide] = useState(0); //현재 슬라이더 상태
   const slideRef = useRef(null); //슬라이더 위치 확인
+  const BtnRef = useRef(null);
   const isPc = useMediaQuery({
     query: "(min-width:1280px)",
   });
@@ -61,6 +62,7 @@ function SliderShow() {
   const isMobile = useMediaQuery({
     query: "(max-width:767px)",
   });
+
   //Provider로 데이터 받아오기
   const state = useExecutiveState();
   const dispatch = useExecutiveDispatch();
@@ -113,7 +115,7 @@ function SliderShow() {
       </SlideBlock>
       <ButtonBlock>
         {ButAry.map((Btn) => (
-          <SliderButton id={Btn} select={select}>
+          <SliderButton ref={BtnRef} id={Btn} select={select}>
             {Btn}
           </SliderButton>
         ))}

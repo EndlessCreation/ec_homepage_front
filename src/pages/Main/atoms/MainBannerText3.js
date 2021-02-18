@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Text = styled.div`
-  font-family: NanumSquareBold;
+  font-family: NanumSqaureBold;
   font-size: 28px;
   line-height: 48px;
   white-space: nowrap;

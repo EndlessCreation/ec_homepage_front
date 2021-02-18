@@ -23,7 +23,6 @@ function SliderButton({ id, select }) {
       id={id}
       onClick={() => {
         select(id);
-        setActive(!Active);
       }}
     />
   );

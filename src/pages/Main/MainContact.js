@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import ContactTextBox from "../../Components/organisms/ContactTextBox";
-import ContactContents from "../../Components/organisms/ContactContents";
+import ContactTextBox from "./organisms/ContactTextBox";
+import ContactContents from "./organisms/ContactContents";
 
 const ContactBlock = styled.div`
   width: 100%;

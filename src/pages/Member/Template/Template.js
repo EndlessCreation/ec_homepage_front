@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Size from "../../../Size";
-import Navbar from "../../Main/Navbar";
+import Navbar from "../../Main/MainNavbar";
 import Intro from "../molecules/Intro";
 import Management from "../organisms/Management";
 import Student from "../organisms/Student";
@@ -148,13 +148,12 @@ const GradBox = styled.div`
   background: #f2f2f2 0% 0% no-repeat padding-box;
 `;
 
-
 function Template() {
   return (
     <>
-    <HeaderBox>
-    <Navbar />
-    </HeaderBox>
+      <HeaderBox>
+        <Navbar />
+      </HeaderBox>
 
       <TopWhite>
         <WhiteContainer>

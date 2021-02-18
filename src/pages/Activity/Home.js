@@ -1,6 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
+const Container = styled.div`
+  max-width: 1280px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 0 auto;
+  height: 100%;
+`;
+
 const Grid = styled.div`
     display: grid;
 
@@ -26,7 +34,7 @@ const Grid = styled.div`
         grid-column: 2;
         grid-row: 4;
         font-size: 24px;
-        font-weight: 400;
+        // font-weight: 400;
         line-height: 1.5;
         font-family: NanumSqaureBold;
       }
@@ -35,16 +43,18 @@ const Grid = styled.div`
 
 function Home({ name, explain, explain2 }) {
   return (
-    <Grid>
-      <div class="wrapper">
-        <div class="title"> {name} </div>
-        <div class="paragraph">
-          {explain}
-          <br />
-          {explain2}
+    <Container>
+      <Grid>
+        <div class="wrapper">
+          <div class="title"> {name} </div>
+          <div class="paragraph">
+            {explain}
+            <br />
+            {explain2}
+          </div>
         </div>
-      </div>
-    </Grid>
+      </Grid>
+    </Container>
   );
 }
 
