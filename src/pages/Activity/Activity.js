@@ -8,12 +8,18 @@ import Photo from './Photo';
 import PhotoTablet from './PhotoTablet';
 import PhotoMobile from './PhotoMobile';
 
+import Footer from './Footer';
+import FooterMobile from './FooterMobile';
+import FooterTablet from './FooterTablet';
+
 import {PhotoProvider} from './PhotoProvider';
 import {MonthProvider} from './MonthProvider';
 
-import GetPhoto from './GetApi';
+import { MainProvider } from "../../Context/MainContext";
+import MainNavbar from "../Main/MainNavbar";
 
-import MainNavbar from '../Main/MainNavbar'
+//import {PhotoProvider} from './GetApi';
+
 import { useMediaQuery } from 'react-responsive'
 
 const Desktop = ({ children }) => {
@@ -41,6 +47,9 @@ function Activity() {
     <MonthListTablet></MonthListTablet> */}
     {/* <MainNavbar /> */}
     <Desktop>
+    <MainProvider>
+      <MainNavbar />
+    </MainProvider>
     <Home name="Activity" explain='2021년 Endless Creation 에서는' explain2='아래와 같은 활동을 준비하고 있어요!'></Home>
     <MonthProvider>
       <MonthList></MonthList>
@@ -48,11 +57,14 @@ function Activity() {
     <PhotoProvider>
       <Photo></Photo>
     </PhotoProvider>
-    <GetPhoto></GetPhoto>
+    <Footer></Footer>
     </Desktop>
   
 
     <Tablet>
+    <MainProvider>
+      <MainNavbar />
+    </MainProvider>
     <HomeTablet name="Activity" explain='2021년 Endless Creation 에서는' explain2='아래와 같은 활동을 준비하고 있어요!'></HomeTablet>
     <MonthProvider>
       <MonthListTablet></MonthListTablet>
@@ -60,10 +72,14 @@ function Activity() {
     <PhotoProvider>
       <PhotoTablet></PhotoTablet>
     </PhotoProvider>
+    <FooterTablet></FooterTablet>
     </Tablet>
 
 
     <Mobile>
+    <MainProvider>
+      <MainNavbar />
+    </MainProvider>
     <HomeMobile name="Activity" explain='2021년 Endless Creation 에서는' explain2='아래와 같은 활동을 준비하고 있어요!'></HomeMobile>
     <MonthProvider>
       <MonthListMobile></MonthListMobile>
@@ -71,6 +87,7 @@ function Activity() {
     <PhotoProvider>
       <PhotoMobile></PhotoMobile>
     </PhotoProvider>
+    <FooterMobile></FooterMobile>
     </Mobile>
 
     </>

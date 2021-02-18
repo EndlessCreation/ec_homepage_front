@@ -41,6 +41,7 @@ const MonthGrid = styled.div`
     height: 3px;
     margin-left: 0px;
     margin-right: 0px;
+    margin-top:1px;
   }
 
   .detail {
@@ -52,6 +53,9 @@ const MonthGrid = styled.div`
   }
 `;
 
+const BarStyle = styled.div`
+  padding-top : 7px;
+;`
 const FlexBox = styled.div`
   margin-left:266px;  // 옆에 칸 띄우기
 
@@ -68,7 +72,7 @@ function Month({ month }) {
     <MonthGrid>
       <div class="component">
         <div class="month">{month.name}</div>
-        <hr class="bar"></hr>
+        <BarStyle><hr class="bar"></hr></BarStyle>
         <div class="detail">
           {month.detail1}
           <br />

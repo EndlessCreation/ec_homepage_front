@@ -5,6 +5,7 @@ import { AiOutlineRight,AiOutlineLeft } from "react-icons/ai";
 import { darken, lighten } from 'polished';
 
 import { usePhotoState } from "./PhotoProvider";
+// import { usePhotoState, usePhotoDispatch ,getPhotos} from "./GetApi";
 
 //현재상태의 이미지만 보여줄 container
 const ShowContainer = styled.div`  
@@ -90,8 +91,19 @@ function Photo({photo}){
 export default function PhotoList(){
 
     const photos = usePhotoState();   // 상태 값 불러오기~
-    const photoNum = photos.length;
-    const TOTAL_SLIDES = Math.floor(photoNum/4)-1;
+    // const dispatch = usePhotoDispatch();
+
+    // useEffect(() => {
+    //     getPhotos(dispatch);
+    //   }, [dispatch]);
+      
+
+    // const { data: photos, loading, error } = state.photos;
+
+
+    
+    const photoNum =  photos.length;
+    const TOTAL_SLIDES =  Math.floor(photoNum/4)-1;
 
     const [currentSlide, setCurrentSlide] = useState(0);
     const slideRef = useRef(null);
@@ -117,6 +129,8 @@ export default function PhotoList(){
         slideRef.current.style.transform = `translateX(-${currentSlide}00%)`; // 백틱을 사용하여 슬라이드로 이동하는 애니메이션을 만듭니다.
     }, [currentSlide]);
 
+
+
     return (
         <>
         <WrapperPC background={'white'} title='Photo'>
@@ -124,6 +138,7 @@ export default function PhotoList(){
             <div class='page'>
             <Button onClick={prevSlide}><AiOutlineLeft/>{currentSlide+1}   /</Button>
             <Button onClick={nextSlide}>{TOTAL_SLIDES+1}<AiOutlineRight/></Button>
+     
             </div>
         </Page>
 
