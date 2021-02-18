@@ -1,67 +1,101 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import React, { createContext, useReducer, useContext } from 'react';
 
-// const instance = axios.create({
-//     baseURL: 'http://13.124.234.100:8080/',
-//     headers:{
-//         'connection': 'keep-alive',
-//         'content-type': 'application/json' ,
-//         'date': 'Thu, 11 Feb 2021 03:47:13 GMT' ,
-//         'keep-alive': 'timeout=60' ,
-//         'transfer-encoding': 'chunked',
-//         "Access-Control-Allow-Origin": "*",
-//     }
-// });
-
-const instance = axios.create({
-    baseURL: "http://13.124.234.100:8080/",
-    withCredentials: false,
-    headers: {
-      'Access-Control-Allow-Origin' : '*',
-      'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-      }
+  const initialPhoto = {
+    photos: {
+      loading: false,
+      data: null,
+      error: null
+    },
+  };
+  
+  // 로딩중일 때 바뀔 상태 객체
+  const loadingState = {
+    loading: true,
+    data: null,
+    error: null
+  };
+  
+  // 성공했을 때의 상태 만들어주는 함수
+  const success = data => ({
+    loading: false,
+    data,
+    error: null
+  });
+  
+  // 실패했을 때의 상태 만들어주는 함수
+  const error = error => ({
+    loading: false,
+    data: null,
+    error: error
   });
 
-
-function GetPhoto() {
-    const [photos, setPhotos] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
-  
-    useEffect(() => {
-      const fetchPhotos = async () => {
-        try {
-          // 요청이 시작 할 때에는 error 와 users 를 초기화하고
-          setError(null);
-          setPhotos(null);
-          // loading 상태를 true 로 바꿉니다.
-          setLoading(true);
-          const response = await instance.get(
-            'activities'
-           
-          );
-          setPhotos(response.data); // 데이터는 response.data 안에 들어있습니다.
-        } catch (e) {
-          setError(e);
-        }
-        setLoading(false);
+// 위에서 만든 객체 / 유틸 함수들을 사용하여 리듀서 작성
+function PhotoReducer(state, action) {
+  switch (action.type) {
+    case 'GET_PHOTOS':
+      return {
+        ...state,
+        photos: loadingState
       };
-  
-      fetchPhotos();
-    }, []);
-  
-    if (loading) return <div>로딩중..</div>;
-    if (error) return <div>에러가 발생했습니다</div>;
-    if (!photos) return null;
-    return (
-      <ul>
-        {photos.map(photo => (
-          <li>
-            <img src={photo} alt='이미지내용' width='296px' height='222px' class='photo'/>
-          </li>
-        ))}        
-      </ul>
-    );
+    case 'GET_PHOTO_SUCCESS':
+      return {
+        ...state,
+        photos: success(action.data)
+      };
+    case 'GET_PHOTO_ERROR':
+      return {
+        ...state,
+        photos: error(action.error)
+      };
+    default:
+      throw new Error(`Unhanded action type: ${action.type}`);
   }
-  
-  export default GetPhoto;
+}
+
+// State 용 Context 와 Dispatch 용 Context 따로 만들어주기
+const PhotoStateContext = createContext(null);
+const PhotoDispatchContext = createContext(null);
+
+
+export function PhotoProvider({children}) {
+  const [state, dispatch] = useReducer(PhotoReducer, initialPhoto);
+
+  return (
+      <PhotoStateContext.Provider value={state}>
+          <PhotoDispatchContext.Provider value={dispatch}>
+              {children}
+          </PhotoDispatchContext.Provider>
+      </PhotoStateContext.Provider>
+  );
+}
+
+// State 를 쉽게 조회 할 수 있게 해주는 커스텀 Hook
+export function usePhotoState() {
+  const context = useContext(PhotoStateContext);
+  if (!context) {
+    throw new Error("Cannot find Provider");
+  }
+  return context;
+}
+
+// Dispatch 를 쉽게 사용 할 수 있게 해주는 커스텀 Hook
+export function usePhotoDispatch() {
+  const context = useContext(PhotoDispatchContext);
+  if (!context) {
+    throw new Error("Cannot find Provider");
+  }
+  return context;
+}
+
+export async function getPhotos(dispatch) {
+  dispatch({ type: 'GET_PHOTOS' });
+  try {
+    const response = await axios.get(
+      'http://13.124.234.100:8080/activities'
+    );
+    dispatch({ type: 'GET_PHOTO_SUCCESS', data: response.data });
+  } catch (e) {
+    dispatch({ type: 'GET_PHOTO_ERROR', error: e });
+  }
+}
