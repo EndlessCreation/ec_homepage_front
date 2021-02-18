@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
-import StuCircle from './StuCircle';
-import './Slide.css';
+import StuCircle from '../atoms/StuCircle';
+import '../atoms/Slide.css';
 import Size from '../../Size';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -283,7 +283,7 @@ font-size: 24px;
 }
 `
 
-function StudInfo(){
+function StudSlide(){
   const isPc = useMediaQuery({
     query: '(min-width: 1280px)'
   })
@@ -386,4 +386,4 @@ function StudInfo(){
   )
 }
 
-export default StudInfo;
+export default StudSlide;

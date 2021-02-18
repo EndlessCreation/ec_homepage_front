@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Size from "../../Size";
-import Manager from "../atoms/Manager";
+import Manager from "../molecules/Manager";
 
 const FlexBox = styled.div`
   width: 848px;

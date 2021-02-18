@@ -148,13 +148,6 @@ const GradBox = styled.div`
   background: #f2f2f2 0% 0% no-repeat padding-box;
 `;
 
-const ButtonBox = styled.div`
- background : #232323;
- width : 85px;
- height: 24px;
- padding-left: 40px;
- padding-top: 536px;
-`
 
 function Template() {
   return (

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
-import GradCircle from './GradCircle';
-import './Slide.css';
+import GradCircle from '../atoms/GradCircle';
+import '../atoms/Slide.css';
 import Size from '../../Size';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -282,7 +282,7 @@ font-size: 24px;
 `
 
 
-function GradInfo(){
+function GradSlide(){
   const isPc = useMediaQuery({
     query: '(min-width: 1280px)'
   })
@@ -387,4 +387,4 @@ function GradInfo(){
   )
 }
 
-export default GradInfo;
+export default GradSlide;

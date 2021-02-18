@@ -29,13 +29,13 @@ const Img = styled.div`
 
 //파트장 Img
 const Part = styled.div`
-  position: relative;
+  position: absolute;
   width: 36px;
   height: 36px;
   background: #232323;
   border-radius: 83px;
   opacity: 1;
-  z-index: 5;
+  z-index: 2;
   display: block;
   align-items: center;
   justify-content: center;

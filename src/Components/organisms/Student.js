@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import StudInfo from '../atoms/StudInfo';
+import StudSlide from '../molecules/StudSlide';
 import Size from '../../Size';
 
 const StudBox = styled.div`
@@ -30,7 +30,7 @@ padding-left: 22.166666667%;
 function Student(){
     return(
     <StudBox>
-          <StudInfo/>
+          <StudSlide/>
     </StudBox>
     )
 }
