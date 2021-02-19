@@ -41,8 +41,8 @@ const IntroText=styled.div
 }
 `;
 
-function ForIntroText(){
-    return <IntroText>선배님들이 했던 프로젝트들이에요!<br></br>너무 많아서 몇 가지만 골라봤어요 :)</IntroText>;
+function ForIntroText({children}){
+    return <IntroText>{children}</IntroText>;
 }
 
 export default ForIntroText;
