@@ -5,9 +5,12 @@ import { useBtnState, useBtnToggle } from "../../../Context/MainContext";
 
 const Button = styled.div`
   position: absolute;
+
   right: 100px;
   margin-top: 10px;
   display: none;
+  width: 30px;
+  height: 20px;
   cursor: pointer;
   span {
     position: absolute;
@@ -20,14 +23,14 @@ const Button = styled.div`
     transition: 0.3s;
   }
   span:nth-child(1) {
-    top: -5px;
+    top: -3px;
   }
   span:nth-child(2),
   span:nth-child(3) {
-    top: 5px;
+    top: 7px;
   }
   span:nth-child(4) {
-    top: 15px;
+    top: 17px;
   }
   @media screen and (max-width: 1280px) {
     display: block;
