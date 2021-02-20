@@ -30,9 +30,11 @@ const ButtonBlock = styled.div`
   justify-content: space-between;
   @media screen and (max-width: 1279px) {
     margin-top: 54px;
+    width: 150px;
   }
   @media screen and (max-width: 767px) {
     margin-top: 32px;
+    width: 150px;
   }
 `;
 
@@ -52,7 +54,7 @@ function SliderShow() {
   console.log("슬라이드시작됨");
   const [currentSlide, setCurrentSlide] = useState(0); //현재 슬라이더 상태
   const slideRef = useRef(null); //슬라이더 위치 확인
-  const BtnRef = useRef(null);
+
   const isPc = useMediaQuery({
     query: "(min-width:1280px)",
   });
@@ -115,7 +117,7 @@ function SliderShow() {
       </SlideBlock>
       <ButtonBlock>
         {ButAry.map((Btn) => (
-          <SliderButton ref={BtnRef} id={Btn} select={select}>
+          <SliderButton currentSlide={currentSlide} id={Btn} select={select}>
             {Btn}
           </SliderButton>
         ))}
