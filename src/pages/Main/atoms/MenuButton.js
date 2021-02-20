@@ -61,7 +61,7 @@ const Button = styled.div`
   }
 `;
 
-function HamburgerBtn() {
+function MenuButton() {
   const Active = useBtnState();
   const onToggle = useBtnToggle();
   return (
@@ -74,4 +74,4 @@ function HamburgerBtn() {
   );
 }
 
-export default HamburgerBtn;
+export default MenuButton;

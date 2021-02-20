@@ -1,8 +1,8 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import MenuList from "../molecules/MenuList";
-import { useBtnState } from "../../../Context/MainContext";
 
+import { useBtnState } from "../../../Context/MainContext";
+import Linkitem from "../atoms/LinkItem";
 const MenuShow = styled.ul`
   display: flex;
   justify-content: flex-end;
@@ -54,12 +54,39 @@ const MenuShow = styled.ul`
       `}
   } ;
 `;
+const CommunutyLink = styled.li`
+  list-style: none;
+  @media screen and (max-width: 1279px) {
+    ${(props) =>
+      props.active &&
+      css`
+        color: #fff;
+      `}
+  }
+`;
+
+const ArrowRightShow = styled.span`
+  position: relative;
+  width: 15px;
+  height: 15px;
+  font-size: 15px;
+  margin-left: 4px;
+  color: #fff;
+`;
 
 function NavbarMenu() {
   const active = useBtnState();
   return (
     <MenuShow active={active}>
-      <MenuList />
+      <Linkitem to={"/Activity"}>Activity</Linkitem>
+      <Linkitem to={"/Project"}>Project</Linkitem>
+      <Linkitem to={"/Member"}>Member</Linkitem>
+      <CommunutyLink active={active}>
+        Community
+        <ArrowRightShow>
+          <img src="images/RightArrow.png" alt="RightArrow" />
+        </ArrowRightShow>
+      </CommunutyLink>
     </MenuShow>
   );
 }
