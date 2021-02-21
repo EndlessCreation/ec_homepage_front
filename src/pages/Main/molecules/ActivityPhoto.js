@@ -18,7 +18,7 @@ const PhotoBlock = styled.div`
   background-color: #fff;
   display: inline-block;
   .Photo {
-    width: 510px;
+    width: 520px;
     height: 100%;
     overflow-y: scroll;
 
@@ -32,10 +32,16 @@ const PhotoBlock = styled.div`
     grid-row: 2/ 3;
     div:nth-child(1) {
       margin-top: 0px;
+    } 
+    .Photo {
+      width: 423px;
     }
   }
   @media screen and (max-width: 767px) {
     width: 182px;
+    .Photo {
+      width: 204px;
+    }
   }
 `;
 function ActivityPhoto() {

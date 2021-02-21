@@ -5,13 +5,7 @@ import EntireBox from "./EntireBox";
 import {MainProvider} from "../../Context/MainContext"
 import MainNavbar from "../Main/MainNavbar";
 import { ProjectProvider } from "../../Context/ProjectContext";
-
-const Footer = styled.div`
-  color: white;
-  background: black;
-  width: 100%;
-  height: 419px;
-`;
+import Footer from "../../pages/Activity/Footer";
 
 function ProjectPage() {
   return (
@@ -21,7 +15,7 @@ function ProjectPage() {
       <MainNavbar />
     </MainProvider>
         <EntireBox />
-      <Footer>Footer</Footer>
+      <Footer />
       </ProjectProvider>
     </>
   );
