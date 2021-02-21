@@ -15,6 +15,7 @@ import {
   getGraduate
 } from "../../../Context/MemberContext";
 
+
 const Block = styled.div`
 width: 848px;
 margin: 0 auto;
