@@ -5,7 +5,9 @@ import Navbar from "../../Main/MainNavbar";
 import Management from "../organisms/Management";
 import Student from "../organisms/Student";
 import Graduate from "../organisms/Graduate";
-import IntroContainer from "../../Project/organisms/IntroContainer"
+import IntroContainer from "../../Project/organisms/IntroContainer";
+import Footer from "../../Activity/Footer";
+
 const TopGray = styled.div`
   width: 100%;
   margin: 0 auto;
@@ -183,6 +185,8 @@ function Template() {
           </GradBox>
         </GrayContainer>
       </TopGray>
+
+      <Footer />
     </>
   );
 }

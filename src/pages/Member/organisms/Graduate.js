@@ -3,6 +3,10 @@ import styled from 'styled-components';
 import Size from '../../../Size';
 import GradSlide from '../molecules/GradSlide';
 import {MemberProvider} from '../../../Context/MemberContext';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 
 const GradBox = styled.div`
 width: 848px;

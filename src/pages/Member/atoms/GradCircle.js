@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Size from '../../../Size';
 
+
 //항목의 text부분
 const Text = styled.div`
 position: absolute;
