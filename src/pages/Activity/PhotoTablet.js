@@ -3,7 +3,11 @@ import styled from 'styled-components';
 import WrapperTablet from './organisms/WrapperTablet';
 import { AiOutlineRight,AiOutlineLeft } from "react-icons/ai";
 import { darken, lighten } from 'polished';
-import { usePhotoState } from "../../Context/PhotoProvider";
+import { usePhotoState, usePhotoDispatch ,getPhotos} from "./GetApi";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 
 //현재상태의 이미지만 보여줄 container
 const ShowContainerTablet = styled.div` 
@@ -73,14 +77,32 @@ const Page = styled.div`
     height : 98px;
     color : #A9A9A9;
     font-size:18px;
+    position : relative;
 
+    .left{
+        position :absolute;
+        top :1px;
+
+    }
+    .right{
+        position :absolute;
+        left : 60px;
+        top : 2.5px;
+
+    }
+    span{
+        position :absolute;
+        left: 50px;
+        top : 0px;
+ 
+    }
 `;
 
 
 function Photo({photo}){
     return (
         <PhotoOne>
-            <img src={photo.src} alt='이미지내용' width='296px' height='222px' class='photo'/>
+            <img src={photo.imageUrl} alt='이미지내용' width='296px' height='222px' class='photo'/>
         </PhotoOne>
     );
 }
@@ -88,13 +110,34 @@ function Photo({photo}){
 
 export default function PhotoListTablet() {
 
-    const photos = usePhotoState();   // 상태 값 불러오기~
-    const photoNum = photos.length;
-    const TOTAL_SLIDES = Math.floor(photoNum/4)-1;
+    
+    const state = usePhotoState();   // 상태 값 불러오기~
+    const dispatch = usePhotoDispatch();
 
     const [currentSlide, setCurrentSlide] = useState(0);
-
     const slideRef = useRef(null);
+
+
+    useEffect(() => {
+        if(!photos){
+            getPhotos(dispatch);
+        }
+        else {
+            slideRef.current.style.transition = "all 0.5s ease-in-out";
+        slideRef.current.style.transform = `translateX(-${currentSlide}00%)`; // 백틱을 사용하여 슬라이드로 이동하는 애니메이션을 만듭니다.
+        }
+      }, [dispatch,currentSlide]);
+
+
+    const { data: photos, loading, error } = state.photos;
+
+    if (loading) return <div>로딩중..</div>;
+    if (error) return <div>에러가 발생했습니다</div>;
+    if (!photos) return null;
+
+    const photoNum =  photos.length;
+    const TOTAL_SLIDES =  Math.floor(photoNum/4)-1;
+
 
     const nextSlide = () => {
         if (currentSlide >= TOTAL_SLIDES) { // 더 이상 넘어갈 슬라이드가 없으면 슬라이드를 초기화합니다.
@@ -112,20 +155,18 @@ export default function PhotoListTablet() {
         }
     };
 
-    useEffect(() => {
-        slideRef.current.style.transition = "all 0.5s ease-in-out";
-        slideRef.current.style.transform = `translateX(-${currentSlide}00%)`; // 백틱을 사용하여 슬라이드로 이동하는 애니메이션을 만듭니다.
-    }, [currentSlide]);
+
 
     return (
-        <WrapperTablet background={'white'} title='Photo'  row={'2/5'}>
+        <WrapperTablet background={'white'} title='Photo'  row={'2/5'} >
         <Page>
-            <ButtonTablet onClick={prevSlide}><AiOutlineLeft/>&ensp;{currentSlide+1}</ButtonTablet>   
-            /
-            <ButtonTablet onClick={nextSlide}>{TOTAL_SLIDES+1}&ensp;<AiOutlineRight/></ButtonTablet>
+            <ButtonTablet className='left' onClick={prevSlide}><AiOutlineLeft/>&ensp;{currentSlide+1}</ButtonTablet>   
+            <span>/</span>
+            <ButtonTablet className='right' onClick={nextSlide}>{TOTAL_SLIDES+1}&ensp;<AiOutlineRight/></ButtonTablet>
         </Page>
 
         <ShowContainerTablet>
+        <div data-aos="fade-up"  data-aos-duration="2000" >
         <PhotoContainerTablet  ref={slideRef}>
             <div class='photo-container'>
             <PhotoBoxTablet>
@@ -144,6 +185,7 @@ export default function PhotoListTablet() {
             </PhotoBoxTablet>
             </div>
         </PhotoContainerTablet>
+        </div>
         </ShowContainerTablet>
  
         </WrapperTablet>

@@ -7,7 +7,7 @@ const Container = styled.div`
   padding-right: 16px;
   box-sizing : border-box;
   margin: 0 auto;
-  height: 100%;
+  height :  ${(props) => props.height || "758px"};
   background: ${(props) => props.background || "skyblue"};
 `;
 
@@ -44,11 +44,11 @@ const WrapperStyleTablet = styled.div`
 
 `;
 
-function WrapperTablet({ children, title, background, row }) {
+function WrapperTablet({ children, title, background,height, row }) {
   return (
     <>
       {/* <GlobalStyle/> */}
-      <Container background={background}>
+      <Container background={background} height={height}>
         <WrapperStyleTablet background={background} row={row}>
           <div class="wrapper">
             <div class="title">{title}</div>

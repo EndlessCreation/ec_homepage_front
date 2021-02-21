@@ -3,9 +3,13 @@ import styled from "styled-components";
 import WrapperMobile from "./organisms/WrapperMobile";
 import { useMonthState } from "../../Context/MonthProvider";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 const Back = styled.div`
   width: 100%;
-  height: 1153px;
+  height: 1100px;
   margin: 0;
   padding: 0;
   background-color: #f2f2f2;
@@ -85,6 +89,7 @@ function MonthListMobile() {
   return (
     <Back>
     <WrapperMobile background={"#f2f2f2"} title="Monthly">
+    <div data-aos="fade-up"  data-aos-duration="2000" >
       <FlexBox>
         <div class="box-container">
           {months.map((month) => (
@@ -92,6 +97,7 @@ function MonthListMobile() {
           ))}
         </div>
       </FlexBox>
+      </div>
     </WrapperMobile>
     </Back>
   );
