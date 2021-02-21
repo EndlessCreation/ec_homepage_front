@@ -58,6 +58,7 @@ const ButtonTablet = styled.button`
     color:  #A9A9A9;
     font-size:18px;
 
+
     &:hover {
         color: ${lighten(0.1, 'black')};
     }
@@ -70,7 +71,8 @@ const Page = styled.div`
     float:right;
     width :120px;
     height : 98px;
-
+    color : #A9A9A9;
+    font-size:18px;
 
 `;
 
@@ -118,8 +120,9 @@ export default function PhotoListTablet() {
     return (
         <WrapperTablet background={'white'} title='Photo'  row={'2/5'}>
         <Page>
-            <ButtonTablet onClick={prevSlide}><AiOutlineLeft/>{currentSlide+1}   /</ButtonTablet>
-            <ButtonTablet onClick={nextSlide}>{TOTAL_SLIDES+1}<AiOutlineRight/></ButtonTablet>
+            <ButtonTablet onClick={prevSlide}><AiOutlineLeft/>&ensp;{currentSlide+1}</ButtonTablet>   
+            /
+            <ButtonTablet onClick={nextSlide}>{TOTAL_SLIDES+1}&ensp;<AiOutlineRight/></ButtonTablet>
         </Page>
 
         <ShowContainerTablet>

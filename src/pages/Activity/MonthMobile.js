@@ -5,7 +5,7 @@ import { useMonthState } from "../../Context/MonthProvider";
 
 const Back = styled.div`
   width: 100%;
-  height: 849px;
+  height: 1153px;
   margin: 0;
   padding: 0;
   background-color: #f2f2f2;
@@ -17,8 +17,8 @@ const MonthGridMobile = styled.div`
   .component {
     display: grid;
     grid-template-rows: 27fr 20fr 68fr;
-    grid-template-columns: 6rem;
-    padding-right: 8px;
+    grid-template-columns: 7rem;
+    padding-right:35px;
     padding-bottom: 34px; 
   }
 
@@ -46,7 +46,7 @@ const MonthGridMobile = styled.div`
   .detail {
     grid-column: 1;
     grid-row: 3;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.5;
     font-family: NanumSquareRegular;
   }

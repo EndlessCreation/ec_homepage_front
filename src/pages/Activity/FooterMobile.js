@@ -13,13 +13,16 @@ const Back = styled.div`
 const Container=styled.div`
     background: ${(props) => props.background || "#232323"};
     max-width: 320px;
+    padding-left :8px;
+    padding-right :8px;
+    box-sizing : border-box;
     margin:0 auto;
     height:100%;
     
 `;
 
 const ContainerInner=styled.div`
-    min-width:160px;  
+    min-width:152px;  
     float: left;
     
 `;
@@ -141,8 +144,8 @@ const Icon = styled.div`
 
 const Cop = styled.div`
   float: right;
+  width : 240px;
   padding-top: 51px ;
-  padding-left:75px;
 
   opacity: 0.73;
   font-family: Kanit;
@@ -178,11 +181,11 @@ function Footer(){
         </div>
       </Name>
       </ContainerInner>
-      <ContainerInner>
-        <Cop>
-            ©EndlessCreation. All rights reserved 2021.
-        </Cop>
-      </ContainerInner>
+      
+      <Cop>
+          ©EndlessCreation. All rights reserved 2021.
+      </Cop>
+      
     </Container>
     </Back>
     )

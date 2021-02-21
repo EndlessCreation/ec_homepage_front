@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Back = styled.div`
     width: 100%;
-    height: 297px;
+    height: 419px;
     margin: 0;
     padding: 0;
     background-color: #232323;
@@ -12,41 +12,41 @@ const Back = styled.div`
 
 const Container=styled.div`
     background: ${(props) => props.background || "#232323"};
-    max-width: 640px;
-    padding-left :16px;
-    padding-right :16px;
+    max-width:1280px;
     box-sizing : border-box;
+    padding-left :40px;
+    padding-right :40px;
     margin:0 auto;
     height:100%;
     
 `;
 
 const ContainerInner=styled.div`
-    width:304px;  
+    width:600px;  
     float: left;
     
 `;
 
 const Logo = styled.div`
-    padding-top : 48px;
-    font-family: Kanit;
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 1.5;
-    letter-spacing: 0.18px;
-    text-align: left;
+    // padding-left : 40px;
+    padding-top : 100px;
     color: #f2f2f2;
+    font-family: Kanit;
+    line-height: 1.46;
+    letter-spacing: 0.24px;
+    font-size: 24px;
 `;
 
 const Name = styled.div`
-  padding-top: 62px;
-  padding-bottom : 85px;
-  width:235px;
+  // padding-left : 40px;
+  padding-top: 72px;
+  padding-bottom : 120px;
+  width: 461px;
 
   .wrapper {
     display: grid;
-    grid-template-columns: 71fr 164fr ;
-    grid-template-rows : 13fr 18fr 13fr 18fr 13fr ;
+    grid-template-columns: 125fr 336fr ;
+    grid-template-rows : 20fr 16fr 20fr 16fr 20fr ;
     
     grid-auto-rows: minmax(100px, auto);    # 최소크기는 100px 이되, 창이 이보다 작아지면 자동으로 
   }
@@ -55,10 +55,9 @@ const Name = styled.div`
     grid-column: 1;
     grid-row: 1;
     font-family: NanumSqaureExtraBold;
-    font-size: 12px;
-    font-style: normal;
-    line-height: 1.08;
-    letter-spacing: -0.24px;
+    font-size: 18px;
+    line-height: 1.17;
+    letter-spacing: -0.36px;
     text-align: left;
     color: #d2d2d2;
   }
@@ -67,10 +66,9 @@ const Name = styled.div`
     grid-column: 1;
     grid-row: 3;
     font-family: NanumSqaureExtraBold;
-    font-size: 12px;
-    font-style: normal;
-    line-height: 1.08;
-    letter-spacing: -0.24px;
+    font-size: 18px;
+    line-height: 1.17;
+    letter-spacing: -0.36px;
     text-align: left;
     color: #d2d2d2;
 
@@ -80,10 +78,9 @@ const Name = styled.div`
     grid-column: 1;
     grid-row: 5;
     font-family: NanumSqaureExtraBold;
-    font-size: 12px;
-    font-style: normal;
-    line-height: 1.08;
-    letter-spacing: -0.24px;
+    font-size: 18px;
+    line-height: 1.17;
+    letter-spacing: -0.36px;
     text-align: left;
     color: #d2d2d2;
 
@@ -94,10 +91,9 @@ const Name = styled.div`
     grid-column: 2;
     grid-row: 1;
     font-family: NanumSqaureExtraBold;
-    font-size: 12px;
-    font-style: normal;
-    line-height: 1.08;
-    letter-spacing: -0.24px;
+    font-size: 18px;
+    line-height: 1.17;
+    letter-spacing: -0.36px;
     text-align: left;
     color: #d2d2d2;
   }
@@ -106,10 +102,9 @@ const Name = styled.div`
     grid-column: 2;
     grid-row: 3;
     font-family: NanumSqaureExtraBold;
-    font-size: 12px;
-    font-style: normal;
-    line-height: 1.08;
-    letter-spacing: -0.24px;
+    font-size: 18px;
+    line-height: 1.17;
+    letter-spacing: -0.36px;
     text-align: left;
     color: #d2d2d2;
   }
@@ -118,10 +113,9 @@ const Name = styled.div`
     grid-column: 2;
     grid-row: 5;
     font-family: NanumSqaureExtraBold;
-    font-size: 12px;
-    font-style: normal;
-    line-height: 1.08;
-    letter-spacing: -0.24px;
+    font-size: 18px;
+    line-height: 1.17;
+    letter-spacing: -0.36px;
     text-align: left;
     color: #d2d2d2;
   }
@@ -129,35 +123,35 @@ const Name = styled.div`
 `;
 const Icon = styled.div`
     float: right;
-    padding-top: 69px ;
+    padding-top: 100px ;
 
     display: flex;
     flex-direction: row;  // 옆으로 정렬
 
     .circle{
-      width: 28px;
-      height: 28px;
-      margin-left: 12px;
+      width: 36px;
+      height: 36px;
+      margin-left:16px;
       border-radius: 68px;
-      background-color:#d2d2d2;
+      background-color: #f2f2f2;
     }
 `;
 
 const Cop = styled.div`
   float: right;
-  padding-top: 99px ;
-  
+  padding-top: 138px ;
 
-  opacity: 0.73;
   font-family: Kanit;
-  font-size: 12px;
+  font-size: 18px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
   line-height: 1.5;
-  letter-spacing: normal;
-  text-align: right;
+  letter-spacing: -0.36px;
   color: #d2d2d2;
 `;
 
-function Footer(){
+function FooterPC(){
     return(
     <Back>
     <Container>
@@ -192,4 +186,4 @@ function Footer(){
     ;
 }
 
-export default Footer;
+export default FooterPC;
