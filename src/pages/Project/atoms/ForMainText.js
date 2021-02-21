@@ -45,8 +45,8 @@ const MainText=styled.div
 }
 `;
 
-function ForMainText(){
-    return <MainText>Project</MainText>;
+function ForMainText({children}){
+    return <MainText>{children}</MainText>;
 }
 
 export default ForMainText;
