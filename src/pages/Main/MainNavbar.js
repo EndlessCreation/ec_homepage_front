@@ -50,6 +50,9 @@ const NavbarTemplate = styled.div`
         padding-top: 20px;
       `}
   }
+  @media screen and (max-width: 359px) {
+    padding-left: 8px;
+  }
 `;
 function MainNavbar() {
   const active = useBtnState();

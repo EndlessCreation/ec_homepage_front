@@ -2,13 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 import ActivityList from "../molecules/ActivityList";
-import ActivityPhoto from "../molecules/ActivityPhoto";
 const ContentsBlock = styled.div`
-  width: 848px;
+  width: 100%;
   height: 463px;
-  margin-left: 22.16%;
-  margin-right: 7%;
+  grid-column: 1 / 2;
+  grid-row: 2/ 3;
+
   display: flex;
+  justify-content: flex-end;
   .first {
     margin-right: 54px;
   }
@@ -36,7 +37,6 @@ function ActivityContents() {
   return (
     <ContentsBlock>
       <ActivityList />
-      <ActivityPhoto />
     </ContentsBlock>
   );
 }

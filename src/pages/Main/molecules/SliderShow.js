@@ -117,9 +117,11 @@ function SliderShow() {
       </SlideBlock>
       <ButtonBlock>
         {ButAry.map((Btn) => (
-          <SliderButton currentSlide={currentSlide} id={Btn} select={select}>
-            {Btn}
-          </SliderButton>
+          <SliderButton
+            currentSlide={currentSlide}
+            id={Btn}
+            select={select}
+          ></SliderButton>
         ))}
       </ButtonBlock>
     </>

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useMediaQuery } from "react-responsive";
 
 const AboutEcMainBlock = styled.div`
   width: 674px;
@@ -49,12 +50,16 @@ const AboutEcMainBlock = styled.div`
 `;
 
 function MainAboutEcSubText() {
+  const isPc = useMediaQuery({
+    query: "(min-width:1280px)",
+  });
   return (
     <AboutEcMainBlock>
       <span className="aboutec-text1">Endless Creation</span>
       <span className="aboutec-text2">
-        은 사람과 컴퓨터를 사랑하는 동아리로, 개발하는 재미와 함께 성장하는
-        즐거움을 알아갈 수 있는 다양한 활동을 준비하고 있습니다.
+        &nbsp; 은 사람과 컴퓨터를 사랑하는 동아리로, {isPc && <br />}개발하는
+        재미와 함께 성장하는 즐거움을 알아갈 수 있는 다양한 활동을 준비하고
+        있습니다.
       </span>
     </AboutEcMainBlock>
   );

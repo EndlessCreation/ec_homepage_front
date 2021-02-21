@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 import ActivityTextBox from "./organisms/ActivityTextBox";
 import ActivityContents from "./organisms/ActivityContents";
+import ActivityPhoto from "./molecules/ActivityPhoto";
+
 const ActivityBlock = styled.div`
   width: 100%;
   height: 683px;
@@ -24,6 +26,10 @@ const ActivityContainer = styled.div`
   padding-right: 40px;
   margin: 0 auto;
   box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 616fr 584fr;
+  grid-template-rows: 220fr 463fr;
+
   @media screen and (max-width: 1279px) {
     max-width: 640px;
     padding-left: 16px;
@@ -41,6 +47,7 @@ function MainActivity() {
       <ActivityContainer>
         <ActivityTextBox />
         <ActivityContents />
+        <ActivityPhoto />
       </ActivityContainer>
     </ActivityBlock>
   );
