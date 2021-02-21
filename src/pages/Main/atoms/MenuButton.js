@@ -57,7 +57,11 @@ const Button = styled.div`
       }
     `}
   @media screen and (max-width:767px) {
-    right: 60px;
+    right: 30px;
+    top: 20px;
+  }
+  @media screen and (max-width: 359px) {
+    right: 8px;
   }
 `;
 

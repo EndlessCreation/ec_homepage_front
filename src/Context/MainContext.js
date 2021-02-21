@@ -12,6 +12,11 @@ const initialState = {
     data: null,
     error: null,
   },
+  mainactivity: {
+    loading: false,
+    data: null,
+    error: null,
+  },
 };
 
 const loadingState = {
@@ -61,6 +66,21 @@ function mainReducer(state, action) {
       return {
         ...state,
         ecpick: error(action.error),
+      };
+    case "GET_MAINACTIVITY":
+      return {
+        ...state,
+        mainactivity: loadingState,
+      };
+    case "GET_MAINACTIVITY_SUCCESS":
+      return {
+        ...state,
+        mainactivity: success(action.data),
+      };
+    case "GET_MAINACTIVITY_ERROR":
+      return {
+        ...state,
+        mainactivity: error(action.error),
       };
     default:
       throw new Error(`Unhanded action type : ${action.type}`);
@@ -139,5 +159,17 @@ export async function getEcpick(dispatch) {
     dispatch({ type: "GET_ECPICK_SUCCESS", data: response.data });
   } catch (e) {
     dispatch({ type: "GET_ECPICK_ERROR", error: e });
+  }
+}
+
+export async function getMainactivty(dispatch) {
+  dispatch({ type: "GET_MAINACTIVITY" });
+  try {
+    const response = await axios.get(
+      "http://13.124.234.100:8080/activities/main"
+    );
+    dispatch({ type: "GET_MAINACTIVITY_SUCCESS", data: response.data });
+  } catch (e) {
+    dispatch({ type: "GET_MAINACTIVITY_ERROR", error: e });
   }
 }
