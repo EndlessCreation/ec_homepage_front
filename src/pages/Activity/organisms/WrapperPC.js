@@ -6,6 +6,7 @@ const Container=styled.div`
     max-width:1280px;
     padding-left :40px;
     padding-right :40px;
+    box-sizing : border-box;
     margin:0 auto;
     height:100%;
     

@@ -5,6 +5,7 @@ const Container = styled.div`
   max-width: 640px;
   padding-left: 16px;
   padding-right: 16px;
+  box-sizing : border-box;
   margin: 0 auto;
   height: 100%;
   background: ${(props) => props.background || "skyblue"};

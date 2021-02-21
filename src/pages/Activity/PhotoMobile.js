@@ -75,6 +75,7 @@ const Page = styled.div`
     width :120px;
     height : 79px;
     padding-top : 10px;
+    color : #A9A9A9;
 `;
 
 function Photo({photo}){
@@ -120,8 +121,9 @@ export default function PhotoList() {
     return (
         <WrapperMobile background={'white'} title='Photo'  row={'2/5'}>
         <Page>
-            <ButtonMobile onClick={prevSlide}><AiOutlineLeft/>{currentSlide+1}   /</ButtonMobile>
-            <ButtonMobile onClick={nextSlide}>{TOTAL_SLIDES+1}<AiOutlineRight/></ButtonMobile>
+            <ButtonMobile onClick={prevSlide}><AiOutlineLeft/>&ensp;{currentSlide+1}</ButtonMobile>
+            /
+            <ButtonMobile onClick={nextSlide}>{TOTAL_SLIDES+1}&ensp;<AiOutlineRight/></ButtonMobile>
         </Page>
 
         <ShowContainerMobile>

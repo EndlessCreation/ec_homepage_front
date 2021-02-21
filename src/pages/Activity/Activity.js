@@ -9,8 +9,7 @@ import PhotoTablet from './PhotoTablet';
 import PhotoMobile from './PhotoMobile';
 
 import Footer from './Footer';
-import FooterMobile from './FooterMobile';
-import FooterTablet from './FooterTablet';
+
 
 import {PhotoProvider} from '../../Context/PhotoProvider';
 import {MonthProvider} from '../../Context/MonthProvider';
@@ -62,7 +61,6 @@ function Activity() {
     <PhotoProvider>
       <Photo></Photo>
     </PhotoProvider>
-    <Footer></Footer>
     </Desktop>
   
 
@@ -77,7 +75,6 @@ function Activity() {
     <PhotoProvider>
       <PhotoTablet></PhotoTablet>
     </PhotoProvider>
-    <FooterTablet></FooterTablet>
     </Tablet>
 
 
@@ -92,8 +89,9 @@ function Activity() {
     <PhotoProvider>
       <PhotoMobile></PhotoMobile>
     </PhotoProvider>
-    <FooterMobile></FooterMobile>
     </Mobile>
+
+    <Footer></Footer>
 
     </>
   );
