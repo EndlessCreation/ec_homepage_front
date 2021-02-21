@@ -5,7 +5,7 @@ import { useMonthState } from "../../Context/MonthProvider";
 
 const Back = styled.div`
   width: 100%;
-  height: 1153px;
+  height: 1100px;
   margin: 0;
   padding: 0;
   background-color: #f2f2f2;

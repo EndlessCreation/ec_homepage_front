@@ -7,7 +7,7 @@ const Container=styled.div`
     padding-left :8px;
     padding-right :8px;
     margin:0 auto;
-    height:100%;
+    height: ${(props) => props.height || "100%"}
     background: ${(props) => props.background || "#f2f2f2"};
 `;
 
@@ -19,7 +19,7 @@ display: grid;
     .wrapper {
         display: grid;
         grid-template-columns: 8fr 312fr ;
-        grid-template-rows : 60fr 35fr 54fr 680fr;
+        grid-template-rows : 60fr 35fr 54fr 572fr;
         grid-auto-rows: minmax(100px, auto);    # 최소크기는 100px 이되, 창이 이보다 작아지면 자동으로
         position: absolute; 
         top:0; 
@@ -46,12 +46,12 @@ display: grid;
 
 `;
 
-function WrapperMobile({children, title,background, row}) {
+function WrapperMobile({children, title,background, height, row}) {
 
     return (
         <>
     {/* <GlobalStyle/> */}
-    <Container background={ background }>
+    <Container background={ background } height={height}>
     <WrapperStyleMobile background={ background }  row ={row}>
         <div class ='wrapper'>
           <div class='title'>{title}</div>

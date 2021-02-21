@@ -92,7 +92,7 @@ export async function getPhotos(dispatch) {
   dispatch({ type: 'GET_PHOTOS' });
   try {
     const response = await axios.get(
-      'http://13.124.234.100:8080/activities'
+      'http://13.124.234.100:8080/activities/detail'
     );
     dispatch({ type: 'GET_PHOTO_SUCCESS', data: response.data });
   } catch (e) {

@@ -4,11 +4,12 @@ import styled from 'styled-components';
 const Container=styled.div`
     background: ${(props) => props.background || "#f2f2f2"};
     max-width:1280px;
+    height :  ${(props) => props.height || "915px"};
     padding-left :40px;
     padding-right :40px;
     box-sizing : border-box;
     margin:0 auto;
-    height:100%;
+    // height:100%;
     
 `;
 
@@ -48,12 +49,12 @@ const WrapperStylePC = styled.div`
 
 `;
 
-function WrapperPC({children, title,background}) {
+function WrapperPC({children, title,background, height}) {
 
     return (
         <>
     {/* <GlobalStyle/> */}
-    <Container background={background}>
+    <Container background={background} height={height}>
     <WrapperStylePC background={ background }>
         <div class ='wrapper'>
           <div class='title'>{title}</div>
