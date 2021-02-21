@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Size from "../../../Size";
 import Manager from "../molecules/Manager";
+import { MemberProvider } from "../../../Context/MemberContext";
 
 const FlexBox = styled.div`
   width: 848px;
@@ -23,9 +24,11 @@ const FlexBox = styled.div`
 
 function Management() {
   return (
+    <MemberProvider>
     <FlexBox>
       <Manager />
     </FlexBox>
+    </MemberProvider>
   );
 }
 

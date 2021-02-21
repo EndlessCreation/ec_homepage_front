@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import StudSlide from '../molecules/StudSlide';
 import Size from '../../../Size';
+import {MemberProvider} from '../../../Context/MemberContext';
 
 const StudBox = styled.div`
 width: 848px;
@@ -29,9 +30,11 @@ padding-left: 22.166666667%;
 
 function Student(){
     return(
+    <MemberProvider>
     <StudBox>
           <StudSlide/>
     </StudBox>
+    </MemberProvider>
     )
 }
 

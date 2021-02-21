@@ -1,8 +1,14 @@
-import React from "react";
+import React, {useEffect} from "react";
 import styled from "styled-components";
 import Size from "../../../Size";
+import {
+  useExecutiveState,
+  useExecutiveDispatch,
+  getExecutive
+} from "../../../Context/MemberContext";
 
-const Img = styled.div`
+
+const Img = styled.img`
   position: relative;
   width: 180px;
   height: 180px;
@@ -320,23 +326,24 @@ const Hashtag = styled.div`
   }
 `;
 
-function Managers({ mana }) {
+function Managers({mana}) {
   return (
     <ManaInfoBlock>
       <InfoBox>
-        <Img>
           {(function () {
             if (mana.part) return <Part>P</Part>;
-          })()}
-        </Img>
+          })()}        
+          <Img src={mana.imageUrl}/>      
         <TextBox>
+          <>
           <Name>{mana.name}</Name>
-          <Grad>{mana.grad}</Grad>
+          <Grad>{mana.generation}기</Grad>
           <Gap />
           <Position>{mana.position}</Position> <Gap />
-          <Hashtag>{mana.hash1}</Hashtag>
-          <Hashtag>{mana.hash2}</Hashtag>
-          <Hashtag>{mana.hash3}</Hashtag>
+          <Hashtag>{mana.hashTags[0]}</Hashtag>
+          <Hashtag>{mana.hashTags[1]}</Hashtag>
+          <Hashtag>{mana.hashTags[2]}</Hashtag>
+          </>
         </TextBox>
       </InfoBox>
     </ManaInfoBlock>
@@ -344,73 +351,20 @@ function Managers({ mana }) {
 }
 
 function ManagerInfo() {
-  const Manager = [
-    {
-      id: 1,
-      name: "김건훈",
-      grad: "27기",
-      position: "회장",
-      hash1: "#ABCDEFGHIJKLM",
-      hash2: "#해시태그그그그",
-      hash3: "#해시태그그그그",
-      part: true,
-    },
-    {
-      id: 2,
-      name: "조인혁",
-      grad: "27기",
-      position: "부회장",
-      hash1: "#해시태그",
-      hash2: "#해시태그",
-      part: true,
-    },
-    {
-      id: 3,
-      name: "조재영",
-      grad: "28기",
-      position: "사무부장",
-      hash1: "#해시태그",
-      hash2: "#해시태그",
-      hash3: "#해시태그",
-      part: true,
-    },
-    {
-      id: 4,
-      name: "김선휘",
-      grad: "27기",
-      position: "학술부장",
-      hash1: "#해시태그",
-      part: false,
-    },
-    {
-      id: 5,
-      name: "오예진",
-      grad: "29기",
-      position: "인사부장",
-      hash1: "#해시태그",
-      part: false,
-    },
-    {
-      id: 6,
-      name: "마경미",
-      grad: "29기",
-      position: "홍보부장",
-      hash1: "#해시태그",
-      part: false,
-    },
-    {
-      id: 7,
-      name: "심연화",
-      grad: "29기",
-      position: "정보부장",
-      hash1: "#해시태그",
-      part: false,
-    },
-  ];
+  const state = useExecutiveState();
+  const dispatch = useExecutiveDispatch();
+  const {data: executive, loading, error} = state.executive;
+
+  useEffect(()=>{
+    getExecutive(dispatch);
+  }, [dispatch]);
+  if (loading) return <div>로딩중..</div>;
+  if (error) return <div>에러가 발생했습니다</div>;
+  if (!executive) return null;
 
   return (
     <>
-      {Manager.map((mana) => (
+      {executive.map((mana) => (
         <Managers mana={mana} />
       ))}
     </>

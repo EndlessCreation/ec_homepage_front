@@ -2,11 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import Size from "../../../Size";
 import Navbar from "../../Main/MainNavbar";
-import Intro from "../molecules/Intro";
 import Management from "../organisms/Management";
 import Student from "../organisms/Student";
 import Graduate from "../organisms/Graduate";
-
+import IntroContainer from "../../Project/organisms/IntroContainer"
 const TopGray = styled.div`
   width: 100%;
   margin: 0 auto;
@@ -17,7 +16,7 @@ const TopGray = styled.div`
 
 const TopWhite = styled.div`
   width: 100%;
-  margin: 0 auto;
+  margin: 0 ;
   background: #ffffff 0% 0% no-repeat padding-box;
   opacity: 1;
 `;
@@ -151,16 +150,11 @@ const GradBox = styled.div`
 function Template() {
   return (
     <>
-      <HeaderBox>
-        <Navbar />
-      </HeaderBox>
-
+    <Navbar />
       <TopWhite>
-        <WhiteContainer>
-          <IntroBox>
-            <Intro />
-          </IntroBox>
-        </WhiteContainer>
+  
+          <IntroContainer main="Member" intro="EC에는 여러분의 성장을 도와줄" intro2="든든한 운영진과 멋진 선배들이 있어요!"/>
+
       </TopWhite>
 
       <TopGray>
