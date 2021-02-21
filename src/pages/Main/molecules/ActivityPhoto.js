@@ -14,12 +14,19 @@ const PhotoBlock = styled.div`
   height: 100%;
   grid-column: 2 / 3;
   grid-row: 1 / -1;
-  overflow: scroll;
+  overflow: hidden;
   background-color: #fff;
   display: inline-block;
-  div:nth-child(1) {
-    margin-top: 220px;
+  .Photo {
+    width: 510px;
+    height: 100%;
+    overflow-y: scroll;
+
+    div:nth-child(1) {
+      margin-top: 220px;
+    }
   }
+
   @media screen and (max-width: 1279px) {
     width: 400px;
     grid-row: 2/ 3;
@@ -45,9 +52,11 @@ function ActivityPhoto() {
 
   return (
     <PhotoBlock>
-      {mainactivity.map((photo, index) => (
-        <PhotoBox url={photo.imageUrl} key={index} />
-      ))}
+      <div className="Photo">
+        {mainactivity.map((photo, index) => (
+          <PhotoBox url={photo.imageUrl} key={index} />
+        ))}
+      </div>
     </PhotoBlock>
   );
 }
