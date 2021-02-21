@@ -1,7 +1,7 @@
 import { useMediaQuery } from 'react-responsive'
-import FooterPC from './FooterPC';
-import FooterMobile from './FooterMobile';
-import FooterTablet from './FooterTablet';
+import FooterPC from './organisms/FooterPC';
+import FooterMobile from './organisms/FooterMobile';
+import FooterTablet from './organisms/FooterTablet';
 
 const Desktop = ({ children }) => {
     const isDesktop = useMediaQuery({ minWidth: 1280 })
