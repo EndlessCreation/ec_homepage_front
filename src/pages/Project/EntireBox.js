@@ -15,7 +15,7 @@ const Box2 = styled.div`
 function EntireBox() {
   return (
     <>
-        <IntroContainer />
+        <IntroContainer main="Project" intro="선배님들이 했던 프로젝트들이에요!" intro2="너무 많아서 몇 가지만 골라봤어요 :)"/>
         <Box2>
         <EcPickContainer/>
         </Box2>

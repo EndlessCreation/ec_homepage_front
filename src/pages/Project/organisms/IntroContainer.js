@@ -1,34 +1,48 @@
 import React from 'react';
 import styled from 'styled-components';
-import IntroContentBox from '../molecules/IntroContentBox';
+import ForMainText from '../atoms/ForMainText';
+import ForIntroText from '../atoms/ForIntroText';
 
 const Container=styled.div`
+box-sizing: border-box;
 
 @media screen and (min-width:1280px)
 {
-    max-width:1200px;
+    width:1200px;
     margin:0 auto;
-    height:553px;
+
+    padding-left: 263px;
+    padding-top:254px;
+    padding-bottom:130px;
 }
 
 @media screen and (min-width:768px) and (max-width:1279px){
-    max-width:608px;
+    width:608px;
     margin:0 auto;
     height: 386px;
+    padding-top:180px;
+    padding-bottom:80px;
 }
 
 @media screen and (max-width:767px){
-    max-width:304px;
+    width:304px;
     margin:0 auto;
     height:389px;
+    padding-top:196px;
+    padding-bottom:72px;
 
 }
 `;
 
-function IntroContainer(){
+
+
+function IntroContainer({main, intro, intro2}){
     return(
         <Container>
-            <IntroContentBox />
+            
+                <ForMainText >{main}</ForMainText>
+                <ForIntroText >{intro} <br></br>{intro2}</ForIntroText>
+            
         </Container>
     );
 }
