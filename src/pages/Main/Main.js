@@ -11,7 +11,7 @@ import MainContact from "./MainContact";
 
 function Main() {
   return (
-    <MainProvider>
+   <>
       <MainNavbar />
       <MainHeader />
       <MainAboutEC />
@@ -19,7 +19,7 @@ function Main() {
       <MainProject />
       <MainMember />
       <MainContact />
-    </MainProvider>
+   </>
   );
 }
 

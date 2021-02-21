@@ -13,7 +13,7 @@ const Text = styled.span`
   color: #101010;
   font-weight: bold;
   white-space: nowrap;
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: 1279px) {
     font-size: 31px;
     ${(props) =>
       props.Active &&

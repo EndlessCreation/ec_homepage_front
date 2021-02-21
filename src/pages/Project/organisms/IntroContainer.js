@@ -8,7 +8,7 @@ box-sizing: border-box;
 
 @media screen and (min-width:1280px)
 {
-    max-width:1200px;
+    width:1200px;
     margin:0 auto;
 
     padding-left: 263px;
@@ -17,7 +17,7 @@ box-sizing: border-box;
 }
 
 @media screen and (min-width:768px) and (max-width:1279px){
-    max-width:608px;
+    width:608px;
     margin:0 auto;
     height: 386px;
     padding-top:180px;
@@ -25,7 +25,7 @@ box-sizing: border-box;
 }
 
 @media screen and (max-width:767px){
-    max-width:304px;
+    width:304px;
     margin:0 auto;
     height:389px;
     padding-top:196px;

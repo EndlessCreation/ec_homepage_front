@@ -3,23 +3,35 @@ import styled, { css } from "styled-components";
 
 const ButtonBlock = styled.button`
   all: unset;
-  width: ${(props) => (props.Active === true ? 70 : 10)}%;
+  width: 10%;
   height: 6px;
   margin-left: 10px;
   cursor: pointer;
   transition: 0.4s;
-  background: #afafaf;
-  :active {
-    width: 70%;
-    background: #232323;
+  opacity: 0.24;
+  background: #232323;
+  ${(props) =>
+    props.id === props.currentSlide &&
+    css`
+      width: 70%;
+      opacity: 1;
+    `}
+
+  @media screen and (max-width:1279px) {
+    height: 6px;
+    margin-left: 9px;
+  }
+
+  @media screen and (max-width: 767px) {
+    height: 5px;
+    margin-left: 8px;
   }
 `;
 
-function SliderButton({ id, select }) {
-  const [Active, setActive] = useState(false);
+function SliderButton({ id, select, currentSlide }) {
   return (
     <ButtonBlock
-      Active={Active}
+      currentSlide={currentSlide}
       id={id}
       onClick={() => {
         select(id);

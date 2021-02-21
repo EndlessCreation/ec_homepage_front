@@ -17,14 +17,14 @@ const ContentsBlock = styled.div`
   @media screen and (max-width: 767px) {
     width: 100%;
     height: 548px;
-    margin-top: 64px;
+    margin-top: ${props=>props.main === true ? 64 : 0}px;
     margin-left: 0;
   }
 `;
 
-function ProjectContents() {
+function ProjectContents({main}) {
   return (
-    <ContentsBlock>
+    <ContentsBlock main={main}>
       <SlideShow />
     </ContentsBlock>
   );

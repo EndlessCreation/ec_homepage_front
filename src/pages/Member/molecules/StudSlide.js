@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState, useEffect } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 import StuCircle from '../atoms/StuCircle';
@@ -9,7 +9,11 @@ import 'slick-carousel/slick/slick-theme.css';
 import {useMediaQuery} from 'react-responsive';
 import {FiChevronLeft} from 'react-icons/fi';
 import {FiChevronRight} from 'react-icons/fi';
-
+import {
+  useStudentState,
+  useStudentDispatch,
+  getStudent
+} from "../../../Context/MemberContext";
 
 const Block = styled.div`
 width: 848px;
@@ -68,133 +72,6 @@ margin: 0 auto;
   }
 }
 `
-
-const studs = [
-    {
-      id: 1,
-      name: '일개발',
-      grade: '25기',
-      tech: 'JAVA',
-      tech2: '안드로이드',
-      part: true
-    },
-    {
-        id: 2,
-        name: '이개발',
-        grade: '25기',
-        tech: '안드로이드',
-        tech2: 'C++',
-        part: false
-    },
-    {
-        id: 3,
-        name: '삼개발',
-        grade: '25기',
-        tech: 'JAVA',
-        tech2: '서버',
-        part: false
-    },
-    {
-        id: 4,
-        name: '사개발',
-        grade: '25기',
-        tech: 'JAVA',
-        tech2: '프론트엔드',
-        part: false
-    },
-    {
-      id: 5,
-      name: '오개발',
-      grade: '25기',
-      tech: 'JAVA',
-      part: true
-    },
-    {
-    id: 6,
-    name: '육개발',
-    grade: '25기',
-    tech: 'JAVA',
-    tech2: '보안',
-    part: false
-    },
-  {
-    id: 7,
-    name: '칠개발',
-    grade: '25기',
-    tech: 'JAVA',
-    part: true
-  },
-  {
-    id: 8,
-    name: '팔개발',
-    grade: '25기',
-    tech: 'JAVA',
-    part: false
-  },
-  {
-    id: 9,
-    name: '구개발',
-    grade: '25기',
-    tech: 'JAVA',
-    part: false
-  },
-  {
-    id: 10,
-    name: '십개발',
-    grade: '25기',
-    tech: 'JAVA',
-    part: false
-  },
-  {
-    id: 11,
-    name: '십일개발',
-    grade: '25기',
-    tech: 'JAVA',
-    part: true
-  },
-  {
-    id: 12,
-    name: '십이개발',
-    grade: '25기',
-    tech: 'JAVA',
-    part: false
-  },
-  {
-    id: 13,
-    name: '십삼개발',
-    grade: '25기',
-    tech: 'JAVA',
-    part: false
-  },
-  {
-    id: 14,
-    name: '십사개발',
-    grade: '25기',
-    tech: 'JAVA',
-    part: false
-  },
-  {
-    id: 15,
-    name: '십오개발',
-    tech: 'JAVA',
-    grade: '25기',
-    part: false
-  },
-  {
-    id: 16,
-    name: '십육개발',
-    grade: '25기',
-    tech: 'JAVA',
-    part: false
-  },
-  {
-    id: 17,
-    name: '십칠칠개발',
-    grade: '25기',
-    tech: 'JAVA',
-    part: false
-  }
-];
 
 const PrevPages = styled.div`
 position: absolute;
@@ -265,7 +142,7 @@ font-size: 24px;
 @media screen and ${Size.device.tablet}
 {
   position: absolute;
-  transform : translate(553px, -92.5px);
+  transform : translate(549px, -92.5px);
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
@@ -290,11 +167,22 @@ function StudSlide(){
   const isTablet = useMediaQuery({query: '(min-width: 640px) and (max-width: 1279px)'})
   const isMoblie = useMediaQuery({query:  '(max-width: 639px)'})
 
-  const PCTotalslides = Math.ceil(studs.length/15);
-  const TABLETTotalslides = Math.ceil(studs.length/8);
-  const MOBLIETotalslides = Math.ceil(studs.length/12);
 
   const [number, setNumber] = useState({currentPage:1});
+  const state = useStudentState();
+  const dispatch = useStudentDispatch();
+  const {data: student, loading, error} = state.student;
+
+  useEffect(()=>{
+    getStudent(dispatch);
+  }, [dispatch]);
+  if (loading) return <div>로딩중..</div>;
+  if (error) return <div>에러가 발생했습니다</div>;
+  if (!student) return null;
+
+  const PCTotalslides = Math.ceil(student.length/15);
+  const TABLETTotalslides = Math.ceil(student.length/8);
+  const MOBLIETotalslides = Math.ceil(student.length/12);
 
   const settings = {
     dots : false,
@@ -308,7 +196,7 @@ function StudSlide(){
     afterChange : (currentPage) => {
       if(currentPage!==0)
       {
-        setNumber({currentPage: currentPage+1});
+        setNumber({currentPage: Math.ceil(currentPage/5)+1});
       }
       else
       setNumber({currentPage:1});
@@ -328,7 +216,7 @@ function StudSlide(){
     afterChange : (currentPage) => {
       if(currentPage!==0)
       {
-        setNumber({currentPage: currentPage-2});
+        setNumber({currentPage: Math.ceil(currentPage/4)+1});
       }
       else
       setNumber({currentPage:1});
@@ -347,7 +235,7 @@ function StudSlide(){
     afterChange : (currentPage) => {
       if(currentPage!==0)
       {
-        setNumber({currentPage});
+        setNumber({currentPage: Math.ceil(currentPage/3)+1});
       }
       else
       setNumber({currentPage:1});
@@ -362,21 +250,21 @@ function StudSlide(){
         {isMoblie&&<NextPages>{MOBLIETotalslides}</NextPages>}
         {isTablet&&<NextPages>{TABLETTotalslides}</NextPages>}
         {isPc&&<Slider {...settings}>       
-          {studs.map(stud => {
+          {student.map((stud) => {
               return (
                   <StuCircle stud={stud} />
               );}
           )}
         </Slider>}
         {isTablet&&<Slider {...settingsforTablet}>
-          {studs.map(stud => {
+          {student.map((stud) => {
               return (
                   <StuCircle stud={stud} />
               );}
           )}
         </Slider>}
         {isMoblie&&<Slider {...settingsforMoblie}>
-          {studs.map(stud => {
+          {student.map((stud) => {
               return (
                   <StuCircle stud={stud} />
               );}

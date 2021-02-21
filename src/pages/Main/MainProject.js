@@ -40,7 +40,7 @@ function MainProject() {
     <ProjectBlock>
       <ProjectContainer>
         <ProjectTextBox />
-        <ProjectContents />
+        <ProjectContents main/>
       </ProjectContainer>
     </ProjectBlock>
   );

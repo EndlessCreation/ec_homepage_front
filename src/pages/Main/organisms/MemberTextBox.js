@@ -16,6 +16,7 @@ const TextBlock = styled.div`
     flex-direction: column;
   }
 `;
+
 function MemberTextBox() {
   return (
     <TextBlock>
