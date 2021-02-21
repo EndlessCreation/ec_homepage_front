@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Back = styled.div`
     width: 100%;
-    height: 335px;
+    height: 297px;
     margin: 0;
     padding: 0;
     background-color: #232323;
@@ -12,20 +12,23 @@ const Back = styled.div`
 
 const Container=styled.div`
     background: ${(props) => props.background || "#232323"};
-    max-width: 320px;
+    max-width: 640px;
+    padding-left :16px;
+    padding-right :16px;
+    box-sizing : border-box;
     margin:0 auto;
     height:100%;
     
 `;
 
 const ContainerInner=styled.div`
-    min-width:160px;  
+    width:304px;  
     float: left;
     
 `;
 
 const Logo = styled.div`
-    padding-top : 54px;
+    padding-top : 48px;
     font-family: Kanit;
     font-size: 18px;
     font-weight: bold;
@@ -36,8 +39,9 @@ const Logo = styled.div`
 `;
 
 const Name = styled.div`
-  padding-top: 48px;
-  
+  padding-top: 62px;
+  padding-bottom : 85px;
+  width:235px;
 
   .wrapper {
     display: grid;
@@ -125,7 +129,7 @@ const Name = styled.div`
 `;
 const Icon = styled.div`
     float: right;
-    padding-top: 55px ;
+    padding-top: 69px ;
 
     display: flex;
     flex-direction: row;  // 옆으로 정렬
@@ -141,14 +145,15 @@ const Icon = styled.div`
 
 const Cop = styled.div`
   float: right;
-  padding-top: 51px ;
-  padding-left:75px;
+  padding-top: 99px ;
+  
 
   opacity: 0.73;
   font-family: Kanit;
   font-size: 12px;
   line-height: 1.5;
   letter-spacing: normal;
+  text-align: right;
   color: #d2d2d2;
 `;
 
@@ -158,15 +163,6 @@ function Footer(){
     <Container>
       <ContainerInner>
       <Logo>Endless Creation</Logo>
-      </ContainerInner>
-      <ContainerInner>
-        <Icon>
-            <div class='circle'></div>
-            <div class='circle'></div>
-            <div class='circle'></div>
-          </Icon>
-      </ContainerInner>
-      <ContainerInner>
       <Name>
         <div class ='wrapper'>
           <div class ='t1'>기획</div>
@@ -177,6 +173,13 @@ function Footer(){
           <div class='p3'>김개발 &emsp; 김개발 &emsp; 김개발</div>
         </div>
       </Name>
+      </ContainerInner>
+      <ContainerInner>
+        <Icon>
+            <div class='circle'></div>
+            <div class='circle'></div>
+            <div class='circle'></div>
+          </Icon>
       </ContainerInner>
       <ContainerInner>
         <Cop>

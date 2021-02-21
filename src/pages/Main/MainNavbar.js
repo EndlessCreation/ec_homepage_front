@@ -3,8 +3,8 @@ import styled, { css } from "styled-components";
 
 import { useBtnState } from "../../Context/MainContext";
 import NavbarMain from "./atoms/NavbarMain";
-import NavbarMenu from "./organisms/NavbarMenu";
-import HamburgerBtn from "./atoms/HamburgerBtn";
+import NavbarMenu from "./molecules/NavbarMenu";
+import MenuButton from "./atoms/MenuButton";
 
 /* 상단 고정 네이게이션 바 Template*/
 const NavbarTemplate = styled.div`
@@ -58,7 +58,7 @@ function MainNavbar() {
       <NavbarTemplate active={active}>
         <NavbarMain />
         <NavbarMenu />
-        <HamburgerBtn />
+        <MenuButton />
       </NavbarTemplate>
     </>
   );

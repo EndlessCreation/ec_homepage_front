@@ -3,6 +3,9 @@ import styled from 'styled-components';
 
 const Container=styled.div`
     max-width: 320px;
+    box-sizing : border-box;
+    padding-left :8px;
+    padding-right :8px;
     margin:0 auto;
     height:100%;
     background: ${(props) => props.background || "#f2f2f2"};

@@ -70,7 +70,8 @@ const Page = styled.div`
     float:left;
     width :266px;
     height : 650px;
-
+    color : #A9A9A9;
+    font-size:24px;
     .page{
         margin-top : 616px;
     }
@@ -136,8 +137,9 @@ export default function PhotoList(){
         <WrapperPC background={'white'} title='Photo'>
         <Page>
             <div class='page'>
-            <Button onClick={prevSlide}><AiOutlineLeft/>{currentSlide+1}   /</Button>
-            <Button onClick={nextSlide}>{TOTAL_SLIDES+1}<AiOutlineRight/></Button>
+            <Button onClick={prevSlide}><AiOutlineLeft/>&ensp;{currentSlide+1}</Button>
+            /
+            <Button onClick={nextSlide}>{TOTAL_SLIDES+1}&ensp;<AiOutlineRight/></Button>
      
             </div>
         </Page>
