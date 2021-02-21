@@ -121,7 +121,9 @@ export function useExecutiveDispatch() {
 export async function getExecutive(dispatch) {
   dispatch({ type: "GET_EXECUTIVE" });
   try {
-    const response = await axios.get("http://localhost:4000/executive");
+    const response = await axios.get(
+      "http://13.124.234.100:8080/members/executives"
+    );
     dispatch({ type: "GET_EXECUTIVE_SUCCESS", data: response.data });
   } catch (e) {
     dispatch({ type: "GET_EXECUTIVE_ERROR", error: e });
@@ -131,7 +133,9 @@ export async function getExecutive(dispatch) {
 export async function getEcpick(dispatch) {
   dispatch({ type: "GET_ECPICK" });
   try {
-    const response = await axios.get("http://localhost:4000/ecpick");
+    const response = await axios.get(
+      "http://13.124.234.100:8080/projects/ecpick"
+    );
     dispatch({ type: "GET_ECPICK_SUCCESS", data: response.data });
   } catch (e) {
     dispatch({ type: "GET_ECPICK_ERROR", error: e });

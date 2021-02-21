@@ -20,7 +20,7 @@ const TextBlock = styled.div`
 function AboutEcTextBox() {
   return (
     <TextBlock>
-      <MainAboutEcText>AboutEc</MainAboutEcText>
+      <MainAboutEcText>AboutEC</MainAboutEcText>
       <MainAboutEcSubText />
     </TextBlock>
   );
