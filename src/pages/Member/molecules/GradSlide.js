@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 import GradCircle from '../atoms/GradCircle';
@@ -9,130 +9,11 @@ import 'slick-carousel/slick/slick-theme.css';
 import {useMediaQuery} from 'react-responsive';
 import {FiChevronLeft} from 'react-icons/fi';
 import {FiChevronRight} from 'react-icons/fi';
-
-const grads = [
-  {
-    id: 1,
-    name: '일개발',
-    position: '백엔드',
-    grade: '22기',
-    company: 'SAMSUNGSAMS'
-
-  },
-  {
-      id: 2,
-      name: '이개발',
-      position: '인공지능',
-      grade: '2기',
-    company: 'NAVER'
-
-  },
-  {
-      id: 3,
-      name: '삼개발',
-      position: '프론트엔드',
-      grade: '3기',
-      company: 'SAMSUNG'
-  },
-  {
-      id: 4,
-      name: '사개발',
-      position: '빅데이터',
-      grade: '4기',
-      company: 'KAKAO'
-  },
-  {
-    id: 5,
-    name: '오개발',
-    position: '안드로이드',
-    grade: '4기',
-      company: 'LINE'
-  },
-  {
-  id: 6,
-  name: '육개발',
-  position: '보안',
-  grade: '5기',
-  company: 'SAMSUNG'
-  },
-{
-  id: 7,
-  name: '칠개발',
-  position: '통신',
-  grade: '6기',
-  company: 'SKT'
-},
-{
-  id: 8,
-  name: '팔개발',
-  position: '프론트엔드',
-  grade: '7기',
-  company: 'KAKAO'
-},
-{
-  id: 9,
-  name: '구개발',
-  position: '보안',
-  grade: '8기',
-  company: 'SAMSUNG'
-},
-{
-  id: 10,
-  name: '십개발',
-  position: '안드로이드',
-  grade: '4기',
-  company: 'KAKAO'
-},
-{
-  id: 11,
-  name: '십일개발',
-  position: '백엔드',
-  grade: '9기',
-  company: 'LINE'
-},
-{
-  id: 12,
-  name: '십이개발',
-  position: '프론트엔드',
-  grade: '9기',
-  company: 'NAVER'
-},
-{
-  id: 13,
-  name: '십이개발',
-  position: '프론트엔드',
-  grade: '9기',
-  company: 'NAVER'
-},
-{
-  id: 14,
-  name: '십이개발',
-  position: '프론트엔드',
-  grade: '9기',
-  company: 'NAVER'
-},
-{
-  id: 15,
-  name: '십이개발',
-  position: '프론트엔드',
-  grade: '9기',
-  company: 'NAVER'
-},
-{
-  id: 16,
-  name: '십이개발',
-  position: '프론트엔드',
-  grade: '9기',
-  company: 'NAVER'
-},
-{
-  id: 17,
-  name: '십이개발',
-  position: '프론트엔드',
-  grade: '9기',
-  company: 'NAVER'
-}
-];
+import {
+  useGraduateState,
+  useGraduateDispatch,
+  getGraduate
+} from "../../../Context/MemberContext";
 
 const Block = styled.div`
 width: 848px;
@@ -288,13 +169,22 @@ function GradSlide(){
   })
   const isTablet = useMediaQuery({query: '(min-width: 640px) and (max-width: 1279px)'})
   const isMoblie = useMediaQuery({query:  '(max-width: 639px)'})
-
-  
-  const PCTotalslides = Math.ceil(grads.length/12);
-  const TABLETTotalslides = Math.ceil(grads.length/10);
-  const MOBLIETotalslides = Math.ceil(grads.length/16);
   
   const [number, setNumber] = useState({currentPage:1});
+  const state = useGraduateState();
+  const dispatch = useGraduateDispatch();
+  const {data: graduate, loading, error} = state.graduate;
+
+  useEffect(()=>{
+    getGraduate(dispatch);
+  }, [dispatch]);
+  if (loading) return <div>로딩중..</div>;
+  if (error) return <div>에러가 발생했습니다</div>;
+  if (!graduate) return null;
+
+  const PCTotalslides = Math.ceil(graduate.length/12);
+  const TABLETTotalslides = Math.ceil(graduate.length/10);
+  const MOBLIETotalslides = Math.ceil(graduate.length/16);
 
   const settings = {
     dots : false,
@@ -309,7 +199,7 @@ function GradSlide(){
     afterChange : (currentPage) => {
       if(currentPage!==0)
       {
-        setNumber({currentPage: currentPage-1});
+        setNumber({currentPage: Math.ceil(currentPage/5)+1});
       }
       else
       setNumber({currentPage:1});
@@ -328,7 +218,7 @@ function GradSlide(){
     afterChange : (currentPage) => {
       if(currentPage!==0)
       {
-        setNumber({currentPage: currentPage-2});
+        setNumber({currentPage: Math.ceil(currentPage/5)+1});
       }
       else
       setNumber({currentPage:1});
@@ -347,7 +237,7 @@ function GradSlide(){
     afterChange : (currentPage) => {
       if(currentPage!==0)
       {
-        setNumber({currentPage: currentPage+1});
+        setNumber({currentPage: Math.ceil(currentPage/6)+1});
       }
       else
       setNumber({currentPage:1});
@@ -363,21 +253,21 @@ function GradSlide(){
         {isTablet&&<NextPages>{TABLETTotalslides}</NextPages>}
 
         {isPc&&<Slider {...settings}>
-          {grads.map(grad => {
+          {graduate.map((grad) => {
               return (
                   <GradCircle grad={grad} />
               );}
           )}
         </Slider>}
         {isTablet&&<Slider {...settingsforTablet}>
-          {grads.map(grad => {
+          {graduate.map((grad) => {
               return (
                   <GradCircle grad={grad} />
               );}
           )}
         </Slider>}
         {isMoblie&&<Slider {...settingsforMoblie}>
-          {grads.map(grad => {
+          {graduate.map((grad) => {
               return (
                   <GradCircle grad={grad} />
               );}

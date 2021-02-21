@@ -17,7 +17,7 @@ font-style: normal;
 line-height: 1.75;
 letter-spacing: normal;
 background: var(--unnamed-color-b0b0b0) 0% 0% no-repeat padding-box;
-color: #232323;
+color: #ffffff;
 
 
 @media screen and ${Size.device.tablet}
@@ -119,11 +119,18 @@ height: 156px;
 display: flex;
 justify-content: center;
 align-items: center;
-background: var(--unnamed-color-f2f2f2) 0% 0% no-repeat padding-box;
-background: #F2F2F2 0% 0% no-repeat padding-box;
+color: #ffffff;
+background: #101010;
+
 border-radius: 68px;
-opacity: 1;
 margin-bottom: 16px;
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 68px;
+  opacity: 0.64;
+}
 
 }
 
@@ -146,13 +153,13 @@ margin-bottom: 16px;
 function StuCircle({stud}){
     return(
       <>
-      {(function () {
+      {(function() {
             if (stud.part) return <Part>P</Part>;
           })()}
     <StudInfoBlock>
-        <Text>{stud.name} {stud.grade}<br />
-        {stud.tech}<br />
-        {stud.tech2}</Text>
+      <img src={stud.imageUrl} />
+        <Text>{stud.name} {stud.generation}기<br />
+        {stud.hashTags}</Text>
     </StudInfoBlock>
     </>
     );

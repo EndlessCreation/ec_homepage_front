@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Size from '../../../Size';
 import GradSlide from '../molecules/GradSlide';
+import {MemberProvider} from '../../../Context/MemberContext';
 
 const GradBox = styled.div`
 width: 848px;
@@ -35,9 +36,11 @@ padding-left: 22.166666667%;
 
 function Graduate(){
     return(
+        <MemberProvider>
         <GradBox>
             <GradSlide/>
         </GradBox>
+        </MemberProvider>
     )
 }
 

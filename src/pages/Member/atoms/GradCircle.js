@@ -14,7 +14,7 @@ letter-spacing: var(--unnamed-character-spacing-0);
 color: var(--unnamed-color-232323);
 font: normal normal normal 16px/28px NanumSquare;
 letter-spacing: 0px;
-color: #232323;
+color: #ffffff;
 opacity: 1;
 
 
@@ -64,8 +64,15 @@ justify-content: center;
 align-items: center;
 
 border-radius: 54px;
-background-color: #ffffff;
+background-color: #101010;
+color: #ffffff;
 
+img {
+    width: 100%;
+    height: 100%;
+    border-radius: 68px;
+    opacity: 0.64;
+  }
 }
 @media screen and ${Size.device.tablet}
 {
@@ -97,10 +104,12 @@ background-color: #ffffff;
 function GradCircle({grad}){
     return (
     <GradInfoBlock>
+        <img src={grad.imageUrl} />
         <Text>
-        {grad.name} {grad.grade}
+        {grad.name} {grad.generation}기
         <br />
-        {grad.position}
+        {grad.hashTags[0]} <br />
+        {grad.hashTags[1]}
         </Text>
     </GradInfoBlock>);
 }
