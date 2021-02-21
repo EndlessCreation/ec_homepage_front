@@ -6,6 +6,10 @@ import { darken, lighten } from 'polished';
 // import { usePhotoState } from "../../Context/PhotoProvider";
 import { usePhotoState, usePhotoDispatch ,getPhotos} from "./GetApi";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 
 //현재상태의 이미지만 보여줄 container
 const ShowContainerMobile = styled.div` 
@@ -76,6 +80,24 @@ const Page = styled.div`
     height : 79px;
     padding-top : 10px;
     color : #A9A9A9;
+    position : relative;
+    .left{
+        position :absolute;
+        top: 1px;
+        
+    }
+    .right{
+        position :absolute;
+        left : 60px;
+        top: 1.5px;
+        
+    }
+    span{
+        position :absolute;
+        left : 50px;
+        top : 0.5px;
+        
+    }
 `;
 
 function Photo({photo}){
@@ -134,12 +156,13 @@ export default function PhotoList() {
     return (
         <WrapperMobile background={'white'} title='Photo'  row={'2/5'} height ={'721px'}>
         <Page>
-            <ButtonMobile onClick={prevSlide}><AiOutlineLeft/>&ensp;{currentSlide+1}</ButtonMobile>
-            /
-            <ButtonMobile onClick={nextSlide}>{TOTAL_SLIDES+1}&ensp;<AiOutlineRight/></ButtonMobile>
+            <ButtonMobile className='left' onClick={prevSlide}><AiOutlineLeft/>&ensp;{currentSlide+1}</ButtonMobile>
+            <span>/</span>
+            <ButtonMobile className='right' onClick={nextSlide}>{TOTAL_SLIDES+1}&ensp;<AiOutlineRight/></ButtonMobile>
         </Page>
 
         <ShowContainerMobile>
+        <div data-aos="fade-up"  data-aos-duration="2000" >
         <PhotoContainerMobile  ref={slideRef}>
             <div class='photo-container'>
             <PhotoBoxMobile>
@@ -158,6 +181,7 @@ export default function PhotoList() {
             </PhotoBoxMobile>
             </div>
         </PhotoContainerMobile>
+        </div>
         </ShowContainerMobile>
   
         </WrapperMobile>

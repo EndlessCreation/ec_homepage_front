@@ -38,9 +38,7 @@ const Logo = styled.div`
 `;
 
 const Name = styled.div`
-  // padding-left : 40px;
   padding-top: 72px;
-  padding-bottom : 120px;
   width: 461px;
 
   .wrapper {

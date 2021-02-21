@@ -15,6 +15,10 @@ import {PhotoProvider} from './GetApi';
 
 import { useMediaQuery } from 'react-responsive'
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 const Desktop = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 1280 })
   return isDesktop ? children : null
@@ -37,7 +41,9 @@ const Mobile = ({ children }) => {
 function Activity() {
   return (
     <>
+    <div data-aos="fade-up"  data-aos-duration="2000">
     <IntroContainer main="Activity" intro='2021년 Endless Creation 에서는' intro2='아래와 같은 활동을 준비하고 있어요!'></IntroContainer>
+    </div>
 
     <Desktop>
     <MainProvider>

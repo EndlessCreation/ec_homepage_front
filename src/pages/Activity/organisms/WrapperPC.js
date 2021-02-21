@@ -1,6 +1,8 @@
 import React  from 'react';
 import styled from 'styled-components';
 
+
+
 const Container=styled.div`
     background: ${(props) => props.background || "#f2f2f2"};
     max-width:1280px;
@@ -19,7 +21,7 @@ const WrapperStylePC = styled.div`
 
     .wrapper {
         display: grid;
-        grid-template-columns: 40fr 266fr  894fr ;
+        grid-template-columns: 266fr  934fr ;
         grid-template-rows : 100fr 48fr 72fr 695fr;
         grid-auto-rows: minmax(100px, auto);    # 최소크기는 100px 이되, 창이 이보다 작아지면 자동으로
         position: absolute; 
@@ -30,7 +32,7 @@ const WrapperStylePC = styled.div`
       }
     
       .title {
-        grid-column: 2;
+        grid-column: 1;
         grid-row: 2;
         font-size: 32px;
         //font-weight: 800;
@@ -41,7 +43,7 @@ const WrapperStylePC = styled.div`
       }
 
       .paragraph{
-        grid-column: 2/4;
+        grid-column: 1/3;
         grid-row: 4;
       }
 
@@ -50,7 +52,6 @@ const WrapperStylePC = styled.div`
 `;
 
 function WrapperPC({children, title,background, height}) {
-
     return (
         <>
     {/* <GlobalStyle/> */}
@@ -61,6 +62,7 @@ function WrapperPC({children, title,background, height}) {
           <div class='paragraph'>{children}</div>
         </div>
     </WrapperStylePC>
+
 
     </Container>
     </>

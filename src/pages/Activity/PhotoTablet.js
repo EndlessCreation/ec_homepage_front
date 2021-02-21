@@ -4,6 +4,9 @@ import WrapperTablet from './organisms/WrapperTablet';
 import { AiOutlineRight,AiOutlineLeft } from "react-icons/ai";
 import { darken, lighten } from 'polished';
 import { usePhotoState, usePhotoDispatch ,getPhotos} from "./GetApi";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 
 //현재상태의 이미지만 보여줄 container
@@ -74,7 +77,25 @@ const Page = styled.div`
     height : 98px;
     color : #A9A9A9;
     font-size:18px;
+    position : relative;
 
+    .left{
+        position :absolute;
+        top :1px;
+
+    }
+    .right{
+        position :absolute;
+        left : 60px;
+        top : 2.5px;
+
+    }
+    span{
+        position :absolute;
+        left: 50px;
+        top : 0px;
+ 
+    }
 `;
 
 
@@ -139,12 +160,13 @@ export default function PhotoListTablet() {
     return (
         <WrapperTablet background={'white'} title='Photo'  row={'2/5'} >
         <Page>
-            <ButtonTablet onClick={prevSlide}><AiOutlineLeft/>&ensp;{currentSlide+1}</ButtonTablet>   
-            /
-            <ButtonTablet onClick={nextSlide}>{TOTAL_SLIDES+1}&ensp;<AiOutlineRight/></ButtonTablet>
+            <ButtonTablet className='left' onClick={prevSlide}><AiOutlineLeft/>&ensp;{currentSlide+1}</ButtonTablet>   
+            <span>/</span>
+            <ButtonTablet className='right' onClick={nextSlide}>{TOTAL_SLIDES+1}&ensp;<AiOutlineRight/></ButtonTablet>
         </Page>
 
         <ShowContainerTablet>
+        <div data-aos="fade-up"  data-aos-duration="2000" >
         <PhotoContainerTablet  ref={slideRef}>
             <div class='photo-container'>
             <PhotoBoxTablet>
@@ -163,6 +185,7 @@ export default function PhotoListTablet() {
             </PhotoBoxTablet>
             </div>
         </PhotoContainerTablet>
+        </div>
         </ShowContainerTablet>
  
         </WrapperTablet>

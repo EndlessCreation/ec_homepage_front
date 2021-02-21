@@ -5,6 +5,10 @@ import { AiOutlineRight,AiOutlineLeft } from "react-icons/ai";
 import { darken, lighten } from 'polished';
 import { usePhotoState, usePhotoDispatch ,getPhotos} from "./GetApi";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 //현재상태의 이미지만 보여줄 container
 const ShowContainer = styled.div`  
     width :872px;
@@ -60,6 +64,8 @@ const Button = styled.button`
     &:active {
         color: ${darken(0.1, 'black')};
     }
+
+
 `;
 
 
@@ -70,8 +76,24 @@ const Page = styled.div`
     height : 650px;
     color : #A9A9A9;
     font-size:24px;
+    position : relative;
+
     .page{
         margin-top : 616px;
+    }
+    .left{
+        position :absolute;
+        bottom: 5px;
+    }
+    .right{
+        position :absolute;
+        left : 70px;
+        
+    }
+    span{
+        position :absolute;
+        left :60px;
+        bottom : 6px;
     }
 
 `;
@@ -134,20 +156,22 @@ export default function PhotoList(){
         }
     };
 
-
     return (
         <>
+    
         <WrapperPC background={'white'} title='Photo' height ='1031px'>
         <Page>
             <div class='page'>
-            <Button onClick={prevSlide}><AiOutlineLeft/>&ensp;{currentSlide+1}</Button>
-            /
-            <Button onClick={nextSlide}>{TOTAL_SLIDES+1}&ensp;<AiOutlineRight/></Button>
+            <Button className='left' onClick={prevSlide}><AiOutlineLeft/>&ensp;{currentSlide+1}</Button>
+            <span>/</span>
+            
+            <Button className='right' onClick={nextSlide}>{TOTAL_SLIDES+1}&ensp;<AiOutlineRight/></Button>
      
             </div>
         </Page>
-
+        
         <ShowContainer>
+        <div data-aos="fade-up"  data-aos-duration="2000" >
         <PhotoContainer  ref={slideRef}>
             <div class='photo-container'>
             <PhotoBox>
@@ -166,7 +190,9 @@ export default function PhotoList(){
             </PhotoBox>
             </div>
         </PhotoContainer>
+        </div>
         </ShowContainer>
+      
         </WrapperPC>
 
         </>
