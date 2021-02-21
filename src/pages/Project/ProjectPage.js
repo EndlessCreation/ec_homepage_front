@@ -4,6 +4,7 @@ import EntireBox from "./EntireBox";
 
 import {MainProvider} from "../../Context/MainContext"
 import MainNavbar from "../Main/MainNavbar";
+import { ProjectProvider } from "../../Context/ProjectContext";
 
 const Footer = styled.div`
   color: white;
@@ -15,11 +16,13 @@ const Footer = styled.div`
 function ProjectPage() {
   return (
     <>
+    <ProjectProvider>
     <MainProvider>
       <MainNavbar />
     </MainProvider>
         <EntireBox />
       <Footer>Footer</Footer>
+      </ProjectProvider>
     </>
   );
 }
