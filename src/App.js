@@ -7,6 +7,7 @@ import Main from "./pages/Main/Main";
 import Activity from "./pages/Activity/Activity";
 import Project from "./pages/Project/ProjectPage";
 import Member from "./pages/Member/Template/Template";
+import { MainProvider } from "./Context/MainContext";
 
 const GlobalStyle = createGlobalStyle`
   body{
@@ -18,11 +19,13 @@ const GlobalStyle = createGlobalStyle`
 function App() {
   return (
     <Router>
+      <MainProvider>
       <GlobalStyle />
       <Route path="/" component={Main} exact={true} />
       <Route path="/Activity" component={Activity} />
       <Route path="/Project" component={Project} />
       <Route path="/Member" component={Member} />
+      </MainProvider>
     </Router>
   );
 }

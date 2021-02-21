@@ -73,7 +73,7 @@ function SliderShow() {
   useEffect(() => {
     if (!ecpick) {
       getEcpick(dispatch);
-      console.log("데이터 받기");
+      
     } else {
       slideRef.current.style.transition = "all 0.7s ease-in-out";
       slideRef.current.style.transform = `translateX(-${MoveSlide}%)`; // 백틱을 사용하여 슬라이드로 이동하는 애니메이션을 만듭니다.

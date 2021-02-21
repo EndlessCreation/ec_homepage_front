@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import ProjectBox from '../atoms/ProjectBox';
 import styled from 'styled-components';
 import {useMediaQuery} from 'react-responsive';
@@ -6,7 +6,8 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import {FiChevronLeft} from 'react-icons/fi';
-import {FiChevronRight} from 'react-icons/fi';
+import {FiChevronRight} from 'react-icons/fi'
+import { getCount, getProject, ProjectProvider, useProjectDispatch, useProjectState } from "../../../Context/ProjectContext";
 
 const BlockforProjectContent=styled.div`
 @media screen and (min-width:1280px){
@@ -35,7 +36,7 @@ z-index: 2;
 width: 42px;
   height: 26px;
   font-family: NanumSquareRegular;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -43,7 +44,7 @@ width: 42px;
   letter-spacing: 2.4px;
   text-align: center;
   color: #afafaf;
-    transform : translate(-191.2px, 600px);
+    transform : translate(-230px, 606px);
   }
 
   @media screen and (min-width:768px) and (max-width:1279px)
@@ -51,7 +52,7 @@ width: 42px;
     width: 32px;
   height: 20px;
   font-family: NanumSquareRegular;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;
@@ -59,7 +60,23 @@ width: 42px;
   letter-spacing: 1.8px;
   text-align: center;
   color: #afafaf;
-  transform:translate(520px,-70px);
+  transform:translate(520px,-77px);
+  }
+
+  @media screen and (max-width:767px)
+  {
+    width: 30px;
+  height: 20px;
+  font-family: NanumSquareR;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.56;
+  letter-spacing: 1.8px;
+  text-align: right;
+  color: #afafaf;
+  transform:translate(225px,-80px);
   }
 `
 ;
@@ -73,7 +90,7 @@ const StyledSlider = styled(Slider)`
     .slick-prev{
       z-index: 2;
       position: absolute;
-      transform : translate(-191.2px, 277px);
+      transform : translate(-245px, 277px);
       opacity: 1;
       color: #afafaf;
     }
@@ -82,7 +99,7 @@ const StyledSlider = styled(Slider)`
       position: absolute;
       opacity: 1;
       color: #afafaf;
-      transform : translate(-1027px, 277px);
+      transform : translate(-1050px, 277px);
     }
   }
 
@@ -91,7 +108,7 @@ const StyledSlider = styled(Slider)`
     .slick-prev{
       z-index: 2;
       position: absolute;
-      transform : translate(520px, -320px);
+      transform : translate(520px, -330px);
       opacity: 1;
       color: #afafaf;
     }
@@ -100,7 +117,25 @@ const StyledSlider = styled(Slider)`
       position: absolute;
       opacity: 1;
       color: #afafaf;
-      transform : translate(-50px, -320px);
+      transform : translate(-50px, -330px);
+    }
+  }
+
+  @media screen and (max-width:767px)
+  {
+    .slick-prev{
+      z-index: 2;
+      position: absolute;
+      transform : translate(220px, -340px);
+      opacity: 1;
+      color: #afafaf;
+    }
+    .slick-next{
+      z-index: 2;
+      position: absolute;
+      opacity: 1;
+      color: #afafaf;
+      transform : translate(-40px, -340px);
     }
   }
 `;
@@ -112,12 +147,31 @@ function ProjectContentBox() {
     query: '(min-width: 768px)'
     })
     const isMobile = useMediaQuery({ query: ' (max-width: 767px)' })
+  
+    const [pageState, setState] = useState({currentSlide:1});
+    const state=useProjectState();
+    const dispatch=useProjectDispatch();
+    const {data:project,loading,error}=state.project;
+    const {data:count}=state.count;
 
-  
-    const PCTotalslides = Math.ceil(25/12);
-    const MOBLIETotalslides = Math.ceil(25/6);
-  
-    const [state, setState] = useState({currentSlide:1});
+    //console.log(project);
+    //console.log(count);
+    
+    useEffect(()=>{
+        getProject(dispatch);
+        getCount(dispatch);
+        console.log("프로젝트 데이터 받기");
+        console.log("프로젝트 count 받기");
+    },[dispatch]);
+
+    if(loading) return <div>로딩중..</div>;
+    if(error) return <div>에러가 발생했습니다.</div>;
+    if(!project) return null;
+    if(!count) return null;
+
+    const PCTotalslides = Math.ceil(96/12);
+    const MOBLIETotalslides = Math.ceil(count.count/6);
+    
 
   const settings = {
     dots: false,
@@ -132,7 +186,9 @@ function ProjectContentBox() {
     afterChange: (currentSlide) => {
       if(currentSlide!==0)
       {
-        setState({currentSlide: currentSlide-2})
+        console.log(pageState.currentSlide);
+        setState({currentSlide: Math.ceil(currentSlide/4)+1});
+        console.log(currentSlide);  
       }
       else
         setState({currentSlide:1})
@@ -140,36 +196,43 @@ function ProjectContentBox() {
   };
 
   const settingsforMobile={
-    adaptiveHeight:true,
-    dots: true,
-    infinite: true,
+    dots: false,
+    infinite: false,
     speed: 500,
     rows:3,
     slidesToShow: 2,
     slidesToScroll: 2,
-    arrows: false,
-    autoplay:true,
-    autoplaySpeed:2500,
-    pauseOnHover:true,
     centerMode: false,
+    prevArrow : <FiChevronLeft type='button' class='slick-prev'/>,
+    nextArrow : <FiChevronRight type='button' class='slick-next'/>,
+    afterChange: (currentSlide) => {
+      if(currentSlide!==0)
+      {
+        console.log(pageState.currentSlide);
+        setState({currentSlide: Math.ceil(currentSlide/2)+1});
+        console.log(currentSlide);  
+      }
+      else
+        setState({currentSlide:1})
+    }
   }
    
   
 return (
     <BlockforProjectContent>
-        {isPc&&<Pages>{state.currentSlide}/{PCTotalslides}</Pages>}
-        {isMobile&&<Pages>{state.currentSlide}/{MOBLIETotalslides}</Pages>}
+        {isPc&&<Pages>{pageState.currentSlide}/{PCTotalslides}</Pages>}
+        {isMobile&&<Pages>{pageState.currentSlide}/{MOBLIETotalslides}</Pages>}
         {isPc&&<StyledSlider {...settings}>
-        {[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24].map(item => {
+        {project.map((data)=> {
           return (
-              <ProjectBox key={item.id} />
+              <ProjectBox key={data.id}>{data.imageUrl}</ProjectBox>
           );
         })}
       </StyledSlider>}
       {isMobile&&<StyledSlider {...settingsforMobile}>
-        {[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20].map(item => {
+        {project.map(data => {
           return (
-              <ProjectBox key={item.id} />
+              <ProjectBox key={data.id}>{data.imageUrl}</ProjectBox>
           );
         })}
       </StyledSlider>}
