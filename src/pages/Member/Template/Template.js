@@ -7,8 +7,7 @@ import Student from "../organisms/Student";
 import Graduate from "../organisms/Graduate";
 import IntroContainer from "../../Project/organisms/CommonHeader";
 import Footer from "../../Activity/Footer";
-import GreyContainer from "./GreyContainer";
-import WhiteContainer from "./WhiteContainer";
+import Container from "./CommonContainer";
 
 const TextBox = styled.div`
   font-family: Kanit;
@@ -55,23 +54,23 @@ function Template() {
     <Navbar />
           <IntroContainer main="Member" intro="EC에는 여러분의 성장을 도와줄" intro2="든든한 운영진과 멋진 선배들이 있어요!"/>
 
-        <GreyContainer>
+        <Container>
             <TextBox>Management</TextBox>
             <Management />
-        </GreyContainer>
+        </Container>
 
 
-        <WhiteContainer>
+        <Container color="white">
             <TextBox>Student</TextBox>
             <Student />
-        </WhiteContainer>
+        </Container>
 
 
 
-        <GreyContainer>
+        <Container>
             <TextBox>Graduate</TextBox>
             <Graduate />
-        </GreyContainer>
+        </Container>
 
 
       <Footer />
