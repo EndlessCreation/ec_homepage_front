@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Main from "./pages/Main/Main";
 import Activity from "./pages/Activity/Activity";
-import Project from "./pages/Project/ProjectPage";
+import Project from "./pages/Project/pages/Project";
 import Member from "./pages/Member/Member";
 import { MainProvider } from "./context/MainContext";
 

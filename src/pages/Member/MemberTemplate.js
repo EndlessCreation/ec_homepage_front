@@ -3,8 +3,8 @@ import MemberManagement from "./organisms/MemberManagement";
 import MemberStudent from "./organisms/MemberStudent";
 import MemberGraduate from "./organisms/MemberGraduate";
 import CommonContainer from "./CommonContainer";
-import TextBox from "../Project/molecules/TextBox";
-import IntroContainer from "../Project/organisms/IntroContainer";
+import TextBox from "../Project/molecules/CommonSubTextContents";
+import IntroContainer from "../Project/organisms/CommonHeader";
 
 
 function MemberTemplate() {

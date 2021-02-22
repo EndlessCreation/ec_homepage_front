@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "../Activity/Footer";
+import CommonFooter from "../Activity/CommonFooter";
 import Navbar from "../Main/MainNavbar";
 import MemberTemplate from "./MemberTemplate";
 
@@ -8,7 +8,7 @@ function Member() {
         <>
         <Navbar />
         <MemberTemplate />
-        <Footer />
+        <CommonFooter />
         </>
     )
 }
