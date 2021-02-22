@@ -1,8 +1,6 @@
 import React  from 'react';
 import IntroContainer from "../Project/organisms/CommonHeader";
-
 import CommonContainer from "../Member/CommonContainer";
-
 import Month from "./ActivityMonth";
 import Photo from "./ActivityPhoto";
 
