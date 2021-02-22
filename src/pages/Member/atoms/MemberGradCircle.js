@@ -71,7 +71,7 @@ color: #ffffff;
 img {
     width: 100%;
     height: 100%;
-    border-radius: 68px;
+    border-radius: 54px;
     opacity: 0.64;
   }
 }
@@ -85,6 +85,13 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 48px;
+        opacity: 0.64;
+      }
     
 }
 
@@ -99,10 +106,16 @@ img {
     justify-content: center;
     align-items: center;
       
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 28px;
+        opacity: 0.64;
+      }
 }
 `;
 
-function GradCircle({grad}){
+function MemberGradCircle({grad}){
     return (
     <GradInfoBlock>
         <img src={grad.imageUrl} />
@@ -115,4 +128,4 @@ function GradCircle({grad}){
     </GradInfoBlock>);
 }
 
-export default GradCircle;
+export default MemberGradCircle;

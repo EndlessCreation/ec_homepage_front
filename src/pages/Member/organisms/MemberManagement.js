@@ -1,35 +1,35 @@
 import React from "react";
 import styled from "styled-components";
 import Size from "../../../Size";
-import Manager from "../molecules/Manager";
+import MemberManager from "../molecules/MemberManager";
 import { MemberProvider } from "../../../context/MemberContext";
 
 const FlexBox = styled.div`
   width: 848px;
-  padding-top: 72px;
   padding-left: 22.166666667%;
+  padding-bottom: 130px;
   @media screen and ${Size.device.tablet} {
     width: 608px;
-    padding-top: 56px;
     padding-left: 0%;
     margin: 0 auto;
+    padding-bottom: 100px;
   }
   @media screen and ${Size.device.moblie} {
     width: 304px;
-    padding-top: 54px;
     padding-left: 0%;
     margin: 0 auto;
+    padding-bottom: 80px;
   }
 `;
 
-function Management() {
+function MemberManagement() {
   return (
     <MemberProvider>
     <FlexBox>
-      <Manager />
+      <MemberManager />
     </FlexBox>
     </MemberProvider>
   );
 }
 
-export default Management;
+export default MemberManagement;

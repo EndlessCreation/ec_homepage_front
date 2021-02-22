@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
-import GradCircle from '../atoms/GradCircle';
-import '../atoms/Slide.css';
+import MemberGradCircle from '../atoms/MemberGradCircle';
+import '../atoms/MemberSlide.css';
 import Size from '../../../Size';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -60,7 +60,7 @@ margin: 0 auto;
   width: 304px;
   margin: 0 auto;
   .slick-prev{
-    transform : translate(230px, -258px);
+    transform : translate(230px, -248px);
     z-index: 2;
     position: absolute;
     opacity: 1;
@@ -71,7 +71,7 @@ margin: 0 auto;
     position: absolute;
     opacity: 1;
     color: #c4c4c4;
-    transform : translate(-28px, -258px);
+    transform : translate(-28px, -248px);
   }
 }
 `
@@ -97,7 +97,7 @@ font-size: 24px;
 @media screen and ${Size.device.moblie}
 {
   position: absolute;
-  transform : translate(230px, -94px);
+  transform : translate(230px, -84px);
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
@@ -126,7 +126,7 @@ font-size: 22px;
 @media screen and ${Size.device.moblie}
 {
   position: absolute;
-  transform : translate(249px, -94px);
+  transform : translate(249px, -84px);
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
@@ -155,7 +155,7 @@ font-size: 24px;
 @media screen and ${Size.device.moblie}
 {
   position: absolute;
-  transform : translate(266px, -94px);
+  transform : translate(266px, -84px);
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
@@ -164,7 +164,7 @@ font-size: 24px;
 `
 
 
-function GradSlide(){
+function MemberGradSlide(){
   const isPc = useMediaQuery({
     query: '(min-width: 1280px)'
   })
@@ -256,21 +256,21 @@ function GradSlide(){
         {isPc&&<Slider {...settings}>
           {graduate.map((grad) => {
               return (
-                  <GradCircle grad={grad} />
+                  <MemberGradCircle grad={grad} />
               );}
           )}
         </Slider>}
         {isTablet&&<Slider {...settingsforTablet}>
           {graduate.map((grad) => {
               return (
-                  <GradCircle grad={grad} />
+                  <MemberGradCircle grad={grad} />
               );}
           )}
         </Slider>}
         {isMoblie&&<Slider {...settingsforMoblie}>
           {graduate.map((grad) => {
               return (
-                  <GradCircle grad={grad} />
+                  <MemberGradCircle grad={grad} />
               );}
           )}
         </Slider>}
@@ -278,4 +278,4 @@ function GradSlide(){
   )
 }
 
-export default GradSlide;
+export default MemberGradSlide;
