@@ -1,7 +1,7 @@
 import React  from 'react';
 import IntroContainer from "../Project/organisms/CommonHeader";
 
-import Container from "../Member/Template/CommonContainer";
+import Container from "../Member/CommonContainer";
 
 import Month from "./ActivityMonth";
 import Photo from "./ActivityPhoto";

@@ -2,7 +2,7 @@ import React from "react";
 import IntroContainer from "../organisms/CommonHeader";
 import EcPickContainer from "../organisms/ProjectEcPickContainer";
 import ProjectContainer from "../organisms/ProjectNormalContainer";
-import Container from "../../Member/Template/CommonContainer";
+import Container from "../../Member/CommonContainer";
 
 
 

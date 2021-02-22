@@ -1,5 +1,5 @@
 import React from 'react';
-import Size from "../../../Size";
+import Size from "../../Size";
 import styled from "styled-components";
 
 const Top = styled.div`

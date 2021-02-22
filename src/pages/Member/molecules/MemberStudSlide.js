@@ -1,8 +1,8 @@
 import React, {useState, useEffect } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
-import StuCircle from '../atoms/StuCircle';
-import '../atoms/Slide.css';
+import MemberStuCircle from '../atoms/MemberStuCircle';
+import '../atoms/MemberSlide.css';
 import Size from '../../../Size';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -57,7 +57,7 @@ margin: 0 auto;
   width: 303px;
   margin: 0 auto;
   .slick-prev{
-    transform : translate(230px, -300px);
+    transform : translate(230px, -290px);
     z-index: 2;
     position: absolute;
     opacity: 1;
@@ -68,7 +68,7 @@ margin: 0 auto;
     position: absolute;
     opacity: 1;
     color: #c4c4c4;
-    transform : translate(-28px, -300px);
+    transform : translate(-28px, -290px);
   }
 }
 `
@@ -94,7 +94,7 @@ font-size: 24px;
 @media screen and ${Size.device.moblie}
 {
   position: absolute;
-  transform : translate(230px, -93px);
+  transform : translate(230px, -83px);
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
@@ -123,7 +123,7 @@ font-size: 22px;
 @media screen and ${Size.device.moblie}
 {
   position: absolute;
-  transform : translate(249px, -93px);
+  transform : translate(249px, -83px);
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
@@ -152,7 +152,7 @@ font-size: 24px;
 @media screen and ${Size.device.moblie}
 {
   position: absolute;
-  transform : translate(266px, -93px);
+  transform : translate(266px, -83px);
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
@@ -160,7 +160,7 @@ font-size: 24px;
 }
 `
 
-function StudSlide(){
+function MemberStudSlide(){
   const isPc = useMediaQuery({
     query: '(min-width: 1280px)'
   })
@@ -252,21 +252,21 @@ function StudSlide(){
         {isPc&&<Slider {...settings}>       
           {student.map((stud) => {
               return (
-                  <StuCircle stud={stud} />
+                  <MemberStuCircle stud={stud} />
               );}
           )}
         </Slider>}
         {isTablet&&<Slider {...settingsforTablet}>
           {student.map((stud) => {
               return (
-                  <StuCircle stud={stud} />
+                  <MemberStuCircle stud={stud} />
               );}
           )}
         </Slider>}
         {isMoblie&&<Slider {...settingsforMoblie}>
           {student.map((stud) => {
               return (
-                  <StuCircle stud={stud} />
+                  <MemberStuCircle stud={stud} />
               );}
           )}
         </Slider>}
@@ -274,4 +274,4 @@ function StudSlide(){
   )
 }
 
-export default StudSlide;
+export default MemberStudSlide;
