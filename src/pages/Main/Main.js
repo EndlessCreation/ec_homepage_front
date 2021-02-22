@@ -1,6 +1,4 @@
 import React from "react";
-
-import { MainProvider } from "../../context/MainContext";
 import MainNavbar from "./MainNavbar";
 import MainHeader from "./MainHeader";
 import MainAboutEC from "./MainAboutEC";
@@ -8,7 +6,7 @@ import MainActivity from "./MainActivity";
 import MainProject from "./MainProject";
 import MainMember from "./MainMember";
 import MainContact from "./MainContact";
-import Footer from "../../pages/Activity/Footer";
+import CommonFooter from "../../pages/Activity/CommonFooter";
 
 function Main() {
   return (
@@ -20,7 +18,7 @@ function Main() {
       <MainProject />
       <MainMember />
       <MainContact />
-      <Footer />
+      <CommonFooter />
    </>
   );
 }

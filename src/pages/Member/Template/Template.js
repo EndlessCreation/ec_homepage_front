@@ -5,8 +5,8 @@ import Navbar from "../../Main/MainNavbar";
 import Management from "../organisms/Management";
 import Student from "../organisms/Student";
 import Graduate from "../organisms/Graduate";
+import CommonFooter from "../../Activity/CommonFooter";
 import IntroContainer from "../../Project/organisms/CommonHeader";
-import Footer from "../../Activity/Footer";
 import GreyContainer from "./GreyContainer";
 import WhiteContainer from "./WhiteContainer";
 
@@ -21,7 +21,6 @@ const TextBox = styled.div`
   text-align: left;
   color: #101010;
   height: 48px;
-  padding-left: 40px;
   @media screen and ${Size.device.tablet} {
     font-family: Kanit;
     font-size: 1.75rem;
@@ -74,7 +73,7 @@ function Template() {
         </GreyContainer>
 
 
-      <Footer />
+      <CommonFooter />
     </>
   );
 }
