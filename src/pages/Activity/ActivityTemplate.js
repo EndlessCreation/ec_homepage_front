@@ -1,7 +1,7 @@
 import React  from 'react';
 import IntroContainer from "../Project/organisms/CommonHeader";
 
-import Container from "../Member/CommonContainer";
+import CommonContainer from "../Member/CommonContainer";
 
 import Month from "./ActivityMonth";
 import Photo from "./ActivityPhoto";
@@ -10,13 +10,13 @@ function ActivityTemplate(){
     return(
         <>
         <IntroContainer main="Activity" intro='2021년 Endless Creation 에서는' intro2='아래와 같은 활동을 준비하고 있어요!'></IntroContainer>
-        <Container>
+        <CommonContainer>
             <Month/>
-        </Container>
+        </CommonContainer>
 
-        <Container color="white">
+        <CommonContainer color="white">
             <Photo/>
-        </Container>
+        </CommonContainer>
         </>
 
     );
