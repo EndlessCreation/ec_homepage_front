@@ -9,7 +9,7 @@ import {
   useExecutiveState,
   useExecutiveDispatch,
   getEcpick,
-} from "../../../Context/MainContext";
+} from "../../../context/MainContext";
 
 //동적으로 영역 너비 설정 완료
 const SlideBlock = styled.div`

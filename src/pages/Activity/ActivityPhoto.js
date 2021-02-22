@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { AiOutlineRight,AiOutlineLeft } from "react-icons/ai";
 import { darken, lighten } from 'polished';
 import { usePhotoState, usePhotoDispatch ,getPhotos} from "./ActivityGetApi";
-import TextBlock from "../Project/molecules/TextBox";
+import TextBlock from "../Project/molecules/CommonSubTextContents";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';

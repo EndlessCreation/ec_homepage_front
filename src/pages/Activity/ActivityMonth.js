@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 // import GreyContainer from "../Member/Template/GreyContainer";
-import TextBlock from "../Project/molecules/TextBox";
+import TextBlock from "../Project/molecules/CommonSubTextContents";
 import { useMonthState } from "../../context/MonthProvider";
 
 import AOS from 'aos';

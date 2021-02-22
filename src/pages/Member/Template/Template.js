@@ -5,8 +5,8 @@ import Navbar from "../../Main/MainNavbar";
 import Management from "../organisms/Management";
 import Student from "../organisms/Student";
 import Graduate from "../organisms/Graduate";
-import IntroContainer from "../../Project/organisms/IntroContainer";
 import CommonFooter from "../../Activity/CommonFooter";
+import IntroContainer from "../../Project/organisms/CommonHeader";
 import GreyContainer from "./GreyContainer";
 import WhiteContainer from "./WhiteContainer";
 

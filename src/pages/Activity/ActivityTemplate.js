@@ -1,5 +1,5 @@
 import React  from 'react';
-import IntroContainer from "../Project/organisms/IntroContainer";
+import IntroContainer from "../Project/organisms/CommonHeader";
 
 import GreyContainer from "../Member/Template/GreyContainer";
 import WhiteContainer from "../Member/Template/WhiteContainer";

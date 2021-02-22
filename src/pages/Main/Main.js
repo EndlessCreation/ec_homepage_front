@@ -1,6 +1,4 @@
 import React from "react";
-
-
 import MainNavbar from "./MainNavbar";
 import MainHeader from "./MainHeader";
 import MainAboutEC from "./MainAboutEC";
