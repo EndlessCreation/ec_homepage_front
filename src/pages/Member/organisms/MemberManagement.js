@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Size from "../../../Size";
 import MemberManager from "../molecules/MemberManager";
-import { MemberProvider } from "../../../Context/MemberContext";
+import { MemberProvider } from "../../../context/MemberContext";
 
 const FlexBox = styled.div`
   width: 848px;

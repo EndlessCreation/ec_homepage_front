@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-import { useBtnState } from "../../../Context/MainContext";
+import { useBtnState } from "../../../context/MainContext";
 import Linkitem from "../atoms/LinkItem";
 const MenuShow = styled.ul`
   display: flex;

@@ -7,7 +7,7 @@ import Main from "./pages/Main/Main";
 import Activity from "./pages/Activity/Activity";
 import Project from "./pages/Project/ProjectPage";
 import Member from "./pages/Member/Member";
-import { MainProvider } from "./Context/MainContext";
+import { MainProvider } from "./context/MainContext";
 
 const GlobalStyle = createGlobalStyle`
   body{

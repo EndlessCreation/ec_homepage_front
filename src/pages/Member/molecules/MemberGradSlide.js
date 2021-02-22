@@ -13,7 +13,7 @@ import {
   useGraduateState,
   useGraduateDispatch,
   getGraduate
-} from "../../../Context/MemberContext";
+} from "../../../context/MemberContext";
 
 
 const Block = styled.div`

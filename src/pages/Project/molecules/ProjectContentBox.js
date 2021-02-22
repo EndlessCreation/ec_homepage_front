@@ -7,7 +7,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import {FiChevronLeft} from 'react-icons/fi';
 import {FiChevronRight} from 'react-icons/fi'
-import { getCount, getProject, ProjectProvider, useProjectDispatch, useProjectState } from "../../../Context/ProjectContext";
+import { getCount, getProject, ProjectProvider, useProjectDispatch, useProjectState } from "../../../context/ProjectContext";
 
 const BlockforProjectContent=styled.div`
 @media screen and (min-width:1280px){
