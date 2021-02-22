@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import ForMainText from '../atoms/ForMainText';
-import ForIntroText from '../atoms/ForIntroText';
+import ForMainText from '../atoms/CommonHeaderSmallText';
+import ForIntroText from '../atoms/CommonHeaderBigText';
 
 const Container=styled.div`
 box-sizing: border-box;

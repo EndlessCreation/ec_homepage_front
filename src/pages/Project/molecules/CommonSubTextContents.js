@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Text from '../atoms/ForText';
+import Text from '../atoms/CommonSubText';
 
 const TextBlock=styled.div`
     @media screen and (min-width:1280px)
@@ -17,6 +17,7 @@ const TextBlock=styled.div`
         padding-bottom:54px;
     }
 `;
+
 
 function TextBox({children})
 {

@@ -1,8 +1,8 @@
 import React,{useState} from 'react';
 import styled from 'styled-components';
-import Modal from './Modal';
+import Modal from './ProjectModal';
 
-const BoxforProject=styled.img`
+const BoxforProject=styled.div`
 
 @media screen and (min-width:1280px){
 width: 188px;
@@ -19,7 +19,6 @@ opacity: 1;
 margin-bottom:16px;
 }
 
-
 @media screen and (max-width:767px){
     width: 146px;
 height: 146px;
@@ -29,7 +28,7 @@ margin-bottom:16px;
 }
 `;
 
-function ProjectBox({children}){
+function ProjectBox({project}){
     const [ modalOpen, setModalOpen ] = useState(false);
 
     const openModal = () => {
@@ -38,12 +37,13 @@ function ProjectBox({children}){
     const closeModal = () => {
         setModalOpen(false);
     };
+
     return (
         <>
-        <BoxforProject src={children} onClick={ openModal }></BoxforProject>
-        <Modal open={ modalOpen } close={ closeModal } header="Modal heading">
-            내용내용내용
-        </Modal>
+        <BoxforProject onClick={openModal}>
+            <img src={project.imageUrl} alt={project.id} width="100%" height="100%"/>
+        </BoxforProject>
+        <Modal open={ modalOpen } close={ closeModal } header="NAME"></Modal>
         </>
     );
 }

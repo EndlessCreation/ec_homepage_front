@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import TextBox from '../molecules/TextBox';
+import TextBox from '../molecules/CommonSubTextContents';
 import EcPickContentBox from '../../Main/organisms/ProjectContents';
 
 const Container=styled.div`

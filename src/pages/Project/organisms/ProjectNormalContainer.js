@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import TextBox from '../molecules/TextBox';
-import ProjectContentBox from '../molecules/ProjectContentBox';
+import TextBox from '../molecules/CommonSubTextContents';
+import ProjectContentBox from '../molecules/ProjectNormalContents';
 
 const Container=styled.div`
 
