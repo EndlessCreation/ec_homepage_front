@@ -1,9 +1,9 @@
 import React ,{ useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import WrapperPC from './organisms/WrapperPC';
 import { AiOutlineRight,AiOutlineLeft } from "react-icons/ai";
 import { darken, lighten } from 'polished';
-import { usePhotoState, usePhotoDispatch ,getPhotos} from "./GetApi";
+import { usePhotoState, usePhotoDispatch ,getPhotos} from "./ActivityGetApi";
+import TextBlock from "../Project/molecules/CommonSubTextContents";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -13,6 +13,18 @@ AOS.init();
 const ShowContainer = styled.div`  
     width :872px;
     overflow: hidden; // 선을 넘어간 이미지들은 보이지 않도록 
+
+    @media screen and (max-width: 1279px){
+        width :624px;
+        overflow: hidden; // 선을 넘어간 이미지들은 보이지 않도록 
+    
+    }
+
+    @media screen and (max-width: 767px){
+        width :304px;
+        overflow: hidden; // 선을 넘어간 이미지들은 보이지 않도록 
+    
+    }
 
  `;
  
@@ -36,7 +48,18 @@ const PhotoBox = styled.div`
         justify-content: flex-start;
 
       }
-
+    @media screen and (max-width: 1279px){
+        .photo {
+            list-style: none;
+            flex: 0 0 50%;
+          }
+    }
+    @media screen and (max-width: 767px){
+        .photo {
+            list-style: none;
+            flex: 0 0 50%;
+          }
+    }
 `;
 
 // 이미지 하나하나의 스타일
@@ -45,7 +68,25 @@ const PhotoOne = styled.div`
         margin-right:28px;
         margin-bottom:28px;
       }
+    @media screen and (max-width: 1279px){
+        .photo{
+            margin-bottom:16px;
+            margin-right:16px;
+            width:296px; 
+            height:222px;
 
+          }
+    
+    }
+    @media screen and (max-width: 767px){
+        .photo{
+            margin-right:0px;
+            margin-bottom:16px;
+            width:304px; 
+            height:228px;
+          }
+    
+    }
 `;
 
 
@@ -65,6 +106,12 @@ const Button = styled.button`
         color: ${darken(0.1, 'black')};
     }
 
+    @media screen and (max-width: 1279px){
+        font-size:18px;
+    }
+    @media screen and (max-width: 767px){
+        font-size:18px;
+    }
 
 `;
 
@@ -96,6 +143,65 @@ const Page = styled.div`
         bottom : 6px;
     }
 
+    @media screen and (max-width: 1279px){
+        float:right;
+        width :120px;
+        height : 0px;
+        color : #A9A9A9;
+        font-size:18px;
+        position : relative;
+
+        .page{
+            margin-top : 0px;
+        }
+        .left{
+            position :absolute;
+            top :-89px;
+        }
+        .right{
+            position :absolute;
+            left : 60px;
+            top : -88.5px;
+        }
+        span{
+            position :absolute;
+            left: 50px;
+            top : -90px;
+        }
+    }
+    @media screen and (max-width: 767px){
+        float:right;
+        width :120px;
+        height : 0px;
+        color : #A9A9A9;
+        font-size:18px;
+        position : relative;
+        .page{
+            margin-top : 0px;
+        }
+        .left{
+            position :absolute;
+            top :-80px;
+
+        }
+        .right{
+            position :absolute;
+            left : 60px;
+            top : -79.5px;
+
+        }
+        span{
+            position :absolute;
+            left: 50px;
+            top : -80px;
+
+        }
+    }
+`;
+
+
+const TextWrapper= styled.div`
+    width : 100px;
 `;
 
 
@@ -158,15 +264,12 @@ export default function PhotoList(){
 
     return (
         <>
-    
-        <WrapperPC background={'white'} title='Photo' height ='1031px'>
+        <TextBlock>Photo</TextBlock>
         <Page>
             <div class='page'>
             <Button className='left' onClick={prevSlide}><AiOutlineLeft/>&ensp;{currentSlide+1}</Button>
             <span>/</span>
-            
             <Button className='right' onClick={nextSlide}>{TOTAL_SLIDES+1}&ensp;<AiOutlineRight/></Button>
-     
             </div>
         </Page>
         
@@ -192,9 +295,7 @@ export default function PhotoList(){
         </PhotoContainer>
         </div>
         </ShowContainer>
-      
-        </WrapperPC>
-
         </>
+
     );
     }

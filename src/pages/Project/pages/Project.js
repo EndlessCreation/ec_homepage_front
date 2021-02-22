@@ -4,7 +4,7 @@ import EntireBox from "../templates/ProjectTemplate";
 import {MainProvider} from "../../../context/MainContext"
 import MainNavbar from "../../Main/MainNavbar";
 import { ProjectProvider } from "../../../context/ProjectContext";
-import Footer from "../../Activity/Footer";
+import CommonFooter from "../../Activity/CommonFooter";
 
 function ProjectPage() {
   return (
@@ -14,7 +14,7 @@ function ProjectPage() {
       <MainNavbar />
     </MainProvider>
         <EntireBox />
-      <Footer />
+      <CommonFooter />
       </ProjectProvider>
     </>
   );

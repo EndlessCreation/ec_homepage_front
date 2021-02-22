@@ -1,7 +1,7 @@
 import { useMediaQuery } from 'react-responsive'
-import FooterPC from './organisms/FooterPC';
-import FooterMobile from './organisms/FooterMobile';
-import FooterTablet from './organisms/FooterTablet';
+import FooterPC from './organisms/CommonFooterPC';
+import FooterMobile from './organisms/CommonFooterMobile';
+import FooterTablet from './organisms/CommonFooterTablet';
 
 const Desktop = ({ children }) => {
     const isDesktop = useMediaQuery({ minWidth: 1280 })
@@ -17,14 +17,14 @@ const Desktop = ({ children }) => {
   }
   
 
-  function Footer() {
+  function CommonFooter() {
     return (
       <>
   
       <Desktop>
         <FooterPC></FooterPC>
       </Desktop>
-    
+  
       <Tablet>
         <FooterTablet></FooterTablet>
       </Tablet>
@@ -37,5 +37,5 @@ const Desktop = ({ children }) => {
     );
   }
   
-  export default Footer;
+  export default CommonFooter;
 
