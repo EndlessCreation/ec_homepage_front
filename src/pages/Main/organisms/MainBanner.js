@@ -1,8 +1,5 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import MainBannerText from "../atoms/MainBannerText";
-import MainBannerText2 from "../atoms/MainBannerText2";
-import MainBannerText3 from "../atoms/MainBannerText3";
 
 const BannerBlock = styled.div`
   width: 100%;
@@ -22,6 +19,51 @@ const BannerBlock = styled.div`
     height: 494px;
     padding-left: 0;
     padding-top: 57.18%;
+  }
+`;
+
+const MainBannerText = styled.div`
+  font-family: NanumSqaureExtraBold;
+  font-size: 52px;
+  line-height: 78px;
+  white-space: nowrap;
+  @media screen and (max-width: 1279px) {
+    font-size: 48px;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 32px;
+  }
+`;
+const MainBannerText2 = styled.div`
+  font-family: Kanit;
+  font-size: 64px;
+  line-height: 78px;
+  white-space: nowrap;
+  @media screen and (max-width: 1279px) {
+    line-height: 68px;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 50px;
+    line-height: 58px;
+    white-space: pre-wrap;
+  }
+`;
+
+const MainBannerText3 = styled.div`
+  font-family: NanumSqaureBold;
+  font-size: 28px;
+  line-height: 48px;
+  white-space: nowrap;
+  margin-top: 32px;
+  @media screen and (max-width: 1279px) {
+    font-size: 24px;
+    line-height: 42px;
+    margin-top: 28px;
+  }
+  @media screen and (max-width: 767px) {
+    font-size: 18px;
+    line-height: 28px;
+    margin-top: 21px;
   }
 `;
 

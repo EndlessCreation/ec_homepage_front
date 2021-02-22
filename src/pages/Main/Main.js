@@ -1,27 +1,17 @@
 import React from "react";
 
-import { MainProvider } from "../../Context/MainContext";
-import MainNavbar from "./MainNavbar";
-import MainHeader from "./MainHeader";
-import MainAboutEC from "./MainAboutEC";
-import MainActivity from "./MainActivity";
-import MainProject from "./MainProject";
-import MainMember from "./MainMember";
-import MainContact from "./MainContact";
+import CommonNavbar from "./CommonNavbar";
+import MainTemplate from "./MainTemplate";
 import Footer from "../../pages/Activity/Footer";
 
 function Main() {
+  console.log("Main 페이지 랜더링 됩니다.");
   return (
-   <>
-      <MainNavbar />
-      <MainHeader />
-      <MainAboutEC />
-      <MainActivity />
-      <MainProject />
-      <MainMember />
-      <MainContact />
+    <>
+      <CommonNavbar />
+      <MainTemplate />
       <Footer />
-   </>
+    </>
   );
 }
 

@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import AboutEcGrowth from "../molecules/AboutEcGrowth";
-import AboutEcSharing from "../molecules/AboutEcSharing";
-import AboutEcCooperation from "../molecules/AboutEcCooperation";
+import AboutEcGrowth from "../molecules/MainAboutEcGrowth";
+import AboutEcSharing from "../molecules/MainAboutEcSharing";
+import AboutEcCooperation from "../molecules/MainAboutEcCooperation";
 const ContentBlock = styled.div`
   width: 848px;
   height: 480px;

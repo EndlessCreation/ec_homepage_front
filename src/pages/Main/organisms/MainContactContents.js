@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import ContatcMainText from "../atoms/ContactMainText";
-import ContactItem from "../atoms/ContactItem";
+import ContatcMainText from "../atoms/MainContactMainText";
+import ContactItem from "../atoms/MainContactItem";
 
 const ContentsBlock = styled.div`
   width: auto;

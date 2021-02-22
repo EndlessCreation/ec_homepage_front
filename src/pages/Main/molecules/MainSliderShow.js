@@ -2,14 +2,14 @@ import React, { useEffect, useState, useRef } from "react";
 import styled, { css } from "styled-components";
 import { useMediaQuery } from "react-responsive";
 
-import SliderBoxs from "./SliderBoxs";
-import SliderBox from "../atoms/SliderBox";
-import SliderButton from "../atoms/SliderButton";
+import SliderBoxs from "./MainSliderBoxs";
+import SliderBox from "../atoms/MainSliderBox";
+import SliderButton from "../atoms/MainSliderButton";
 import {
   useExecutiveState,
   useExecutiveDispatch,
   getEcpick,
-} from "../../../Context/MainContext";
+} from "../../../context/MainContext";
 
 //동적으로 영역 너비 설정 완료
 const SlideBlock = styled.div`
@@ -51,7 +51,6 @@ function division(arr) {
 }
 
 function SliderShow() {
-  console.log("슬라이드시작됨");
   const [currentSlide, setCurrentSlide] = useState(0); //현재 슬라이더 상태
   const slideRef = useRef(null); //슬라이더 위치 확인
 
@@ -73,7 +72,6 @@ function SliderShow() {
   useEffect(() => {
     if (!ecpick) {
       getEcpick(dispatch);
-      
     } else {
       slideRef.current.style.transition = "all 0.7s ease-in-out";
       slideRef.current.style.transform = `translateX(-${MoveSlide}%)`; // 백틱을 사용하여 슬라이드로 이동하는 애니메이션을 만듭니다.
@@ -95,7 +93,6 @@ function SliderShow() {
   // 버튼 클릭시 CurrentSlide 값을 변경. -> useEffect에서 변화를 감지해서 translate 하도록 함.
   function select(id) {
     setCurrentSlide(id);
-    console.log(currentSlide);
   }
   //배열 버튼 동적 생성 완료
 
@@ -110,7 +107,7 @@ function SliderShow() {
         {NewArrary.map((data, index) => (
           <SliderBoxs key={index}>
             {data.map((data) => (
-              <SliderBox></SliderBox>
+              <SliderBox id={data.id}></SliderBox>
             ))}
           </SliderBoxs>
         ))}

@@ -2,14 +2,15 @@ import React from "react";
 import Size from "../../../Size";
 import styled from "styled-components";
 
-const TopWhite = styled.div`
+const TopGrey = styled.div`
   width: 100%;
-  margin: 0;
-  background: #ffffff 0% 0% no-repeat padding-box;
+  margin: 0 auto;
+  background: var(--unnamed-color-f2f2f2) 0% 0% no-repeat padding-box;
+  background: #f2f2f2 0% 0% no-repeat padding-box;
   opacity: 1;
 `;
 
-const WhiteBox = styled.div`
+const GreyBox = styled.div`
   max-width: 1280px;
   box-sizing: border-box;
   margin: 0 auto;
@@ -30,12 +31,12 @@ const WhiteBox = styled.div`
   }
 `;
 
-function WhiteContainer({ children }) {
+function GreyContainer({ children }) {
   return (
-    <TopWhite>
-      <WhiteBox>{children}</WhiteBox>
-    </TopWhite>
+    <TopGrey>
+      <GreyBox>{children}</GreyBox>
+    </TopGrey>
   );
 }
 
-export default WhiteContainer;
+export default GreyContainer;

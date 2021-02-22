@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
-import { useBtnState } from "../../../Context/MainContext";
+import { useBtnState, useBtnOffToggle } from "../../../context/MainContext";
 
 const LinkList = styled.li`
   list-style: none;
@@ -22,8 +22,10 @@ const LinkList = styled.li`
 `;
 function LinkItem({ children, to }) {
   const active = useBtnState();
+  const OffToggle = useBtnOffToggle();
+  console.log(active);
   return (
-    <LinkList active={active}>
+    <LinkList active={active} onClick={OffToggle}>
       <Link to={to} className="link">
         {children}
       </Link>

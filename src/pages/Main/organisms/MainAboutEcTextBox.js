@@ -17,6 +17,7 @@ const TextBlock = styled.div`
     flex-direction: column;
   }
 `;
+
 function AboutEcTextBox() {
   return (
     <TextBlock>

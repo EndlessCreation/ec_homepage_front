@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import WrapperMobile from "./organisms/WrapperMobile";
-import { useMonthState } from "../../Context/MonthProvider";
+import { useMonthState } from "../../context/MonthProvider";
 
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 AOS.init();
 
 const Back = styled.div`
@@ -22,8 +22,8 @@ const MonthGridMobile = styled.div`
     display: grid;
     grid-template-rows: 27fr 20fr 68fr;
     grid-template-columns: 7rem;
-    padding-right:35px;
-    padding-bottom: 34px; 
+    padding-right: 35px;
+    padding-bottom: 34px;
   }
 
   .month {
@@ -84,21 +84,21 @@ function Month({ month }) {
 }
 
 function MonthListMobile() {
-  const months = useMonthState();   // 상태 값 불러오기~
+  const months = useMonthState(); // 상태 값 불러오기~
 
   return (
     <Back>
-    <WrapperMobile background={"#f2f2f2"} title="Monthly">
-    <div data-aos="fade-up"  data-aos-duration="2000" >
-      <FlexBox>
-        <div class="box-container">
-          {months.map((month) => (
-            <Month month={month} class="month-elem" />
-          ))}
+      <WrapperMobile background={"#f2f2f2"} title="Monthly">
+        <div data-aos="fade-up" data-aos-duration="2000">
+          <FlexBox>
+            <div class="box-container">
+              {months.map((month) => (
+                <Month month={month} class="month-elem" />
+              ))}
+            </div>
+          </FlexBox>
         </div>
-      </FlexBox>
-      </div>
-    </WrapperMobile>
+      </WrapperMobile>
     </Back>
   );
 }

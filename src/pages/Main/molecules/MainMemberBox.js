@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import MemberItem from "../atoms/MemberItem";
+import MemberItem from "../atoms/MainMemberItem";
 
 import {
   useExecutiveState,
   useExecutiveDispatch,
   getExecutive,
-} from "../../../Context/MainContext";
+} from "../../../context/MainContext";
 
 const MemberBlock = styled.div`
   max-width: 880px;
@@ -43,7 +43,6 @@ function MainMemberBox() {
   if (error) return <div>에러가 발생했습니다</div>;
   if (!executive) return null;
 
-  console.log(executive);
   return (
     <MemberBlock>
       {executive.map((Member) => (

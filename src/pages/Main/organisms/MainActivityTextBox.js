@@ -11,7 +11,6 @@ const TextBlock = styled.div`
   display: flex;
   @media screen and (max-width: 1279px) {
     grid-column: 1 / -1;
-
     width: 100%;
     height: 205px;
   }

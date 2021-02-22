@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import WrapperPC from "./organisms/WrapperPC";
 
-import { useMonthState } from "../../Context/MonthProvider";
+import { useMonthState } from "../../context/MonthProvider";
 
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 AOS.init();
 
 const Back = styled.div`
@@ -95,22 +95,19 @@ function MonthList() {
   const months = useMonthState(); // 상태 값 불러오기~
 
   return (
-
-    <Back>      
+    <Back>
       <WrapperPC background={"#f2f2f2"} title="Monthly">
-      <div data-aos="fade-up"  data-aos-duration="2000" >
-        <FlexBox>
-          <div class="box-container">
-            {months.map((month) => (
-              <Month month={month} class="month-elem" />
-            ))}
-          </div>
-        </FlexBox>
+        <div data-aos="fade-up" data-aos-duration="2000">
+          <FlexBox>
+            <div class="box-container">
+              {months.map((month) => (
+                <Month month={month} class="month-elem" />
+              ))}
+            </div>
+          </FlexBox>
         </div>
       </WrapperPC>
-      
     </Back>
-    
   );
 }
 

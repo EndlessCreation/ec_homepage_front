@@ -17,6 +17,7 @@ const VideoBlock = styled.div`
     margin-right: 0;
   }
   @media screen and (max-width: 767px) {
+    width: 100%;
     height: 171px;
   }
 `;

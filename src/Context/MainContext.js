@@ -92,6 +92,7 @@ const ExecutiveDispatchContext = createContext(null);
 
 const BtnState = createContext();
 const BtnStateToggle = createContext();
+const BtnStateOff = createContext();
 
 export function MainProvider({ children }) {
   const [state, dispatch] = useReducer(mainReducer, initialState);
@@ -99,14 +100,20 @@ export function MainProvider({ children }) {
   const onToggle = () => {
     setActive(!Active);
   };
+  const offActive = () => {
+    setActive(false);
+    console.log(Active);
+  };
   return (
     <BtnState.Provider value={Active}>
       <BtnStateToggle.Provider value={onToggle}>
-        <ExecutiveStateContext.Provider value={state}>
-          <ExecutiveDispatchContext.Provider value={dispatch}>
-            {children}
-          </ExecutiveDispatchContext.Provider>
-        </ExecutiveStateContext.Provider>
+        <BtnStateOff.Provider value={offActive}>
+          <ExecutiveStateContext.Provider value={state}>
+            <ExecutiveDispatchContext.Provider value={dispatch}>
+              {children}
+            </ExecutiveDispatchContext.Provider>
+          </ExecutiveStateContext.Provider>
+        </BtnStateOff.Provider>
       </BtnStateToggle.Provider>
     </BtnState.Provider>
   );
@@ -121,7 +128,10 @@ export function useBtnToggle() {
   const context = useContext(BtnStateToggle);
   return context;
 }
-
+export function useBtnOffToggle() {
+  const context = useContext(BtnStateOff);
+  return context;
+}
 export function useExecutiveState() {
   const state = useContext(ExecutiveStateContext);
   if (!state) {

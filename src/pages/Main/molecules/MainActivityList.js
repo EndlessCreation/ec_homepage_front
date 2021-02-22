@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import ActivityTitle from "../atoms/ActivityTitle";
-import List from "../atoms/List";
+import ActivityTitle from "../atoms/MainActivityTitle";
+import List from "../atoms/MainList";
 
 const Block = styled.div`
   @media screen and (max-width: 1279px) {

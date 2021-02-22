@@ -5,7 +5,7 @@ const SlideBlock = styled.div`
   width: 49.4%;
   height: 100%;
   background-color: #fff;
-  margin-left: 10px;
+  margin-left: 16px;
 
   @media screen and (max-width: 1279px) {
     width: 95%;
@@ -18,8 +18,8 @@ const SlideBlock = styled.div`
     width: 100%;
   }
 `;
-function SliderBox({ key }) {
-  return <SlideBlock id={key}></SlideBlock>;
+function SliderBox({ id }) {
+  return <SlideBlock id={id}></SlideBlock>;
 }
 
 export default SliderBox;

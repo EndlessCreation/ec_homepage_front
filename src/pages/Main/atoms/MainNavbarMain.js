@@ -2,8 +2,8 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { useMediaQuery } from "react-responsive";
 
-import LinkItem from "./LinkItem";
-import { useBtnState } from "../../../Context/MainContext";
+import LinkItem from "./MainLinkItem";
+import { useBtnState } from "../../../context/MainContext";
 /*네이게이션 바 EC 텍스트*/
 const Text = styled.span`
   display: inline-block;

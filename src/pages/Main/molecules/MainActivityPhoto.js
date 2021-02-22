@@ -1,17 +1,16 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 
-import PhotoBox from "../atoms/PhotoBox";
+import PhotoBox from "../atoms/MainPhotoBox";
 import {
   useExecutiveState,
   useExecutiveDispatch,
   getMainactivty,
-} from "../../../Context/MainContext";
+} from "../../../context/MainContext";
+
 const PhotoBlock = styled.div`
-  position: sticky;
-  top: 120px;
   width: 498px;
-  height: 100%;
+  height: 683px;
   grid-column: 2 / 3;
   grid-row: 1 / -1;
   overflow: hidden;
@@ -21,26 +20,32 @@ const PhotoBlock = styled.div`
     width: 520px;
     height: 100%;
     overflow-y: scroll;
-
     div:nth-child(1) {
       margin-top: 220px;
     }
   }
-
   @media screen and (max-width: 1279px) {
     width: 400px;
     grid-row: 2/ 3;
-    div:nth-child(1) {
-      margin-top: 0px;
-    } 
+    height: 739px;
     .Photo {
-      width: 423px;
+      width: 432px;
+      div:nth-child(1) {
+        margin-top: 0px;
+      }
     }
   }
   @media screen and (max-width: 767px) {
     width: 182px;
+    grid-row: 2/ 3;
+
+    height: 634px;
     .Photo {
       width: 204px;
+
+      div:nth-child(1) {
+        margin-top: 0px;
+      }
     }
   }
 `;

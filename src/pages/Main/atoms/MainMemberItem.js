@@ -64,7 +64,6 @@ const ItemBox = styled.div`
 `;
 
 function MemberItem({ HashTag, name, imageUrl, position }) {
-  console.log(imageUrl);
   return (
     <ItemBox>
       <img src={imageUrl} alt={"임원진사진"} />

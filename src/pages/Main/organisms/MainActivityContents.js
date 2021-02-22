@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import ActivityList from "../molecules/ActivityList";
+import ActivityList from "../molecules/MainActivityList";
 const ContentsBlock = styled.div`
   width: 100%;
   height: 463px;

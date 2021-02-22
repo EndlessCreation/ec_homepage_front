@@ -1,10 +1,10 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-import { useBtnState } from "../../Context/MainContext";
-import NavbarMain from "./atoms/NavbarMain";
-import NavbarMenu from "./molecules/NavbarMenu";
-import MenuButton from "./atoms/MenuButton";
+import { useBtnState } from "../../context/MainContext";
+import NavbarMain from "./atoms/MainNavbarMain";
+import NavbarMenu from "./molecules/MainNavbarMenu";
+import MenuButton from "./atoms/MainMenuButton";
 
 /* 상단 고정 네이게이션 바 Template*/
 const NavbarTemplate = styled.div`

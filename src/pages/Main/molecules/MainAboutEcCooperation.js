@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import AboutEcImg from "../atoms/AboutEcImg";
-import AboutEcMainText from "../atoms/AboutEcMainText";
-import AboutEcSubText from "../atoms/AboutEcSubText";
+import AboutEcImg from "../atoms/MainAboutEcImg";
+import AboutEcMainText from "../atoms/MainAboutEcMainText";
+import AboutEcSubText from "../atoms/MainAboutEcSubTexts";
 const ContentBlock = styled.div`
   width: 229px;
   height: auto;
