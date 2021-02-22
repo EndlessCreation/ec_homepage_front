@@ -3,10 +3,10 @@ import { createGlobalStyle } from "styled-components";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Main from "./pages/Main/Main";
-import Activity from "./pages/Activity/Activity";
-import Project from "./pages/Project/pages/Project";
-import Member from "./pages/Member/Member";
+import Main from "./components/pages/Main";
+import Activity from "./components/pages/Activity";
+import Project from "./components/pages/Project";
+import Member from "./components/pages/Member";
 import { MainProvider } from "./context/MainContext";
 
 const GlobalStyle = createGlobalStyle`
@@ -20,11 +20,11 @@ function App() {
   return (
     <Router>
       <MainProvider>
-      <GlobalStyle />
-      <Route path="/" component={Main} exact={true} />
-      <Route path="/Activity" component={Activity} />
-      <Route path="/Project" component={Project} />
-      <Route path="/Member" component={Member} />
+        <GlobalStyle />
+        <Route path="/" component={Main} exact={true} />
+        <Route path="/Activity" component={Activity} />
+        <Route path="/Project" component={Project} />
+        <Route path="/Member" component={Member} />
       </MainProvider>
     </Router>
   );
