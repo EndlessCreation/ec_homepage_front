@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import WrapperMobile from "./organisms/WrapperMobile";
-import { useMonthState } from "../../Context/MonthProvider";
+import { useMonthState } from "../../context/MonthProvider";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';

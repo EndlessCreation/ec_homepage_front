@@ -7,10 +7,10 @@ const initialState = {
     data: null,
     error: null,
   },
-  count:{
-      loading:false,
-      data:null,
-      error:null,
+  projectData:{
+    loading: false,
+    data: null,
+    error: null,
   }
 };
 const loadingState = {
@@ -30,6 +30,7 @@ const error = (error) => ({
 });
 
 function ProjectReducer(state, action) {
+  
   switch (action.type) {
     case "GET_PROJECT":
       return {
@@ -60,27 +61,40 @@ function ProjectReducer(state, action) {
         return {
             ...state,
             count:error(action.error),
-        }
+        };
+    case "GET_PROJECTDATA":
+      return{
+        ...state,
+        projectData: loadingState,
+      };
+    case "GET_PROJECTDATA_SUCCESS":
+      return {
+        ...state,
+        projectData:success(action.data),
+      };
+    case "GET_PROJECTDATA_ERROR":
+      return{
+        ...state,
+        projectData:error(action.error),
+      }
     default:
       throw new Error(`Unhanded action type : ${action.type}`);
   }
 }
 
+
 const ProjectStateContext=createContext();
 const ProjectDispatchContext=createContext();
 
-const CountState=createContext();
 
 export function ProjectProvider({ children }) {
   const [state, dispatch] = useReducer(ProjectReducer, initialState);
   return (
-    <CountState.Provider value={state}>
         <ProjectStateContext.Provider value={state}>
             <ProjectDispatchContext.Provider value={dispatch}>
             {children}
             </ProjectDispatchContext.Provider>
     </ProjectStateContext.Provider>
-    </CountState.Provider>
   );
 }
 
@@ -100,11 +114,6 @@ export function useProjectDispatch() {
   return dispatch;
 }
 
-export function useCountState(){
-    const context=useContext(CountState);
-    return context;
-}
-
 export async function getProject(dispatch) {
   dispatch({ type: "GET_PROJECT" });
   try {
@@ -117,14 +126,14 @@ export async function getProject(dispatch) {
   }
 }
 
-export async function getCount(dispatch){
-    dispatch({type:"GET_COUNT"});
-    try{
-        const response=await axios.get(
-         "http://13.124.234.100:8080/projects/normal/count"
-        );
-        dispatch({type:"GET_COUNT_SUCCESS",data:response.data});
-    }catch(e){
-        dispatch({type:"GET_PROJECT_ERROR",error:e});
-    }
+export async function getProjectData(dispatch) {
+  dispatch({ type: "GET_PROJECTDATA" });
+  try {
+    const response = await axios.get(
+      "http://13.124.234.100:8080/projects/100"
+    );
+    dispatch({ type: "GET_PROJECTDATA_SUCCESS", data: response.data });
+  } catch (e) {
+    dispatch({ type: "GET_PROJECTDATA_ERROR", error: e });
+  }
 }

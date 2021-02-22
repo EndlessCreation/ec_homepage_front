@@ -6,7 +6,7 @@ import {
   useExecutiveState,
   useExecutiveDispatch,
   getMainactivty,
-} from "../../../Context/MainContext";
+} from "../../../context/MainContext";
 const PhotoBlock = styled.div`
   position: sticky;
   top: 120px;

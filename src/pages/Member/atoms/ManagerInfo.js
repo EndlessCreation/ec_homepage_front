@@ -5,7 +5,7 @@ import {
   useExecutiveState,
   useExecutiveDispatch,
   getExecutive
-} from "../../../Context/MemberContext";
+} from "../../../context/MemberContext";
 
 
 const Img = styled.img`
