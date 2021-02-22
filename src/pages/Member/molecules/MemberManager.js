@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ManagerInfo from '../atoms/ManagerInfo';
+import MemberManagerInfo from '../atoms/MemberManagerInfo';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init();
@@ -12,15 +12,15 @@ flex-wrap: wrap;
 justify-content: space-between;
 `
 
-function Manager(){
+function MemberManager(){
     return(
         <div data-aos="fade-up"
      data-aos-duration="3000">
         <Box>
-            <ManagerInfo />
+            <MemberManagerInfo />
         </Box>
         </div>
     )
 }
 
-export default Manager; 
+export default MemberManager; 

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Size from '../../../Size';
-import GradSlide from '../molecules/GradSlide';
+import MemberGradSlide from '../molecules/MemberGradSlide';
 import {MemberProvider} from '../../../context/MemberContext';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -10,15 +10,14 @@ AOS.init();
 
 const GradBox = styled.div`
 width: 848px;
-
-padding-top: 72px;
+padding-bottom: 130px;
 padding-left: 22.166666667%;
 
 
 @media screen and ${Size.device.tablet}
 {
     width: 608px;
-    padding-top: 56px;
+    padding-bottom: 120px;
     padding-left: 0%;
     
     margin: 0 auto;
@@ -29,23 +28,22 @@ padding-left: 22.166666667%;
 {
     width: 304px;
 
-    padding-top: 54px;
     padding-left: 0%;
-    
+    padding-bottom: 101px;
     margin: 0 auto;
     
 }
 
 `
 
-function Graduate(){
+function MemberGraduate(){
     return(
         <MemberProvider>
         <GradBox>
-            <GradSlide/>
+            <MemberGradSlide/>
         </GradBox>
         </MemberProvider>
     )
 }
 
-export default Graduate;
+export default MemberGraduate;
