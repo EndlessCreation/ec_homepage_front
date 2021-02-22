@@ -6,8 +6,8 @@ import Management from "../organisms/Management";
 import Student from "../organisms/Student";
 import Graduate from "../organisms/Graduate";
 import IntroContainer from "../../Project/organisms/IntroContainer";
-import Footer from "../../Activity/Footer";
-import GrayContainer from "./GrayContainer";
+import CommonFooter from "../../Activity/CommonFooter";
+import GreyContainer from "./GreyContainer";
 import WhiteContainer from "./WhiteContainer";
 
 const TextBox = styled.div`
@@ -21,7 +21,6 @@ const TextBox = styled.div`
   text-align: left;
   color: #101010;
   height: 48px;
-  padding-left: 40px;
   @media screen and ${Size.device.tablet} {
     font-family: Kanit;
     font-size: 1.75rem;
@@ -55,10 +54,10 @@ function Template() {
     <Navbar />
           <IntroContainer main="Member" intro="EC에는 여러분의 성장을 도와줄" intro2="든든한 운영진과 멋진 선배들이 있어요!"/>
 
-        <GrayContainer>
+        <GreyContainer>
             <TextBox>Management</TextBox>
             <Management />
-        </GrayContainer>
+        </GreyContainer>
 
 
         <WhiteContainer>
@@ -68,13 +67,13 @@ function Template() {
 
 
 
-        <GrayContainer>
+        <GreyContainer>
             <TextBox>Graduate</TextBox>
             <Graduate />
-        </GrayContainer>
+        </GreyContainer>
 
 
-      <Footer />
+      <CommonFooter />
     </>
   );
 }
