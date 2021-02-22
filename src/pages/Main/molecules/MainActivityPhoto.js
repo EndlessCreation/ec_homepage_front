@@ -7,7 +7,6 @@ import {
   useExecutiveDispatch,
   getMainactivty,
 } from "../../../context/MainContext";
-
 const PhotoBlock = styled.div`
   width: 498px;
   height: 683px;

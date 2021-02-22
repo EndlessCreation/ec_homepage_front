@@ -3,8 +3,7 @@ import styled from "styled-components";
 
 import MainHeader from "./MainHeader";
 //common Template
-import GreyContainer from "../Member/Template/GreyContainer";
-import WhiteContainer from "../../pages/Member/Template/WhiteContainer";
+import CommonContainer from "../../pages/Member/CommonContainer";
 
 //About Ec Import
 import AboutEcTextBox from "./organisms/MainAboutEcTextBox";
@@ -45,30 +44,30 @@ function MainTemplate() {
   return (
     <>
       <MainHeader />
-      <GreyContainer>
+      <CommonContainer>
         <AboutEcTextBox />
         <AboutEcVideo />
         <AboutEcContents />
-      </GreyContainer>
-      <WhiteContainer>
+      </CommonContainer>
+      <CommonContainer color="white">
         <GridBlock>
           <ActivityTextBox />
           <ActivityContents />
           <ActivityPhoto />
         </GridBlock>
-      </WhiteContainer>
-      <GreyContainer>
+      </CommonContainer>
+      <CommonContainer>
         <ProjectTextBox />
         <ProjectContents main />
-      </GreyContainer>
-      <WhiteContainer>
+      </CommonContainer>
+      <CommonContainer color="white">
         <MemberTextBox />
         <MemberContents />
-      </WhiteContainer>
-      <WhiteContainer>
+      </CommonContainer>
+      <CommonContainer>
         <ContactTextBox />
         <ContactContents />
-      </WhiteContainer>
+      </CommonContainer>
     </>
   );
 }
