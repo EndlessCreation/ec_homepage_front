@@ -6,11 +6,11 @@ import PhotoTablet from './PhotoTablet';
 import PhotoMobile from './PhotoMobile';
 
 import MainNavbar from "../Main/MainNavbar";
-import IntroContainer from "../Project/organisms/IntroContainer";
+import IntroContainer from "../Project/organisms/CommonHeader";
 import Footer from './Footer';
 
-import {MonthProvider} from '../../Context/MonthProvider';
-import { MainProvider } from "../../Context/MainContext";
+import {MonthProvider} from '../../context/MonthProvider';
+import { MainProvider } from "../../context/MainContext";
 import {PhotoProvider} from './GetApi';
 
 import { useMediaQuery } from 'react-responsive'

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import WrapperPC from "./organisms/WrapperPC";
 
-import { useMonthState } from "../../Context/MonthProvider";
+import { useMonthState } from "../../context/MonthProvider";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';

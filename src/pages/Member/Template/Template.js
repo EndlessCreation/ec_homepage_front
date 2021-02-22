@@ -5,9 +5,9 @@ import Navbar from "../../Main/MainNavbar";
 import Management from "../organisms/Management";
 import Student from "../organisms/Student";
 import Graduate from "../organisms/Graduate";
-import IntroContainer from "../../Project/organisms/IntroContainer";
+import IntroContainer from "../../Project/organisms/CommonHeader";
 import Footer from "../../Activity/Footer";
-import GrayContainer from "./GrayContainer";
+import GreyContainer from "./GreyContainer";
 import WhiteContainer from "./WhiteContainer";
 
 const TextBox = styled.div`
@@ -55,10 +55,10 @@ function Template() {
     <Navbar />
           <IntroContainer main="Member" intro="EC에는 여러분의 성장을 도와줄" intro2="든든한 운영진과 멋진 선배들이 있어요!"/>
 
-        <GrayContainer>
+        <GreyContainer>
             <TextBox>Management</TextBox>
             <Management />
-        </GrayContainer>
+        </GreyContainer>
 
 
         <WhiteContainer>
@@ -68,10 +68,10 @@ function Template() {
 
 
 
-        <GrayContainer>
+        <GreyContainer>
             <TextBox>Graduate</TextBox>
             <Graduate />
-        </GrayContainer>
+        </GreyContainer>
 
 
       <Footer />

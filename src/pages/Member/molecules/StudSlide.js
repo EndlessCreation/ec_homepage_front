@@ -13,7 +13,7 @@ import {
   useStudentState,
   useStudentDispatch,
   getStudent
-} from "../../../Context/MemberContext";
+} from "../../../context/MemberContext";
 
 const Block = styled.div`
 width: 848px;

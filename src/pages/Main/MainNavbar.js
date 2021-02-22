@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-import { useBtnState } from "../../Context/MainContext";
+import { useBtnState } from "../../context/MainContext";
 import NavbarMain from "./atoms/NavbarMain";
 import NavbarMenu from "./molecules/NavbarMenu";
 import MenuButton from "./atoms/MenuButton";

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import WrapperTablet from "./organisms/WrapperTablet";
-import { useMonthState } from "../../Context/MonthProvider";
+import { useMonthState } from "../../context/MonthProvider";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';

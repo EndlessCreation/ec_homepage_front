@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import StudSlide from '../molecules/StudSlide';
 import Size from '../../../Size';
-import {MemberProvider} from '../../../Context/MemberContext';
+import {MemberProvider} from '../../../context/MemberContext';
 
 const StudBox = styled.div`
 width: 848px;
