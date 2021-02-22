@@ -44,46 +44,35 @@ function Activity() {
     <div data-aos="fade-up"  data-aos-duration="2000">
     <IntroContainer main="Activity" intro='2021년 Endless Creation 에서는' intro2='아래와 같은 활동을 준비하고 있어요!'></IntroContainer>
     </div>
+    <MainProvider>
+      <MainNavbar />
+    </MainProvider>
 
     <Desktop>
-    <MainProvider>
-      <MainNavbar />
-    </MainProvider>
-    {/* <Home name="Activity" explain='2021년 Endless Creation 에서는' explain2='아래와 같은 활동을 준비하고 있어요!'></Home> */}
-    <MonthProvider>
-      <MonthList></MonthList>
-    </MonthProvider>
-    <PhotoProvider>
-      <Photo></Photo>
-    </PhotoProvider>
+      <MonthProvider>
+        <MonthList></MonthList>
+      </MonthProvider>
+      <PhotoProvider>
+        <Photo></Photo>
+      </PhotoProvider>
     </Desktop>
   
-
     <Tablet>
-    <MainProvider>
-      <MainNavbar />
-    </MainProvider>
-    {/* <HomeTablet name="Activity" explain='2021년 Endless Creation 에서는' explain2='아래와 같은 활동을 준비하고 있어요!'></HomeTablet> */}
-    <MonthProvider>
-      <MonthListTablet></MonthListTablet>
-    </MonthProvider>
-    <PhotoProvider>
-      <PhotoTablet></PhotoTablet>
-    </PhotoProvider>
+      <MonthProvider>
+        <MonthListTablet></MonthListTablet>
+      </MonthProvider>
+      <PhotoProvider>
+        <PhotoTablet></PhotoTablet>
+      </PhotoProvider>
     </Tablet>
 
-
     <Mobile>
-    <MainProvider>
-      <MainNavbar />
-    </MainProvider>
-    {/* <HomeMobile name="Activity" explain='2021년 Endless Creation 에서는' explain2='아래와 같은 활동을 준비하고 있어요!'></HomeMobile> */}
-    <MonthProvider>
-      <MonthListMobile></MonthListMobile>
-    </MonthProvider>
-    <PhotoProvider>
-      <PhotoMobile></PhotoMobile>
-    </PhotoProvider>
+      <MonthProvider>
+        <MonthListMobile></MonthListMobile>
+      </MonthProvider>
+      <PhotoProvider>
+        <PhotoMobile></PhotoMobile>
+      </PhotoProvider>
     </Mobile>
 
     <Footer></Footer>
