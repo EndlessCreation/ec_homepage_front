@@ -350,7 +350,7 @@ function Managers({mana}) {
   );
 }
 
-function ManagerInfo() {
+function MemberManagerInfo() {
   const state = useExecutiveState();
   const dispatch = useExecutiveDispatch();
   const {data: executive, loading, error} = state.executive;
@@ -371,4 +371,4 @@ function ManagerInfo() {
   );
 }
 
-export default ManagerInfo;
+export default MemberManagerInfo;

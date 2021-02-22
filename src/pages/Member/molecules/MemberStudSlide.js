@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
-import GradCircle from '../atoms/GradCircle';
-import '../atoms/Slide.css';
+import MemberStuCircle from '../atoms/MemberStuCircle';
+import '../atoms/MemberSlide.css';
 import Size from '../../../Size';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -10,17 +10,16 @@ import {useMediaQuery} from 'react-responsive';
 import {FiChevronLeft} from 'react-icons/fi';
 import {FiChevronRight} from 'react-icons/fi';
 import {
-  useGraduateState,
-  useGraduateDispatch,
-  getGraduate
+  useStudentState,
+  useStudentDispatch,
+  getStudent
 } from "../../../Context/MemberContext";
-
 
 const Block = styled.div`
 width: 848px;
 margin: 0 auto;
 .slick-prev{
-  transform : translate(-200px, 117px);
+  transform : translate(-200px, 218px);
   z-index: 2;
   position: absolute;
   opacity: 1;
@@ -31,16 +30,15 @@ margin: 0 auto;
   position: absolute;
   opacity: 1;
   color: #c4c4c4;
-  transform : translate(-990px, 117px);
+  transform : translate(-990px, 218px);
 }
-
 
 @media screen and ${Size.device.tablet}
 {
   width: 608px;
   margin: 0 auto;
   .slick-prev{
-    transform : translate(510px, -218px);
+    transform : translate(510px, -245px);
     z-index: 2;
     position: absolute;
     opacity: 1;
@@ -51,16 +49,15 @@ margin: 0 auto;
     position: absolute;
     opacity: 1;
     color: #c4c4c4;
-    transform : translate(-45px, -218px);
+    transform : translate(-45px, -245px);
   }
 }
-
 @media screen and ${Size.device.moblie}
 {
-  width: 304px;
+  width: 303px;
   margin: 0 auto;
   .slick-prev{
-    transform : translate(230px, -258px);
+    transform : translate(230px, -290px);
     z-index: 2;
     position: absolute;
     opacity: 1;
@@ -71,7 +68,7 @@ margin: 0 auto;
     position: absolute;
     opacity: 1;
     color: #c4c4c4;
-    transform : translate(-28px, -258px);
+    transform : translate(-28px, -290px);
   }
 }
 `
@@ -79,7 +76,7 @@ margin: 0 auto;
 const PrevPages = styled.div`
 position: absolute;
 z-index: 2;
-transform : translate(-200px, 252px);
+transform : translate(-200px, 468px);
 color: #c4c4c4;
 opacity: 1;
 font-size: 24px;
@@ -97,7 +94,7 @@ font-size: 24px;
 @media screen and ${Size.device.moblie}
 {
   position: absolute;
-  transform : translate(230px, -94px);
+  transform : translate(230px, -83px);
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
@@ -107,7 +104,7 @@ font-size: 24px;
 `
 const Slash = styled.div`
 position: absolute;
-transform : translate(-178px, 252px);
+transform : translate(-178px, 468px);
 color: #c4c4c4;
 opacity: 1;
 z-index: 2;
@@ -126,7 +123,7 @@ font-size: 22px;
 @media screen and ${Size.device.moblie}
 {
   position: absolute;
-  transform : translate(249px, -94px);
+  transform : translate(249px, -83px);
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
@@ -136,7 +133,7 @@ font-size: 22px;
 
 const NextPages = styled.div`
 position: absolute;
-transform : translate(-157px, 252px);
+transform : translate(-157px, 468px);
 color: #c4c4c4;
 opacity: 1;
 z-index: 2;
@@ -145,7 +142,7 @@ font-size: 24px;
 @media screen and ${Size.device.tablet}
 {
   position: absolute;
-  transform : translate(553px, -92.5px);
+  transform : translate(549px, -92.5px);
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
@@ -155,7 +152,7 @@ font-size: 24px;
 @media screen and ${Size.device.moblie}
 {
   position: absolute;
-  transform : translate(266px, -94px);
+  transform : translate(266px, -83px);
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
@@ -163,40 +160,39 @@ font-size: 24px;
 }
 `
 
-
-function GradSlide(){
+function MemberStudSlide(){
   const isPc = useMediaQuery({
     query: '(min-width: 1280px)'
   })
   const isTablet = useMediaQuery({query: '(min-width: 640px) and (max-width: 1279px)'})
   const isMoblie = useMediaQuery({query:  '(max-width: 639px)'})
-  
+
+
   const [number, setNumber] = useState({currentPage:1});
-  const state = useGraduateState();
-  const dispatch = useGraduateDispatch();
-  const {data: graduate, loading, error} = state.graduate;
+  const state = useStudentState();
+  const dispatch = useStudentDispatch();
+  const {data: student, loading, error} = state.student;
 
   useEffect(()=>{
-    getGraduate(dispatch);
+    getStudent(dispatch);
   }, [dispatch]);
   if (loading) return <div>로딩중..</div>;
   if (error) return <div>에러가 발생했습니다</div>;
-  if (!graduate) return null;
+  if (!student) return null;
 
-  const PCTotalslides = Math.ceil(graduate.length/12);
-  const TABLETTotalslides = Math.ceil(graduate.length/10);
-  const MOBLIETotalslides = Math.ceil(graduate.length/16);
+  const PCTotalslides = Math.ceil(student.length/15);
+  const TABLETTotalslides = Math.ceil(student.length/8);
+  const MOBLIETotalslides = Math.ceil(student.length/12);
 
   const settings = {
     dots : false,
-    infinite: false, // 무한으로 즐기게
-    slidesToShow: 6, 
-    slidesToScroll: 1,
+    infinite: false, 
+    slidesToShow: 5, 
     speed: 500,
-    rows: 2, // 3행
-    slidesToScroll: 6,
-    prevArrow : <FiChevronLeft type='button' class='slick-prev' />,
-    nextArrow : <FiChevronRight type='button' class='slick-next' />,
+    rows: 3, // 3행
+    slidesToScroll: 5,
+    prevArrow : <FiChevronLeft type='button' class='slick-prev'/>,
+    nextArrow : <FiChevronRight type='button' class='slick-next'/>,
     afterChange : (currentPage) => {
       if(currentPage!==0)
       {
@@ -207,19 +203,20 @@ function GradSlide(){
     }
   }
 
+
   const settingsforTablet = {
     dots : false,
     infinite: false, // 무한으로 즐기게
-    slidesToShow: 5, 
+    slidesToShow: 4, 
     speed: 500,
     rows: 2,
-    slidesToScroll: 5,
+    slidesToScroll: 4,
     prevArrow : <FiChevronLeft type='button' class='slick-prev' />,
     nextArrow : <FiChevronRight type='button' class='slick-next' />,
     afterChange : (currentPage) => {
       if(currentPage!==0)
       {
-        setNumber({currentPage: Math.ceil(currentPage/5)+1});
+        setNumber({currentPage: Math.ceil(currentPage/4)+1});
       }
       else
       setNumber({currentPage:1});
@@ -229,16 +226,16 @@ function GradSlide(){
   const settingsforMoblie = {
     dots : false,
     infinite: false, // 무한으로 즐기게
-    slidesToShow: 4, 
+    slidesToShow: 3, 
     speed: 500,
     rows: 4,
-    slidesToScroll: 4,
+    slidesToScroll: 3,
     prevArrow : <FiChevronLeft type='button' class='slick-prev' />,
     nextArrow : <FiChevronRight type='button' class='slick-next' />,
     afterChange : (currentPage) => {
       if(currentPage!==0)
       {
-        setNumber({currentPage: Math.ceil(currentPage/6)+1});
+        setNumber({currentPage: Math.ceil(currentPage/3)+1});
       }
       else
       setNumber({currentPage:1});
@@ -252,25 +249,24 @@ function GradSlide(){
         {isPc&&<NextPages>{PCTotalslides}</NextPages>}
         {isMoblie&&<NextPages>{MOBLIETotalslides}</NextPages>}
         {isTablet&&<NextPages>{TABLETTotalslides}</NextPages>}
-
-        {isPc&&<Slider {...settings}>
-          {graduate.map((grad) => {
+        {isPc&&<Slider {...settings}>       
+          {student.map((stud) => {
               return (
-                  <GradCircle grad={grad} />
+                  <MemberStuCircle stud={stud} />
               );}
           )}
         </Slider>}
         {isTablet&&<Slider {...settingsforTablet}>
-          {graduate.map((grad) => {
+          {student.map((stud) => {
               return (
-                  <GradCircle grad={grad} />
+                  <MemberStuCircle stud={stud} />
               );}
           )}
         </Slider>}
         {isMoblie&&<Slider {...settingsforMoblie}>
-          {graduate.map((grad) => {
+          {student.map((stud) => {
               return (
-                  <GradCircle grad={grad} />
+                  <MemberStuCircle stud={stud} />
               );}
           )}
         </Slider>}
@@ -278,4 +274,4 @@ function GradSlide(){
   )
 }
 
-export default GradSlide;
+export default MemberStudSlide;

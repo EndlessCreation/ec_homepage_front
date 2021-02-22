@@ -139,6 +139,13 @@ img {
     width: 140px;
     height: 140px;
     border-radius: 60px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 60px;
+      opacity: 0.64;
+    }
 }
 
 @media screen and ${Size.device.moblie}
@@ -147,10 +154,17 @@ img {
     height: 93px;
     border-radius: 38px;
     margin-bottom: 12px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 38px;
+      opacity: 0.64;
+    }
 }
 `;
 
-function StuCircle({stud}){
+function MemberStuCircle({stud}){
     return(
       <>
       {(function() {
@@ -165,4 +179,4 @@ function StuCircle({stud}){
     );
 }
 
-export default StuCircle;
+export default MemberStuCircle;

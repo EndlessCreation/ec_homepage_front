@@ -1,41 +1,38 @@
 import React from 'react';
 import styled from 'styled-components';
-import StudSlide from '../molecules/StudSlide';
+import MemberStudSlide from '../molecules/MemberStudSlide';
 import Size from '../../../Size';
 import {MemberProvider} from '../../../Context/MemberContext';
 
 const StudBox = styled.div`
 width: 848px;
-padding-top: 72px;
 padding-left: 22.166666667%;
-
+padding-bottom: 130px;
 
 @media screen and ${Size.device.tablet}{
 
   width: 608px;
-  padding-top: 56px;
   padding-left: 0%;
+  padding-bottom: 100px;
 
 }
 
 @media screen and ${Size.device.moblie}{
 
   width: 303px;
-  
-  padding-top: 54px;
   padding-left: 0%;
-
+  padding-bottom: 80px;
 }
 `
 
-function Student(){
+function MemberStudent(){
     return(
     <MemberProvider>
     <StudBox>
-          <StudSlide/>
+          <MemberStudSlide/>
     </StudBox>
     </MemberProvider>
     )
 }
 
-export default Student;
+export default MemberStudent;
