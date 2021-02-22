@@ -6,7 +6,7 @@ import MainNavbar from "../../Main/MainNavbar";
 import { ProjectProvider } from "../../../context/ProjectContext";
 import CommonFooter from "../../Activity/CommonFooter";
 
-function ProjectPage() {
+function Project() {
   return (
     <>
     <ProjectProvider>
@@ -20,4 +20,4 @@ function ProjectPage() {
   );
 }
 
-export default ProjectPage;
+export default Project;

@@ -12,7 +12,7 @@ function ActivityTemplate(){
             <Month/>
         </CommonContainer>
 
-        <CommonContainer color={"white"}>
+        <CommonContainer color="white">
             <Photo/>
         </CommonContainer>
         </>
