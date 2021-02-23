@@ -1,15 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import styled from "styled-components";
+import { useGlobalState, useGlobalDispatch } from "../../context/GlobalContext";
 import {
-  useModalState,
-  useModalClose,
-  useIdState,
-} from "../../context/ProjectModalContext";
-import {
-  useExecutiveState,
-  useExecutiveDispatch,
+  useECState,
+  useECDispatch,
   getProjectData,
-} from "../../context/MainContext";
+} from "../../context/Context";
 const Block = styled.div`
   display: block;
   position: fixed;
@@ -81,7 +77,7 @@ const ImgBlock = styled.div`
 `;
 const Text = styled.div`
   width: 104px;
-  font-family: NanumSquareB;
+  font-family: NanumSquareBold;
   font-size: 16px;
   line-height: 1.13;
   letter-spacing: normal;
@@ -90,7 +86,7 @@ const Text = styled.div`
 `;
 const Box = styled.div`
   width: 456px;
-  font-family: NanumSquareR;
+  font-family: NanumSquareRegular;
   font-size: 14px;
   line-height: 1.71;
   color: #232323;
@@ -101,12 +97,19 @@ const TextContainer = styled.div`
   display: flex;
 `;
 function CommonModal() {
-  const State = useModalState();
-  const closeModal = useModalClose();
+  const State = useGlobalState();
+  const GlobalDispatch = useGlobalDispatch();
+  const ModalState = State.ModalState;
+  const id = State.id;
 
-  const id = useIdState();
-  const state = useExecutiveState();
-  const dispatch = useExecutiveDispatch();
+  const closeModal = useCallback(() => {
+    GlobalDispatch({
+      type: "MODAL_CLOSE",
+    });
+  }, []);
+
+  const state = useECState();
+  const dispatch = useECDispatch();
   const { data: projectData, loading, error } = state.projectData;
   useEffect(() => {
     console.log(projectData);
@@ -121,8 +124,8 @@ function CommonModal() {
   const endDate = new Date(projectData.endDate);
   return (
     <>
-      {State && (
-        <Block State={State}>
+      {ModalState && (
+        <Block State={ModalState}>
           <ModalBlock>
             <Header>
               <div>{projectData.name}</div>

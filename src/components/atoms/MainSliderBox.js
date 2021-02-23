@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useCallback } from "react";
 import styled, { css } from "styled-components";
-import { useModalOpen, useChangeId } from "../../context/ProjectModalContext";
+import { useGlobalDispatch } from "../../context/GlobalContext";
 
 const SlideBlock = styled.div`
   width: 49.4%;
@@ -8,7 +8,10 @@ const SlideBlock = styled.div`
   background-color: #fff;
   margin-left: 16px;
   cursor: pointer;
-
+  img {
+    width: 100%;
+    height: 100%;
+  }
   @media screen and (max-width: 1279px) {
     width: 95%;
     height: 46%;
@@ -20,14 +23,30 @@ const SlideBlock = styled.div`
     width: 100%;
   }
 `;
-function SliderBox({ id }) {
-  const openModal = useModalOpen();
-  const changeid = useChangeId();
+function SliderBox({ id, url }) {
+  const GlobalDispatch = useGlobalDispatch();
+
+  const changeid = useCallback(() => {
+    GlobalDispatch({
+      type: "CHANGE_ID",
+      id,
+    });
+  }, []);
+
+  const openModal = useCallback(() => {
+    GlobalDispatch({
+      type: "MODAL_OPEN",
+    });
+  }, []);
   function ClickEvent(id) {
     openModal();
     changeid(id);
   }
-  return <SlideBlock id={id} onClick={() => ClickEvent(id)}></SlideBlock>;
+  return (
+    <SlideBlock id={id} onClick={() => ClickEvent(id)}>
+      <img src={url} alt="ECPick"></img>
+    </SlideBlock>
+  );
 }
 
 export default SliderBox;

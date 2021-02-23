@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useCallback } from "react";
 import styled, { css } from "styled-components";
 
-import { useBtnState, useBtnToggle } from "../../context/MainContext";
+import { useGlobalState, useGlobalDispatch } from "../../context/GlobalContext";
 
 const Button = styled.div`
   position: absolute;
@@ -23,7 +23,7 @@ const Button = styled.div`
     transition: 0.3s;
   }
   span:nth-child(1) {
-    top: -3px;
+    top: -2px;
   }
   span:nth-child(2),
   span:nth-child(3) {
@@ -66,8 +66,14 @@ const Button = styled.div`
 `;
 
 function MenuButton() {
-  const Active = useBtnState();
-  const onToggle = useBtnToggle();
+  const state = useGlobalState();
+  const Active = state.NavState;
+  const dispatch = useGlobalDispatch();
+  const onToggle = useCallback(() => {
+    dispatch({
+      type: "TOGGLE_NAVSTATE",
+    });
+  }, []);
   return (
     <Button active={Active} onClick={onToggle}>
       <span />

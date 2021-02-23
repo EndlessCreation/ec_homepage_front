@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-import { useBtnState } from "../../context/MainContext";
+import { useGlobalState } from "../../context/GlobalContext";
 import Linkitem from "../atoms/MainLinkItem";
 const MenuShow = styled.ul`
   display: flex;
@@ -75,7 +75,8 @@ const ArrowRightShow = styled.span`
 `;
 
 function NavbarMenu() {
-  const active = useBtnState();
+  const state = useGlobalState();
+  const active = state.NavState;
   return (
     <MenuShow active={active}>
       <Linkitem to={"/Activity"}>Activity</Linkitem>

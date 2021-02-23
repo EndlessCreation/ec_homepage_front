@@ -2,11 +2,7 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import MemberItem from "../atoms/MainMemberItem";
 
-import {
-  useExecutiveState,
-  useExecutiveDispatch,
-  getExecutive,
-} from "../../context/MainContext";
+import { useECState, useECDispatch, getExecutive } from "../../context/Context";
 
 const MemberBlock = styled.div`
   max-width: 880px;
@@ -32,8 +28,8 @@ const MemberBlock = styled.div`
 `;
 
 function MainMemberBox() {
-  const state = useExecutiveState();
-  const dispatch = useExecutiveDispatch();
+  const state = useECState();
+  const dispatch = useECDispatch();
   const { data: executive, loading, error } = state.executive;
 
   useEffect(() => {
@@ -47,12 +43,12 @@ function MainMemberBox() {
     <MemberBlock>
       {executive.map((Member) => (
         <div data-aos="flip-right">
-        <MemberItem
-          HashTag={Member.hashTags}
-          name={Member.name}
-          imageUrl={Member.imageUrl}
-          position={Member.position}
-        />
+          <MemberItem
+            HashTag={Member.hashTags}
+            name={Member.name}
+            imageUrl={Member.imageUrl}
+            position={Member.position}
+          />
         </div>
       ))}
     </MemberBlock>
