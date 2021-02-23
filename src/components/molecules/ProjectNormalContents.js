@@ -10,7 +10,6 @@ import { FiChevronRight } from "react-icons/fi";
 import Pages from "../atoms/ProjectSlidePage";
 import {
   getProject,
-  getProjectData,
   useECDispatch,
   useECState,
 } from "../../context/Context";

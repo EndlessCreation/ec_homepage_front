@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
+import {useModalOpen, useChangeId} from "../../context/ProjectModalContext";
+
 // import AOS from 'aos';
 import "aos/dist/aos.css";
 // AOS.init();
@@ -10,6 +12,7 @@ const BoxforProject = styled.div`
     height: 188px;
     opacity: 1;
     margin-bottom: 32px;
+    cursor:pointer;
   }
 
   @media screen and (max-width: 1279px) {
@@ -17,6 +20,7 @@ const BoxforProject = styled.div`
     height: 140px;
     opacity: 1;
     margin-bottom: 16px;
+    cursor:pointer;
   }
 
   @media screen and (max-width: 767px) {
@@ -24,14 +28,21 @@ const BoxforProject = styled.div`
     height: 146px;
     opacity: 1;
     margin-bottom: 16px;
+    cursor:pointer;
   }
 `;
 
 function ProjectBox({ project }) {
+    const openModal = useModalOpen();
+    const changeid = useChangeId();
+    function ClickEvent(id) {
+      openModal();
+      changeid(id);
+    }
   return (
     <>
       <div data-aos="flip-right" data-aos-duration="1000">
-        <BoxforProject>
+        <BoxforProject onClick={() => ClickEvent(project.id)}>
           <img
             src={project.imageUrl}
             alt={project.id}

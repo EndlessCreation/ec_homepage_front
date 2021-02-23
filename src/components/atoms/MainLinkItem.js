@@ -23,7 +23,6 @@ const LinkList = styled.li`
 function LinkItem({ children, to }) {
   const active = useBtnState();
   const OffToggle = useBtnOffToggle();
-  console.log(active);
   return (
     <LinkList active={active} onClick={OffToggle}>
       <Link to={to} className="link">

@@ -12,6 +12,7 @@ export function ProjectModalContext({ children }) {
   const [id, setid] = useState(null);
 
   const openModal = () => {
+console.log(`openMODAL ${modalState}`);
     setModalState(true);
   };
   const closeModal = () => {
@@ -20,7 +21,6 @@ export function ProjectModalContext({ children }) {
 
   const changeid = (id) => {
     setid(id);
-    console.log(id);
   };
   return (
     <ModalState.Provider value={modalState}>

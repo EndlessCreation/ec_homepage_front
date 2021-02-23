@@ -10,6 +10,7 @@ import Project from "./components/pages/Project";
 import Member from "./components/pages/Member";
 import { MainProvider } from "./context/MainContext";
 import { ECProvider } from "./context/Context";
+import { ProjectModalContext } from "./context/ProjectModalContext";
 
 
 const GlobalStyle = createGlobalStyle`
@@ -23,6 +24,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop>
+<ProjectModalContext>
       <MainProvider>
         <ECProvider>
           <GlobalStyle />
@@ -32,6 +34,7 @@ function App() {
           <Route path="/Member" component={Member} />
         </ECProvider>
       </MainProvider>
+      </ProjectModalContext>
       </ScrollToTop>
     </Router>
   );

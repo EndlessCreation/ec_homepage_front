@@ -10,6 +10,7 @@ import {
   useExecutiveDispatch,
   getProjectData,
 } from "../../context/MainContext";
+
 const Block = styled.div`
   display: block;
   position: fixed;
@@ -109,7 +110,6 @@ function CommonModal() {
   const dispatch = useExecutiveDispatch();
   const { data: projectData, loading, error } = state.projectData;
   useEffect(() => {
-    console.log(projectData);
     getProjectData(dispatch, id);
   }, [dispatch, id]);
 
