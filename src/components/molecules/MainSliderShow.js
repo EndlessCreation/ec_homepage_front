@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import styled, { css } from "styled-components";
 import { useMediaQuery } from "react-responsive";
+import Loader from "../atoms/CommonLoader";
 
 import SliderBoxs from "./MainSliderBoxs";
 import SliderBox from "../atoms/MainSliderBox";
@@ -78,7 +79,7 @@ function SliderShow() {
       slideRef.current.style.transform = `translateX(-${MoveSlide}%)`; // 백틱을 사용하여 슬라이드로 이동하는 애니메이션을 만듭니다.
     }
   }, [dispatch, currentSlide]);
-  if (loading) return <div>로딩중..</div>;
+  if (loading) return <div><Loader/></div>;
   if (error) return <div>에러가 발생했습니다</div>;
   if (!ecpick) return null;
 

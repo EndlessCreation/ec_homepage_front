@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 import { darken, lighten } from "polished";
+import Loader from "../atoms/CommonLoader";
 import {
   useECState,
   useECDispatch,
@@ -226,7 +227,7 @@ export default function PhotoList() {
 
   const { data: photos, loading, error } = state.photos;
 
-  if (loading) return <div>로딩중..</div>;
+  if (loading) return <Loader/>;
   if (error) return <div>에러가 발생했습니다</div>;
   if (!photos) return null;
 

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
+import Loader from "./CommonLoader";
 import {
   useModalState,
   useModalClose,
@@ -113,7 +114,7 @@ function CommonModal() {
     getProjectData(dispatch, id);
   }, [dispatch, id]);
 
-  if (loading) return <div>로딩중..</div>;
+  if (loading) return <div><Loader/></div>;
   if (error) return <div>에러가 발생했습니다</div>;
   if (!projectData) return null;
 
