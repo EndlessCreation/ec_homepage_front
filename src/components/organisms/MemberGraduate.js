@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Size from "../../Size";
 import MemberGradSlide from "../molecules/MemberGradSlide";
-import { MemberProvider } from "../../context/MemberContext";
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
@@ -31,11 +30,9 @@ const GradBox = styled.div`
 
 function MemberGraduate() {
   return (
-    <MemberProvider>
       <GradBox>
         <MemberGradSlide />
       </GradBox>
-    </MemberProvider>
   );
 }
 

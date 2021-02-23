@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import Size from "../../Size";
 import {
-  useExecutiveState,
-  useExecutiveDispatch,
+  useECState,
+  useECDispatch,
   getExecutive,
-} from "../../context/MemberContext";
+} from "../../context/Context";
 
 const Img = styled.img`
   position: relative;
@@ -339,9 +339,10 @@ function Managers({ mana }) {
             <Grad>{mana.generation}기</Grad>
             <Gap />
             <Position>{mana.position}</Position> <Gap />
-            <Hashtag>{mana.hashTags[0]}</Hashtag>
-            <Hashtag>{mana.hashTags[1]}</Hashtag>
-            <Hashtag>{mana.hashTags[2]}</Hashtag>
+            <Hashtag>
+              {mana.hashTags.map((hash)=> 
+                <div>{hash}</div>)}
+            </Hashtag>
           </>
         </TextBox>
       </InfoBox>
@@ -350,8 +351,8 @@ function Managers({ mana }) {
 }
 
 function MemberManagerInfo() {
-  const state = useExecutiveState();
-  const dispatch = useExecutiveDispatch();
+  const state = useECState();
+  const dispatch = useECDispatch();
   const { data: executive, loading, error } = state.executive;
 
   useEffect(() => {
