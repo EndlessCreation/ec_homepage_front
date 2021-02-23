@@ -86,7 +86,6 @@ function ProjectReducer(state, action) {
 const ProjectStateContext=createContext();
 const ProjectDispatchContext=createContext();
 
-
 export function ProjectProvider({ children }) {
   const [state, dispatch] = useReducer(ProjectReducer, initialState);
   return (
@@ -94,7 +93,7 @@ export function ProjectProvider({ children }) {
             <ProjectDispatchContext.Provider value={dispatch}>
             {children}
             </ProjectDispatchContext.Provider>
-    </ProjectStateContext.Provider>
+      </ProjectStateContext.Provider>
   );
 }
 
@@ -130,7 +129,7 @@ export async function getProjectData(dispatch) {
   dispatch({ type: "GET_PROJECTDATA" });
   try {
     const response = await axios.get(
-      "http://13.124.234.100:8080/projects/100"
+      "http://13.124.234.100:8080/projects/50"
     );
     dispatch({ type: "GET_PROJECTDATA_SUCCESS", data: response.data });
   } catch (e) {

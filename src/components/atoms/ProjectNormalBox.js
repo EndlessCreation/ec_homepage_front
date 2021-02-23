@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import styled from 'styled-components';
-import Modal from './ProjectModal';
+import {useModalOpen} from '../../context/ProjectModalContext';
 
 const BoxforProject=styled.div`
 
@@ -29,21 +29,13 @@ margin-bottom:16px;
 `;
 
 function ProjectBox({project}){
-    const [ modalOpen, setModalOpen ] = useState(false);
 
-    const openModal = () => {
-        setModalOpen(true);
-    };
-    const closeModal = () => {
-        setModalOpen(false);
-    };
 
     return (
         <>
-        <BoxforProject onClick={openModal}>
+        <BoxforProject>
             <img src={project.imageUrl} alt={project.id} width="100%" height="100%"/>
         </BoxforProject>
-        <Modal open={ modalOpen } close={ closeModal } header="NAME"></Modal>
         </>
     );
 }

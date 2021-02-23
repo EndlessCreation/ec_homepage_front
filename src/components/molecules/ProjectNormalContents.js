@@ -10,7 +10,6 @@ import { FiChevronRight } from "react-icons/fi";
 import Pages from "../atoms/ProjectSlidePage";
 import {
   getProject,
-  getProjectData,
   useProjectDispatch,
   useProjectState,
 } from "../../context/ProjectContext";
@@ -103,7 +102,6 @@ function ProjectContentBox() {
 
   useEffect(() => {
     getProject(dispatch);
-    getProjectData(dispatch);
   }, [dispatch]);
 
   if (loading) return <div>로딩중..</div>;
