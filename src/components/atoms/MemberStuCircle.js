@@ -176,7 +176,8 @@ function MemberStuCircle({ stud }) {
         <img src={stud.imageUrl} />
         <Text>
           {stud.name} {stud.generation}기<br />
-          {stud.hashTags}
+          {stud.hashTags.map((hash)=> 
+                <div>{hash}</div>)}
         </Text>
       </StudInfoBlock>
       </div>

@@ -11,9 +11,9 @@ import Pages from "../atoms/ProjectSlidePage";
 import {
   getProject,
   getProjectData,
-  useProjectDispatch,
-  useProjectState,
-} from "../../context/ProjectContext";
+  useECDispatch,
+  useECState,
+} from "../../context/Context";
 
 const BlockforProjectContent = styled.div`
   @media screen and (min-width: 1280px) {
@@ -97,8 +97,8 @@ function ProjectContentBox() {
 
   const [pageState, setState] = useState({ currentSlide: 1 });
 
-  const state = useProjectState();
-  const dispatch = useProjectDispatch();
+  const state = useECState();
+  const dispatch = useECDispatch();
   const { data: project, loading, error } = state.project;
 
   useEffect(() => {

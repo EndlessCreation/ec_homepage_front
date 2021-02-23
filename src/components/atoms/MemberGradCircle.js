@@ -123,8 +123,8 @@ function MemberGradCircle({ grad }) {
       <Text>
         {grad.name} {grad.generation}기
         <br />
-        {grad.hashTags[0]} <br />
-        {grad.hashTags[1]}
+        {grad.hashTags.map((hash)=> 
+                <div>{hash}</div>)}
       </Text>
     </GradInfoBlock>
     </div>

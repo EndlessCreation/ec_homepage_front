@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 import { darken, lighten } from "polished";
 import {
-  usePhotoState,
-  usePhotoDispatch,
+  useECState,
+  useECDispatch,
   getPhotos,
-} from "../../context/ActivityGetApi";
+} from "../../context/Context";
 import TextBlock from "../molecules/CommonSubTextContents";
 
 // import AOS from "aos";
@@ -210,8 +210,8 @@ function Photo({ photo }) {
 }
 
 export default function PhotoList() {
-  const state = usePhotoState(); // 상태 값 불러오기~
-  const dispatch = usePhotoDispatch();
+  const state = useECState(); // 상태 값 불러오기~
+  const dispatch = useECDispatch();
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef(null);
