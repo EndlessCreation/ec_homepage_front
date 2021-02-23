@@ -3,9 +3,9 @@ import "./ProjectModal.css";
 import styled from "styled-components";
 import {
   getProjectData,
-  useProjectDispatch,
-  useProjectState,
-} from "../../context/ProjectContext";
+  useECDispatch,
+  useECState,
+} from "../../context/Context";
 
 const Header = styled.header`
   width: 131px;
@@ -57,8 +57,8 @@ const ModalContainer = styled.div`
 function Modal({ open, close, header }) {
   // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
 
-  const state = useProjectState();
-  const dispatch = useProjectDispatch();
+  const state = useECState();
+  const dispatch = useECDispatch();
   const { data: projectData, loading, error } = state.project;
 
   useEffect(() => {

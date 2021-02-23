@@ -10,10 +10,10 @@ import { useMediaQuery } from "react-responsive";
 import { FiChevronLeft } from "react-icons/fi";
 import { FiChevronRight } from "react-icons/fi";
 import {
-  useGraduateState,
-  useGraduateDispatch,
+  useECState,
+  useECDispatch,
   getGraduate,
-} from "../../context/MemberContext";
+} from "../../context/Context";
 
 const Block = styled.div`
   width: 848px;
@@ -162,8 +162,8 @@ function MemberGradSlide() {
   const isMoblie = useMediaQuery({ query: "(max-width: 639px)" });
 
   const [number, setNumber] = useState({ currentPage: 1 });
-  const state = useGraduateState();
-  const dispatch = useGraduateDispatch();
+  const state = useECState();
+  const dispatch = useECDispatch();
   const { data: graduate, loading, error } = state.graduate;
 
   useEffect(() => {
