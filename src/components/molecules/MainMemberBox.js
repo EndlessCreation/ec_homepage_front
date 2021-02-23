@@ -3,7 +3,7 @@ import styled from "styled-components";
 import MemberItem from "../atoms/MainMemberItem";
 
 import { useECState, useECDispatch, getExecutive } from "../../context/Context";
-
+import Loader from "../atoms/CommonLoader";
 const MemberBlock = styled.div`
   max-width: 880px;
   height: 408px;
@@ -35,7 +35,7 @@ function MainMemberBox() {
   useEffect(() => {
     getExecutive(dispatch);
   }, [dispatch]);
-  if (loading) return <div>로딩중..</div>;
+  if (loading) return <Loader />;
   if (error) return <div>에러가 발생했습니다</div>;
   if (!executive) return null;
 

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import PhotoBox from "../atoms/MainPhotoBox";
+import Loader from "../atoms/CommonLoader";
 import {
   useECState,
   useECDispatch,
@@ -56,7 +57,7 @@ function ActivityPhoto() {
   useEffect(() => {
     getMainactivty(dispatch);
   }, [dispatch]);
-  if (loading) return <div>로딩중..</div>;
+  if (loading) return <div><Loader/></div>;
   if (error) return <div>에러가 발생했습니다</div>;
   if (!mainactivity) return null;
 

@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { useMediaQuery } from "react-responsive";
 import { FiChevronLeft } from "react-icons/fi";
 import { FiChevronRight } from "react-icons/fi";
+import Loader from "../atoms/CommonLoader";
 import {
   useECState,
   useECDispatch,
@@ -169,7 +170,7 @@ function MemberGradSlide() {
   useEffect(() => {
     getGraduate(dispatch);
   }, [dispatch]);
-  if (loading) return <div>로딩중..</div>;
+  if (loading) return <div><Loader/></div>;
   if (error) return <div>에러가 발생했습니다</div>;
   if (!graduate) return null;
 
