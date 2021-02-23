@@ -6,12 +6,7 @@ import Loader from "../atoms/CommonLoader";
 import SliderBoxs from "./MainSliderBoxs";
 import SliderBox from "../atoms/MainSliderBox";
 import SliderButton from "../atoms/MainSliderButton";
-import {
-  useExecutiveState,
-  useExecutiveDispatch,
-  getEcpick,
-  getProjectData,
-} from "../../context/MainContext";
+import { useECState, useECDispatch, getEcpick } from "../../context/Context";
 
 //동적으로 영역 너비 설정 완료
 const SlideBlock = styled.div`
@@ -67,8 +62,8 @@ function SliderShow() {
   });
 
   //Provider로 데이터 받아오기
-  const state = useExecutiveState();
-  const dispatch = useExecutiveDispatch();
+  const state = useECState();
+  const dispatch = useECDispatch();
   const { data: ecpick, loading, error } = state.ecpick;
 
   useEffect(() => {
@@ -109,7 +104,7 @@ function SliderShow() {
         {NewArrary.map((data, index) => (
           <SliderBoxs key={index}>
             {data.map((data) => (
-              <SliderBox id={data.id}></SliderBox>
+              <SliderBox id={data.id} url={data.imageUrl}></SliderBox>
             ))}
           </SliderBoxs>
         ))}

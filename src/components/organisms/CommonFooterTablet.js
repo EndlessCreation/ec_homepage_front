@@ -1,41 +1,38 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Back = styled.div`
-    width: 100%;
-    height: 297px;
-    margin: 0;
-    padding: 0;
-    background-color: #232323;
+  width: 100%;
+  height: 297px;
+  margin: 0;
+  padding: 0;
+  background-color: #232323;
 `;
 
-
-const Container=styled.div`
-    background: ${(props) => props.background || "#232323"};
-    max-width: 640px;
-    padding-left :16px;
-    padding-right :16px;
-    box-sizing : border-box;
-    margin:0 auto;
-    height:100%;
-    
+const Container = styled.div`
+  background: ${(props) => props.background || "#232323"};
+  max-width: ${(props) => props.nav || "640px"};
+  padding-left: ${(props) => props.left || "16px"};
+  padding-right: 16px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  height: 100%;
 `;
 
-const ContainerInner=styled.div`
-    width:304px;  
-    float: left;
-    
+const ContainerInner = styled.div`
+  width: 50%;
+  float: left;
 `;
 
 const Logo = styled.div`
-    padding-top : 48px;
-    font-family: Kanit;
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 1.5;
-    letter-spacing: 0.18px;
-    text-align: left;
-    color: #f2f2f2;
+  padding-top: 48px;
+  font-family: Kanit;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: 0.18px;
+  text-align: left;
+  color: #f2f2f2;
 `;
 
 const Name = styled.div`
@@ -128,25 +125,24 @@ const Name = styled.div`
 
 `;
 const Icon = styled.div`
-    float: right;
-    padding-top: 69px ;
+  float: right;
+  padding-top: 69px;
 
-    display: flex;
-    flex-direction: row;  // 옆으로 정렬
+  display: flex;
+  flex-direction: row; // 옆으로 정렬
 
-    .circle{
-      width: 28px;
-      height: 28px;
-      margin-left: 12px;
-      border-radius: 68px;
-      background-color:#d2d2d2;
-    }
+  .circle {
+    width: 28px;
+    height: 28px;
+    margin-left: 12px;
+    border-radius: 68px;
+    background-color: #d2d2d2;
+  }
 `;
 
 const Cop = styled.div`
   float: right;
-  padding-top: 99px ;
-  
+  padding-top: 99px;
 
   opacity: 0.73;
   font-family: Kanit;
@@ -157,39 +153,36 @@ const Cop = styled.div`
   color: #d2d2d2;
 `;
 
-function Footer(){
-    return(
+function Footer({ nav, left }) {
+  return (
     <Back>
-    <Container>
-      <ContainerInner>
-      <Logo>Endless Creation</Logo>
-      <Name>
-        <div class ='wrapper'>
-          <div class ='t1'>기획</div>
-          <div class ='t2'>디자이너</div>
-          <div class ='t3'>개발자</div>
-          <div class='p1'>김개발 &emsp; 김개발 &emsp; 김개발</div>
-          <div class='p2'>김개발 &emsp; 김개발 &emsp; 김개발</div>
-          <div class='p3'>김개발 &emsp; 김개발 &emsp; 김개발</div>
-        </div>
-      </Name>
-      </ContainerInner>
-      <ContainerInner>
-        <Icon>
-            <div class='circle'></div>
-            <div class='circle'></div>
-            <div class='circle'></div>
+      <Container nav={nav} left={left}>
+        <ContainerInner>
+          <Logo>Endless Creation</Logo>
+          <Name>
+            <div class="wrapper">
+              <div class="t1">기획</div>
+              <div class="t2">디자이너</div>
+              <div class="t3">개발자</div>
+              <div class="p1">김개발 &emsp; 김개발 &emsp; 김개발</div>
+              <div class="p2">김개발 &emsp; 김개발 &emsp; 김개발</div>
+              <div class="p3">김개발 &emsp; 김개발 &emsp; 김개발</div>
+            </div>
+          </Name>
+        </ContainerInner>
+        <ContainerInner>
+          <Icon>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
           </Icon>
-      </ContainerInner>
-      <ContainerInner>
-        <Cop>
-            ©EndlessCreation. All rights reserved 2021.
-        </Cop>
-      </ContainerInner>
-    </Container>
+        </ContainerInner>
+        <ContainerInner>
+          <Cop>©EndlessCreation. All rights reserved 2021.</Cop>
+        </ContainerInner>
+      </Container>
     </Back>
-    )
-    ;
+  );
 }
 
 export default Footer;

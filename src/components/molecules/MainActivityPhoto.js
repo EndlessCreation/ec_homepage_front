@@ -3,10 +3,10 @@ import styled from "styled-components";
 import PhotoBox from "../atoms/MainPhotoBox";
 import Loader from "../atoms/CommonLoader";
 import {
-  useExecutiveState,
-  useExecutiveDispatch,
+  useECState,
+  useECDispatch,
   getMainactivty,
-} from "../../context/MainContext";
+} from "../../context/Context";
 
 const PhotoBlock = styled.div`
   width: 498px;
@@ -50,8 +50,8 @@ const PhotoBlock = styled.div`
   }
 `;
 function ActivityPhoto() {
-  const state = useExecutiveState();
-  const dispatch = useExecutiveDispatch();
+  const state = useECState();
+  const dispatch = useECDispatch();
   const { data: mainactivity, loading, error } = state.mainactivity;
 
   useEffect(() => {
@@ -63,7 +63,7 @@ function ActivityPhoto() {
 
   return (
     <PhotoBlock>
-      <div className="Photo" >
+      <div className="Photo">
         {mainactivity.map((photo, index) => (
           <PhotoBox url={photo.imageUrl} key={index} />
         ))}
