@@ -2,7 +2,7 @@ import MainNavbar from "../templates/CommonNavbar";
 import CommonFooter from "../templates/CommonFooter";
 import ActivityTemplate from "../templates/ActivityTemplate";
 import { MainProvider } from "../../context/MainContext";
-import { MonthProvider } from "../../context/MonthProvider";
+
 
 // import AOS from "aos";
 import "aos/dist/aos.css";
@@ -14,11 +14,7 @@ function Activity() {
       <MainProvider>
         <MainNavbar />
       </MainProvider>
-
-      <MonthProvider>
-          <ActivityTemplate />
-      </MonthProvider>
-
+      <ActivityTemplate />
       <CommonFooter />
     </>
   );

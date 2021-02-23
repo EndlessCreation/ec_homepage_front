@@ -115,7 +115,7 @@ export async function getProject(dispatch) {
   dispatch({ type: "GET_PROJECT" });
   try {
     const response = await axios.get(
-      "http://13.124.234.100:8080/projects/normal"
+      "http://3.35.39.140:8080/projects/normal"
     );
     dispatch({ type: "GET_PROJECT_SUCCESS", data: response.data });
   } catch (e) {
@@ -127,7 +127,7 @@ export async function getProjectData(dispatch, id) {
   dispatch({ type: "GET_PROJECTDATA" });
   try {
     const response = await axios.get(
-      `http://13.124.234.100:8080/projects/${id}`
+      `http://3.35.39.140:8080/projects/${id}`
     );
     dispatch({ type: "GET_PROJECTDATA_SUCCESS", data: response.data });
   } catch (e) {
