@@ -172,9 +172,9 @@ function Footer(){
       <ContainerInner>
       <Name>
         <div class ='wrapper'>
-          <div class ='t1'>기획</div>
-          <div class ='t2'>디자이너</div>
-          <div class ='t3'>개발자</div>
+          <div class ='t1'>프론트</div>
+          <div class ='t2'>백엔드</div>
+          <div class ='t3'>디자이너</div>
           <div class='p1'>김개발 &emsp; 김개발 &emsp; 김개발</div>
           <div class='p2'>김개발 &emsp; 김개발 &emsp; 김개발</div>
           <div class='p3'>김개발 &emsp; 김개발 &emsp; 김개발</div>
