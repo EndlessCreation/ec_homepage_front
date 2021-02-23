@@ -8,11 +8,11 @@ import CommonFooter from "../templates/CommonFooter";
 function Project() {
   return (
     <>
-        <MainProvider>
-          <MainNavbar />
-        </MainProvider>
-        <EntireBox />
-        <CommonFooter />
+      <MainProvider>
+        <MainNavbar />
+      </MainProvider>
+      <EntireBox />
+      <CommonFooter />
     </>
   );
 }

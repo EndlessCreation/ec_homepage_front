@@ -1,11 +1,13 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { useModalOpen, useChangeId } from "../../context/ProjectModalContext";
 
 const SlideBlock = styled.div`
   width: 49.4%;
   height: 100%;
   background-color: #fff;
   margin-left: 16px;
+  cursor: pointer;
 
   @media screen and (max-width: 1279px) {
     width: 95%;
@@ -19,7 +21,13 @@ const SlideBlock = styled.div`
   }
 `;
 function SliderBox({ id }) {
-  return <SlideBlock id={id}></SlideBlock>;
+  const openModal = useModalOpen();
+  const changeid = useChangeId();
+  function ClickEvent(id) {
+    openModal();
+    changeid(id);
+  }
+  return <SlideBlock id={id} onClick={() => ClickEvent(id)}></SlideBlock>;
 }
 
 export default SliderBox;

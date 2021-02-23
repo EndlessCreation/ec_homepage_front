@@ -4,7 +4,7 @@ import styled from "styled-components";
 import ActivityList from "../molecules/MainActivityList";
 
 // import AOS from 'aos';
-import 'aos/dist/aos.css';
+import "aos/dist/aos.css";
 // AOS.init();
 
 const ContentsBlock = styled.div`
@@ -40,11 +40,11 @@ const ContentsBlock = styled.div`
 `;
 function ActivityContents() {
   return (
-    <div data-aos="fade-up"  data-aos-duration="1000" >
     <ContentsBlock>
-      <ActivityList />
+      <div data-aos="fade-up" data-aos-duration="1000">
+        <ActivityList />
+      </div>
     </ContentsBlock>
-    </div>
   );
 }
 
