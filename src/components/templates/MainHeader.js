@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-
 import MainBanner from "../organisms/MainBanner";
 import MainBannerForm from "../atoms/MainBannerForm";
+// import AOS from 'aos';
+import 'aos/dist/aos.css';
+// AOS.init();
+
 const HeaderBlock = styled.div`
   max-width: 1280px;
   height: 717px;
@@ -32,9 +35,11 @@ function MainHeader() {
   return (
     <HeaderBlock>
       <MainBanner />
-      <FormBlock>
-        <MainBannerForm />
-      </FormBlock>
+      <div data-aos="flip-up"  data-aos-duration="500"  data-aos-delay="300">
+        <FormBlock>
+          <MainBannerForm />
+        </FormBlock>
+      </div>
     </HeaderBlock>
   );
 }

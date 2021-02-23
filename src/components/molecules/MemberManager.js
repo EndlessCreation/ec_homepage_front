@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import MemberManagerInfo from '../atoms/MemberManagerInfo';
-import AOS from 'aos';
+// import AOS from 'aos';
 import 'aos/dist/aos.css';
-AOS.init();
+// AOS.init();
 
 const Box = styled.div`
 display: flex;
@@ -14,8 +14,7 @@ justify-content: space-between;
 
 function MemberManager(){
     return(
-        <div data-aos="fade-up"
-     data-aos-duration="3000">
+        <div data-aos="fade-up" data-aos-duration="2000">
         <Box>
             <MemberManagerInfo />
         </Box>

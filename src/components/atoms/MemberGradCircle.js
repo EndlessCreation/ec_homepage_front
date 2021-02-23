@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import Size from "../../Size";
+// import AOS from 'aos';
+import 'aos/dist/aos.css';
+// AOS.init({
+//   disable : 'mobile'
+// });
 
 //항목의 text부분
 const Text = styled.div`
@@ -112,6 +117,7 @@ img {
 
 function MemberGradCircle({ grad }) {
   return (
+    <div data-aos="flip-right"  data-aos-duration="1000" >
     <GradInfoBlock>
       <img src={grad.imageUrl} />
       <Text>
@@ -121,6 +127,7 @@ function MemberGradCircle({ grad }) {
         {grad.hashTags[1]}
       </Text>
     </GradInfoBlock>
+    </div>
   );
 }
 

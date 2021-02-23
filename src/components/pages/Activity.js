@@ -5,9 +5,9 @@ import { MainProvider } from "../../context/MainContext";
 import { MonthProvider } from "../../context/MonthProvider";
 import { PhotoProvider } from "../../context/ActivityGetApi";
 
-import AOS from "aos";
+// import AOS from "aos";
 import "aos/dist/aos.css";
-AOS.init();
+// AOS.init();
 
 function Activity() {
   return (

@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-
 import MainAboutEcText from "../atoms/MainAboutEcText";
 import MainAboutEcSubText from "../atoms/MainAboutEcSubText";
+// import AOS from 'aos';
+import 'aos/dist/aos.css';
+// AOS.init();
+
 
 const TextBlock = styled.div`
   width: 100%;
@@ -21,8 +24,12 @@ const TextBlock = styled.div`
 function AboutEcTextBox() {
   return (
     <TextBlock>
-      <MainAboutEcText>AboutEC</MainAboutEcText>
-      <MainAboutEcSubText />
+      <div data-aos="fade-up"  data-aos-duration="600" >
+        <MainAboutEcText>AboutEC</MainAboutEcText>
+      </div>
+      <div data-aos="fade-up"  data-aos-duration="600" >
+        <MainAboutEcSubText />
+      </div>
     </TextBlock>
   );
 }
