@@ -2,6 +2,7 @@ import React from "react";
 import { createGlobalStyle } from "styled-components";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import  ScrollToTop from './ScrollToTop';
 
 import Main from "./components/pages/Main";
 import Activity from "./components/pages/Activity";
@@ -21,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
 function App() {
   return (
     <Router>
+      <ScrollToTop>
       <MainProvider>
         <ECProvider>
           <GlobalStyle />
@@ -30,6 +32,7 @@ function App() {
           <Route path="/Member" component={Member} />
         </ECProvider>
       </MainProvider>
+      </ScrollToTop>
     </Router>
   );
 }

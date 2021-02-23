@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import Size from "../../Size";
 import MemberGradSlide from "../molecules/MemberGradSlide";
-import AOS from "aos";
+// import AOS from "aos";
 import "aos/dist/aos.css";
-AOS.init();
+// AOS.init();
 
 const GradBox = styled.div`
   width: 848px;

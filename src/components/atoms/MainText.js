@@ -2,6 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
+// import AOS from 'aos';
+import 'aos/dist/aos.css';
+// AOS.init({
+//   disable : 'mobile'
+// });
+
 const TextBlock = styled.div`
   width: 267px;
   font-size: 32px;
@@ -57,6 +63,7 @@ const TextBlock = styled.div`
 `;
 function MainText({ children, url }) {
   return (
+    <div data-aos="fade-up"  data-aos-duration="1500" >
     <TextBlock>
       {children}
       {url && (
@@ -67,6 +74,7 @@ function MainText({ children, url }) {
         </div>
       )}
     </TextBlock>
+    </div>
   );
 }
 
