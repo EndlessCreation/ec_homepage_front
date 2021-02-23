@@ -6,7 +6,10 @@ import {
   useProjectDispatch,
   useProjectState,
 } from "../../context/ProjectContext";
-
+import {
+  useModalState,
+  useModalClose,
+} from "../../context/ProjectModalContext";
 const Header = styled.header`
   width: 131px;
   height: 31px;
@@ -54,7 +57,11 @@ const ModalContainer = styled.div`
   padding-bottom: 24px;
 `;
 
-function Modal({ open, close, header }) {
+function Modal({ header }) {
+  //모달 상태
+  const ModalState = useModalState();
+  const closeModal = useModalClose();
+
   // 열기, 닫기, 모달 헤더 텍스트를 부모로부터 받아옴
 
   const state = useProjectState();
@@ -71,12 +78,12 @@ function Modal({ open, close, header }) {
 
   return (
     // 모달이 열릴때 openModal 클래스가 생성된다.
-    <div className={open ? "openModal modal" : "modal"}>
-      {open ? (
+    <div className={ModalState ? "openModal modal" : "modal"}>
+      {ModalState ? (
         <section>
           <Header>
             {header}
-            <button className="close" onClick={close}>
+            <button className="close" onClick={closeModal}>
               {" "}
               &times;{" "}
             </button>

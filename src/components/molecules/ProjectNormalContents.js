@@ -14,6 +14,11 @@ import {
   useProjectDispatch,
   useProjectState,
 } from "../../context/ProjectContext";
+import {
+  useModalState,
+  useModalClose,
+} from "../../context/ProjectModalContext";
+import Modal from "../atoms/ProjectModal";
 
 const BlockforProjectContent = styled.div`
   @media screen and (min-width: 1280px) {
@@ -93,8 +98,10 @@ function ProjectContentBox() {
   const isPc = useMediaQuery({
     query: "(min-width: 768px)",
   });
+  //모달 상태
+  const ModalState = useModalState();
+  const closeModal = useModalClose();
   const isMobile = useMediaQuery({ query: " (max-width: 767px)" });
-
   const [pageState, setState] = useState({ currentSlide: 1 });
 
   const state = useProjectState();
@@ -152,36 +159,39 @@ function ProjectContentBox() {
   };
 
   return (
-    <BlockforProjectContent>
-      {isPc && (
-        <Pages>
-          {pageState.currentSlide}/{PCTotalslides}
-        </Pages>
-      )}
-      {isMobile && (
-        <Pages>
-          {pageState.currentSlide}/{MOBLIETotalslides}
-        </Pages>
-      )}
-      {isPc && (
-        <StyledSlider {...settings}>
-          {project.map((data) => {
-            return (
-              <>
-                <ProjectBox project={data} />
-              </>
-            );
-          })}
-        </StyledSlider>
-      )}
-      {isMobile && (
-        <StyledSlider {...settingsforMobile}>
-          {project.map((data) => {
-            return <ProjectBox project={data}></ProjectBox>;
-          })}
-        </StyledSlider>
-      )}
-    </BlockforProjectContent>
+    <>
+      <BlockforProjectContent>
+        {isPc && (
+          <Pages>
+            {pageState.currentSlide}/{PCTotalslides}
+          </Pages>
+        )}
+        {isMobile && (
+          <Pages>
+            {pageState.currentSlide}/{MOBLIETotalslides}
+          </Pages>
+        )}
+        {isPc && (
+          <StyledSlider {...settings}>
+            {project.map((data) => {
+              return (
+                <>
+                  <ProjectBox project={data} />
+                </>
+              );
+            })}
+          </StyledSlider>
+        )}
+        {isMobile && (
+          <StyledSlider {...settingsforMobile}>
+            {project.map((data) => {
+              return <ProjectBox project={data}></ProjectBox>;
+            })}
+          </StyledSlider>
+        )}
+      </BlockforProjectContent>
+      <Modal state={ModalState} close={closeModal} haeder="header" />
+    </>
   );
 }
 

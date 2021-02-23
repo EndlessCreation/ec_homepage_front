@@ -7,11 +7,11 @@ const initialState = {
     data: null,
     error: null,
   },
-  projectData:{
+  projectData: {
     loading: false,
     data: null,
     error: null,
-  }
+  },
 };
 const loadingState = {
   loading: true,
@@ -30,7 +30,6 @@ const error = (error) => ({
 });
 
 function ProjectReducer(state, action) {
-  
   switch (action.type) {
     case "GET_PROJECT":
       return {
@@ -48,52 +47,50 @@ function ProjectReducer(state, action) {
         project: error(action.error),
       };
     case "GET_COUNT":
-        return {
-            ...state,
-            count: loadingState,
-        };
+      return {
+        ...state,
+        count: loadingState,
+      };
     case "GET_COUNT_SUCCESS":
-        return {
-            ...state,
-            count:success(action.data),
-        };
+      return {
+        ...state,
+        count: success(action.data),
+      };
     case "GET_COUNT_ERROR":
-        return {
-            ...state,
-            count:error(action.error),
-        };
+      return {
+        ...state,
+        count: error(action.error),
+      };
     case "GET_PROJECTDATA":
-      return{
+      return {
         ...state,
         projectData: loadingState,
       };
     case "GET_PROJECTDATA_SUCCESS":
       return {
         ...state,
-        projectData:success(action.data),
+        projectData: success(action.data),
       };
     case "GET_PROJECTDATA_ERROR":
-      return{
+      return {
         ...state,
-        projectData:error(action.error),
-      }
+        projectData: error(action.error),
+      };
     default:
       throw new Error(`Unhanded action type : ${action.type}`);
   }
 }
 
-
-const ProjectStateContext=createContext();
-const ProjectDispatchContext=createContext();
-
+const ProjectStateContext = createContext();
+const ProjectDispatchContext = createContext();
 
 export function ProjectProvider({ children }) {
   const [state, dispatch] = useReducer(ProjectReducer, initialState);
   return (
-        <ProjectStateContext.Provider value={state}>
-            <ProjectDispatchContext.Provider value={dispatch}>
-            {children}
-            </ProjectDispatchContext.Provider>
+    <ProjectStateContext.Provider value={state}>
+      <ProjectDispatchContext.Provider value={dispatch}>
+        {children}
+      </ProjectDispatchContext.Provider>
     </ProjectStateContext.Provider>
   );
 }
@@ -126,11 +123,11 @@ export async function getProject(dispatch) {
   }
 }
 
-export async function getProjectData(dispatch) {
+export async function getProjectData(dispatch, id) {
   dispatch({ type: "GET_PROJECTDATA" });
   try {
     const response = await axios.get(
-      "http://13.124.234.100:8080/projects/100"
+      `http://13.124.234.100:8080/projects/${id}`
     );
     dispatch({ type: "GET_PROJECTDATA_SUCCESS", data: response.data });
   } catch (e) {
