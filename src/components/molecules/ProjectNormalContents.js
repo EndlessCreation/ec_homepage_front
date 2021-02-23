@@ -10,9 +10,10 @@ import { FiChevronRight } from "react-icons/fi";
 import Pages from "../atoms/ProjectSlidePage";
 import {
   getProject,
-  useProjectDispatch,
-  useProjectState,
-} from "../../context/ProjectContext";
+  getProjectData,
+  useECDispatch,
+  useECState,
+} from "../../context/Context";
 
 const BlockforProjectContent = styled.div`
   @media screen and (min-width: 1280px) {
@@ -93,11 +94,10 @@ function ProjectContentBox() {
     query: "(min-width: 768px)",
   });
   const isMobile = useMediaQuery({ query: " (max-width: 767px)" });
-
   const [pageState, setState] = useState({ currentSlide: 1 });
 
-  const state = useProjectState();
-  const dispatch = useProjectDispatch();
+  const state = useECState();
+  const dispatch = useECDispatch();
   const { data: project, loading, error } = state.project;
 
   useEffect(() => {
@@ -150,36 +150,38 @@ function ProjectContentBox() {
   };
 
   return (
-    <BlockforProjectContent>
-      {isPc && (
-        <Pages>
-          {pageState.currentSlide}/{PCTotalslides}
-        </Pages>
-      )}
-      {isMobile && (
-        <Pages>
-          {pageState.currentSlide}/{MOBLIETotalslides}
-        </Pages>
-      )}
-      {isPc && (
-        <StyledSlider {...settings}>
-          {project.map((data) => {
-            return (
-              <>
-                <ProjectBox project={data} />
-              </>
-            );
-          })}
-        </StyledSlider>
-      )}
-      {isMobile && (
-        <StyledSlider {...settingsforMobile}>
-          {project.map((data) => {
-            return <ProjectBox project={data}></ProjectBox>;
-          })}
-        </StyledSlider>
-      )}
-    </BlockforProjectContent>
+    <>
+      <BlockforProjectContent>
+        {isPc && (
+          <Pages>
+            {pageState.currentSlide}/{PCTotalslides}
+          </Pages>
+        )}
+        {isMobile && (
+          <Pages>
+            {pageState.currentSlide}/{MOBLIETotalslides}
+          </Pages>
+        )}
+        {isPc && (
+          <StyledSlider {...settings}>
+            {project.map((data) => {
+              return (
+                <>
+                  <ProjectBox project={data} />
+                </>
+              );
+            })}
+          </StyledSlider>
+        )}
+        {isMobile && (
+          <StyledSlider {...settingsforMobile}>
+            {project.map((data) => {
+              return <ProjectBox project={data}></ProjectBox>;
+            })}
+          </StyledSlider>
+        )}
+      </BlockforProjectContent>
+    </>
   );
 }
 

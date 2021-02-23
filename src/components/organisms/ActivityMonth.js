@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-// import GreyContainer from "../Member/Template/GreyContainer";
 import TextBlock from "../molecules/CommonSubTextContents";
 import { useMonthState } from "../../context/MonthProvider";
 
-import AOS from "aos";
+// import AOS from "aos";
 import "aos/dist/aos.css";
-AOS.init();
+// AOS.init();
 
 const MonthGrid = styled.div`
   display: grid;

@@ -10,10 +10,10 @@ import { useMediaQuery } from "react-responsive";
 import { FiChevronLeft } from "react-icons/fi";
 import { FiChevronRight } from "react-icons/fi";
 import {
-  useStudentState,
-  useStudentDispatch,
+  useECState,
+  useECDispatch,
   getStudent,
-} from "../../context/MemberContext";
+} from "../../context/Context";
 
 const Block = styled.div`
   width: 848px;
@@ -161,8 +161,8 @@ function MemberStudSlide() {
   const isMoblie = useMediaQuery({ query: "(max-width: 639px)" });
 
   const [number, setNumber] = useState({ currentPage: 1 });
-  const state = useStudentState();
-  const dispatch = useStudentDispatch();
+  const state = useECState();
+  const dispatch = useECDispatch();
   const { data: student, loading, error } = state.student;
 
   useEffect(() => {

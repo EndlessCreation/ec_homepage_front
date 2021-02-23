@@ -26,6 +26,7 @@ function PhotoBox({ url }) {
     <Photo>
       <img src={url}></img>
     </Photo>
+
   );
 }
 

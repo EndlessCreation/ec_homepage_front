@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import MemberStudSlide from "../molecules/MemberStudSlide";
 import Size from "../../Size";
-import { MemberProvider } from "../../context/MemberContext";
 
 const StudBox = styled.div`
   width: 848px;
@@ -24,11 +23,9 @@ const StudBox = styled.div`
 
 function MemberStudent() {
   return (
-    <MemberProvider>
       <StudBox>
         <MemberStudSlide />
       </StudBox>
-    </MemberProvider>
   );
 }
 

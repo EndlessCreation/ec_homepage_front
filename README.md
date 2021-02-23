@@ -33,27 +33,36 @@ https://app.zeplin.io/project/600e52dd14039eb3748469cc
 ```
   📁 components 
     📁 atoms
-      // atom 단위의 컴포넌트가 들어가있어요!
+       // atom 단위의 컴포넌트가 들어가있어요!
     📁 molecules
-      // molecule 단위의 컴포넌트가 들어가있어요!
+       // molecule 단위의 컴포넌트가 들어가있어요!
     📁 organisms
-      //organisms 단위의 컴포넌트가 들어가있어요!
+       //organisms 단위의 컴포넌트가 들어가있어요!
     📁 templates
-     📄 CommonFooter.js
-     📄 CommonNavbar.js
-     📄 ActivityTemplate.js
-     📄 MainHeader.js
-     📄 MainTemplate.js
-     📄 MemberTemplate.js
-     📄 ProjectTemplate.js
+       📄 CommonFooter.js
+       📄 CommonNavbar.js
+       📄 ActivityTemplate.js
+       📄 MainHeader.js
+       📄 MainTemplate.js
+       📄 MemberTemplate.js
+       📄 ProjectTemplate.js
     📁 pages
-      📄 Main.js
-      📄 Activity.js
-      📄 Project.js
-      📄 Member.js
+        📄 Main.js
+        📄 Activity.js
+        📄 Project.js
+        📄 Member.js
+      
   📁 context
+      📄 Api.js
+      📄 AsyncActionUtils.js
+      📄 Context.js
+      📄 MainContext.js
+      📄 MonthProvider.js
+  
   📁 fonts
+  
   📄 App.js
+  
   📄 Size.js 
 ```
 

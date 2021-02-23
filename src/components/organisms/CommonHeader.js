@@ -2,6 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import ForMainText from "../atoms/CommonHeaderSmallText";
 import ForIntroText from "../atoms/CommonHeaderBigText";
+// import AOS from 'aos';
+import 'aos/dist/aos.css';
+// AOS.init();
 
 const Container = styled.div`
   box-sizing: border-box;
@@ -35,10 +38,14 @@ const Container = styled.div`
 function IntroContainer({ main, intro, intro2 }) {
   return (
     <Container>
-      <ForMainText>{main}</ForMainText>
+      <div data-aos="fade-right" data-aos-duration="1000" >
+        <ForMainText>{main}</ForMainText>
+      </div>
       <ForIntroText>
-        {intro} <br></br>
-        {intro2}
+        <div data-aos="fade-right" data-aos-duration="1000"  data-aos-delay="500">
+          {intro} <br></br> 
+          {intro2}
+        </div>
       </ForIntroText>
     </Container>
   );

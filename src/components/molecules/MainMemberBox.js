@@ -46,12 +46,14 @@ function MainMemberBox() {
   return (
     <MemberBlock>
       {executive.map((Member) => (
+        <div data-aos="flip-right">
         <MemberItem
           HashTag={Member.hashTags}
           name={Member.name}
           imageUrl={Member.imageUrl}
           position={Member.position}
         />
+        </div>
       ))}
     </MemberBlock>
   );

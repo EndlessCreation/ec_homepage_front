@@ -2,6 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 import ActivityList from "../molecules/MainActivityList";
+
+// import AOS from 'aos';
+import "aos/dist/aos.css";
+// AOS.init();
+
 const ContentsBlock = styled.div`
   width: 100%;
   height: 463px;
@@ -36,7 +41,9 @@ const ContentsBlock = styled.div`
 function ActivityContents() {
   return (
     <ContentsBlock>
-      <ActivityList />
+      <div data-aos="fade-up" data-aos-duration="1000">
+        <ActivityList />
+      </div>
     </ContentsBlock>
   );
 }

@@ -100,7 +100,7 @@ const TextContainer = styled.div`
   padding-bottom: 24px;
   display: flex;
 `;
-function ModalTest() {
+function CommonModal() {
   const State = useModalState();
   const closeModal = useModalClose();
 
@@ -198,4 +198,4 @@ function ModalTest() {
   );
 }
 
-export default ModalTest;
+export default CommonModal;

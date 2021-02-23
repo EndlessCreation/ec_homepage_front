@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-
 import PhotoBox from "../atoms/MainPhotoBox";
 import {
   useExecutiveState,
   useExecutiveDispatch,
   getMainactivty,
 } from "../../context/MainContext";
+
 const PhotoBlock = styled.div`
   width: 498px;
   height: 683px;
@@ -62,7 +62,7 @@ function ActivityPhoto() {
 
   return (
     <PhotoBlock>
-      <div className="Photo">
+      <div className="Photo" >
         {mainactivity.map((photo, index) => (
           <PhotoBox url={photo.imageUrl} key={index} />
         ))}
