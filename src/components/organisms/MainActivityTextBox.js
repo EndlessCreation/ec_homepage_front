@@ -1,8 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-
 import MainText from "../atoms/MainText";
 import MainSubText from "../atoms/MainSubText";
+// import AOS from 'aos';
+import 'aos/dist/aos.css';
+// AOS.init();
+
 const TextBlock = styled.div`
   width: 100%;
   height: 220px;
@@ -21,11 +24,17 @@ const TextBlock = styled.div`
   }
 `;
 
+
+
 function ActivityTextBox() {
   return (
     <TextBlock>
-      <MainText url={"/Activity"}>Activity</MainText>
-      <MainSubText>EC에 오면 이런 활동을 할 수 있어요!</MainSubText>
+      <div data-aos="fade-up"  data-aos-duration="1500" >
+        <MainText url={"/Activity"}>Activity</MainText>
+      </div>
+      <div data-aos="fade-up"  data-aos-duration="1500" >
+        <MainSubText>EC에 오면 이런 활동을 할 수 있어요!</MainSubText>
+      </div>
     </TextBlock>
   );
 }

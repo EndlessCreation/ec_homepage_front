@@ -3,15 +3,15 @@ import styled from "styled-components";
 import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 import { darken, lighten } from "polished";
 import {
-  usePhotoState,
-  usePhotoDispatch,
+  useECState,
+  useECDispatch,
   getPhotos,
-} from "../../context/ActivityGetApi";
+} from "../../context/Context";
 import TextBlock from "../molecules/CommonSubTextContents";
 
-import AOS from "aos";
+// import AOS from "aos";
 import "aos/dist/aos.css";
-AOS.init();
+// AOS.init();
 
 //현재상태의 이미지만 보여줄 container
 const ShowContainer = styled.div`
@@ -31,10 +31,17 @@ const ShowContainer = styled.div`
 
 // 두줄을 아래로 정렬
 const PhotoContainer = styled.div`
+  padding-bottom: 130px;
   .photo-container {
     display: flex;
     flex-direction: column; // 아래로 정렬
     flex-wrap: nowrap; // 공간이 없을때 자동 줄바꿈
+  }
+  @media screen and (max-width: 1279px) {
+    padding-bottom: 80px;
+  }
+  @media screen and (max-width: 767px) {
+    padding-bottom: 70px;
   }
 `;
 
@@ -187,9 +194,6 @@ const Page = styled.div`
   }
 `;
 
-const TextWrapper = styled.div`
-  width: 100px;
-`;
 
 function Photo({ photo }) {
   return (
@@ -206,8 +210,8 @@ function Photo({ photo }) {
 }
 
 export default function PhotoList() {
-  const state = usePhotoState(); // 상태 값 불러오기~
-  const dispatch = usePhotoDispatch();
+  const state = useECState(); // 상태 값 불러오기~
+  const dispatch = useECDispatch();
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef(null);

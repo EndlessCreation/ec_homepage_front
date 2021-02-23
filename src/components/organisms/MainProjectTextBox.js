@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import MainText from "../atoms/MainText";
 import MainSubText from "../atoms/MainSubText";
+
 const TextBlock = styled.div`
   width: 100%;
   height: 254px;

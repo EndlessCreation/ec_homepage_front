@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Modal from "./ProjectModal";
+// import AOS from 'aos';
+import "aos/dist/aos.css";
+// AOS.init();
 
 const BoxforProject = styled.div`
   @media screen and (min-width: 1280px) {
@@ -26,25 +28,18 @@ const BoxforProject = styled.div`
 `;
 
 function ProjectBox({ project }) {
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const openModal = () => {
-    setModalOpen(true);
-  };
-  const closeModal = () => {
-    setModalOpen(false);
-  };
-
   return (
     <>
-      <BoxforProject onClick={openModal}>
-        <img
-          src={project.imageUrl}
-          alt={project.id}
-          width="100%"
-          height="100%"
-        />
-      </BoxforProject>
+      <div data-aos="flip-right" data-aos-duration="1000">
+        <BoxforProject>
+          <img
+            src={project.imageUrl}
+            alt={project.id}
+            width="100%"
+            height="100%"
+          />
+        </BoxforProject>
+      </div>
     </>
   );
 }

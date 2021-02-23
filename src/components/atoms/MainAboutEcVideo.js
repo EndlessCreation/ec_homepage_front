@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 const VideoBlock = styled.div`
   background-color: #dddddd;
@@ -24,6 +27,8 @@ const VideoBlock = styled.div`
 
 function AboutEcVideo() {
   return (
+
+    <div data-aos="fade-up"  data-aos-duration="600" >
     <VideoBlock>
       <iframe
         width="100%"
@@ -34,6 +39,7 @@ function AboutEcVideo() {
         allowfullscreen
       />
     </VideoBlock>
+    </div>
   );
 }
 

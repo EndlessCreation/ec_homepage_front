@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import Size from "../../Size";
+// import AOS from 'aos';
+import 'aos/dist/aos.css';
+// AOS.init({
+//   disable : 'mobile'
+// });
 
 //항목의 text부분
 const Text = styled.div`
@@ -163,6 +168,7 @@ img {
 function MemberStuCircle({ stud }) {
   return (
     <>
+    <div data-aos="flip-right"  data-aos-duration="1000" >
       {(function () {
         if (stud.part) return <Part>P</Part>;
       })()}
@@ -170,9 +176,11 @@ function MemberStuCircle({ stud }) {
         <img src={stud.imageUrl} />
         <Text>
           {stud.name} {stud.generation}기<br />
-          {stud.hashTags}
+          {stud.hashTags.map((hash)=> 
+                <div>{hash}</div>)}
         </Text>
       </StudInfoBlock>
+      </div>
     </>
   );
 }

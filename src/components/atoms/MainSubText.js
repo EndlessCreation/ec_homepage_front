@@ -1,5 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+// import AOS from 'aos';
+import 'aos/dist/aos.css';
+// AOS.init({
+//   disable : 'mobile'
+// });
 
 const TextBlock = styled.div`
   width: auto;
@@ -21,7 +26,11 @@ const TextBlock = styled.div`
   }
 `;
 function MainSubText({ children }) {
-  return <TextBlock>{children}</TextBlock>;
+  return (
+  <div data-aos="fade-up"  data-aos-duration="1500" >
+  <TextBlock>{children}</TextBlock>
+  </div>
+  );
 }
 
 export default MainSubText;

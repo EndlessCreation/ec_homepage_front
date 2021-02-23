@@ -11,14 +11,9 @@ import Pages from "../atoms/ProjectSlidePage";
 import {
   getProject,
   getProjectData,
-  useProjectDispatch,
-  useProjectState,
-} from "../../context/ProjectContext";
-import {
-  useModalState,
-  useModalClose,
-} from "../../context/ProjectModalContext";
-import Modal from "../atoms/ProjectModal";
+  useECDispatch,
+  useECState,
+} from "../../context/Context";
 
 const BlockforProjectContent = styled.div`
   @media screen and (min-width: 1280px) {
@@ -98,14 +93,11 @@ function ProjectContentBox() {
   const isPc = useMediaQuery({
     query: "(min-width: 768px)",
   });
-  //모달 상태
-  const ModalState = useModalState();
-  const closeModal = useModalClose();
   const isMobile = useMediaQuery({ query: " (max-width: 767px)" });
   const [pageState, setState] = useState({ currentSlide: 1 });
 
-  const state = useProjectState();
-  const dispatch = useProjectDispatch();
+  const state = useECState();
+  const dispatch = useECDispatch();
   const { data: project, loading, error } = state.project;
 
   useEffect(() => {
@@ -190,7 +182,6 @@ function ProjectContentBox() {
           </StyledSlider>
         )}
       </BlockforProjectContent>
-      <Modal state={ModalState} close={closeModal} haeder="header" />
     </>
   );
 }

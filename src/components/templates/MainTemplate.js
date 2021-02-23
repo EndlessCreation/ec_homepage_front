@@ -27,6 +27,10 @@ import MemberContents from "../organisms/MainMemberContents";
 import ContactTextBox from "../organisms/MainContactTextBox";
 import ContactContents from "../organisms/MainContactContents";
 
+// import AOS from 'aos';
+import 'aos/dist/aos.css';
+// AOS.init();
+
 const GridBlock = styled.div`
   width: 100%;
 

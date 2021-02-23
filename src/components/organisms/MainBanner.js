@@ -1,5 +1,8 @@
 import React from "react";
 import styled, { css } from "styled-components";
+// import AOS from 'aos';
+import 'aos/dist/aos.css';
+// AOS.init();
 
 const BannerBlock = styled.div`
   width: 100%;
@@ -50,7 +53,7 @@ const MainBannerText2 = styled.div`
 `;
 
 const MainBannerText3 = styled.div`
-  font-family: NanumSqaureBold;
+  font-family: NanumSquareBold;
   font-size: 28px;
   line-height: 48px;
   white-space: nowrap;
@@ -70,12 +73,16 @@ const MainBannerText3 = styled.div`
 function MainBanner() {
   return (
     <BannerBlock>
-      <MainBannerText> 성장하는 즐거움,</MainBannerText>
-      <MainBannerText2>Endless Creation</MainBannerText2>
-      <MainBannerText3>
-        신입기수 모집 중(~3/14)
-        <br /> 31기 여러분들을 기다리고 있어요
-      </MainBannerText3>
+      <div data-aos="fade-right"  data-aos-duration="1000" >
+        <MainBannerText> 성장하는 즐거움,</MainBannerText>
+        <MainBannerText2>Endless Creation</MainBannerText2>
+      </div>
+      <div data-aos="fade-right" data-aos-duration="1000"  data-aos-delay="300">
+        <MainBannerText3>
+          신입기수 모집 중(~3/14)
+          <br /> 31기 여러분들을 기다리고 있어요
+        </MainBannerText3>
+      </div>
     </BannerBlock>
   );
 }

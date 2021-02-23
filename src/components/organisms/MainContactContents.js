@@ -2,6 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import ContatcMainText from "../atoms/MainContactMainText";
 import ContactItem from "../atoms/MainContactItem";
+// import AOS from 'aos';
+import 'aos/dist/aos.css';
+// AOS.init();
 
 const ContentsBlock = styled.div`
   width: auto;
@@ -38,6 +41,7 @@ const ContentsBlock = styled.div`
 const ContactInfo = styled.div``;
 function ContactContents() {
   return (
+    <div data-aos="fade-up"  data-aos-duration="1000" >
     <ContentsBlock>
       <ContactInfo className="location">
         <ContatcMainText>Location</ContatcMainText>
@@ -45,16 +49,17 @@ function ContactContents() {
         <ContactItem>서울과학기술대학교 미래관 313호</ContactItem>
       </ContactInfo>
       <ContactInfo className="keyword1">
-        <ContatcMainText>Location</ContatcMainText>
+        <ContatcMainText>Contact 1</ContatcMainText>
         <ContactItem>2021년 회장 김건훈</ContactItem>
         <ContactItem>010-1010-1010</ContactItem>
       </ContactInfo>
       <ContactInfo className="keyword2">
-        <ContatcMainText>Location</ContatcMainText>
+        <ContatcMainText>Contact 2</ContatcMainText>
         <ContactItem>2021년 부회장 조인혁</ContactItem>
         <ContactItem>010-2642-2713</ContactItem>
       </ContactInfo>
     </ContentsBlock>
+    </div>
   );
 }
 
