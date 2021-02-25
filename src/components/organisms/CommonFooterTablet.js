@@ -38,11 +38,11 @@ const Logo = styled.div`
 const Name = styled.div`
   padding-top: 62px;
   padding-bottom : 85px;
-  width:235px;
+  width:300px;
 
   .wrapper {
     display: grid;
-    grid-template-columns: 71fr 280fr ;
+    grid-template-columns: 71fr 229fr ;
     grid-template-rows : 13fr 18fr 13fr 18fr 13fr ;
     
     grid-auto-rows: minmax(100px, auto);    # 최소크기는 100px 이되, 창이 이보다 작아지면 자동으로 
@@ -169,12 +169,12 @@ function Footer({ nav, left }) {
           <Logo>Endless Creation</Logo>
           <Name>
             <div className="wrapper">
-              <div className="t1">기획</div>
-              <div className="t2">디자이너</div>
-              <div className="t3">개발자</div>
-              <div className="p1">김개발 &emsp; 김개발 &emsp; 김개발 &emsp; 김개발</div>
-              <div className="p2">김개발 &emsp; 김개발 &emsp; 김개발 &emsp; 김개발</div>
-              <div className="p3">김개발 &emsp; 김개발 &emsp; 김개발 &emsp; 김개발</div>
+            <div className ='t1'>디자이너</div>
+            <div className ='t2'>프론트엔드</div>
+            <div className ='t3'>백엔드</div>
+            <div className='p1'>김재완 </div>
+            <div className='p2'>조인혁 &ensp; 김미성 &ensp; 김초희&ensp; 마경미 &ensp;오예진</div>
+            <div className='p3'>김건훈 &ensp; 김예림 &ensp; 이상진&ensp;</div>
             </div>
           </Name>
         </ContainerInner>

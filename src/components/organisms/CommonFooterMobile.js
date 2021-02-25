@@ -180,12 +180,12 @@ function Footer(){
       <ContainerInner>
       <Name>
         <div className ='wrapper'>
-          <div className ='t1'>디자이너</div>
+        <div className ='t1'>디자이너</div>
           <div className ='t2'>프론트엔드</div>
           <div className ='t3'>백엔드</div>
-          <div className='p1'>김개발 &emsp; 김개발 &emsp; 김개발 &emsp; 김개발</div>
-          <div className='p2'>김개발 &emsp; 김개발 &emsp; 김개발 &emsp; 김개발</div>
-          <div className='p3'>김개발 &emsp; 김개발 &emsp; 김개발 &emsp; 김개발</div>
+          <div className='p1'>김재완 </div>
+          <div className='p2'>조인혁 &ensp; 김미성 &ensp; 김초희&ensp; 마경미 &ensp;오예진</div>
+          <div className='p3'>김건훈 &ensp; 김예림 &ensp; 이상진&ensp;</div>
         </div>
       </Name>
       </ContainerInner>
