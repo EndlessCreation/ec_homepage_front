@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import styled, { css } from "styled-components";
 import { useMediaQuery } from "react-responsive";
-
 import SliderBoxs from "./MainSliderBoxs";
 import SliderBox from "../atoms/MainSliderBox";
 import SliderButton from "../atoms/MainSliderButton";
@@ -9,7 +8,6 @@ import {
   useExecutiveState,
   useExecutiveDispatch,
   getEcpick,
-  getProjectData,
 } from "../../context/MainContext";
 
 //동적으로 영역 너비 설정 완료

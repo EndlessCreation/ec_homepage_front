@@ -17,11 +17,6 @@ const initialState = {
     data: null,
     error: null,
   },
-  projectData: {
-    loading: false,
-    data: null,
-    error: null,
-  },
 };
 
 const loadingState = {
@@ -86,22 +81,6 @@ function mainReducer(state, action) {
       return {
         ...state,
         mainactivity: error(action.error),
-      };
-
-    case "GET_PROJECTDATA":
-      return {
-        ...state,
-        projectData: loadingState,
-      };
-    case "GET_PROJECTDATA_SUCCESS":
-      return {
-        ...state,
-        projectData: success(action.data),
-      };
-    case "GET_PROJECTDATA_ERROR":
-      return {
-        ...state,
-        projectData: error(action.error),
       };
     default:
       throw new Error(`Unhanded action type : ${action.type}`);
@@ -173,7 +152,7 @@ export async function getExecutive(dispatch) {
   dispatch({ type: "GET_EXECUTIVE" });
   try {
     const response = await axios.get(
-      "http://13.124.234.100:8080/members/executives"
+      "http://3.35.39.140:8080/members/executives"
     );
     dispatch({ type: "GET_EXECUTIVE_SUCCESS", data: response.data });
   } catch (e) {
@@ -185,7 +164,7 @@ export async function getEcpick(dispatch) {
   dispatch({ type: "GET_ECPICK" });
   try {
     const response = await axios.get(
-      "http://13.124.234.100:8080/projects/ecpick"
+      "http://3.35.39.140:8080/projects/ecpick"
     );
     dispatch({ type: "GET_ECPICK_SUCCESS", data: response.data });
   } catch (e) {
@@ -197,21 +176,10 @@ export async function getMainactivty(dispatch) {
   dispatch({ type: "GET_MAINACTIVITY" });
   try {
     const response = await axios.get(
-      "http://13.124.234.100:8080/activities/main"
+      "http://3.35.39.140:8080/activities/main"
     );
     dispatch({ type: "GET_MAINACTIVITY_SUCCESS", data: response.data });
   } catch (e) {
     dispatch({ type: "GET_MAINACTIVITY_ERROR", error: e });
-  }
-}
-export async function getProjectData(dispatch, id) {
-  dispatch({ type: "GET_PROJECTDATA" });
-  try {
-    const response = await axios.get(
-      `http://13.124.234.100:8080/projects/${id}`
-    );
-    dispatch({ type: "GET_PROJECTDATA_SUCCESS", data: response.data });
-  } catch (e) {
-    dispatch({ type: "GET_PROJECTDATA_ERROR", error: e });
   }
 }

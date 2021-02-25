@@ -6,10 +6,11 @@ import {
   useIdState,
 } from "../../context/ProjectModalContext";
 import {
-  useExecutiveState,
-  useExecutiveDispatch,
-  getProjectData,
-} from "../../context/MainContext";
+  useECState,
+  useECDispatch,
+  getProjectData
+} from "../../context/Context";
+
 const Block = styled.div`
   display: block;
   position: fixed;
@@ -105,8 +106,8 @@ function CommonModal() {
   const closeModal = useModalClose();
 
   const id = useIdState();
-  const state = useExecutiveState();
-  const dispatch = useExecutiveDispatch();
+  const state = useECState();
+  const dispatch = useECDispatch();
   const { data: projectData, loading, error } = state.projectData;
   useEffect(() => {
     console.log(projectData);

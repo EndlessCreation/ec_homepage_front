@@ -33,6 +33,17 @@ const initialState = {
       data: null,
       error: null
     },
+    ecpick: {
+      loading: false,
+      data: null,
+      error: null,
+    },
+    mainactivity: {
+      loading: false,
+      data: null,
+      error: null,
+    },
+    
 }
 
 const loadingState = {
@@ -143,6 +154,36 @@ function ECReducer(state, action) {
           ...state,
           photos: error(action.error)
         };
+        case "GET_ECPICK":
+          return {
+            ...state,
+            ecpick: loadingState,
+          };
+        case "GET_ECPICK_SUCCESS":
+          return {
+            ...state,
+            ecpick: success(action.data),
+          };
+        case "GET_ECPICK_ERROR":
+          return {
+            ...state,
+            ecpick: error(action.error),
+          };
+        case "GET_MAINACTIVITY":
+          return {
+            ...state,
+            mainactivity: loadingState,
+          };
+        case "GET_MAINACTIVITY_SUCCESS":
+          return {
+            ...state,
+            mainactivity: success(action.data),
+          };
+        case "GET_MAINACTIVITY_ERROR":
+          return {
+            ...state,
+            mainactivity: error(action.error),
+          };
       default:
         throw new Error(`Unhanded action type : ${action.type}`);
     }
@@ -151,15 +192,49 @@ function ECReducer(state, action) {
 const ECStateContext = createContext(null);
 const ECDispatchContext = createContext(null);
 
+const BtnState = createContext();
+const BtnStateToggle = createContext();
+const BtnStateOff = createContext();
+
 export function ECProvider({ children }) {
     const [state, dispatch] = useReducer(ECReducer, initialState);
+    const [Active, setActive] = useState(false);
+    const onToggle = () => {
+      setActive(!Active);
+    };
+    const offActive = () => {
+      setActive(false);
+      console.log(Active);
+    };
     return (
+      <BtnState.Provider value={Active}>
+      <BtnStateToggle.Provider value={onToggle}>
+        <BtnStateOff.Provider value={offActive}>
+ 
         <ECStateContext.Provider value={state}>
             <ECDispatchContext.Provider value={dispatch}>
               {children}
             </ECDispatchContext.Provider>
         </ECStateContext.Provider>
+
+        </BtnStateOff.Provider>
+      </BtnStateToggle.Provider>
+    </BtnState.Provider>
     );
+  }
+
+  export function useBtnState() {
+    const context = useContext(BtnState);
+    return context;
+  }
+  
+  export function useBtnToggle() {
+    const context = useContext(BtnStateToggle);
+    return context;
+  }
+  export function useBtnOffToggle() {
+    const context = useContext(BtnStateOff);
+    return context;
   }
 
 export function useECState() {
@@ -183,5 +258,6 @@ export function useECDispatch() {
   export const getGraduate = createAsyncDispatcher('GET_GRADUATE', api.getGraduate);
   export const getProject = createAsyncDispatcher('GET_PROJECT', api.getProject);
   export const getProjectData = createAsyncDispatcher('GET_PROJECTDATA', api.getProjectData);
-  export const getPhotos = createAsyncDispatcher('GET_PHOTOS', api.getPhotos);
+  export const getEcpick = createAsyncDispatcher('GET_ECPICK', api.getEcpick);
+  export const getMainactivty = createAsyncDispatcher('GET_MAINACTIVITY', api.getMainactivty);
   

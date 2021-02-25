@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
-import { useBtnState, useBtnOffToggle } from "../../context/MainContext";
+import { useBtnState, useBtnOffToggle } from "../../context/Context";
 
 const LinkList = styled.li`
   list-style: none;

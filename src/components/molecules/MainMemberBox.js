@@ -3,10 +3,10 @@ import styled from "styled-components";
 import MemberItem from "../atoms/MainMemberItem";
 
 import {
-  useExecutiveState,
-  useExecutiveDispatch,
+  useECState,
+  useECDispatch,
   getExecutive,
-} from "../../context/MainContext";
+} from "../../context/Context";
 
 const MemberBlock = styled.div`
   max-width: 880px;
@@ -32,8 +32,8 @@ const MemberBlock = styled.div`
 `;
 
 function MainMemberBox() {
-  const state = useExecutiveState();
-  const dispatch = useExecutiveDispatch();
+  const state = useECState();
+  const dispatch = useECDispatch();
   const { data: executive, loading, error } = state.executive;
 
   useEffect(() => {

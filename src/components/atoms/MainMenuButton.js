@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-import { useBtnState, useBtnToggle } from "../../context/MainContext";
+import { useBtnState, useBtnToggle } from "../../context/Context";
 
 const Button = styled.div`
   position: absolute;
