@@ -2,7 +2,9 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import MemberItem from "../atoms/MainMemberItem";
 
+import { Position } from "../../context/PositionMapping";
 import { useECState, useECDispatch, getExecutive } from "../../context/Context";
+
 import Loader from "../atoms/CommonLoader";
 const MemberBlock = styled.div`
   max-width: 880px;
@@ -47,7 +49,7 @@ function MainMemberBox() {
             HashTag={Member.hashTags}
             name={Member.name}
             imageUrl={Member.imageUrl}
-            position={Member.position}
+            position={Position[Member.position]}
           />
         </div>
       ))}

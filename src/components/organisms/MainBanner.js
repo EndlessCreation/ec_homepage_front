@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 // import AOS from 'aos';
-import 'aos/dist/aos.css';
+import "aos/dist/aos.css";
 // AOS.init();
 
 const BannerBlock = styled.div`
@@ -11,6 +11,7 @@ const BannerBlock = styled.div`
   padding-top: 265px;
   padding-bottom: 0;
   padding-right: 36%;
+  color: #ffffff;
   box-sizing: border-box;
   @media screen and (max-width: 1279px) {
     padding-left: 0;
@@ -73,11 +74,11 @@ const MainBannerText3 = styled.div`
 function MainBanner() {
   return (
     <BannerBlock>
-      <div data-aos="fade-right"  data-aos-duration="1000" >
+      <div data-aos="fade-right" data-aos-duration="1000">
         <MainBannerText> 성장하는 즐거움,</MainBannerText>
         <MainBannerText2>Endless Creation</MainBannerText2>
       </div>
-      <div data-aos="fade-right" data-aos-duration="1000"  data-aos-delay="300">
+      <div data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
         <MainBannerText3>
           신입기수 모집 중(~3/14)
           <br /> 31기 여러분들을 기다리고 있어요

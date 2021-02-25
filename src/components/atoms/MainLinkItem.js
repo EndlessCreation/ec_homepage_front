@@ -7,7 +7,7 @@ const LinkList = styled.li`
   list-style: none;
   .link {
     text-decoration: none;
-    color: #232323;
+    color: #ffffff;
     display: inline-block;
   }
   @media screen and (max-width: 1280px) {
