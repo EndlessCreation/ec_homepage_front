@@ -164,12 +164,12 @@ function FooterPC(){
       <Logo>Endless Creation</Logo>
       <Name>
         <div className ='wrapper'>
-          <div className ='t1'>기획</div>
-          <div className ='t2'>디자이너</div>
-          <div className ='t3'>개발자</div>
-          <div className='p1'>김개발 &emsp; 김개발 &emsp; 김개발&emsp; 김개발</div>
-          <div className='p2'>김개발 &emsp; 김개발 &emsp; 김개발&emsp; 김개발</div>
-          <div className='p3'>김개발 &emsp; 김개발 &emsp; 김개발&emsp; 김개발</div>
+          <div className ='t1'>디자이너</div>
+          <div className ='t2'>프론트엔드</div>
+          <div className ='t3'>백엔드</div>
+          <div className='p1'>김재완 </div>
+          <div className='p2'>조인혁 &emsp; 김미성 &emsp; 김초희&emsp; 마경미 &emsp;오예진</div>
+          <div className='p3'>김건훈 &emsp; 김예림 &emsp; 이상진&emsp;</div>
         </div>
       </Name>
       </ContainerInner>
