@@ -10,7 +10,6 @@ const Text = styled.span`
   font-family: Kanit;
   line-height: 35px;
   font-size: 24px;
-  color: #101010;
   font-weight: bold;
   white-space: nowrap;
   @media screen and (max-width: 1279px) {

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+//Main Header import
 import MainHeader from "./MainHeader";
 //common Template
 import CommonContainer from "../organisms/CommonContainer";
@@ -28,12 +28,11 @@ import ContactTextBox from "../organisms/MainContactTextBox";
 import ContactContents from "../organisms/MainContactContents";
 
 // import AOS from 'aos';
-import 'aos/dist/aos.css';
+import "aos/dist/aos.css";
 // AOS.init();
 
 const GridBlock = styled.div`
   width: 100%;
-
   display: grid;
   grid-template-columns: 616fr 584fr;
   grid-template-rows: 220fr 463fr;
