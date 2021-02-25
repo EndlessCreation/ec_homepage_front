@@ -1,16 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import styled from "styled-components";
-import {
-  useModalState,
-  useModalClose,
-  useIdState,
-} from "../../context/ProjectModalContext";
+import { useGlobalState, useGlobalDispatch } from "../../context/GlobalContext";
+import Loader from "./CommonLoader";
 import {
   useECState,
   useECDispatch,
-  getProjectData
+  getProjectData,
 } from "../../context/Context";
-
 const Block = styled.div`
   display: block;
   position: fixed;
@@ -82,7 +78,7 @@ const ImgBlock = styled.div`
 `;
 const Text = styled.div`
   width: 104px;
-  font-family: NanumSquareB;
+  font-family: NanumSquareBold;
   font-size: 16px;
   line-height: 1.13;
   letter-spacing: normal;
@@ -91,7 +87,7 @@ const Text = styled.div`
 `;
 const Box = styled.div`
   width: 456px;
-  font-family: NanumSquareR;
+  font-family: NanumSquareRegular;
   font-size: 14px;
   line-height: 1.71;
   color: #232323;
@@ -102,10 +98,17 @@ const TextContainer = styled.div`
   display: flex;
 `;
 function CommonModal() {
-  const State = useModalState();
-  const closeModal = useModalClose();
+  const State = useGlobalState();
+  const GlobalDispatch = useGlobalDispatch();
+  const ModalState = State.ModalState;
+  const id = State.id;
 
-  const id = useIdState();
+  const closeModal = useCallback(() => {
+    GlobalDispatch({
+      type: "MODAL_CLOSE",
+    });
+  }, []);
+
   const state = useECState();
   const dispatch = useECDispatch();
   const { data: projectData, loading, error } = state.projectData;
@@ -114,7 +117,12 @@ function CommonModal() {
     getProjectData(dispatch, id);
   }, [dispatch, id]);
 
-  if (loading) return <div>로딩중..</div>;
+  if (loading)
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
   if (error) return <div>에러가 발생했습니다</div>;
   if (!projectData) return null;
 
@@ -122,8 +130,8 @@ function CommonModal() {
   const endDate = new Date(projectData.endDate);
   return (
     <>
-      {State && (
-        <Block State={State}>
+      {ModalState && (
+        <Block State={ModalState}>
           <ModalBlock>
             <Header>
               <div>{projectData.name}</div>

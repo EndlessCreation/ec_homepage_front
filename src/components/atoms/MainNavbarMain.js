@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import { useMediaQuery } from "react-responsive";
 
 import LinkItem from "./MainLinkItem";
-import { useBtnState } from "../../context/Context";
+import { useGlobalState } from "../../context/GlobalContext";
 /*네이게이션 바 EC 텍스트*/
 const Text = styled.span`
   display: inline-block;
@@ -24,7 +24,8 @@ const Text = styled.span`
 `;
 
 function NavbarMain() {
-  const Active = useBtnState();
+  const state = useGlobalState();
+  const Active = state.NavState;
   /*Pc와 태블릿&&모바일 다른 텍스트 구현 */
   const isPC = useMediaQuery({
     query: "(min-width:1280px)",
