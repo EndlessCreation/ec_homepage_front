@@ -7,8 +7,8 @@ import CommonModal from "../atoms/CommonModal";
 function Project() {
   return (
     <>
-    <CommonModal />
       <MainNavbar />
+      <CommonModal />
       <EntireBox />
       <CommonFooter />
     </>

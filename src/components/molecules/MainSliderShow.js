@@ -1,15 +1,12 @@
 import React, { useEffect, useState, useRef } from "react";
 import styled, { css } from "styled-components";
 import { useMediaQuery } from "react-responsive";
+import Loader from "../atoms/CommonLoader";
 
 import SliderBoxs from "./MainSliderBoxs";
 import SliderBox from "../atoms/MainSliderBox";
 import SliderButton from "../atoms/MainSliderButton";
-import {
-  useExecutiveState,
-  useExecutiveDispatch,
-  getEcpick,
-} from "../../context/MainContext";
+import { useECState, useECDispatch, getEcpick } from "../../context/Context";
 
 //동적으로 영역 너비 설정 완료
 const SlideBlock = styled.div`
@@ -65,8 +62,8 @@ function SliderShow() {
   });
 
   //Provider로 데이터 받아오기
-  const state = useExecutiveState();
-  const dispatch = useExecutiveDispatch();
+  const state = useECState();
+  const dispatch = useECDispatch();
   const { data: ecpick, loading, error } = state.ecpick;
 
   useEffect(() => {
@@ -77,7 +74,7 @@ function SliderShow() {
       slideRef.current.style.transform = `translateX(-${MoveSlide}%)`; // 백틱을 사용하여 슬라이드로 이동하는 애니메이션을 만듭니다.
     }
   }, [dispatch, currentSlide]);
-  if (loading) return <div>로딩중..</div>;
+  if (loading) return <div><Loader/></div>;
   if (error) return <div>에러가 발생했습니다</div>;
   if (!ecpick) return null;
 
@@ -107,7 +104,7 @@ function SliderShow() {
         {NewArrary.map((data, index) => (
           <SliderBoxs key={index}>
             {data.map((data) => (
-              <SliderBox id={data.id}></SliderBox>
+              <SliderBox id={data.id} url={data.imageUrl}></SliderBox>
             ))}
           </SliderBoxs>
         ))}

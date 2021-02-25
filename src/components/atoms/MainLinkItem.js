@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
-import { useBtnState, useBtnOffToggle } from "../../context/MainContext";
+import { useGlobalState, useGlobalDispatch } from "../../context/GlobalContext";
 
 const LinkList = styled.li`
   list-style: none;
@@ -21,8 +21,16 @@ const LinkList = styled.li`
   }
 `;
 function LinkItem({ children, to }) {
-  const active = useBtnState();
-  const OffToggle = useBtnOffToggle();
+  const state = useGlobalState();
+  const dispatch = useGlobalDispatch();
+  const active = state.NavState;
+  const OffToggle = useCallback((id) => {
+    dispatch({
+      type: "TOGGLE_OFF",
+    });
+  }, []);
+
+  console.log(active);
   return (
     <LinkList active={active} onClick={OffToggle}>
       <Link to={to} className="link">

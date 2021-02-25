@@ -1,11 +1,11 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-import { useBtnState } from "../../context/MainContext";
+import { useGlobalState } from "../../context/GlobalContext";
 import NavbarMain from "../atoms/MainNavbarMain";
 import NavbarMenu from "../molecules/MainNavbarMenu";
 import MenuButton from "../atoms/MainMenuButton";
-
+import CommonFooter from "../organisms/CommonFooterTablet";
 /* 상단 고정 네이게이션 바 Template*/
 const NavbarTemplate = styled.div`
   position: fixed;
@@ -20,6 +20,11 @@ const NavbarTemplate = styled.div`
   padding-left: 70px;
   padding-right: 70px;
   z-index: 3;
+  .footer {
+    width: 100%;
+
+    display: none;
+  }
   @media screen and (max-width: 1280px) {
     padding-left: 80px;
     padding-right: 70px;
@@ -29,10 +34,13 @@ const NavbarTemplate = styled.div`
       css`
         height: 100%;
         background-color: #232323;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: flex-start;
         flex-direction: column;
         padding-top: 24px;
+        .footer {
+          display: block;
+        }
       `}
   }
   @media screen and (max-width: 767px) {
@@ -48,6 +56,9 @@ const NavbarTemplate = styled.div`
         align-items: flex-start;
         flex-direction: column;
         padding-top: 20px;
+        .footer {
+          display: none;
+        }
       `}
   }
   @media screen and (max-width: 359px) {
@@ -55,13 +66,17 @@ const NavbarTemplate = styled.div`
   }
 `;
 function MainNavbar() {
-  const active = useBtnState();
+  const state = useGlobalState();
+  const active = state.NavState;
   return (
     <>
       <NavbarTemplate active={active}>
         <NavbarMain />
         <NavbarMenu />
         <MenuButton />
+        <div className="footer">
+          <CommonFooter nav={"100%"} left={"0px"} />
+        </div>
       </NavbarTemplate>
     </>
   );

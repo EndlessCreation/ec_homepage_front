@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useCallback } from "react";
 import styled from "styled-components";
-import {useModalOpen, useChangeId} from "../../context/ProjectModalContext";
+import { useGlobalDispatch } from "../../context/GlobalContext";
 
 // import AOS from 'aos';
 import "aos/dist/aos.css";
@@ -12,7 +12,7 @@ const BoxforProject = styled.div`
     height: 188px;
     opacity: 1;
     margin-bottom: 32px;
-    cursor:pointer;
+    cursor: pointer;
   }
 
   @media screen and (max-width: 1279px) {
@@ -20,7 +20,7 @@ const BoxforProject = styled.div`
     height: 140px;
     opacity: 1;
     margin-bottom: 16px;
-    cursor:pointer;
+    cursor: pointer;
   }
 
   @media screen and (max-width: 767px) {
@@ -28,17 +28,29 @@ const BoxforProject = styled.div`
     height: 146px;
     opacity: 1;
     margin-bottom: 16px;
-    cursor:pointer;
+    cursor: pointer;
   }
 `;
 
 function ProjectBox({ project }) {
-    const openModal = useModalOpen();
-    const changeid = useChangeId();
-    function ClickEvent(id) {
-      openModal();
-      changeid(id);
-    }
+  const GlobalDispatch = useGlobalDispatch();
+  const id = project.id;
+  const changeid = useCallback(() => {
+    GlobalDispatch({
+      type: "CHANGE_ID",
+      id,
+    });
+  }, []);
+
+  const openModal = useCallback(() => {
+    GlobalDispatch({
+      type: "MODAL_OPEN",
+    });
+  }, []);
+  function ClickEvent(id) {
+    openModal();
+    changeid(id);
+  }
   return (
     <>
       <div data-aos="flip-right" data-aos-duration="1000">
