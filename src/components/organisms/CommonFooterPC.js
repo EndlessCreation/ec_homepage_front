@@ -127,11 +127,18 @@ const Icon = styled.div`
     flex-direction: row;  // 옆으로 정렬
 
     .circle{
-      width: 36px;
-      height: 36px;
-      margin-left:16px;
-      border-radius: 68px;
-      background-color: #f2f2f2;
+      height: 24px;
+      padding-left:24px;
+      font-family: Kanit-Regular;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 1.5;
+      letter-spacing: -0.32px;
+      text-align: right;
+    }
+
+    a{
+      color: #d2d2d2;
     }
 `;
 
@@ -156,21 +163,21 @@ function FooterPC(){
       <ContainerInner>
       <Logo>Endless Creation</Logo>
       <Name>
-        <div class ='wrapper'>
-          <div class ='t1'>기획</div>
-          <div class ='t2'>디자이너</div>
-          <div class ='t3'>개발자</div>
-          <div class='p1'>김개발 &emsp; 김개발 &emsp; 김개발</div>
-          <div class='p2'>김개발 &emsp; 김개발 &emsp; 김개발</div>
-          <div class='p3'>김개발 &emsp; 김개발 &emsp; 김개발</div>
+        <div className ='wrapper'>
+          <div className ='t1'>기획</div>
+          <div className ='t2'>디자이너</div>
+          <div className ='t3'>개발자</div>
+          <div className='p1'>김개발 &emsp; 김개발 &emsp; 김개발&emsp; 김개발</div>
+          <div className='p2'>김개발 &emsp; 김개발 &emsp; 김개발&emsp; 김개발</div>
+          <div className='p3'>김개발 &emsp; 김개발 &emsp; 김개발&emsp; 김개발</div>
         </div>
       </Name>
       </ContainerInner>
       <ContainerInner>
         <Icon>
-            <div class='circle'></div>
-            <div class='circle'></div>
-            <div class='circle'></div>
+            <div className="circle"><a href="https://www.facebook.com/groups/238730472850269">Facebook</a></div>
+            <div className="circle"><a href='https://github.com/EndlessCreation'>Github</a></div>
+            <div className="circle"><a href='https://github.com/EndlessCreation'>KakaoTalk</a></div>
           </Icon>
       </ContainerInner>
       <ContainerInner>
