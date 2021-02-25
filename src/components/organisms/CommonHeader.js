@@ -3,8 +3,16 @@ import styled from "styled-components";
 import ForMainText from "../atoms/CommonHeaderSmallText";
 import ForIntroText from "../atoms/CommonHeaderBigText";
 // import AOS from 'aos';
-import 'aos/dist/aos.css';
+import "aos/dist/aos.css";
 // AOS.init();
+const Block = styled.div`
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  background-image: url(${(props) => props.Url});
+  background-size: cover;
+`;
 
 const Container = styled.div`
   box-sizing: border-box;
@@ -35,19 +43,25 @@ const Container = styled.div`
   }
 `;
 
-function IntroContainer({ main, intro, intro2 }) {
+function IntroContainer({ main, intro, intro2, Url }) {
   return (
-    <Container>
-      <div data-aos="fade-right" data-aos-duration="1000" >
-        <ForMainText>{main}</ForMainText>
-      </div>
-      <ForIntroText>
-        <div data-aos="fade-right" data-aos-duration="1000"  data-aos-delay="500">
-          {intro} <br></br> 
-          {intro2}
+    <Block Url={Url}>
+      <Container>
+        <div data-aos="fade-right" data-aos-duration="1000">
+          <ForMainText>{main}</ForMainText>
         </div>
-      </ForIntroText>
-    </Container>
+        <ForIntroText>
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-delay="500"
+          >
+            {intro} <br></br>
+            {intro2}
+          </div>
+        </ForIntroText>
+      </Container>
+    </Block>
   );
 }
 
