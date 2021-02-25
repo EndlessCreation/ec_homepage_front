@@ -113,7 +113,6 @@ function CommonModal() {
   const dispatch = useECDispatch();
   const { data: projectData, loading, error } = state.projectData;
   useEffect(() => {
-    console.log(projectData);
     getProjectData(dispatch, id);
   }, [dispatch, id]);
 

@@ -4,14 +4,14 @@ import styled from "styled-components";
 const Form = styled.div`
   width: 280px;
   height: 48px;
-  background-color: #232323;
+  background-color: #1ae49b;
   float: right;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  color: #fff;
+  color: #101010;
   font-family: NanumSquareBold;
   font-size: 18px;
   line-height: 26px;

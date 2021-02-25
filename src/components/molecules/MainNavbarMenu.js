@@ -56,6 +56,7 @@ const MenuShow = styled.ul`
 `;
 const CommunutyLink = styled.li`
   list-style: none;
+  color: #ffffff;
   @media screen and (max-width: 1279px) {
     ${(props) =>
       props.active &&

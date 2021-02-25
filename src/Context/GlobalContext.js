@@ -3,7 +3,7 @@ import React, { useReducer, createContext, useContext } from "react";
 const initState = {
   NavState: false,
   ModalState: false,
-  id: null,
+  id: 1,
 };
 
 function StateReducer(state, action) {

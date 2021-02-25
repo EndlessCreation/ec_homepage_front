@@ -16,13 +16,11 @@ const NavbarTemplate = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fff;
   padding-left: 70px;
   padding-right: 70px;
   z-index: 3;
   .footer {
     width: 100%;
-
     display: none;
   }
   @media screen and (max-width: 1280px) {
