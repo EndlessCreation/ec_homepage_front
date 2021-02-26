@@ -26,6 +26,11 @@ const Block = styled.div`
 const ModalBlock = styled.div`
   width: 608px;
   background-color: #fff;
+
+  @media screen and (max-width:767px)
+  {
+    width:336px;
+  }
 `;
 const Header = styled.div`
   width: 100%;
@@ -33,6 +38,12 @@ const Header = styled.div`
   box-sizing: border-box;
   padding-left: 24px;
   padding-right: 24px;
+
+  @media screen and (max-width:767px){
+    height:64px;
+    padding-left:16px;
+    padding-right:16px;
+  }
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -66,12 +77,22 @@ const Header = styled.div`
 `;
 const Content = styled.div`
   padding: 24px;
+
+  @media screen and (max-width:767px){
+    padding:16px;
+  }
 `;
 const ImgBlock = styled.div`
   width: 560px;
   height: 420px;
   background-color: #f2f2f2;
   margin-bottom: 21px;
+
+  @media screen and (max-width:767px){
+    width:304px;
+    height:228px;
+  }
+
   img {
     width: 100%;
     height: 100%;
@@ -85,6 +106,7 @@ const Text = styled.div`
   letter-spacing: normal;
   text-align: left;
   color: #101010;
+
 `;
 const Box = styled.div`
   width: 456px;
@@ -92,11 +114,21 @@ const Box = styled.div`
   font-size: 14px;
   line-height: 1.71;
   color: #232323;
+
+  @media screen and (max-width:767px){
+    padding-top:16px;
+    width: 100%;
+  }
 `;
 const TextContainer = styled.div`
   width: 560px;
   padding-bottom: 24px;
   display: flex;
+
+  @media screen and (max-width:767px){
+    width:304px;
+    display:block;
+  }
 `;
 function CommonModal() {
   const State = useGlobalState();
@@ -108,7 +140,7 @@ function CommonModal() {
     GlobalDispatch({
       type: "MODAL_CLOSE",
     });
-  }, []);
+  }, [GlobalDispatch]);
 
   const state = useECState();
   const dispatch = useECDispatch();

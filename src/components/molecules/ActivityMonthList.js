@@ -171,12 +171,12 @@ const FlexBox = styled.div`
 function Month({ month }) {
   return (
     <MonthGrid>
-      <div class="component">
-        <div class="month">{month.name}</div>
+      <div className="component">
+        <div className="month">{month.name}</div>
         <BarStyle>
-          <hr class="bar"></hr>
+          <hr className="bar"></hr>
         </BarStyle>
-        <div class="detail">
+        <div className="detail">
           {month.detail1}
           <br />
           {month.detail2}
@@ -270,9 +270,9 @@ function MonthList() {
     <>
       <div data-aos="fade-up" data-aos-duration="2000">
         <FlexBox>
-          <div class="box-container">
+          <div className="box-container">
             {months.map((month) => (
-              <Month month={month} class="month-elem" />
+              <Month month={month} className="month-elem" />
             ))}
           </div>
         </FlexBox>

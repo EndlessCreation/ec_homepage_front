@@ -203,7 +203,7 @@ function Photo({ photo }) {
         alt="이미지내용"
         width="408px"
         height="306px"
-        class="photo"
+        className="photo"
       />
     </PhotoOne>
   );
@@ -215,6 +215,7 @@ export default function PhotoList() {
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const slideRef = useRef(null);
+  const { data: photos, loading, error } = state.photos;
 
   useEffect(() => {
     if (!photos) {
@@ -223,9 +224,9 @@ export default function PhotoList() {
       slideRef.current.style.transition = "all 0.5s ease-in-out";
       slideRef.current.style.transform = `translateX(-${currentSlide}00%)`; // 백틱을 사용하여 슬라이드로 이동하는 애니메이션을 만듭니다.
     }
-  }, [dispatch, currentSlide]);
+  }, [dispatch, currentSlide,photos]);
 
-  const { data: photos, loading, error } = state.photos;
+  
 
   if (loading) return <Loader/>;
   if (error) return <div>에러가 발생했습니다</div>;
@@ -254,7 +255,7 @@ export default function PhotoList() {
   return (
     <>
       <Page>
-        <div class="page">
+        <div className="page">
           <Button className="left" onClick={prevSlide}>
             <AiOutlineLeft />
             &ensp;{currentSlide + 1}
@@ -270,18 +271,18 @@ export default function PhotoList() {
       <ShowContainer>
         <div data-aos="fade-up" data-aos-duration="2000">
           <PhotoContainer ref={slideRef}>
-            <div class="photo-container">
+            <div className="photo-container">
               <PhotoBox>
-                <div class="photo-box">
+                <div className="photo-box">
                   {photos.slice(1, photoNum / 2 + 1).map((photo) => (
-                    <Photo photo={photo} class="photo" />
+                    <Photo photo={photo} className="photo" />
                   ))}
                 </div>
               </PhotoBox>
               <PhotoBox>
-                <div class="photo-box">
+                <div className="photo-box">
                   {photos.slice(photoNum / 2, photoNum).map((photo) => (
-                    <Photo photo={photo} class="photo" />
+                    <Photo photo={photo} className="photo" />
                   ))}
                 </div>
               </PhotoBox>

@@ -128,18 +128,26 @@ const Name = styled.div`
 `;
 const Icon = styled.div`
     float: right;
-    padding-top: 55px ;
+    padding-top: 60px ;
 
     display: flex;
     flex-direction: row;  // 옆으로 정렬
 
     .circle{
-      width: 28px;
-      height: 28px;
-      margin-left: 12px;
-      border-radius: 68px;
-      background-color:#d2d2d2;
+      height: 18px;
+      margin-left: 8px;
+      font-family: Kanit-Regular;
+      font-size: 11px;
+      font-weight: 300;
+      line-height: 1.5;
+      letter-spacing: -0.24px;
+      text-align: right;
     }
+    
+    a{
+      color: #d2d2d2;
+    }
+    
 `;
 
 const Cop = styled.div`
@@ -164,20 +172,20 @@ function Footer(){
       </ContainerInner>
       <ContainerInner>
         <Icon>
-            <div class='circle'></div>
-            <div class='circle'></div>
-            <div class='circle'></div>
+            <div className="circle"><a href="https://www.facebook.com/groups/238730472850269">Facebook</a></div>
+            <div className="circle"><a href='https://github.com/EndlessCreation'>Github</a></div>
+            <div className="circle"><a href='https://github.com/EndlessCreation'>KakaoTalk</a></div>
           </Icon>
       </ContainerInner>
       <ContainerInner>
       <Name>
-        <div class ='wrapper'>
-          <div class ='t1'>프론트</div>
-          <div class ='t2'>백엔드</div>
-          <div class ='t3'>디자이너</div>
-          <div class='p1'>김개발 &emsp; 김개발 &emsp; 김개발</div>
-          <div class='p2'>김개발 &emsp; 김개발 &emsp; 김개발</div>
-          <div class='p3'>김개발 &emsp; 김개발 &emsp; 김개발</div>
+        <div className ='wrapper'>
+        <div className ='t1'>디자이너</div>
+          <div className ='t2'>프론트엔드</div>
+          <div className ='t3'>백엔드</div>
+          <div className='p1'>김재완 </div>
+          <div className='p2'>조인혁 &ensp; 김미성 &ensp; 김초희&ensp; 마경미 &ensp;오예진</div>
+          <div className='p3'>김건훈 &ensp; 김예림 &ensp; 이상진&ensp;</div>
         </div>
       </Name>
       </ContainerInner>
