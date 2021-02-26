@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 
-import { useGlobalState } from "../../context/GlobalContext";
+import { useGlobalState, useGlobalDispatch } from "../../context/GlobalContext";
 import NavbarMain from "../atoms/MainNavbarMain";
 import NavbarMenu from "../molecules/MainNavbarMenu";
 import MenuButton from "../atoms/MainMenuButton";
 import CommonFooter from "../organisms/CommonFooterTablet";
+
 /* 상단 고정 네이게이션 바 Template*/
 const NavbarTemplate = styled.div`
   position: fixed;
@@ -19,6 +20,12 @@ const NavbarTemplate = styled.div`
   padding-left: 70px;
   padding-right: 70px;
   z-index: 3;
+  ${(props) =>
+    props.ScrollState &&
+    css`
+      background: #fff;
+      transition: all 0.5s ease-in-out;
+    `}
   .footer {
     width: 100%;
     display: none;
@@ -30,6 +37,7 @@ const NavbarTemplate = styled.div`
     ${(props) =>
       props.active &&
       css`
+        transition: all 0s;
         height: 100%;
         background-color: #232323;
         justify-content: space-between;
@@ -65,10 +73,47 @@ const NavbarTemplate = styled.div`
 `;
 function MainNavbar() {
   const state = useGlobalState();
+  const dispatch = useGlobalDispatch();
   const active = state.NavState;
+
+  const [ScrollState, SetScrollState] = useState(false);
+  /*
+  const ScrollHandler = function () {
+    const Scroll =
+      document.documentElement.scrollTop || document.body.scrollTop;
+    if (Scroll > 600) {
+      if (ScrollState === false) {
+        SetScrollState(true);
+        console.log("Scroll up");
+      }
+    } else {
+      if (ScrollState === true) {
+        SetScrollState(false);
+        console.log("Scroll Down");
+      }
+    }
+  };
+  document.addEventListener("scroll", setInterval(ScrollHandler));
+*/
+  const ScrollHandler = function () {
+    const Scroll =
+      document.documentElement.scrollTop || document.body.scrollTop;
+    if (Scroll < 600) {
+      SetScrollState(false);
+      console.log("헤더영역");
+    } else {
+      SetScrollState(true);
+      console.log("헤더외 영역");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", ScrollHandler);
+  }, [ScrollState]);
+
   return (
     <>
-      <NavbarTemplate active={active}>
+      <NavbarTemplate active={active} ScrollState={ScrollState}>
         <NavbarMain />
         <NavbarMenu />
         <MenuButton />
