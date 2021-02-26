@@ -40,13 +40,13 @@ function ProjectBox({ project }) {
       type: "CHANGE_ID",
       id,
     });
-  }, []);
+  }, [GlobalDispatch,id]);
 
   const openModal = useCallback(() => {
     GlobalDispatch({
       type: "MODAL_OPEN",
     });
-  }, []);
+  }, [GlobalDispatch]);
   function ClickEvent(id) {
     openModal();
     changeid(id);

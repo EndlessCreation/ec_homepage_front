@@ -111,6 +111,14 @@ function ProjectContentBox() {
   const PCTotalslides = Math.ceil(project.length / 12);
   const MOBLIETotalslides = Math.ceil(project.length / 6);
 
+  const NextArrow=({currentSlide,slideCount,...props})=>(
+    <FiChevronRight {...props} type="button" className="slick-next" /> 
+  )
+
+  const PrevArrow=({currentSlide,slideCount,...props})=>(
+    <FiChevronLeft {...props} type="button" className="slick-prev" />
+  )
+
   const settings = {
     dots: false,
     infinite: false,
@@ -118,8 +126,8 @@ function ProjectContentBox() {
     rows: 3,
     slidesToShow: 4,
     slidesToScroll: 4,
-    prevArrow: <FiChevronLeft type="button" class="slick-prev" />,
-    nextArrow: <FiChevronRight type="button" class="slick-next" />,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
     centerMode: false,
     afterChange: (currentSlide) => {
       if (currentSlide !== 0) {
@@ -138,8 +146,8 @@ function ProjectContentBox() {
     slidesToShow: 2,
     slidesToScroll: 2,
     centerMode: false,
-    prevArrow: <FiChevronLeft type="button" class="slick-prev" />,
-    nextArrow: <FiChevronRight type="button" class="slick-next" />,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
     afterChange: (currentSlide) => {
       if (currentSlide !== 0) {
         console.log(pageState.currentSlide);
@@ -167,7 +175,7 @@ function ProjectContentBox() {
             {project.map((data) => {
               return (
                 <>
-                  <ProjectBox project={data} />
+                  <ProjectBox project={data} key={data.id} />
                 </>
               );
             })}
@@ -176,7 +184,7 @@ function ProjectContentBox() {
         {isMobile && (
           <StyledSlider {...settingsforMobile}>
             {project.map((data) => {
-              return <ProjectBox project={data}></ProjectBox>;
+              return <ProjectBox project={data} key={data.id}></ProjectBox>;
             })}
           </StyledSlider>
         )}
