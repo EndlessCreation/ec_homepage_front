@@ -14,7 +14,7 @@ const MainText=styled.div
   line-height: 1.22;
   letter-spacing: normal;
   text-align: left;
-  color: #101010;
+  color: #ffffff;
     padding-bottom:8px;
 }
 @media screen and (min-width:768px) and (max-width:1279px)
@@ -27,7 +27,7 @@ const MainText=styled.div
     line-height: 1.44;
     letter-spacing: normal;
     text-align: left;
-    color: #101010;
+    color: #ffffff;
     padding-bottom:24px;
 }
 @media screen and (max-width:767px)
@@ -40,7 +40,7 @@ const MainText=styled.div
   line-height: 1.44;
   letter-spacing: normal;
   text-align: left;
-  color: #101010;
+  color: #ffffff;
     padding-bottom:19px;
 }
 `;

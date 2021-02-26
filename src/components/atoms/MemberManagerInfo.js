@@ -7,19 +7,20 @@ import {
   useECDispatch,
   getExecutive,
 } from "../../context/Context";
+import { Position } from "../../context/PositionMapping";
 
 const Img = styled.img`
   position: relative;
   width: 180px;
   height: 180px;
-  background: #d0d0d0 0% 0% no-repeat padding-box;
+
   border-radius: 80px;
   opacity: 1;
 
   @media only screen and ${Size.device.tablet} {
     width: 117px;
     height: 117px;
-    background: #d0d0d0 0% 0% no-repeat padding-box;
+
     border-radius: 51px;
     opacity: 1;
   }
@@ -27,7 +28,7 @@ const Img = styled.img`
   @media only screen and ${Size.device.moblie} {
     width: 114px;
     height: 114px;
-    background: #d0d0d0 0% 0% no-repeat padding-box;
+
     border-radius: 48px;
     opacity: 1;
   }
@@ -54,7 +55,7 @@ const Part = styled.div`
   line-height: 1.46;
   letter-spacing: normal;
   text-align: center;
-  color: #ffffff;
+  color: #1ae49b;
 
   @media only screen and ${Size.device.tablet} {
     width: 30px;
@@ -68,7 +69,7 @@ const Part = styled.div`
     line-height: 1.46;
     letter-spacing: normal;
     text-align: center;
-    color: #ffffff;
+    color: #1ae49b;
   }
 
   @media only screen and ${Size.device.moblie} {
@@ -83,7 +84,7 @@ const Part = styled.div`
     line-height: 1.46;
     letter-spacing: normal;
     text-align: center;
-    color: #ffffff;
+    color: #1ae49b;
   }
 `;
 
@@ -254,7 +255,7 @@ const Gap = styled.div`
     height: 9px;
   }
 `;
-const Position = styled.span`
+const Role = styled.span`
   font-family: NanumSquareR;
   font-size: 21px;
   font-weight: normal;
@@ -339,7 +340,7 @@ function Managers({ mana }) {
             <Name>{mana.name}</Name>
             <Grad>{mana.generation}기</Grad>
             <Gap />
-            <Position>{mana.position}</Position> <Gap />
+            <Role>{Position[mana.position]}</Role> <Gap />
             <Hashtag>
               {mana.hashTags.map((hash)=> 
                 <div>{hash}</div>)}
@@ -366,7 +367,9 @@ function MemberManagerInfo() {
   return (
     <>
       {executive.map((mana) => (
-        <Managers mana={mana} />
+        <Managers 
+        key = {mana.id}
+        mana={mana} />
       ))}
     </>
   );

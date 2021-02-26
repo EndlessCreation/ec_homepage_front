@@ -38,7 +38,7 @@ const Text = styled.div`
     line-height: 1.73;
     letter-spacing: normal;
     text-align: center;
-    color: #232323;
+    color: #ffffff;
   }
   @media screen and ${Size.device.moblie} {
     position: absolute;
@@ -54,7 +54,7 @@ const Text = styled.div`
     line-height: 1.73;
     letter-spacing: normal;
     text-align: center;
-    color: #232323;
+    color: #ffffff;
   }
 `;
 
@@ -79,7 +79,7 @@ const Part = styled.div`
   line-height: 1.46;
   letter-spacing: normal;
   text-align: center;
-  color: #ffffff;
+  color: #1ae49b;
 
   @media only screen and ${Size.device.tablet} {
     position: absolute;
@@ -94,7 +94,7 @@ const Part = styled.div`
     line-height: 1.46;
     letter-spacing: normal;
     text-align: center;
-    color: #ffffff;
+    color: #1ae49b;
   }
 
   @media only screen and ${Size.device.moblie} {
@@ -110,7 +110,7 @@ const Part = styled.div`
     line-height: 1.46;
     letter-spacing: normal;
     text-align: center;
-    color: #ffffff;
+    color: #1ae49b;
   }
 `;
 
@@ -140,7 +140,7 @@ img {
     width: 140px;
     height: 140px;
     border-radius: 60px;
-
+    background: #101010;
     img {
       width: 100%;
       height: 100%;
@@ -155,7 +155,7 @@ img {
     height: 93px;
     border-radius: 38px;
     margin-bottom: 12px;
-
+    background: #101010;
     img {
       width: 100%;
       height: 100%;
@@ -173,7 +173,7 @@ function MemberStuCircle({ stud }) {
         if (stud.part) return <Part>P</Part>;
       })()}
       <StudInfoBlock>
-        <img src={stud.imageUrl} />
+        <img src={stud.imageUrl} alt="학생이미지"/>
         <Text>
           {stud.name} {stud.generation}기<br />
           {stud.hashTags.map((hash)=> 

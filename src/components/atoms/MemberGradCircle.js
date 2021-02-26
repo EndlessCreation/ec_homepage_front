@@ -36,7 +36,7 @@ const Text = styled.div`
     line-height: 1.57;
     letter-spacing: normal;
     text-align: center;
-    color: #232323;
+    color: #ffffff;
   }
 
   @media screen and ${Size.device.moblie} {
@@ -50,7 +50,7 @@ const Text = styled.div`
     color: var(--unnamed-color-232323);
     text-align: center;
     font: normal normal normal 8px/15px NanumSquare;
-    color: #232323;
+    color: #ffffff;
     opacity: 1;
   }
 `;
@@ -79,7 +79,6 @@ img {
 {
     width: 112px;
     height: 112px;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
     border-radius: 48px;
     opacity: 1;
     display: flex;
@@ -99,7 +98,6 @@ img {
 {
     width: 67px;
     height: 67px;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
     border-radius: 28px;
     opacity: 1;
     display: flex;
@@ -119,7 +117,7 @@ function MemberGradCircle({ grad }) {
   return (
     <div data-aos="flip-right"  data-aos-duration="1000" >
     <GradInfoBlock>
-      <img src={grad.imageUrl} />
+      <img src={grad.imageUrl} alt="졸업생이미지"/>
       <Text>
         {grad.name} {grad.generation}기
         <br />

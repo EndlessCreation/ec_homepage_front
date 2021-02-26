@@ -183,6 +183,7 @@ function MemberStudSlide() {
     slidesToShow: 5,
     speed: 500,
     rows: 3, // 3행
+     // eslint-disable-next-line 
     slidesToScroll: 5,
     prevArrow: <FiChevronLeft type="button" class="slick-prev" />,
     nextArrow: <FiChevronRight type="button" class="slick-next" />,
@@ -199,6 +200,7 @@ function MemberStudSlide() {
     slidesToShow: 4,
     speed: 500,
     rows: 2,
+     // eslint-disable-next-line 
     slidesToScroll: 4,
     prevArrow: <FiChevronLeft type="button" class="slick-prev" />,
     nextArrow: <FiChevronRight type="button" class="slick-next" />,
@@ -215,6 +217,7 @@ function MemberStudSlide() {
     slidesToShow: 3,
     speed: 500,
     rows: 4,
+     // eslint-disable-next-line 
     slidesToScroll: 3,
     prevArrow: <FiChevronLeft type="button" class="slick-prev" />,
     nextArrow: <FiChevronRight type="button" class="slick-next" />,

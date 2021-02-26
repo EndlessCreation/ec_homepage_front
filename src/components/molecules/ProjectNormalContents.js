@@ -119,6 +119,7 @@ function ProjectContentBox() {
     speed: 500,
     rows: 3,
     slidesToShow: 4,
+     // eslint-disable-next-line 
     slidesToScroll: 4,
     prevArrow: <FiChevronLeft type="button" class="slick-prev" />,
     nextArrow: <FiChevronRight type="button" class="slick-next" />,
@@ -138,6 +139,7 @@ function ProjectContentBox() {
     speed: 500,
     rows: 3,
     slidesToShow: 2,
+     // eslint-disable-next-line 
     slidesToScroll: 2,
     centerMode: false,
     prevArrow: <FiChevronLeft type="button" class="slick-prev" />,

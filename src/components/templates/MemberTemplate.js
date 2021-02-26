@@ -9,7 +9,8 @@ import IntroContainer from "../organisms/CommonHeader";
 function MemberTemplate() {
   return (
     <>
-      <IntroContainer
+      <IntroContainer 
+        color="White"
         main="Member"
         intro="EC에는 여러분의 성장을 도와줄"
         intro2="든든한 운영진과 멋진 선배들이 있어요!"

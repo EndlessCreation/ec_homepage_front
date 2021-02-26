@@ -185,6 +185,7 @@ function MemberGradSlide() {
     slidesToScroll: 1,
     speed: 500,
     rows: 2, // 3행
+     // eslint-disable-next-line 
     slidesToScroll: 6,
     prevArrow: <FiChevronLeft type="button" class="slick-prev" />,
     nextArrow: <FiChevronRight type="button" class="slick-next" />,
@@ -201,6 +202,7 @@ function MemberGradSlide() {
     slidesToShow: 5,
     speed: 500,
     rows: 2,
+     // eslint-disable-next-line 
     slidesToScroll: 5,
     prevArrow: <FiChevronLeft type="button" class="slick-prev" />,
     nextArrow: <FiChevronRight type="button" class="slick-next" />,
@@ -217,7 +219,8 @@ function MemberGradSlide() {
     slidesToShow: 4,
     speed: 500,
     rows: 4,
-    slidesToScroll: 4,
+     // eslint-disable-next-line 
+    slidesToScroll: 4, 
     prevArrow: <FiChevronLeft type="button" class="slick-prev" />,
     nextArrow: <FiChevronRight type="button" class="slick-next" />,
     afterChange: (currentPage) => {
