@@ -14,7 +14,7 @@ const IntroText=styled.div
   line-height: 1.67;
   letter-spacing: normal;
   text-align: left;
-  color: #101010;
+  color: #ffffff;
 }
 @media screen and (min-width:768px) and (max-width:1279px){
     font-family: NanumSquareRegular;
@@ -25,7 +25,7 @@ const IntroText=styled.div
     line-height: 1.56;
     letter-spacing: normal;
     text-align: left;
-    color: #101010;
+    color: #ffffff;
 }
 
 @media screen and (max-width:767px){
@@ -37,7 +37,7 @@ const IntroText=styled.div
   line-height: 1.56;
   letter-spacing: normal;
   text-align: left;
-  color: #101010;
+  color: #ffffff;
 }
 `;
 
