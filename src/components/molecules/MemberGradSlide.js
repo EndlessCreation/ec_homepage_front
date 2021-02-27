@@ -14,7 +14,7 @@ import {
   useECState,
   useECDispatch,
   getGraduate,
-} from "../../context/Context";
+} from "../../Context/Context";
 
 const Block = styled.div`
   width: 848px;
@@ -170,8 +170,8 @@ function MemberGradSlide() {
   useEffect(() => {
     getGraduate(dispatch);
   }, [dispatch]);
-  if (loading) return <div><Loader/></div>;
-  if (error) return <div>에러가 발생했습니다</div>;
+  if (loading) return <><div><Loader/></div></>;
+  if (error) return <><div>에러가 발생했습니다</div></>;
   if (!graduate) return null;
 
   const PCTotalslides = Math.ceil(graduate.length / 12);
@@ -231,7 +231,9 @@ function MemberGradSlide() {
   };
 
   return (
+    <>
     <Block>
+      
       <PrevPages>{number.currentPage}</PrevPages>
       <Slash>/</Slash>
       {isPc && <NextPages>{PCTotalslides}</NextPages>}
@@ -241,25 +243,27 @@ function MemberGradSlide() {
       {isPc && (
         <Slider {...settings}>
           {graduate.map((grad) => {
-            return <MemberGradCircle grad={grad} />;
+            return <MemberGradCircle key={grad.id} grad={grad} />;
           })}
         </Slider>
       )}
       {isTablet && (
         <Slider {...settingsforTablet}>
           {graduate.map((grad) => {
-            return <MemberGradCircle grad={grad} />;
+            return <MemberGradCircle key={grad.id} grad={grad} />;
           })}
         </Slider>
       )}
       {isMoblie && (
         <Slider {...settingsforMoblie}>
           {graduate.map((grad) => {
-            return <MemberGradCircle grad={grad} />;
+            return <MemberGradCircle key={grad.id} grad={grad} />;
           })}
         </Slider>
       )}
+      
     </Block>
+    </>
   );
 }
 

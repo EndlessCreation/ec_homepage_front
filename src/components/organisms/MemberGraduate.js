@@ -30,9 +30,11 @@ const GradBox = styled.div`
 
 function MemberGraduate() {
   return (
+    <>
       <GradBox>
         <MemberGradSlide />
       </GradBox>
+      </>
   );
 }
 

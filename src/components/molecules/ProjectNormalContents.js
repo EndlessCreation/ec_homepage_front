@@ -14,7 +14,7 @@ import {
   getProjectData,
   useECDispatch,
   useECState,
-} from "../../context/Context";
+} from "../../Context/Context";
 
 const BlockforProjectContent = styled.div`
   @media screen and (min-width: 1280px) {

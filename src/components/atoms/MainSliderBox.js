@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import styled, { css } from "styled-components";
-import { useGlobalDispatch } from "../../context/GlobalContext";
+import { useGlobalDispatch } from "../../Context/GlobalContext";
 
 const SlideBlock = styled.div`
   width: 49.4%;

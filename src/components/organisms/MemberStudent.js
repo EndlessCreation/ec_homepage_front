@@ -23,9 +23,11 @@ const StudBox = styled.div`
 
 function MemberStudent() {
   return (
+    <>
       <StudBox>
         <MemberStudSlide />
       </StudBox>
+      </>
   );
 }
 

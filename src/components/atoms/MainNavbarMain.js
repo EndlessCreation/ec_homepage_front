@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import { useMediaQuery } from "react-responsive";
 
 import LinkItem from "./MainLinkItem";
-import { useGlobalState } from "../../context/GlobalContext";
+import { useGlobalState } from "../../Context/GlobalContext";
 /*네이게이션 바 EC 텍스트*/
 const Text = styled.span`
   display: inline-block;

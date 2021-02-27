@@ -1,12 +1,12 @@
 import React, { useEffect, useCallback } from "react";
 import styled from "styled-components";
-import { useGlobalState, useGlobalDispatch } from "../../context/GlobalContext";
+import { useGlobalState, useGlobalDispatch } from "../../Context/GlobalContext";
 import Loader from "./CommonLoader";
 import {
   useECState,
   useECDispatch,
   getProjectData,
-} from "../../context/Context";
+} from "../../Context/Context";
 const Block = styled.div`
   display: block;
   position: fixed;

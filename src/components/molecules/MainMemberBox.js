@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import MemberItem from "../atoms/MainMemberItem";
 
-import { Position } from "../../context/PositionMapping";
-import { useECState, useECDispatch, getExecutive } from "../../context/Context";
+import { Position } from "../../Context/PositionMapping";
+import { useECState, useECDispatch, getExecutive } from "../../Context/Context";
 
 import Loader from "../atoms/CommonLoader";
 const MemberBlock = styled.div`

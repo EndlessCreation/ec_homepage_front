@@ -6,7 +6,7 @@ import Loader from "../atoms/CommonLoader";
 import SliderBoxs from "./MainSliderBoxs";
 import SliderBox from "../atoms/MainSliderBox";
 import SliderButton from "../atoms/MainSliderButton";
-import { useECState, useECDispatch, getEcpick } from "../../context/Context";
+import { useECState, useECDispatch, getEcpick } from "../../Context/Context";
 
 //동적으로 영역 너비 설정 완료
 const SlideBlock = styled.div`

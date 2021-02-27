@@ -23,9 +23,11 @@ const FlexBox = styled.div`
 
 function MemberManagement() {
   return (
+    <>
       <FlexBox>
         <MemberManager />
       </FlexBox>
+      </>
   );
 }
 

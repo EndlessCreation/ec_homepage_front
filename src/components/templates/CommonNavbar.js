@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-import { useGlobalState } from "../../context/GlobalContext";
+import { useGlobalState } from "../../Context/GlobalContext";
 import NavbarMain from "../atoms/MainNavbarMain";
 import NavbarMenu from "../molecules/MainNavbarMenu";
 import MenuButton from "../atoms/MainMenuButton";

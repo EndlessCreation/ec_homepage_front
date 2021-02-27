@@ -6,8 +6,8 @@ import {
   useECState,
   useECDispatch,
   getExecutive,
-} from "../../context/Context";
-import { Position } from "../../context/PositionMapping";
+} from "../../Context/Context";
+import { Position } from "../../Context/PositionMapping";
 
 const Img = styled.img`
   position: relative;
@@ -167,7 +167,7 @@ const TextBox = styled.div`
 `;
 
 const Name = styled.span`
-  font-family: NanumSquareB;
+  font-family: NanumSquareBold;
   font-size: 24px;
   font-weight: normal;
   font-stretch: normal;
@@ -178,7 +178,7 @@ const Name = styled.span`
   color: #101010;
 
   @media screen and ${Size.device.tablet} {
-    font-family: NanumSquareB;
+    font-family: NanumSquareBold;
     font-size: 18px;
     font-weight: normal;
     font-stretch: normal;
@@ -190,7 +190,7 @@ const Name = styled.span`
   }
 
   @media screen and ${Size.device.moblie} {
-    font-family: NanumSquareB;
+    font-family: NanumSquareBold;
     font-size: 1.125rem;
     font-weight: normal;
     font-stretch: normal;
@@ -206,7 +206,7 @@ const Grad = styled.span`
   padding-left: 8px;
   padding-top: 2px;
   vertical-align: left;
-  font-family: NanumSquareR;
+  font-family: NanumSquareRegular;
   font-size: 21px;
   font-weight: normal;
   font-stretch: normal;
@@ -219,7 +219,6 @@ const Grad = styled.span`
   @media screen and ${Size.device.tablet} {
     padding-left: 9px;
     padding-top: 2px;
-    font-family: NanumSquareR;
     font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
@@ -233,7 +232,6 @@ const Grad = styled.span`
   @media screen and ${Size.device.moblie} {
     padding-left: 5px;
     padding-top: 2px;
-    font-family: NanumSquareR;
     font-size: 1rem;
     font-weight: normal;
     font-stretch: normal;
@@ -256,7 +254,7 @@ const Gap = styled.div`
   }
 `;
 const Role = styled.span`
-  font-family: NanumSquareR;
+  font-family: NanumSquareRegular;
   font-size: 21px;
   font-weight: normal;
   font-stretch: normal;
@@ -267,7 +265,6 @@ const Role = styled.span`
   color: #232323;
 
   @media screen and ${Size.device.tablet} {
-    font-family: NanumSquareR;
     font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
@@ -279,7 +276,6 @@ const Role = styled.span`
   }
 
   @media screen and ${Size.device.moblie} {
-    font-family: NanumSquareR;
     font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
@@ -292,7 +288,7 @@ const Role = styled.span`
 `;
 
 const Hashtag = styled.div`
-  font-family: NanumSquareR;
+  font-family: NanumSquareRegular;
   font-size: 16px;
   font-weight: normal;
   font-stretch: normal;
@@ -303,7 +299,6 @@ const Hashtag = styled.div`
   color: #232323;
 
   @media screen and ${Size.device.tablet} {
-    font-family: NanumSquareR;
     font-size: 12px;
     font-weight: normal;
     font-stretch: normal;
@@ -315,7 +310,6 @@ const Hashtag = styled.div`
   }
 
   @media screen and ${Size.device.moblie} {
-    font-family: NanumSquareR;
     font-size: 12px;
     font-weight: normal;
     font-stretch: normal;
@@ -342,8 +336,8 @@ function Managers({ mana }) {
             <Gap />
             <Role>{Position[mana.position]}</Role> <Gap />
             <Hashtag>
-              {mana.hashTags.map((hash)=> 
-                <div>{hash}</div>)}
+              {mana.hashTags.map((hash, index)=> 
+                <div key={index}>#{hash}</div>)}
             </Hashtag>
           </>
         </TextBox>

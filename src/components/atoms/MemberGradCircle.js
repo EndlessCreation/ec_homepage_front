@@ -13,11 +13,9 @@ const Text = styled.div`
   margin: 0 auto;
   text-align: center;
   flex: 1;
-
   font: var(--unnamed-font-style-normal) normal normal 16px/28px
     var(--unnamed-font-family-nanumsquare);
   letter-spacing: var(--unnamed-character-spacing-0);
-  color: var(--unnamed-color-232323);
   font: normal normal normal 16px/28px NanumSquare;
   letter-spacing: 0px;
   color: #ffffff;
@@ -115,17 +113,19 @@ img {
 
 function MemberGradCircle({ grad }) {
   return (
+    <>
     <div data-aos="flip-right"  data-aos-duration="1000" >
     <GradInfoBlock>
       <img src={grad.imageUrl} alt="졸업생이미지"/>
       <Text>
         {grad.name} {grad.generation}기
         <br />
-        {grad.hashTags.map((hash)=> 
-                <div>{hash}</div>)}
+        {grad.hashTags.map((hash, index)=> 
+                <div key={index}>{hash}</div>)}
       </Text>
     </GradInfoBlock>
     </div>
+    </>
   );
 }
 

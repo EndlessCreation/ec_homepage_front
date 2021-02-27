@@ -7,7 +7,7 @@ import {
   useECState,
   useECDispatch,
   getPhotos,
-} from "../../context/Context";
+} from "../../Context/Context";
 
 // import AOS from "aos";
 import "aos/dist/aos.css";

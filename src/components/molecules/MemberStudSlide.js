@@ -14,7 +14,7 @@ import {
   useECState,
   useECDispatch,
   getStudent,
-} from "../../context/Context";
+} from "../../Context/Context";
 
 const Block = styled.div`
   width: 848px;
@@ -229,7 +229,9 @@ function MemberStudSlide() {
   };
 
   return (
+    <>
     <Block>
+      
       <PrevPages>{number.currentPage}</PrevPages>
       <Slash>/</Slash>
       {isPc && <NextPages>{PCTotalslides}</NextPages>}
@@ -238,25 +240,27 @@ function MemberStudSlide() {
       {isPc && (
         <Slider {...settings}>
           {student.map((stud) => {
-            return <MemberStuCircle stud={stud} />;
+            return <MemberStuCircle key={stud.id} stud={stud} />;
           })}
         </Slider>
       )}
       {isTablet && (
         <Slider {...settingsforTablet}>
           {student.map((stud) => {
-            return <MemberStuCircle stud={stud} />;
+            return <MemberStuCircle key={stud.id} stud={stud} />;
           })}
         </Slider>
       )}
       {isMoblie && (
         <Slider {...settingsforMoblie}>
           {student.map((stud) => {
-            return <MemberStuCircle stud={stud} />;
+            return <MemberStuCircle key={stud.id} stud={stud} />;
           })}
         </Slider>
       )}
+      
     </Block>
+    </>
   );
 }
 

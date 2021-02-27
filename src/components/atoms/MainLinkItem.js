@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
-import { useGlobalState, useGlobalDispatch } from "../../context/GlobalContext";
+import { useGlobalState, useGlobalDispatch } from "../../Context/GlobalContext";
 
 const LinkList = styled.li`
   list-style: none;
