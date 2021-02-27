@@ -21,13 +21,29 @@ const Block = styled.div`
   left: 0;
   z-index: 99;
   background: rgb(25, 25, 25, 0.64);
-  overflow-y: scroll;
 `;
 
 const ModalBlock = styled.div`
   width: 608px;
   background-color: #fff;
+  height:700px;
+  overflow-y:scroll;
 
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(0,0,0, 0.25);
+  }
+  &::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+  }
+  
   @media screen and (max-width:767px)
   {
     width:336px;
