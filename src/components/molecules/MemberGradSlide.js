@@ -78,7 +78,7 @@ const PrevPages = styled.div`
   transform: translate(-200px, 252px);
   color: #c4c4c4;
   opacity: 1;
-  font-size: 24px;
+  font-size: 20px;
 
   @media screen and (min-width:768px) and (max-width:1279px) {
     position: absolute;
@@ -95,7 +95,7 @@ const PrevPages = styled.div`
     color: #c4c4c4;
     opacity: 1;
     z-index: 2;
-    font-size: 18px;
+    font-size: 16px;
   }
 `;
 const Slash = styled.div`
@@ -104,7 +104,7 @@ const Slash = styled.div`
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
-  font-size: 22px;
+  font-size: 18px;
 
   @media screen and (min-width:768px) and (max-width:1279px) {
     position: absolute;
@@ -121,7 +121,7 @@ const Slash = styled.div`
     color: #c4c4c4;
     opacity: 1;
     z-index: 2;
-    font-size: 18px;
+    font-size: 16px;
   }
 `;
 
@@ -131,7 +131,7 @@ const NextPages = styled.div`
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
-  font-size: 24px;
+  font-size: 20px;
 
   @media screen and (min-width:768px) and (max-width:1279px) {
     position: absolute;
@@ -148,7 +148,7 @@ const NextPages = styled.div`
     color: #c4c4c4;
     opacity: 1;
     z-index: 2;
-    font-size: 18px;
+    font-size: 16px;
   }
 `;
 

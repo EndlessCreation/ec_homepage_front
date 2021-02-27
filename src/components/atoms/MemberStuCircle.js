@@ -127,7 +127,18 @@ img {
   width: 100%;
   height: 100%;
   border-radius: 68px;
-  opacity: 0.5;
+  opacity: 0.2;
+}
+:hover {
+  img {
+    opacity: 1;
+    transition: all 0.5s;
+  }
+  ${Text} {
+    display: none;
+    transition: all 0.5s;
+  }
+}
 }
 
 
@@ -142,7 +153,18 @@ img {
       width: 100%;
       height: 100%;
       border-radius: 60px;
-      opacity: 0.64;
+      opacity: 0.2;
+    }
+
+    :active {
+      img {
+        opacity: 1;
+        transition: all 0.5s;
+      }
+      ${Text} {
+        display: none;
+        transition: all 0.5s;
+      }
     }
 }
 
@@ -154,15 +176,29 @@ img {
     margin-bottom: 12px;
     background: #101010;
     img {
+
       width: 100%;
       height: 100%;
       border-radius: 38px;
-      opacity: 0.64;
+      opacity: 0.2;
+    }
+
+    :active {
+      img {
+        opacity: 1;
+        transition: all 0.5s;
+      }
+      ${Text} {
+        display: none;
+        transition: all 0.5s;
+      }
     }
 }
 `;
 
 function MemberStuCircle({ stud }) {
+  const url = stud.imageUrl === null ? "images/sample.png" : stud.imageUrl;
+
   return (
     <>
     <div data-aos="fade-up"  data-aos-duration="1000" >
@@ -171,7 +207,7 @@ function MemberStuCircle({ stud }) {
       })()}
       <>
       <StudInfoBlock>
-        <img src={stud.imageUrl} alt=" "/>
+        <img src={url} alt=" " />
         <Text>
           {stud.name} {stud.generation}기<br />
           {stud.hashTags.map((hash, index)=> 
