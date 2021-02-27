@@ -13,10 +13,7 @@ const Text = styled.div`
   text-align: center;
   flex: 1;
   font-family: NanumSquareRegular;
-  font: var(--unnamed-font-style-normal) normal normal 16px/28px
-    var(--unnamed-font-family-nanumsquare);
-  letter-spacing: var(--unnamed-character-spacing-0);
-  font: normal normal normal 16px/28px NanumSquare;
+  font-size: 1rem;
   letter-spacing: 0px;
   color: #ffffff;
   opacity: 1;
@@ -42,12 +39,10 @@ const Text = styled.div`
 
     margin: 0 auto;
     font-family: NanumSquareRegular;
-    font: var(--unnamed-font-style-normal) normal normal 16px/28px
-      var(--unnamed-font-family-nanumsquare);
+    font-size: 8px; 
     letter-spacing: var(--unnamed-character-spacing-0);
     color: var(--unnamed-color-232323);
     text-align: center;
-    font: normal normal normal 8px/15px NanumSquare;
     color: #ffffff;
     opacity: 1;
   }
@@ -145,11 +140,13 @@ img {
 `;
 
 function MemberGradCircle({ grad }) {
+  const url = grad.imageUrl === null ? "images/sample.png" : grad.imageUrl;
+
   return (
     <>
     <div data-aos="fade-up"  data-aos-duration="1000" >
     <GradInfoBlock>
-      <img src={grad.imageUrl} alt=" " onerror="this.style.display='none'"/>
+      <img src={url} alt=" "/>
       <Text>
         {grad.name} {grad.generation}기
       </Text>
