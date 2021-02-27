@@ -271,8 +271,8 @@ function MonthList() {
       <div data-aos="fade-up" data-aos-duration="2000">
         <FlexBox>
           <div className="box-container">
-            {months.map((month) => (
-              <Month month={month} className="month-elem" />
+            {months.map((month,index) => (
+              <Month month={month} className="month-elem" key={index} />
             ))}
           </div>
         </FlexBox>
