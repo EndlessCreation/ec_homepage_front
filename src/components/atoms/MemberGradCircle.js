@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Size from "../../Size";
 // import AOS from 'aos';
 import "aos/dist/aos.css";
 // AOS.init({
@@ -13,17 +12,15 @@ const Text = styled.div`
   margin: 0 auto;
   text-align: center;
   flex: 1;
-
   font: var(--unnamed-font-style-normal) normal normal 16px/28px
     var(--unnamed-font-family-nanumsquare);
   letter-spacing: var(--unnamed-character-spacing-0);
-  color: var(--unnamed-color-232323);
   font: normal normal normal 16px/28px NanumSquare;
   letter-spacing: 0px;
   color: #ffffff;
   opacity: 1;
 
-  @media screen and ${Size.device.tablet} {
+  @media screen and (min-width:768px) and (max-width:1279px) {
     position: absolute;
 
     margin: 0 auto;
@@ -36,10 +33,10 @@ const Text = styled.div`
     line-height: 1.57;
     letter-spacing: normal;
     text-align: center;
-    color: #232323;
+    color: #ffffff;
   }
 
-  @media screen and ${Size.device.moblie} {
+  @media screen and (max-width:767px) {
     position: absolute;
 
     margin: 0 auto;
@@ -50,7 +47,7 @@ const Text = styled.div`
     color: var(--unnamed-color-232323);
     text-align: center;
     font: normal normal normal 8px/15px NanumSquare;
-    color: #232323;
+    color: #ffffff;
     opacity: 1;
   }
 `;
@@ -75,11 +72,10 @@ img {
     opacity: 0.64;
   }
 }
-@media screen and ${Size.device.tablet}
+@media screen and (min-width:768px) and (max-width:1279px)
 {
     width: 112px;
     height: 112px;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
     border-radius: 48px;
     opacity: 1;
     display: flex;
@@ -95,11 +91,10 @@ img {
     
 }
 
-@media screen and ${Size.device.moblie}
+@media screen and (max-width:767px)
 {
     width: 67px;
     height: 67px;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
     border-radius: 28px;
     opacity: 1;
     display: flex;
@@ -117,18 +112,21 @@ img {
 
 function MemberGradCircle({ grad }) {
   return (
-    <div data-aos="flip-right" data-aos-duration="1000">
-      <GradInfoBlock>
-        <img src={grad.imageUrl} />
-        <Text>
-          {grad.name} {grad.generation}기
-          <br />
-          {grad.hashTags.map((hash) => (
-            <div>{hash}</div>
-          ))}
-        </Text>
-      </GradInfoBlock>
+    <>
+    <div data-aos="flip-right"  data-aos-duration="1000" >
+      <>
+    <GradInfoBlock>
+      <img src={grad.imageUrl} alt="졸업생이미지"/>
+      <Text>
+        {grad.name} {grad.generation}기
+        <br />
+        {grad.hashTags.map((hash, index)=> 
+                <div key={index}>{hash}</div>)}
+      </Text>
+    </GradInfoBlock>
+    </>
     </div>
+    </>
   );
 }
 

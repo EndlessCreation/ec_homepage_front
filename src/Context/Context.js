@@ -191,6 +191,10 @@ function ECReducer(state, action) {
 const ECStateContext = createContext(null);
 const ECDispatchContext = createContext(null);
 
+const BtnState = createContext();
+const BtnStateToggle = createContext();
+const BtnStateOff = createContext();
+
 export function ECProvider({ children }) {
   const [state, dispatch] = useReducer(ECReducer, initialState);
   return (
@@ -201,6 +205,20 @@ export function ECProvider({ children }) {
     </ECStateContext.Provider>
   );
 }
+
+  export function useBtnState() {
+    const context = useContext(BtnState);
+    return context;
+  }
+  
+  export function useBtnToggle() {
+    const context = useContext(BtnStateToggle);
+    return context;
+  }
+  export function useBtnOffToggle() {
+    const context = useContext(BtnStateOff);
+    return context;
+  }
 
 export function useECState() {
   const state = useContext(ECStateContext);

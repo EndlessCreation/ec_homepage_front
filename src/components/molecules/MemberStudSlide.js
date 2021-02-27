@@ -3,14 +3,17 @@ import Slider from "react-slick";
 import styled from "styled-components";
 import MemberStuCircle from "../atoms/MemberStuCircle";
 import "../atoms/MemberSlide.css";
-import Size from "../../Size";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useMediaQuery } from "react-responsive";
 import { FiChevronLeft } from "react-icons/fi";
 import { FiChevronRight } from "react-icons/fi";
 import Loader from "../atoms/CommonLoader";
-import { useECState, useECDispatch, getStudent } from "../../context/Context";
+import {
+  useECState,
+  useECDispatch,
+  getStudent,
+} from "../../context/Context";
 
 const Block = styled.div`
   width: 848px;
@@ -30,7 +33,7 @@ const Block = styled.div`
     transform: translate(-990px, 218px);
   }
 
-  @media screen and ${Size.device.tablet} {
+  @media screen and (min-width:768px) and (max-width:1279px) {
     width: 608px;
     margin: 0 auto;
     .slick-prev {
@@ -48,7 +51,7 @@ const Block = styled.div`
       transform: translate(-45px, -245px);
     }
   }
-  @media screen and ${Size.device.moblie} {
+  @media screen and (max-width:767px) {
     width: 303px;
     margin: 0 auto;
     .slick-prev {
@@ -76,7 +79,7 @@ const PrevPages = styled.div`
   opacity: 1;
   font-size: 24px;
 
-  @media screen and ${Size.device.tablet} {
+  @media screen and (min-width:768px) and (max-width:1279px) {
     position: absolute;
     transform: translate(510px, -92.5px);
     color: #c4c4c4;
@@ -85,7 +88,7 @@ const PrevPages = styled.div`
     font-size: 18px;
   }
 
-  @media screen and ${Size.device.moblie} {
+  @media screen and (max-width:767px) {
     position: absolute;
     transform: translate(230px, -83px);
     color: #c4c4c4;
@@ -102,7 +105,7 @@ const Slash = styled.div`
   z-index: 2;
   font-size: 22px;
 
-  @media screen and ${Size.device.tablet} {
+  @media screen and (min-width:768px) and (max-width:1279px) {
     position: absolute;
     transform: translate(534px, -92.5px);
     color: #c4c4c4;
@@ -111,7 +114,7 @@ const Slash = styled.div`
     font-size: 18px;
   }
 
-  @media screen and ${Size.device.moblie} {
+  @media screen and (max-width:767px){
     position: absolute;
     transform: translate(249px, -83px);
     color: #c4c4c4;
@@ -129,7 +132,7 @@ const NextPages = styled.div`
   z-index: 2;
   font-size: 24px;
 
-  @media screen and ${Size.device.tablet} {
+  @media screen and (min-width:768px) and (max-width:1279px) {
     position: absolute;
     transform: translate(549px, -92.5px);
     color: #c4c4c4;
@@ -138,7 +141,7 @@ const NextPages = styled.div`
     font-size: 18px;
   }
 
-  @media screen and ${Size.device.moblie} {
+  @media screen and (max-width:767px) {
     position: absolute;
     transform: translate(266px, -83px);
     color: #c4c4c4;
@@ -178,15 +181,24 @@ function MemberStudSlide() {
   const TABLETTotalslides = Math.ceil(student.length / 8);
   const MOBLIETotalslides = Math.ceil(student.length / 12);
 
+  const NextArrow=({currentSlide,slideCount,...props})=>(
+    <FiChevronRight {...props} type="button" className="slick-next" /> 
+  )
+
+  const PrevArrow=({currentSlide,slideCount,...props})=>(
+    <FiChevronLeft {...props} type="button" className="slick-prev" />
+  )
+
   const settings = {
     dots: false,
     infinite: false,
     slidesToShow: 5,
     speed: 500,
     rows: 3, // 3행
+     // eslint-disable-next-line 
     slidesToScroll: 5,
-    prevArrow: <FiChevronLeft type="button" class="slick-prev" />,
-    nextArrow: <FiChevronRight type="button" class="slick-next" />,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
     afterChange: (currentPage) => {
       if (currentPage !== 0) {
         setNumber({ currentPage: Math.ceil(currentPage / 5) + 1 });
@@ -200,9 +212,10 @@ function MemberStudSlide() {
     slidesToShow: 4,
     speed: 500,
     rows: 2,
+     // eslint-disable-next-line 
     slidesToScroll: 4,
-    prevArrow: <FiChevronLeft type="button" class="slick-prev" />,
-    nextArrow: <FiChevronRight type="button" class="slick-next" />,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
     afterChange: (currentPage) => {
       if (currentPage !== 0) {
         setNumber({ currentPage: Math.ceil(currentPage / 4) + 1 });
@@ -216,9 +229,10 @@ function MemberStudSlide() {
     slidesToShow: 3,
     speed: 500,
     rows: 4,
+     // eslint-disable-next-line 
     slidesToScroll: 3,
-    prevArrow: <FiChevronLeft type="button" class="slick-prev" />,
-    nextArrow: <FiChevronRight type="button" class="slick-next" />,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
     afterChange: (currentPage) => {
       if (currentPage !== 0) {
         setNumber({ currentPage: Math.ceil(currentPage / 3) + 1 });
@@ -227,7 +241,9 @@ function MemberStudSlide() {
   };
 
   return (
+    <>
     <Block>
+      
       <PrevPages>{number.currentPage}</PrevPages>
       <Slash>/</Slash>
       {isPc && <NextPages>{PCTotalslides}</NextPages>}
@@ -236,25 +252,27 @@ function MemberStudSlide() {
       {isPc && (
         <Slider {...settings}>
           {student.map((stud) => {
-            return <MemberStuCircle stud={stud} />;
+            return <MemberStuCircle key={stud.id} stud={stud} />;
           })}
         </Slider>
       )}
       {isTablet && (
         <Slider {...settingsforTablet}>
           {student.map((stud) => {
-            return <MemberStuCircle stud={stud} />;
+            return <MemberStuCircle key={stud.id} stud={stud} />;
           })}
         </Slider>
       )}
       {isMoblie && (
         <Slider {...settingsforMoblie}>
           {student.map((stud) => {
-            return <MemberStuCircle stud={stud} />;
+            return <MemberStuCircle key={stud.id} stud={stud} />;
           })}
         </Slider>
       )}
+      
     </Block>
+    </>
   );
 }
 
