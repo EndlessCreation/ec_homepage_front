@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import TextBox from "../molecules/CommonSubTextContents";
-import EcPickContentBox from "../organisms/MainProjectContents";
+import EcPickContentBox from "../molecules/ProjectEcPickContents";
 
 const Container = styled.div`
   @media screen and (min-width: 1280px) {

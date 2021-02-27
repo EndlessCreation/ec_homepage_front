@@ -114,11 +114,28 @@ const Box = styled.div`
   line-height: 1.71;
   color: #232323;
 
+
   @media screen and (max-width:767px){
     padding-top:16px;
     width: 100%;
   }
 `;
+
+const Textfor=styled.pre`
+{
+  width:100%;
+  height:100%;  
+  margin:0;
+  font-family: NanumSquareRegular;
+  font-size: 14px;
+  white-space: pre-wrap; /* CSS3*/
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-all; /* Internet Explorer 5.5+ */ 
+  }
+`;
+
 const TextContainer = styled.div`
   width: 560px;
   padding-bottom: 24px;
@@ -177,13 +194,13 @@ function CommonModal() {
               </ImgBlock>
               <TextContainer>
                 <Text>작품설명</Text>
-                <Box>{projectData.description}</Box>
+                <Box><Textfor>{projectData.description}</Textfor></Box>
               </TextContainer>
               <TextContainer>
                 <Text>참여인원</Text>
                 <Box>
                   {projectData.participantResponses.map((data) => (
-                    <div>{data.name}</div>
+                    <div>{data.name} {data.role}</div>
                   ))}
                 </Box>
               </TextContainer>
@@ -212,9 +229,10 @@ function CommonModal() {
                   <a
                     style={{ textDecoration: "none", color: "black" }}
                     href={projectData.presentationUrl}
+                    width="100%"
                     target="blank"
                   >
-                    {projectData.presentationUrl}
+                    [발표링크 바로가기]
                   </a>
                 </Box>
               </TextContainer>
@@ -226,7 +244,7 @@ function CommonModal() {
                     href={projectData.githubUrl}
                     target="blank"
                   >
-                    {projectData.githubUrl}
+                    [github 바로가기]]
                   </a>
                 </Box>
               </TextContainer>
