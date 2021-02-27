@@ -74,14 +74,14 @@ const Block = styled.div`
 const PrevPages = styled.div`
   position: absolute;
   z-index: 2;
-  transform: translate(-200px, 468px);
+  transform: translate(-200px, 473px);
   color: #c4c4c4;
   opacity: 1;
-  font-size: 24px;
+  font-size: 20px;
 
   @media screen and (min-width:768px) and (max-width:1279px) {
     position: absolute;
-    transform: translate(510px, -92.5px);
+    transform: translate(510px, -92px);
     color: #c4c4c4;
     opacity: 1;
     z-index: 2;
@@ -90,24 +90,24 @@ const PrevPages = styled.div`
 
   @media screen and (max-width:767px) {
     position: absolute;
-    transform: translate(230px, -83px);
+    transform: translate(230px, -81px);
     color: #c4c4c4;
     opacity: 1;
     z-index: 2;
-    font-size: 18px;
+    font-size: 16px;
   }
 `;
 const Slash = styled.div`
   position: absolute;
-  transform: translate(-178px, 468px);
+  transform: translate(-178px, 473px);
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
-  font-size: 22px;
+  font-size: 18px;
 
   @media screen and (min-width:768px) and (max-width:1279px) {
     position: absolute;
-    transform: translate(534px, -92.5px);
+    transform: translate(534px, -92px);
     color: #c4c4c4;
     opacity: 1;
     z-index: 2;
@@ -116,25 +116,25 @@ const Slash = styled.div`
 
   @media screen and (max-width:767px){
     position: absolute;
-    transform: translate(249px, -83px);
+    transform: translate(249px, -81px);
     color: #c4c4c4;
     opacity: 1;
     z-index: 2;
-    font-size: 18px;
+    font-size: 16px;
   }
 `;
 
 const NextPages = styled.div`
   position: absolute;
-  transform: translate(-157px, 468px);
+  transform: translate(-157px, 473px);
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
-  font-size: 24px;
+  font-size: 20px;
 
   @media screen and (min-width:768px) and (max-width:1279px) {
     position: absolute;
-    transform: translate(549px, -92.5px);
+    transform: translate(549px, -92px);
     color: #c4c4c4;
     opacity: 1;
     z-index: 2;
@@ -143,11 +143,11 @@ const NextPages = styled.div`
 
   @media screen and (max-width:767px) {
     position: absolute;
-    transform: translate(266px, -83px);
+    transform: translate(266px, -81px);
     color: #c4c4c4;
     opacity: 1;
     z-index: 2;
-    font-size: 18px;
+    font-size: 16px;
   }
 `;
 

@@ -23,7 +23,7 @@ const Text = styled.div`
   background: var(--unnamed-color-b0b0b0) 0% 0% no-repeat padding-box;
   color: #ffffff;
 
-  @media screen and (min-width:768px) and (max-width:1279px) {
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
     position: absolute;
 
     text-align: center;
@@ -38,7 +38,7 @@ const Text = styled.div`
     text-align: center;
     color: #ffffff;
   }
-  @media screen and (max-width:767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
 
     text-align: center;
@@ -78,7 +78,7 @@ const Part = styled.div`
   text-align: center;
   color: #1ae49b;
 
-  @media screen and (min-width:768px) and (max-width:1279px) {
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
     position: absolute;
     width: 30px;
     height: 30px;
@@ -94,7 +94,7 @@ const Part = styled.div`
     color: #1ae49b;
   }
 
-  @media screen and (max-width:767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     width: 26px;
     height: 26px;
@@ -127,7 +127,18 @@ img {
   width: 100%;
   height: 100%;
   border-radius: 68px;
-  opacity: 0.5;
+  opacity: 0.2;
+}
+:hover {
+  img {
+    opacity: 1;
+    transition: all 0.5s;
+  }
+  ${Text} {
+    display: none;
+    transition: all 0.5s;
+  }
+}
 }
 
 
@@ -142,7 +153,18 @@ img {
       width: 100%;
       height: 100%;
       border-radius: 60px;
-      opacity: 0.64;
+      opacity: 0.2;
+    }
+
+    :active {
+      img {
+        opacity: 1;
+        transition: all 0.5s;
+      }
+      ${Text} {
+        display: none;
+        transition: all 0.5s;
+      }
     }
 }
 
@@ -154,31 +176,46 @@ img {
     margin-bottom: 12px;
     background: #101010;
     img {
+
       width: 100%;
       height: 100%;
       border-radius: 38px;
-      opacity: 0.64;
+      opacity: 0.2;
+    }
+
+    :active {
+      img {
+        opacity: 1;
+        transition: all 0.5s;
+      }
+      ${Text} {
+        display: none;
+        transition: all 0.5s;
+      }
     }
 }
 `;
 
 function MemberStuCircle({ stud }) {
+  const url = stud.imageUrl === null ? "images/sample.png" : stud.imageUrl;
+
   return (
     <>
-    <div data-aos="fade-up"  data-aos-duration="1000" >
-      {(function () {
-        if (stud.part) return <Part>P</Part>;
-      })()}
-      <>
-      <StudInfoBlock>
-        <img src={stud.imageUrl} alt=" "/>
-        <Text>
-          {stud.name} {stud.generation}기<br />
-          {stud.hashTags.map((hash, index)=> 
-                <div key={index}>{hash}</div>)}
-        </Text>
-      </StudInfoBlock>
-      </>
+      <div data-aos="fade-up" data-aos-duration="1000">
+        {(function () {
+          if (stud.part) return <Part>P</Part>;
+        })()}
+        <>
+          <StudInfoBlock>
+            <img src={url} alt=" " />
+            <Text>
+              {stud.name} {stud.generation}기<br />
+              {stud.hashTags.map((hash, index) => (
+                <div key={index}>{hash}</div>
+              ))}
+            </Text>
+          </StudInfoBlock>
+        </>
       </div>
     </>
   );
