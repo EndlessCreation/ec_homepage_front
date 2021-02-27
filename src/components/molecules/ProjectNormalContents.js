@@ -11,7 +11,6 @@ import Loader from "../atoms/CommonLoader";
 import Pages from "../atoms/ProjectSlidePage";
 import {
   getProject,
-  getProjectData,
   useECDispatch,
   useECState,
 } from "../../Context/Context";
@@ -103,7 +102,6 @@ function ProjectContentBox() {
 
   useEffect(() => {
     getProject(dispatch);
-    getProjectData(dispatch);
   }, [dispatch]);
 
   if (loading) return <div><Loader/></div>;
@@ -113,6 +111,14 @@ function ProjectContentBox() {
   const PCTotalslides = Math.ceil(project.length / 12);
   const MOBLIETotalslides = Math.ceil(project.length / 6);
 
+  const NextArrow=({currentSlide,slideCount,...props})=>(
+    <FiChevronRight {...props} type="button" className="slick-next" /> 
+  )
+
+  const PrevArrow=({currentSlide,slideCount,...props})=>(
+    <FiChevronLeft {...props} type="button" className="slick-prev" />
+  )
+
   const settings = {
     dots: false,
     infinite: false,
@@ -121,8 +127,8 @@ function ProjectContentBox() {
     slidesToShow: 4,
      // eslint-disable-next-line 
     slidesToScroll: 4,
-    prevArrow: <FiChevronLeft type="button" class="slick-prev" />,
-    nextArrow: <FiChevronRight type="button" class="slick-next" />,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
     centerMode: false,
     afterChange: (currentSlide) => {
       if (currentSlide !== 0) {
@@ -142,8 +148,8 @@ function ProjectContentBox() {
      // eslint-disable-next-line 
     slidesToScroll: 2,
     centerMode: false,
-    prevArrow: <FiChevronLeft type="button" class="slick-prev" />,
-    nextArrow: <FiChevronRight type="button" class="slick-next" />,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
     afterChange: (currentSlide) => {
       if (currentSlide !== 0) {
         console.log(pageState.currentSlide);
@@ -171,7 +177,7 @@ function ProjectContentBox() {
             {project.map((data) => {
               return (
                 <>
-                  <ProjectBox project={data} />
+                  <ProjectBox project={data} key={data.id} />
                 </>
               );
             })}
@@ -180,7 +186,7 @@ function ProjectContentBox() {
         {isMobile && (
           <StyledSlider {...settingsforMobile}>
             {project.map((data) => {
-              return <ProjectBox project={data}></ProjectBox>;
+              return <ProjectBox project={data} key={data.id}></ProjectBox>;
             })}
           </StyledSlider>
         )}
