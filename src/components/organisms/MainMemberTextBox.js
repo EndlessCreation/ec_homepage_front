@@ -30,4 +30,4 @@ function MemberTextBox() {
   );
 }
 
-export default MemberTextBox;
+export default React.memo(MemberTextBox);

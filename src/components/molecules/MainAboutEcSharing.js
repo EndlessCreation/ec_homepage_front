@@ -37,4 +37,4 @@ function AboutEcSharing() {
   );
 }
 
-export default AboutEcSharing;
+export default React.memo(AboutEcSharing);

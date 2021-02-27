@@ -75,4 +75,4 @@ function MainTemplate() {
   );
 }
 
-export default MainTemplate;
+export default React.memo(MainTemplate);

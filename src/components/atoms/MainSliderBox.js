@@ -38,15 +38,16 @@ function SliderBox({ id, url }) {
       type: "MODAL_OPEN",
     });
   }, [GlobalDispatch]);
+
   function ClickEvent(id) {
     openModal();
     changeid(id);
   }
   return (
-    <SlideBlock id={id} onClick={() => ClickEvent(id)}>
+    <SlideBlock onClick={useCallback(() => ClickEvent(id), ClickEvent())}>
       <img src={url} alt="ECPick"></img>
     </SlideBlock>
   );
 }
 
-export default SliderBox;
+export default React.memo(SliderBox);

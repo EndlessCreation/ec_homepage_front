@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import styled, { css } from "styled-components";
 
 import _ from "loadsh";
@@ -78,7 +78,7 @@ function MainNavbar() {
   const active = state.NavState;
   const ScrollState = state.ScrollState;
 
-  const ScrollHandler = function () {
+  const ScrollHandler = useCallback(() => {
     const Scroll =
       document.documentElement.scrollTop || document.body.scrollTop;
     if (window.matchMedia("(max-width:767px)").matches) {
@@ -124,10 +124,66 @@ function MainNavbar() {
         }
       }
     }
-  };
+  }, []);
+  /*
+  const ScrollHandler = useCallback(
+    function () {
+      const Scroll =
+        document.documentElement.scrollTop || document.body.scrollTop;
+      if (window.matchMedia("(max-width:767px)").matches) {
+        if (window.location.pathname === "/") {
+          if (Scroll < 605) {
+            SetScrollState(false);
+          } else {
+            SetScrollState(true);
+          }
+        } else {
+          if (Scroll < 389) {
+            SetScrollState(false);
+          } else {
+            SetScrollState(true);
+          }
+        }
+      } else if (window.matchMedia("(max-width:1279px)").matches) {
+        if (window.location.pathname === "/") {
+          if (Scroll < 605) {
+            SetScrollState(false);
+          } else {
+            SetScrollState(true);
+          }
+        } else {
+          if (Scroll < 388) {
+            SetScrollState(false);
+          } else {
+            SetScrollState(true);
+          }
+        }
+      } else {
+        if (window.location.pathname === "/") {
+          if (Scroll < 700) {
+            SetScrollState(false);
+          } else {
+            SetScrollState(true);
+          }
+        } else {
+          if (Scroll < 553) {
+            SetScrollState(false);
+          } else {
+            SetScrollState(true);
+          }
+        }
+      }
+    },
+    [ScrollState]
+  );
+*/
+
   useEffect(() => {
-    window.addEventListener("scroll", _.throttle(ScrollHandler, 300));
-  }, [active]);
+    window.addEventListener("scroll", _.throttle(ScrollHandler, 300), {
+      passive: true,
+    });
+  }, [ScrollHandler]);
+
   return (
     <>
       <NavbarTemplate active={active} ScrollState={ScrollState}>
@@ -142,4 +198,4 @@ function MainNavbar() {
   );
 }
 
-export default MainNavbar;
+export default React.memo(MainNavbar);

@@ -48,4 +48,4 @@ function LinkItem({ children, to }) {
   );
 }
 
-export default LinkItem;
+export default React.memo(LinkItem);

@@ -40,4 +40,4 @@ function SliderButton({ id, select, currentSlide }) {
   );
 }
 
-export default SliderButton;
+export default React.memo(SliderButton);

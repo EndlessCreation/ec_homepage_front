@@ -43,4 +43,4 @@ function AboutEcVideo() {
   );
 }
 
-export default AboutEcVideo;
+export default React.memo(AboutEcVideo);

@@ -65,4 +65,4 @@ function MainAboutEcSubText() {
   );
 }
 
-export default MainAboutEcSubText;
+export default React.memo(MainAboutEcSubText);

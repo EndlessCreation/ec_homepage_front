@@ -17,6 +17,9 @@ const ListBlock = styled.div`
   @media screen and (max-width: 1279px) {
     width: 100px;
   }
+  @media screen and (max-width: 767px) {
+    margin-bottom: 48px;
+  }
 `;
 const List1 = [
   "신입생 스터디",
@@ -36,7 +39,7 @@ const List2 = [
   "겨울 M.T.",
   "매달 생일 챙겨줌",
 ];
-function ActivityList1() {
+function ActivityList() {
   return (
     <Block>
       <ListBlock className="first">
@@ -55,4 +58,4 @@ function ActivityList1() {
   );
 }
 
-export default ActivityList1;
+export default React.memo(ActivityList);
