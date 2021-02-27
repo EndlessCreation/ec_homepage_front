@@ -23,4 +23,4 @@ function EntireBox() {
   );
 }
 
-export default EntireBox;
+export default React.memo(EntireBox);
