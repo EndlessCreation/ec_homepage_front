@@ -54,11 +54,6 @@ const Header = styled.div`
   padding-left: 24px;
   padding-right: 24px;
 
-  @media screen and (max-width: 767px) {
-    height: 64px;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -68,6 +63,14 @@ const Header = styled.div`
   line-height: 1.48;
   color: #101010;
   border-bottom: 1px solid #dee2e6;
+
+  @media screen and (max-width: 767px) {
+    height: 64px;
+    font-size: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
   .button {
     position: relative;
     width: 25px;
@@ -235,8 +238,8 @@ function CommonModal() {
               <TextContainer>
                 <Text>기술스택</Text>
                 <Box>
-                  {projectData.techStack.map((data) => (
-                    <div>{data}</div>
+                  {projectData.techStack.map((data, index) => (
+                    <div key={index}>{data}</div>
                   ))}
                 </Box>
               </TextContainer>
