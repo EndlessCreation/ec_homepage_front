@@ -7,6 +7,7 @@ import {
   useECDispatch,
   getProjectData,
 } from "../../context/Context";
+
 const Block = styled.div`
   display: flex;
   justify-content: center;
@@ -257,4 +258,4 @@ function CommonModal() {
   );
 }
 
-export default CommonModal;
+export default React.memo(CommonModal);

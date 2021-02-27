@@ -34,4 +34,4 @@ function ProjectContainer(){
     );
 }
 
-export default ProjectContainer;
+export default React.memo(ProjectContainer);

@@ -30,4 +30,4 @@ function EcPickContainer() {
   );
 }
 
-export default EcPickContainer;
+export default React.memo(EcPickContainer);

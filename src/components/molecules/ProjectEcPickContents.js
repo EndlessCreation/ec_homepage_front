@@ -160,4 +160,4 @@ function ECPickContentBox({name}){
         </BlockforEcPick>
     );  
 }
-export default ECPickContentBox; 
+export default React.memo(ECPickContentBox); 
