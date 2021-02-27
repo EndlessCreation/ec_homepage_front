@@ -34,4 +34,4 @@ function MemberTemplate() {
   );
 }
 
-export default MemberTemplate;
+export default React.memo(MemberTemplate);

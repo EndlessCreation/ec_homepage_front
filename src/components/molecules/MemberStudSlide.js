@@ -156,9 +156,9 @@ function MemberStudSlide() {
     query: "(min-width: 1280px)",
   });
   const isTablet = useMediaQuery({
-    query: "(min-width: 640px) and (max-width: 1279px)",
+    query: "(min-width: 768px) and (max-width: 1279px)",
   });
-  const isMoblie = useMediaQuery({ query: "(max-width: 639px)" });
+  const isMoblie = useMediaQuery({ query: "(max-width: 767px)" });
 
   const [number, setNumber] = useState({ currentPage: 1 });
   const state = useECState();
@@ -276,4 +276,4 @@ function MemberStudSlide() {
   );
 }
 
-export default MemberStudSlide;
+export default React.memo(MemberStudSlide);

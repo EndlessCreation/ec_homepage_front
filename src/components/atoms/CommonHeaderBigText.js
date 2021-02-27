@@ -45,4 +45,4 @@ function ForIntroText({children}){
     return <IntroText>{children}</IntroText>;
 }
 
-export default ForIntroText;
+export default React.memo(ForIntroText);

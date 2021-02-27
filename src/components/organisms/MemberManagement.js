@@ -30,4 +30,4 @@ function MemberManagement() {
   );
 }
 
-export default MemberManagement;
+export default React.memo(MemberManagement);

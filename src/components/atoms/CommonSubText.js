@@ -43,4 +43,4 @@ function ForText({ children }) {
   return <Text>{children}</Text>;
 }
 
-export default ForText;
+export default React.memo(ForText);
