@@ -44,7 +44,7 @@ function SliderBox({ id, url }) {
     changeid(id);
   }
   return (
-    <SlideBlock onClick={useCallback(() => ClickEvent(id), ClickEvent())}>
+    <SlideBlock onClick={useCallback(() => ClickEvent(id))}>
       <img src={url} alt="ECPick"></img>
     </SlideBlock>
   );
