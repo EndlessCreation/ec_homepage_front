@@ -195,4 +195,4 @@ function ProjectContentBox() {
   );
 }
 
-export default ProjectContentBox;
+export default React.memo(ProjectContentBox);

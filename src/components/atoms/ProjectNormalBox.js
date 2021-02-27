@@ -67,4 +67,4 @@ function ProjectBox({ project }) {
   );
 }
 
-export default ProjectBox;
+export default React.memo(ProjectBox);
