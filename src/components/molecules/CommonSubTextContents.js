@@ -34,4 +34,4 @@ function TextBox({children})
     );
 }
 
-export default TextBox;
+export default React.memo(TextBox);

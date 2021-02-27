@@ -14,9 +14,10 @@ const ContentsBlock = styled.div`
   }
   @media screen and (max-width: 767px) {
     width: 100%;
-    height: 704px;
+    height: auto;
     margin-left: 0;
     margin-right: 0;
+    margin-bottom: 80px;
   }
 `;
 

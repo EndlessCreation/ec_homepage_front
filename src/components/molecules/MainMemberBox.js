@@ -22,7 +22,7 @@ const MemberBlock = styled.div`
   }
   @media screen and (max-width: 767px) {
     max-width: 304px;
-    height: 100%;
+    height: auto;
     grid-template-columns: repeat(auto-fit, minmax(144px, 1fr));
     grid-template-rows: 144px 144px;
     grid-gap: 16px;
@@ -44,7 +44,7 @@ function MainMemberBox() {
   return (
     <MemberBlock>
       {executive.map((Member) => (
-        <div data-aos="fade-up">
+        <div data-aos="fade-up" key={Member.name}>
           <MemberItem
             HashTag={Member.hashTags}
             name={Member.name}

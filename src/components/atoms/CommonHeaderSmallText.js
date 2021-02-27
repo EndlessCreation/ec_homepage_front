@@ -49,4 +49,4 @@ function ForMainText({children}){
     return <MainText>{children}</MainText>;
 }
 
-export default ForMainText;
+export default React.memo(ForMainText);

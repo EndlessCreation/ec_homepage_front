@@ -11,7 +11,7 @@ function EntireBox() {
         main="Project"
         intro="선배님들이 했던 프로젝트들이에요!"
         intro2="너무 많아서 몇 가지만 골라봤어요 :)"
-        Url="images/ProjectHeader.png"
+        Url="images/ProjectHeader.jpg"
       />
       <Container>
         <EcPickContainer />
@@ -23,4 +23,4 @@ function EntireBox() {
   );
 }
 
-export default EntireBox;
+export default React.memo(EntireBox);

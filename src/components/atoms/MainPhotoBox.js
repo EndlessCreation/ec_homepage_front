@@ -24,9 +24,8 @@ const Photo = styled.div`
 function PhotoBox({ url }) {
   return (
     <Photo>
-      <img src={url}></img>
+      <img src={url} alt="활동사진"></img>
     </Photo>
-
   );
 }
 

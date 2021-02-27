@@ -125,6 +125,7 @@ function ProjectContentBox() {
     speed: 500,
     rows: 3,
     slidesToShow: 4,
+     // eslint-disable-next-line 
     slidesToScroll: 4,
     prevArrow: <PrevArrow />,
     nextArrow: <NextArrow />,
@@ -144,6 +145,7 @@ function ProjectContentBox() {
     speed: 500,
     rows: 3,
     slidesToShow: 2,
+     // eslint-disable-next-line 
     slidesToScroll: 2,
     centerMode: false,
     prevArrow: <PrevArrow />,
@@ -193,4 +195,4 @@ function ProjectContentBox() {
   );
 }
 
-export default ProjectContentBox;
+export default React.memo(ProjectContentBox);

@@ -59,4 +59,4 @@ function SlidePage({children}){
     return <Pages>{children}</Pages>
 }
 
-export default SlidePage;
+export default React.memo(SlidePage);
