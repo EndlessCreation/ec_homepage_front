@@ -11,7 +11,7 @@ function ActivityTemplate() {
         main="Activity"
         intro="2021년 Endless Creation 에서는"
         intro2="아래와 같은 활동을 준비하고 있어요!"
-        Url="images/ActivityHeader.png"
+        Url="images/ActivityHeader.jpg"
       ></IntroContainer>
       <CommonContainer>
         <Month />

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 
+import _ from "loadsh";
 import { useGlobalState, useGlobalDispatch } from "../../context/GlobalContext";
 import NavbarMain from "../atoms/MainNavbarMain";
 import NavbarMenu from "../molecules/MainNavbarMenu";
@@ -24,7 +25,6 @@ const NavbarTemplate = styled.div`
     props.ScrollState &&
     css`
       background: #fff;
-      transition: all 0.5s ease-in-out;
     `}
   .footer {
     width: 100%;
@@ -71,46 +71,63 @@ const NavbarTemplate = styled.div`
     padding-left: 8px;
   }
 `;
+
 function MainNavbar() {
   const state = useGlobalState();
   const dispatch = useGlobalDispatch();
   const active = state.NavState;
+  const ScrollState = state.ScrollState;
 
-  const [ScrollState, SetScrollState] = useState(false);
-  /*
   const ScrollHandler = function () {
     const Scroll =
       document.documentElement.scrollTop || document.body.scrollTop;
-    if (Scroll > 600) {
-      if (ScrollState === false) {
-        SetScrollState(true);
-        console.log("Scroll up");
+    if (window.matchMedia("(max-width:767px)").matches) {
+      if (window.location.pathname === "/") {
+        if (Scroll < 605) {
+          dispatch({ type: "SCROLL_UP" });
+        } else {
+          dispatch({ type: "SCROLL_DOWN" });
+        }
+      } else {
+        if (Scroll < 389) {
+          dispatch({ type: "SCROLL_UP" });
+        } else {
+          dispatch({ type: "SCROLL_DOWN" });
+        }
+      }
+    } else if (window.matchMedia("(max-width:1279px)").matches) {
+      if (window.location.pathname === "/") {
+        if (Scroll < 605) {
+          dispatch({ type: "SCROLL_UP" });
+        } else {
+          dispatch({ type: "SCROLL_DOWN" });
+        }
+      } else {
+        if (Scroll < 388) {
+          dispatch({ type: "SCROLL_UP" });
+        } else {
+          dispatch({ type: "SCROLL_DOWN" });
+        }
       }
     } else {
-      if (ScrollState === true) {
-        SetScrollState(false);
-        console.log("Scroll Down");
+      if (window.location.pathname === "/") {
+        if (Scroll < 700) {
+          dispatch({ type: "SCROLL_UP" });
+        } else {
+          dispatch({ type: "SCROLL_DOWN" });
+        }
+      } else {
+        if (Scroll < 553) {
+          dispatch({ type: "SCROLL_UP" });
+        } else {
+          dispatch({ type: "SCROLL_DOWN" });
+        }
       }
     }
   };
-  document.addEventListener("scroll", setInterval(ScrollHandler));
-*/
-  const ScrollHandler = function () {
-    const Scroll =
-      document.documentElement.scrollTop || document.body.scrollTop;
-    if (Scroll < 600) {
-      SetScrollState(false);
-      console.log("헤더영역");
-    } else {
-      SetScrollState(true);
-      console.log("헤더외 영역");
-    }
-  };
-
   useEffect(() => {
-    window.addEventListener("scroll", ScrollHandler);
-  }, [ScrollState]);
-
+    window.addEventListener("scroll", _.throttle(ScrollHandler, 300));
+  }, [active]);
   return (
     <>
       <NavbarTemplate active={active} ScrollState={ScrollState}>
