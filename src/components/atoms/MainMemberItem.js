@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Text = styled.div`
   width: 188px;
   height: 188px;
-  font-family: NanumSquareRegualr;
+  font-family: NanumSquareRegular;
   font-size: 16px;
   line-height: 28px;
   color: #fff;
