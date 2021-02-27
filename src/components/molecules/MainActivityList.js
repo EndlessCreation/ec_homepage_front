@@ -14,8 +14,10 @@ const ListBlock = styled.div`
   width: 110px;
   height: 100%;
   display: inline-block;
+
   @media screen and (max-width: 1279px) {
     width: 100px;
+    margin-bottom: 48px;
   }
   @media screen and (max-width: 767px) {
     margin-bottom: 48px;
