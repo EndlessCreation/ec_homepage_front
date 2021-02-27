@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Size from "../../Size";
 // import AOS from 'aos';
 import 'aos/dist/aos.css';
 // AOS.init({
@@ -21,7 +20,7 @@ const Text = styled.div`
   color: #ffffff;
   opacity: 1;
 
-  @media screen and ${Size.device.tablet} {
+  @media screen and (min-width:768px) and (max-width:1279px) {
     position: absolute;
 
     margin: 0 auto;
@@ -37,7 +36,7 @@ const Text = styled.div`
     color: #ffffff;
   }
 
-  @media screen and ${Size.device.moblie} {
+  @media screen and (max-width:767px) {
     position: absolute;
 
     margin: 0 auto;
@@ -73,7 +72,7 @@ img {
     opacity: 0.64;
   }
 }
-@media screen and ${Size.device.tablet}
+@media screen and (min-width:768px) and (max-width:1279px)
 {
     width: 112px;
     height: 112px;
@@ -92,7 +91,7 @@ img {
     
 }
 
-@media screen and ${Size.device.moblie}
+@media screen and (max-width:767px)
 {
     width: 67px;
     height: 67px;
@@ -115,6 +114,7 @@ function MemberGradCircle({ grad }) {
   return (
     <>
     <div data-aos="flip-right"  data-aos-duration="1000" >
+      <>
     <GradInfoBlock>
       <img src={grad.imageUrl} alt="졸업생이미지"/>
       <Text>
@@ -124,6 +124,7 @@ function MemberGradCircle({ grad }) {
                 <div key={index}>{hash}</div>)}
       </Text>
     </GradInfoBlock>
+    </>
     </div>
     </>
   );

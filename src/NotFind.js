@@ -1,5 +1,4 @@
 import React from "react";
-import Size from "./Size";
 import styled, {keyframes} from "styled-components";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -23,13 +22,13 @@ const Box = styled.div`
   padding-right: 30px;
   box-sizing: border-box;
   opacity: 1;
-  @media screen and ${Size.device.tablet} {
+  @media screen and (min-width:768px) and (max-width:1279px) {
     max-width: 640px;
     padding-left: 16px;
     padding-right: 16px;
     margin: 0 auto;
   }
-  @media screen and ${Size.device.moblie} {
+  @media screen and (max-width:767px) {
     padding-top: 40px;
     padding-bottom: 40px;
     max-width: 320px;
@@ -58,7 +57,7 @@ line-height: 211px;
 letter-spacing: 0em;
 text-align: center;
 
-@media screen and ${Size.device.tablet} {
+@media screen and (min-width:768px) and (max-width:1279px) {
     width: 308px;
     height: 166px;
     margin: 0 auto;
@@ -69,7 +68,7 @@ text-align: center;
     text-align: center;
   }
 
-  @media screen and ${Size.device.moblie} {
+  @media screen and (max-width:767px) {
     padding-top: 80px;
     width: 258px;
     height: 116px;
@@ -95,7 +94,7 @@ font-align: center;
 text-align: center;
 padding-bottom: 180px;
 
-@media screen and ${Size.device.tablet} {
+@media screen and (min-width:768px) and (max-width:1279px) {
     width: 300px;
 
     margin: 0 auto;
@@ -106,7 +105,7 @@ padding-bottom: 180px;
     text-align: center;
   }
 
-  @media screen and ${Size.device.moblie} {
+  @media screen and (max-width:767px) {
     width: 230px;
     padding-top: 30px;
     margin: 0 auto;
@@ -131,13 +130,13 @@ const ImgBlock = styled.img`
   height: 257px;
   padding-bottom: 180px;
   
-  @media screen and ${Size.device.tablet} {
+  @media screen and (min-width:768px) and (max-width:1279px) {
     padding-left: 60px;
     width: 130px;
     height: 157px;
   }
 
-  @media screen and ${Size.device.moblie} {
+  @media screen and (max-width:767px) {
     padding-top: 25px;
     padding-left: 19px;
     width: 90px;

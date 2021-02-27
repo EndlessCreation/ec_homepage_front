@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Size from "../../Size";
 // import AOS from 'aos';
 import 'aos/dist/aos.css';
 // AOS.init({
@@ -24,7 +23,7 @@ const Text = styled.div`
   background: var(--unnamed-color-b0b0b0) 0% 0% no-repeat padding-box;
   color: #ffffff;
 
-  @media screen and ${Size.device.tablet} {
+  @media screen and (min-width:768px) and (max-width:1279px) {
     position: absolute;
 
     text-align: center;
@@ -40,7 +39,7 @@ const Text = styled.div`
     text-align: center;
     color: #ffffff;
   }
-  @media screen and ${Size.device.moblie} {
+  @media screen and (max-width:767px) {
     position: absolute;
 
     text-align: center;
@@ -81,7 +80,7 @@ const Part = styled.div`
   text-align: center;
   color: #1ae49b;
 
-  @media only screen and ${Size.device.tablet} {
+  @media only screen and (min-width:768px) and (max-width:1279px) {
     position: absolute;
     width: 30px;
     height: 30px;
@@ -97,7 +96,7 @@ const Part = styled.div`
     color: #1ae49b;
   }
 
-  @media only screen and ${Size.device.moblie} {
+  @media only screen and (max-width:767px) {
     position: absolute;
     width: 26px;
     height: 26px;
@@ -135,7 +134,7 @@ img {
 
 }
 
-@media screen and ${Size.device.tablet}
+@media screen and (min-width:768px) and (max-width:1279px)
 {
     width: 140px;
     height: 140px;
@@ -149,7 +148,7 @@ img {
     }
 }
 
-@media screen and ${Size.device.moblie}
+@media screen and (max-width:767px)
 {
     width: 93px;
     height: 93px;
@@ -172,6 +171,7 @@ function MemberStuCircle({ stud }) {
       {(function () {
         if (stud.part) return <Part>P</Part>;
       })()}
+      <>
       <StudInfoBlock>
         <img src={stud.imageUrl} alt="학생이미지"/>
         <Text>
@@ -180,6 +180,7 @@ function MemberStuCircle({ stud }) {
                 <div key={index}>{hash}</div>)}
         </Text>
       </StudInfoBlock>
+      </>
       </div>
     </>
   );

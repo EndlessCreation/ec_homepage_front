@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import Size from "../../Size";
 import Loader from "../atoms/CommonLoader"
 import {
   useECState,
@@ -17,7 +16,7 @@ const Img = styled.img`
   border-radius: 80px;
   opacity: 1;
 
-  @media only screen and ${Size.device.tablet} {
+  @media only screen and (min-width:768px) and (max-width:1279px) {
     width: 117px;
     height: 117px;
 
@@ -25,7 +24,7 @@ const Img = styled.img`
     opacity: 1;
   }
 
-  @media only screen and ${Size.device.moblie} {
+  @media only screen and (max-width:767px) {
     width: 114px;
     height: 114px;
 
@@ -57,7 +56,7 @@ const Part = styled.div`
   text-align: center;
   color: #1ae49b;
 
-  @media only screen and ${Size.device.tablet} {
+  @media only screen and (min-width:768px) and (max-width:1279px) {
     width: 30px;
     height: 30px;
 
@@ -72,7 +71,7 @@ const Part = styled.div`
     color: #1ae49b;
   }
 
-  @media only screen and ${Size.device.moblie} {
+  @media only screen and (max-width:767px) {
     width: 26px;
     height: 26px;
 
@@ -96,7 +95,7 @@ const ManaInfoBlock = styled.div`
   opacity: 1;
   margin-bottom: 16px;
 
-  @media screen and ${Size.device.tablet} {
+  @media screen and (min-width:768px) and (max-width:1279px) {
     width: 295px;
     height: 155px;
     background: #ffffff 0% 0% no-repeat padding-box;
@@ -104,7 +103,7 @@ const ManaInfoBlock = styled.div`
     margin-bottom: 16px;
   }
 
-  @media screen and ${Size.device.moblie} {
+  @media screen and (max-width:767px) {
     width: 304px;
     height: 151px;
     background: #ffffff 0% 0% no-repeat padding-box;
@@ -125,7 +124,7 @@ const InfoBox = styled.div`
   padding-top: 24px;
   padding-right: 24px;
 
-  @media screen and ${Size.device.tablet} {
+  @media screen and (min-width:768px) and (max-width:1279px) {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -137,7 +136,7 @@ const InfoBox = styled.div`
     padding-top: 16px;
   }
 
-  @media screen and ${Size.device.moblie} {
+  @media screen and (max-width:767px) {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -155,12 +154,12 @@ const TextBox = styled.div`
   width: 130px;
   padding-left: 28px;
 
-  @media screen and ${Size.device.tablet} {
+  @media screen and (min-width:768px) and (max-width:1279px) {
     width: 100px;
     padding-left: 21px;
   }
 
-  @media screen and ${Size.device.moblie} {
+  @media screen and (max-width:767px) {
     width: 94px;
     padding-left: 19px;
   }
@@ -177,7 +176,7 @@ const Name = styled.span`
   text-align: left;
   color: #101010;
 
-  @media screen and ${Size.device.tablet} {
+  @media screen and (min-width:768px) and (max-width:1279px) {
     font-family: NanumSquareBold;
     font-size: 18px;
     font-weight: normal;
@@ -189,7 +188,7 @@ const Name = styled.span`
     color: #101010;
   }
 
-  @media screen and ${Size.device.moblie} {
+  @media screen and (max-width:767px){
     font-family: NanumSquareBold;
     font-size: 1.125rem;
     font-weight: normal;
@@ -216,7 +215,7 @@ const Grad = styled.span`
   text-align: left;
   color: #232323;
 
-  @media screen and ${Size.device.tablet} {
+  @media screen and (min-width:768px) and (max-width:1279px) {
     padding-left: 9px;
     padding-top: 2px;
     font-size: 16px;
@@ -229,7 +228,7 @@ const Grad = styled.span`
     color: #232323;
   }
 
-  @media screen and ${Size.device.moblie} {
+  @media screen and (max-width:767px) {
     padding-left: 5px;
     padding-top: 2px;
     font-size: 1rem;
@@ -245,11 +244,11 @@ const Grad = styled.span`
 const Gap = styled.div`
   height: 18px;
 
-  @media screen and ${Size.device.tablet} {
+  @media screen and (min-width:768px) and (max-width:1279px) {
     height: 9px;
   }
 
-  @media screen and ${Size.device.moblie} {
+  @media screen and (max-width:767px) {
     height: 9px;
   }
 `;
@@ -264,7 +263,7 @@ const Role = styled.span`
   text-align: left;
   color: #232323;
 
-  @media screen and ${Size.device.tablet} {
+  @media screen and (min-width:768px) and (max-width:1279px) {
     font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
@@ -275,7 +274,7 @@ const Role = styled.span`
     color: #232323;
   }
 
-  @media screen and ${Size.device.moblie} {
+  @media screen and (max-width:767px) {
     font-size: 16px;
     font-weight: normal;
     font-stretch: normal;
@@ -298,7 +297,7 @@ const Hashtag = styled.div`
   text-align: left;
   color: #232323;
 
-  @media screen and ${Size.device.tablet} {
+  @media screen and (min-width:768px) and (max-width:1279px) {
     font-size: 12px;
     font-weight: normal;
     font-stretch: normal;
@@ -309,7 +308,7 @@ const Hashtag = styled.div`
     color: #232323;
   }
 
-  @media screen and ${Size.device.moblie} {
+  @media screen and (max-width:767px) {
     font-size: 12px;
     font-weight: normal;
     font-stretch: normal;
@@ -323,6 +322,7 @@ const Hashtag = styled.div`
 
 function Managers({ mana }) {
   return (
+    <>
     <ManaInfoBlock>
       <InfoBox>
         {(function () {
@@ -343,6 +343,7 @@ function Managers({ mana }) {
         </TextBox>
       </InfoBox>
     </ManaInfoBlock>
+    </>
   );
 }
 

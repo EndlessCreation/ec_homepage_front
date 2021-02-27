@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Size from "../../Size";
 import MemberGradSlide from "../molecules/MemberGradSlide";
 // import AOS from "aos";
 import "aos/dist/aos.css";
@@ -11,7 +10,7 @@ const GradBox = styled.div`
   padding-bottom: 130px;
   padding-left: 22.166666667%;
 
-  @media screen and ${Size.device.tablet} {
+  @media screen and (min-width:768px) and (max-width:1279px) {
     width: 608px;
     padding-bottom: 120px;
     padding-left: 0%;
@@ -19,7 +18,7 @@ const GradBox = styled.div`
     margin: 0 auto;
   }
 
-  @media screen and ${Size.device.moblie} {
+  @media screen and (max-width:767px) {
     width: 304px;
 
     padding-left: 0%;

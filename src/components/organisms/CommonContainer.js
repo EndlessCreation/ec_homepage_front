@@ -1,5 +1,4 @@
 import React from 'react';
-import Size from "../../Size";
 import styled from "styled-components";
 
 const Top = styled.div`
@@ -16,13 +15,13 @@ const Box = styled.div`
   padding-right: 40px;
   box-sizing: border-box;
   opacity: 1;
-  @media screen and ${Size.device.tablet} {
+  @media screen and (min-width:768px) and (max-width:1279px) {
     max-width: 640px;
     padding-left: 16px;
     padding-right: 16px;
     margin: 0 auto;
   }
-  @media screen and ${Size.device.moblie} {
+  @media screen and (max-width:767px) {
     max-width: 320px;
     padding-left: 8px;
     padding-right: 8px;
