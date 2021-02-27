@@ -9,7 +9,7 @@ const ImgBlock = styled.div`
     grid-row: 1 / -1;
     img {
       width: 95px;
-      height: auto;
+      height: 100%;
     }
   }
 `;
