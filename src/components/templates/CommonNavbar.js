@@ -124,59 +124,7 @@ function MainNavbar() {
         }
       }
     }
-  }, []);
-  /*
-  const ScrollHandler = useCallback(
-    function () {
-      const Scroll =
-        document.documentElement.scrollTop || document.body.scrollTop;
-      if (window.matchMedia("(max-width:767px)").matches) {
-        if (window.location.pathname === "/") {
-          if (Scroll < 605) {
-            SetScrollState(false);
-          } else {
-            SetScrollState(true);
-          }
-        } else {
-          if (Scroll < 389) {
-            SetScrollState(false);
-          } else {
-            SetScrollState(true);
-          }
-        }
-      } else if (window.matchMedia("(max-width:1279px)").matches) {
-        if (window.location.pathname === "/") {
-          if (Scroll < 605) {
-            SetScrollState(false);
-          } else {
-            SetScrollState(true);
-          }
-        } else {
-          if (Scroll < 388) {
-            SetScrollState(false);
-          } else {
-            SetScrollState(true);
-          }
-        }
-      } else {
-        if (window.location.pathname === "/") {
-          if (Scroll < 700) {
-            SetScrollState(false);
-          } else {
-            SetScrollState(true);
-          }
-        } else {
-          if (Scroll < 553) {
-            SetScrollState(false);
-          } else {
-            SetScrollState(true);
-          }
-        }
-      }
-    },
-    [ScrollState]
-  );
-*/
+  }, [dispatch]);
 
   useEffect(() => {
     window.addEventListener("scroll", _.throttle(ScrollHandler, 300), {

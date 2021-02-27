@@ -1,14 +1,13 @@
-import React, {useEffect} from 'react';
-import styled from 'styled-components';
-import EcPickBox from '../atoms/ProjectEcPickBox';
+import React, { useEffect } from "react";
+import styled from "styled-components";
+import EcPickBox from "../atoms/ProjectEcPickBox";
 import { useMediaQuery } from "react-responsive";
 
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Loader from "../atoms/CommonLoader";
 import { useECState, useECDispatch, getEcpick } from "../../context/Context";
-
 
 const StyledSlider = styled(Slider)`
     .slick-slide div{
@@ -123,106 +122,108 @@ const StyledSlider = styled(Slider)`
     
 `;
 
-const BlockforEcPick=styled.div`
-@media screen and (min-width:1280px){
+const BlockforEcPick = styled.div`
+  @media screen and (min-width: 1280px) {
     padding-left: 266px;
-    width:879px;
-    padding-bottom:192px;
-    overflow:hidden;
-}
-@media screen and (min-width:768px) and (max-width:1279px){
-  padding-bottom:148px;
-  overflow:hidden;
-}
-@media screen and (max-width:767px){
-padding-bottom:100px;
-overflow:hidden;
-}
+    width: 879px;
+    padding-bottom: 192px;
+    overflow: hidden;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    padding-bottom: 148px;
+    overflow: hidden;
+  }
+  @media screen and (max-width: 767px) {
+    padding-bottom: 100px;
+    overflow: hidden;
+  }
 `;
 
-
-
-
-function ECPickContentBox({name}){
+function ECPickContentBox({ name }) {
   const state = useECState();
   const dispatch = useECDispatch();
   const isPc = useMediaQuery({
-    query: '(min-width: 1280px)'
-    })
-    const isTablet = useMediaQuery({ query: '(min-width: 768px) and (max-width:1279px)' })
-    const isMobile = useMediaQuery({ query: ' (max-width: 767px)' })
-
+    query: "(min-width: 1280px)",
+  });
+  const isTablet = useMediaQuery({
+    query: "(min-width: 768px) and (max-width:1279px)",
+  });
+  const isMobile = useMediaQuery({ query: " (max-width: 767px)" });
 
   const { data: ecpick, loading, error } = state.ecpick;
   useEffect(() => {
     if (!ecpick) {
       getEcpick(dispatch);
     }
-  }, [dispatch,ecpick]);
-  if (loading) return <div><Loader/></div>;
+  }, [dispatch, ecpick]);
+  if (loading)
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
   if (error) return <div>에러가 발생했습니다</div>;
   if (!ecpick) return null;
 
+  const settings = {
+    dots: true,
+    speed: 1000,
+    arrows: false,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    centerMode: false,
+    appendDots: (dots) => <ul>{dots}</ul>,
+    customPaging: (i) => <div className="ft-slick__dots--custom"></div>,
+  };
 
-    const settings = {
-        dots: true,
-        speed: 1000,
-        arrows: false,
-        slidesToShow:2,
-        slidesToScroll: 2,
-        centerMode: false,
-        appendDots: (dots) => <ul>{dots}</ul>,
-    customPaging: (i) => <div className="ft-slick__dots--custom"></div>
-      };
+  const settingsforTablet = {
+    dots: true,
+    speed: 500,
+    slidesToShow: 2,
+    rows: 2,
+    slidesToScroll: 2,
+    arrows: false,
+    centerMode: false,
+    appendDots: (dots) => <ul>{dots}</ul>,
+    customPaging: (i) => <div className="ft-slick__dots--custom--tablet"></div>,
+  };
 
-      const settingsforTablet={
-        dots: true,
-        speed: 500,
-        slidesToShow: 2,
-        rows:2,
-        slidesToScroll: 2,
-        arrows: false,
-        centerMode: false,
-        appendDots: (dots) => <ul>{dots}</ul>,
-    customPaging: (i) => <div className="ft-slick__dots--custom--tablet"></div>
-      };
+  const settingsforMobile = {
+    dots: true,
+    speed: 500,
+    slidesToShow: 1,
+    rows: 2,
+    slidesToScroll: 1,
+    arrows: false,
+    centerMode: false,
+    appendDots: (dots) => <ul>{dots}</ul>,
+    customPaging: (i) => <div className="ft-slick__dots--custom--mobile"></div>,
+  };
 
-      const settingsforMobile={
-        dots: true,
-        speed: 500,
-        slidesToShow: 1,
-        rows:2,
-        slidesToScroll: 2,
-        arrows: false,
-        centerMode: false,
-        appendDots: (dots) => <ul>{dots}</ul>,
-        customPaging: (i) => <div className="ft-slick__dots--custom--mobile"></div>
-          };
-
-    return (
-        <BlockforEcPick>
-            {isPc&&<StyledSlider {...settings}>
-            {ecpick.map((data,index)=> {
-              return (
-                  <EcPickBox key={data.id} project={data} />
-              );
-            })}
-          </StyledSlider>}
-          {isTablet&&<StyledSlider {...settingsforTablet}>
-            {ecpick.map((data,index) => {
-              return (
-                  <EcPickBox key={data.id} project={data} />
-              );
-            })}
-          </StyledSlider>}
-          {isMobile&&<StyledSlider {...settingsforMobile}>
-            {ecpick.map((data,index) => {
-              return (
-                  <EcPickBox key={data.id} project={data} />
-              );
-            })}
-          </StyledSlider>}
-        </BlockforEcPick>
-    );  
+  return (
+    <BlockforEcPick>
+      {isPc && (
+        <StyledSlider {...settings}>
+          {ecpick.map((data, index) => {
+            return <EcPickBox key={data.id} project={data} />;
+          })}
+        </StyledSlider>
+      )}
+      {isTablet && (
+        <StyledSlider {...settingsforTablet}>
+          {ecpick.map((data, index) => {
+            return <EcPickBox key={data.id} project={data} />;
+          })}
+        </StyledSlider>
+      )}
+      {isMobile && (
+        <StyledSlider {...settingsforMobile}>
+          {ecpick.map((data, index) => {
+            return <EcPickBox key={data.id} project={data} />;
+          })}
+        </StyledSlider>
+      )}
+    </BlockforEcPick>
+  );
 }
-export default React.memo(ECPickContentBox); 
+export default React.memo(ECPickContentBox);
