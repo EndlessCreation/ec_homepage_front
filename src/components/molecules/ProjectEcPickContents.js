@@ -167,7 +167,7 @@ function ECPickContentBox({ name }) {
 
   const settings = {
     dots: true,
-    speed: 1000,
+    speed: 500,
     arrows: false,
     slidesToShow: 2,
     slidesToScroll: 2,
@@ -204,21 +204,21 @@ function ECPickContentBox({ name }) {
     <BlockforEcPick>
       {isPc && (
         <StyledSlider {...settings}>
-          {ecpick.map((data, index) => {
+          {ecpick.map((data) => {
             return <EcPickBox key={data.id} project={data} />;
           })}
         </StyledSlider>
       )}
       {isTablet && (
         <StyledSlider {...settingsforTablet}>
-          {ecpick.map((data, index) => {
+          {ecpick.map((data) => {
             return <EcPickBox key={data.id} project={data} />;
           })}
         </StyledSlider>
       )}
       {isMobile && (
         <StyledSlider {...settingsforMobile}>
-          {ecpick.map((data, index) => {
+          {ecpick.map((data) => {
             return <EcPickBox key={data.id} project={data} />;
           })}
         </StyledSlider>

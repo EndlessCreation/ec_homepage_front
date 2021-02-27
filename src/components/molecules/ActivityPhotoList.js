@@ -13,16 +13,15 @@ import {
 import "aos/dist/aos.css";
 // AOS.init();
 
+
 //현재상태의 이미지만 보여줄 container
 const ShowContainer = styled.div`
   width: 872px;
   overflow: hidden; // 선을 넘어간 이미지들은 보이지 않도록
-
   @media screen and (max-width: 1279px) {
     width: 624px;
     overflow: hidden; // 선을 넘어간 이미지들은 보이지 않도록
   }
-
   @media screen and (max-width: 767px) {
     width: 304px;
     overflow: hidden; // 선을 넘어간 이미지들은 보이지 않도록
@@ -100,14 +99,12 @@ const Button = styled.button`
   color: #a9a9a9;
   font-size: 24px;
   vertical-align: middle;
-
   &:hover {
     color: ${lighten(0.1, "black")};
   }
   &:active {
     color: ${darken(0.1, "black")};
   }
-
   @media screen and (max-width: 1279px) {
     font-size: 18px;
   }
@@ -132,10 +129,9 @@ const Page = styled.div`
     display:inline-block;
     vertical-align: middle;
   }
-
   @media screen and (max-width: 1279px) {
     float: right;
-    width: 150px;
+    width: 160px;
     height: 0px;
     color: #a9a9a9;
     font-size: 18px;
@@ -151,14 +147,22 @@ const Page = styled.div`
       vertical-align: middle;
     }
   }
-
   @media screen and (max-width: 767px) {
     float: right;
-    width: 140px;
+    width: 150px;
     height: 0px;
     color: #a9a9a9;
     font-size: 18px;
   
+    .group{
+      position: absolute;
+      margin-top : 0px;
+      top: -88px;
+    }
+    .page{
+      display:inline-block;
+      vertical-align: middle;
+    }
   }
 `;
 
@@ -206,7 +210,7 @@ function PhotoList() {
   const nextSlide = () => {
     if (currentSlide >= TOTAL_SLIDES) {
       // 더 이상 넘어갈 슬라이드가 없으면 슬라이드를 초기화합니다.
-      setCurrentSlide(0);
+      // setCurrentSlide(0);
     } else {
       setCurrentSlide(currentSlide + 1);
     }
@@ -214,11 +218,13 @@ function PhotoList() {
 
   const prevSlide = () => {
     if (currentSlide === 0) {
-      setCurrentSlide(TOTAL_SLIDES);
+      // setCurrentSlide(TOTAL_SLIDES);
     } else {
       setCurrentSlide(currentSlide - 1);
     }
   };
+
+
 
   return (
     <>
@@ -237,7 +243,6 @@ function PhotoList() {
           </Button>
         </div>
       </Page>
-
       <ShowContainer>
         <div data-aos="fade-up" data-aos-duration="2000">
           <PhotoContainer ref={slideRef}>

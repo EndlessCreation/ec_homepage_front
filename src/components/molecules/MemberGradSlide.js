@@ -75,7 +75,7 @@ const Block = styled.div`
 const PrevPages = styled.div`
   position: absolute;
   z-index: 2;
-  transform: translate(-200px, 252px);
+  transform: translate(-200px, 260px);
   color: #c4c4c4;
   opacity: 1;
   font-size: 20px;
@@ -100,7 +100,7 @@ const PrevPages = styled.div`
 `;
 const Slash = styled.div`
   position: absolute;
-  transform: translate(-178px, 252px);
+  transform: translate(-178px, 260px);
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
@@ -127,7 +127,7 @@ const Slash = styled.div`
 
 const NextPages = styled.div`
   position: absolute;
-  transform: translate(-157px, 252px);
+  transform: translate(-157px, 260px);
   color: #c4c4c4;
   opacity: 1;
   z-index: 2;
@@ -199,7 +199,7 @@ function MemberGradSlide() {
     nextArrow: <NextArrow />,
     afterChange: (currentPage) => {
       if (currentPage !== 0) {
-        setNumber({ currentPage: Math.ceil(currentPage / 5) + 1 });
+        setNumber({ currentPage: Math.ceil(currentPage / 6) + 1 });
       } else setNumber({ currentPage: 1 });
     },
   };
@@ -233,7 +233,7 @@ function MemberGradSlide() {
     nextArrow: <NextArrow />,
     afterChange: (currentPage) => {
       if (currentPage !== 0) {
-        setNumber({ currentPage: Math.ceil(currentPage / 6) + 1 });
+        setNumber({ currentPage: Math.ceil(currentPage / 4) + 1 });
       } else setNumber({ currentPage: 1 });
     },
   };
