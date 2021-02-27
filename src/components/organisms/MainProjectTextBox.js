@@ -29,4 +29,4 @@ function ProjectTextBos() {
   );
 }
 
-export default ProjectTextBos;
+export default React.memo(ProjectTextBos);

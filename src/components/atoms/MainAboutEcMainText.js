@@ -31,4 +31,4 @@ function AboutEcMainText({ children }) {
   return <TextBlock>{children}</TextBlock>;
 }
 
-export default AboutEcMainText;
+export default React.memo(AboutEcMainText);

@@ -33,4 +33,4 @@ function AboutEcTextBox() {
   );
 }
 
-export default AboutEcTextBox;
+export default React.memo(AboutEcTextBox);

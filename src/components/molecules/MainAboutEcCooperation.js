@@ -33,4 +33,4 @@ function AboutEcCooperation() {
   );
 }
 
-export default AboutEcCooperation;
+export default React.memo(AboutEcCooperation);

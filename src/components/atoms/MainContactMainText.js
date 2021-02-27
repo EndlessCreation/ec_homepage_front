@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const TextBlock = styled.div`
-  font-family: kanit;
+  font-family: ${(props) => props.font || "NanumSqaureExtraBold"};
   font-size: 24px;
   line-height: 35px;
   font-weight: bold;
@@ -28,8 +28,8 @@ const TextBlock = styled.div`
     }
   }
 `;
-function ContactMainText({ children }) {
-  return <TextBlock>{children}</TextBlock>;
+function ContactMainText({ children, font }) {
+  return <TextBlock font={font}>{children}</TextBlock>;
 }
 
-export default ContactMainText;
+export default React.memo(ContactMainText);

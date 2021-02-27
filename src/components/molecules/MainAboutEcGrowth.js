@@ -33,4 +33,4 @@ function AboutEcGrowth() {
   );
 }
 
-export default AboutEcGrowth;
+export default React.memo(AboutEcGrowth);

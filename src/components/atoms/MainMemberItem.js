@@ -31,13 +31,7 @@ const ItemBox = styled.div`
   height: 188px;
   position: relative;
   border-radius: 83px;
-  /*
-  font-family: NanumSquareRegualr;
-  font-size: 16px;
-  line-height: 28px;
-  color: #232323;
-  background-color: #b0b0b0;
-  */
+
   img {
     width: 100%;
     height: 100%;
@@ -74,4 +68,4 @@ function MemberItem({ HashTag, name, imageUrl, position }) {
   );
 }
 
-export default MemberItem;
+export default React.memo(MemberItem);
