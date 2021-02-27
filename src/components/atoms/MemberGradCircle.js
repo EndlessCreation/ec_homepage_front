@@ -70,7 +70,18 @@ img {
     width: 100%;
     height: 100%;
     border-radius: 54px;
-    opacity: 0.64;
+    opacity: 0.2;
+  }
+
+  :hover {
+    img {
+      opacity: 1;
+      transition: all 0.5s;
+    }
+    ${Text} {
+      display: none;
+      transition: all 0.5s;
+    }
   }
 }
 @media screen and (min-width:768px) and (max-width:1279px)
@@ -87,7 +98,18 @@ img {
         width: 100%;
         height: 100%;
         border-radius: 48px;
-        opacity: 0.64;
+        opacity: 0.2;
+      }
+
+      :active {
+        img {
+          opacity: 1;
+          transition: all 0.5s;
+        }
+        ${Text} {
+          display: none;
+          transition: all 0.5s;
+        }
       }
     
 }
@@ -106,7 +128,18 @@ img {
         width: 100%;
         height: 100%;
         border-radius: 28px;
-        opacity: 0.64;
+        opacity: 0.2;
+      }
+
+      :active {
+        img {
+          opacity: 1;
+          transition: all 0.5s;
+        }
+        ${Text} {
+          display: none;
+          transition: all 0.5s;
+        }
       }
 }
 `;
@@ -117,12 +150,9 @@ function MemberGradCircle({ grad }) {
     <div data-aos="flip-right"  data-aos-duration="1000" >
       <>
     <GradInfoBlock>
-      <img src={grad.imageUrl} alt=" "/>
+      <img src={grad.imageUrl} alt=" " onerror="this.style.display='none'"/>
       <Text>
         {grad.name} {grad.generation}기
-        <br />
-        {grad.hashTags.map((hash, index)=> 
-                <div key={index}>{hash}</div>)}
       </Text>
     </GradInfoBlock>
     </>
