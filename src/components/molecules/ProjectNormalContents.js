@@ -311,7 +311,7 @@ function ProjectContentBox() {
 
   return (
     <>
-      <BlockforProjectContent>
+      <BlockforProjectContent data-aos="fade-up"  data-aos-duration="1000">
         {isPc && (
           <>
           <Pages1>{pageState.currentSlide}</Pages1>
