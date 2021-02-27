@@ -26,4 +26,4 @@ function MemberManager(){
     )
 }
 
-export default MemberManager; 
+export default React.memo(MemberManager); 

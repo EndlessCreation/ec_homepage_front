@@ -30,4 +30,4 @@ function MemberStudent() {
   );
 }
 
-export default MemberStudent;
+export default React.memo(MemberStudent);

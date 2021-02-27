@@ -3,8 +3,6 @@ import styled from "styled-components";
 import { useMediaQuery } from "react-responsive";
 
 import Loader from "../atoms/CommonLoader";
-
-import Size from "../../Size";
 import SliderBoxs from "./MainSliderBoxs";
 import SliderBox from "../atoms/MainSliderBox";
 import SliderButton from "../atoms/MainSliderButton";

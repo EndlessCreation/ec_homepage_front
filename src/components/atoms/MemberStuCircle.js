@@ -13,7 +13,7 @@ const Text = styled.div`
 
   text-align: center;
   margin: 0 auto;
-  font-family: NanumSquareR;
+  font-family: NanumSquareRegular;
   font-size: 1rem;
   font-weight: normal;
   font-stretch: normal;
@@ -29,7 +29,6 @@ const Text = styled.div`
     text-align: center;
     margin: 0 auto;
 
-    font-family: NanumSquareR;
     font-size: 15px;
     font-weight: normal;
     font-stretch: normal;
@@ -45,7 +44,6 @@ const Text = styled.div`
     text-align: center;
     margin: 0 auto;
 
-    font-family: NanumSquareR;
     font-size: 8px;
     font-weight: normal;
     font-stretch: normal;
@@ -80,7 +78,7 @@ const Part = styled.div`
   text-align: center;
   color: #1ae49b;
 
-  @media only screen and (min-width:768px) and (max-width:1279px) {
+  @media screen and (min-width:768px) and (max-width:1279px) {
     position: absolute;
     width: 30px;
     height: 30px;
@@ -96,7 +94,7 @@ const Part = styled.div`
     color: #1ae49b;
   }
 
-  @media only screen and (max-width:767px) {
+  @media screen and (max-width:767px) {
     position: absolute;
     width: 26px;
     height: 26px;
@@ -129,10 +127,10 @@ img {
   width: 100%;
   height: 100%;
   border-radius: 68px;
-  opacity: 0.64;
+  opacity: 0.5;
 }
 
-}
+
 
 @media screen and (min-width:768px) and (max-width:1279px)
 {
@@ -173,7 +171,7 @@ function MemberStuCircle({ stud }) {
       })()}
       <>
       <StudInfoBlock>
-        <img src={stud.imageUrl} alt="학생이미지"/>
+        <img src={stud.imageUrl} alt=" "/>
         <Text>
           {stud.name} {stud.generation}기<br />
           {stud.hashTags.map((hash, index)=> 
@@ -186,4 +184,4 @@ function MemberStuCircle({ stud }) {
   );
 }
 
-export default MemberStuCircle;
+export default React.memo(MemberStuCircle);

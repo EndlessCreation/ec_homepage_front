@@ -16,7 +16,7 @@ const Img = styled.img`
   border-radius: 80px;
   opacity: 1;
 
-  @media only screen and (min-width:768px) and (max-width:1279px) {
+  @media screen and (min-width:768px) and (max-width:1279px) {
     width: 117px;
     height: 117px;
 
@@ -24,7 +24,7 @@ const Img = styled.img`
     opacity: 1;
   }
 
-  @media only screen and (max-width:767px) {
+  @media screen and (max-width:767px) {
     width: 114px;
     height: 114px;
 
@@ -56,7 +56,7 @@ const Part = styled.div`
   text-align: center;
   color: #1ae49b;
 
-  @media only screen and (min-width:768px) and (max-width:1279px) {
+  @media screen and (min-width:768px) and (max-width:1279px) {
     width: 30px;
     height: 30px;
 
@@ -71,7 +71,7 @@ const Part = styled.div`
     color: #1ae49b;
   }
 
-  @media only screen and (max-width:767px) {
+  @media screen and (max-width:767px) {
     width: 26px;
     height: 26px;
 
@@ -370,4 +370,4 @@ function MemberManagerInfo() {
   );
 }
 
-export default MemberManagerInfo;
+export default React.memo(MemberManagerInfo);

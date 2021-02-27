@@ -239,4 +239,4 @@ function CommonModal() {
   );
 }
 
-export default CommonModal;
+export default React.memo(CommonModal);
