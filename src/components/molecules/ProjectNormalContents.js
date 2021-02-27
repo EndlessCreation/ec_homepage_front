@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { FiChevronLeft } from "react-icons/fi";
 import { FiChevronRight } from "react-icons/fi";
 import Loader from "../atoms/CommonLoader";
-import Pages from "../atoms/ProjectSlidePage";
+
 import {
   getProject,
   useECDispatch,
@@ -18,17 +18,11 @@ import {
 const BlockforProjectContent = styled.div`
   @media screen and (min-width: 1280px) {
     padding-left: 266px;
-    padding-bottom: 160px;
     width: 880px;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
     width: 608px;
-    padding-bottom: 120px;
-  }
-
-  @media screen and (max-width: 767px) {
-    padding-bottom: 100px;
   }
 `;
 
@@ -58,7 +52,7 @@ const StyledSlider = styled(Slider)`
     .slick-prev {
       z-index: 2;
       position: absolute;
-      transform: translate(520px, -332px);
+      transform: translate(520px, -374px);
       opacity: 1;
       color: #afafaf;
     }
@@ -67,7 +61,7 @@ const StyledSlider = styled(Slider)`
       position: absolute;
       opacity: 1;
       color: #afafaf;
-      transform: translate(-40px, -332px);
+      transform: translate(-40px, -374px);
     }
   }
 
@@ -75,7 +69,7 @@ const StyledSlider = styled(Slider)`
     .slick-prev {
       z-index: 2;
       position: absolute;
-      transform: translate(225px, -340px);
+      transform: translate(235px, -377px);
       opacity: 1;
       color: #afafaf;
     }
@@ -84,10 +78,166 @@ const StyledSlider = styled(Slider)`
       position: absolute;
       opacity: 1;
       color: #afafaf;
-      transform: translate(-30px, -340px);
+      transform: translate(-22px, -377px);
     }
   }
 `;
+
+const Pages1 = styled.div`
+
+  @media screen and (min-width:1280px)
+  {
+    position: absolute;
+z-index: 2;
+width: 56px;
+  height: 26px;
+  font-family: NanumSquareRegular;
+  font-size: 22px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: 2.4px;
+  text-align: right;
+  color: #afafaf;
+    transform : translate(-270px, 604px);
+  }
+
+  @media screen and (min-width:768px) and (max-width:1279px)
+  {
+    width: 40px;
+  height: 20px;
+  font-family: NanumSquareRegular;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.56;
+  letter-spacing: 1.8px;
+  text-align: right;
+  color: #afafaf;
+  transform:translate(500px,-83px);
+  }
+
+  @media screen and (max-width:767px)
+  {
+    width: 50px;
+  height: 20px;
+  font-family: NanumSquareRegular;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.56;
+  letter-spacing: 1.8px;
+  text-align: right;
+  color: #afafaf;
+  transform:translate(205px,-75px);
+  }
+`
+;
+
+const Pages2 = styled.div`
+
+  @media screen and (min-width:1280px)
+  {
+    position: absolute;
+z-index: 2;
+width: 30px;
+  height: 26px;
+  font-family: NanumSquareRegular;
+  font-size: 22px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: 2.4px;
+  text-align: left;
+  color: #afafaf;
+    transform : translate(-197px, 604px);
+  }
+
+  @media screen and (min-width:768px) and (max-width:1279px)
+  {
+    width: 20px;
+  height: 20px;
+  font-family: NanumSquareRegular;
+  font-size: 16px;
+  line-height: 1.56;
+  letter-spacing: 1.8px;
+  text-align: left;
+  color: #afafaf;
+  transform:translate(552px,-123px);
+  }
+
+  @media screen and (max-width:767px)
+  {
+    width: 25px;
+  height: 20px;
+  font-family: NanumSquareRegular;
+  font-size: 14px;
+  line-height: 1.56;
+  letter-spacing: 1.8px;
+  text-align: left;
+  color: #afafaf;
+  transform:translate(265px,-115px);
+  }
+`
+;
+
+const Slash= styled.div`
+
+  @media screen and (min-width:1280px)
+  {
+    position: absolute;
+z-index: 2;
+width: 56px;
+  height: 26px;
+  font-family: NanumSquareRegular;
+  font-size: 22px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: 2.4px;
+  text-align: right;
+  color: #afafaf;
+    transform : translate(-255px, 604px);
+  }
+
+  @media screen and (min-width:768px) and (max-width:1279px)
+  {
+    width: 40px;
+  height: 20px;
+  font-family: NanumSquareRegular;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.56;
+  letter-spacing: 1.8px;
+  text-align: right;
+  color: #afafaf;
+  transform:translate(510px,-103px);
+  }
+
+  @media screen and (max-width:767px)
+  {
+    width: 50px;
+  height: 20px;
+  font-family: NanumSquareRegular;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.56;
+  letter-spacing: 1.8px;
+  text-align: right;
+  color: #afafaf;
+  transform:translate(213px,-94.5px);
+  }
+`
+;
 
 function ProjectContentBox() {
   const isPc = useMediaQuery({
@@ -163,14 +313,18 @@ function ProjectContentBox() {
     <>
       <BlockforProjectContent>
         {isPc && (
-          <Pages>
-            {pageState.currentSlide}/{PCTotalslides}
-          </Pages>
+          <>
+          <Pages1>{pageState.currentSlide}</Pages1>
+          <Slash>/</Slash>
+          <Pages2>{PCTotalslides}</Pages2>
+          </>
         )}
         {isMobile && (
-          <Pages>
-            {pageState.currentSlide}/{MOBLIETotalslides}
-          </Pages>
+          <>
+          <Pages1> {pageState.currentSlide}</Pages1>
+          <Slash>/</Slash>
+          <Pages2>{MOBLIETotalslides}</Pages2>
+          </>
         )}
         {isPc && (
           <StyledSlider {...settings}>
