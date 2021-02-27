@@ -13,6 +13,7 @@ import {
 import "aos/dist/aos.css";
 // AOS.init();
 
+
 //현재상태의 이미지만 보여줄 container
 const ShowContainer = styled.div`
   width: 872px;
@@ -209,7 +210,7 @@ function PhotoList() {
   const nextSlide = () => {
     if (currentSlide >= TOTAL_SLIDES) {
       // 더 이상 넘어갈 슬라이드가 없으면 슬라이드를 초기화합니다.
-      setCurrentSlide(0);
+      // setCurrentSlide(0);
     } else {
       setCurrentSlide(currentSlide + 1);
     }
@@ -217,11 +218,13 @@ function PhotoList() {
 
   const prevSlide = () => {
     if (currentSlide === 0) {
-      setCurrentSlide(TOTAL_SLIDES);
+      // setCurrentSlide(TOTAL_SLIDES);
     } else {
       setCurrentSlide(currentSlide - 1);
     }
   };
+
+
 
   return (
     <>
@@ -240,7 +243,6 @@ function PhotoList() {
           </Button>
         </div>
       </Page>
-
       <ShowContainer>
         <div data-aos="fade-up" data-aos-duration="2000">
           <PhotoContainer ref={slideRef}>
