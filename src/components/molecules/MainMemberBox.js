@@ -43,8 +43,8 @@ function MainMemberBox() {
 
   return (
     <MemberBlock>
-      {executive.map((Member, index) => (
-        <div data-aos="flip-right" key={Member.name}>
+      {executive.map((Member) => (
+        <div data-aos="fade-up" key={Member.name}>
           <MemberItem
             HashTag={Member.hashTags}
             name={Member.name}

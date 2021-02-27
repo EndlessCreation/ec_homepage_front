@@ -24,4 +24,4 @@ function ActivityTemplate() {
   );
 }
 
-export default ActivityTemplate;
+export default React.memo(ActivityTemplate);

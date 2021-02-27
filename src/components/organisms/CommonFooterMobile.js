@@ -40,11 +40,12 @@ const Logo = styled.div`
 
 const Name = styled.div`
   padding-top: 48px;
+  width : 291px;
   
 
   .wrapper {
     display: grid;
-    grid-template-columns: 71fr 164fr ;
+    grid-template-columns: 71fr 220fr ;
     grid-template-rows : 13fr 18fr 13fr 18fr 13fr ;
     
     grid-auto-rows: minmax(100px, auto);    # 최소크기는 100px 이되, 창이 이보다 작아지면 자동으로 
@@ -172,7 +173,6 @@ function Footer(){
       </ContainerInner>
       <ContainerInner>
         <Icon>
-            <div className="circle"><a href="https://www.facebook.com/groups/238730472850269">Facebook</a></div>
             <div className="circle"><a href='https://github.com/EndlessCreation'>Github</a></div>
             <div className="circle"><a href='https://github.com/EndlessCreation'>KakaoTalk</a></div>
           </Icon>
@@ -200,4 +200,4 @@ function Footer(){
     ;
 }
 
-export default Footer;
+export default React.memo(Footer);

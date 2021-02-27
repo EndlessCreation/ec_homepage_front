@@ -165,7 +165,7 @@ img {
 function MemberStuCircle({ stud }) {
   return (
     <>
-    <div data-aos="flip-right"  data-aos-duration="1000" >
+    <div data-aos="fade-up"  data-aos-duration="1000" >
       {(function () {
         if (stud.part) return <Part>P</Part>;
       })()}

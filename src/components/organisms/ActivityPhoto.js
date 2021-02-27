@@ -17,4 +17,4 @@ function ActivityPhoto() {
   );
 }
 
-export default ActivityPhoto;
+export default React.memo(ActivityPhoto);

@@ -1,3 +1,4 @@
+import React from "react";
 import ActivityTemplate from "../templates/ActivityTemplate";
 
 // import AOS from "aos";
@@ -12,4 +13,4 @@ function Activity() {
   );
 }
 
-export default Activity;
+export default React.memo(Activity);
