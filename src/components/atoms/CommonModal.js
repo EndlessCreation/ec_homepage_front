@@ -22,7 +22,6 @@ const Block = styled.div`
   z-index: 99;
   background: rgb(25, 25, 25, 0.64);
 `;
-
 const ModalBlock = styled.div`
   width: 608px;
   background-color: #fff;
@@ -137,18 +136,16 @@ const Box = styled.div`
 `;
 
 const Textfor = styled.pre`
-   {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    font-family: NanumSquareRegular;
-    font-size: 14px;
-    white-space: pre-wrap; /* CSS3*/
-    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
-    white-space: -pre-wrap; /* Opera 4-6 */
-    white-space: -o-pre-wrap; /* Opera 7 */
-    word-wrap: break-all; /* Internet Explorer 5.5+ */
-  }
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: NanumSquareRegular;
+  font-size: 14px;
+  white-space: pre-wrap; /* CSS3*/
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-all; /* Internet Explorer 5.5+ */
 `;
 
 const TextContainer = styled.div`
@@ -219,7 +216,7 @@ function CommonModal() {
                 <Box>
                   {projectData.participantResponses.map((data) => (
                     <div>
-                      {data.name} {data.role}
+                      {data.name} - {data.role}
                     </div>
                   ))}
                 </Box>
