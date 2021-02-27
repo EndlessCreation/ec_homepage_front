@@ -176,7 +176,7 @@ function FooterPC(){
       <ContainerInner>
         <Icon>
             <div className="circle"><a href='https://github.com/EndlessCreation'>Github</a></div>
-            <div className="circle"><a href='https://github.com/EndlessCreation'>KakaoTalk</a></div>
+            <div className="circle"><a href='https://open.kakao.com/o/sidItFZc'>KakaoTalk</a></div>
           </Icon>
       </ContainerInner>
       <ContainerInner>
