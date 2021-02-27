@@ -7,7 +7,6 @@ const Container = styled.div`
   @media screen and (min-width: 1280px) {
     width: 1200px;
     margin: 0 auto;
-    height: 718px;
   }
 
   @media screen and (min-width: 768px) and (max-width: 1279px) {
