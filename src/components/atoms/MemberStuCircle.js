@@ -23,7 +23,7 @@ const Text = styled.div`
   background: var(--unnamed-color-b0b0b0) 0% 0% no-repeat padding-box;
   color: #ffffff;
 
-  @media screen and (min-width:768px) and (max-width:1279px) {
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
     position: absolute;
 
     text-align: center;
@@ -38,7 +38,7 @@ const Text = styled.div`
     text-align: center;
     color: #ffffff;
   }
-  @media screen and (max-width:767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
 
     text-align: center;
@@ -78,7 +78,7 @@ const Part = styled.div`
   text-align: center;
   color: #1ae49b;
 
-  @media screen and (min-width:768px) and (max-width:1279px) {
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
     position: absolute;
     width: 30px;
     height: 30px;
@@ -94,7 +94,7 @@ const Part = styled.div`
     color: #1ae49b;
   }
 
-  @media screen and (max-width:767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     width: 26px;
     height: 26px;
@@ -201,20 +201,21 @@ function MemberStuCircle({ stud }) {
 
   return (
     <>
-    <div data-aos="fade-up"  data-aos-duration="1000" >
-      {(function () {
-        if (stud.part) return <Part>P</Part>;
-      })()}
-      <>
-      <StudInfoBlock>
-        <img src={url} alt=" " />
-        <Text>
-          {stud.name} {stud.generation}기<br />
-          {stud.hashTags.map((hash, index)=> 
-                <div key={index}>{hash}</div>)}
-        </Text>
-      </StudInfoBlock>
-      </>
+      <div data-aos="fade-up" data-aos-duration="1000">
+        {(function () {
+          if (stud.part) return <Part>P</Part>;
+        })()}
+        <>
+          <StudInfoBlock>
+            <img src={url} alt=" " />
+            <Text>
+              {stud.name} {stud.generation}기<br />
+              {stud.hashTags.map((hash, index) => (
+                <div key={index}>{hash}</div>
+              ))}
+            </Text>
+          </StudInfoBlock>
+        </>
       </div>
     </>
   );

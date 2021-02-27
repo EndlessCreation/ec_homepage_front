@@ -22,7 +22,6 @@ const Block = styled.div`
   z-index: 99;
   background: rgb(25, 25, 25, 0.64);
 `;
-
 const ModalBlock = styled.div`
   width: 608px;
   background-color: #fff;
@@ -64,12 +63,12 @@ const Header = styled.div`
   line-height: 1.48;
   color: #101010;
   border-bottom: 1px solid #dee2e6;
-  
-  @media screen and (max-width:767px){
-    height:64px;
-    font-size:18px;
-    padding-left:16px;
-    padding-right:16px;
+
+  @media screen and (max-width: 767px) {
+    height: 64px;
+    font-size: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .button {
@@ -140,18 +139,16 @@ const Box = styled.div`
 `;
 
 const Textfor = styled.pre`
-   {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    font-family: NanumSquareRegular;
-    font-size: 14px;
-    white-space: pre-wrap; /* CSS3*/
-    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
-    white-space: -pre-wrap; /* Opera 4-6 */
-    white-space: -o-pre-wrap; /* Opera 7 */
-    word-wrap: break-all; /* Internet Explorer 5.5+ */
-  }
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: NanumSquareRegular;
+  font-size: 14px;
+  white-space: pre-wrap; /* CSS3*/
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-all; /* Internet Explorer 5.5+ */
 `;
 
 const TextContainer = styled.div`
@@ -220,8 +217,10 @@ function CommonModal() {
               <TextContainer>
                 <Text>참여인원</Text>
                 <Box>
-                  {projectData.participantResponses.map((data,index) => (
-                    <div key={index}>{data.name} {data.role}</div>
+                  {projectData.participantResponses.map((data) => (
+                    <div>
+                      {data.name} - {data.role}
+                    </div>
                   ))}
                 </Box>
               </TextContainer>
@@ -239,7 +238,7 @@ function CommonModal() {
               <TextContainer>
                 <Text>기술스택</Text>
                 <Box>
-                  {projectData.techStack.map((data,index) => (
+                  {projectData.techStack.map((data, index) => (
                     <div key={index}>{data}</div>
                   ))}
                 </Box>
