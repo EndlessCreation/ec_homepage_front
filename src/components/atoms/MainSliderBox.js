@@ -31,20 +31,20 @@ function SliderBox({ id, url }) {
       type: "CHANGE_ID",
       id,
     });
-  }, [id]);
+  }, [GlobalDispatch, id]);
 
   const openModal = useCallback(() => {
     GlobalDispatch({
       type: "MODAL_OPEN",
     });
-  }, []);
+  }, [GlobalDispatch]);
 
   function ClickEvent(id) {
     openModal();
     changeid(id);
   }
   return (
-    <SlideBlock onClick={useCallback(() => ClickEvent(id), [id])}>
+    <SlideBlock onClick={useCallback(() => ClickEvent(id), ClickEvent())}>
       <img src={url} alt="ECPick"></img>
     </SlideBlock>
   );

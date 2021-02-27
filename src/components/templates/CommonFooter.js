@@ -1,3 +1,4 @@
+import React from "react";
 import { useMediaQuery } from "react-responsive";
 import FooterPC from "../organisms/CommonFooterPC";
 import FooterMobile from "../organisms/CommonFooterMobile";
@@ -34,4 +35,4 @@ function CommonFooter() {
   );
 }
 
-export default CommonFooter;
+export default React.memo(CommonFooter);

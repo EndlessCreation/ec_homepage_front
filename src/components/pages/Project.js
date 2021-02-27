@@ -12,4 +12,4 @@ function Project() {
   );
 }
 
-export default Project;
+export default React.memo(Project);

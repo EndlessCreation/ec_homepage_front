@@ -7,6 +7,7 @@ import {
   useECDispatch,
   getProjectData,
 } from "../../context/Context";
+
 const Block = styled.div`
   display: flex;
   justify-content: center;
@@ -20,13 +21,29 @@ const Block = styled.div`
   left: 0;
   z-index: 99;
   background: rgb(25, 25, 25, 0.64);
-  overflow-y: scroll;
 `;
 
 const ModalBlock = styled.div`
   width: 608px;
   background-color: #fff;
+  height:700px;
+  overflow-y:scroll;
 
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(0,0,0, 0.25);
+  }
+  &::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+  }
+  
   @media screen and (max-width:767px)
   {
     width:336px;
@@ -115,11 +132,28 @@ const Box = styled.div`
   line-height: 1.71;
   color: #232323;
 
+
   @media screen and (max-width:767px){
     padding-top:16px;
     width: 100%;
   }
 `;
+
+const Textfor=styled.pre`
+{
+  width:100%;
+  height:100%;  
+  margin:0;
+  font-family: NanumSquareRegular;
+  font-size: 14px;
+  white-space: pre-wrap; /* CSS3*/
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-all; /* Internet Explorer 5.5+ */ 
+  }
+`;
+
 const TextContainer = styled.div`
   width: 560px;
   padding-bottom: 24px;
@@ -178,13 +212,13 @@ function CommonModal() {
               </ImgBlock>
               <TextContainer>
                 <Text>작품설명</Text>
-                <Box>{projectData.description}</Box>
+                <Box><Textfor>{projectData.description}</Textfor></Box>
               </TextContainer>
               <TextContainer>
                 <Text>참여인원</Text>
                 <Box>
                   {projectData.participantResponses.map((data) => (
-                    <div>{data.name}</div>
+                    <div>{data.name} {data.role}</div>
                   ))}
                 </Box>
               </TextContainer>
@@ -213,9 +247,10 @@ function CommonModal() {
                   <a
                     style={{ textDecoration: "none", color: "black" }}
                     href={projectData.presentationUrl}
+                    width="100%"
                     target="blank"
                   >
-                    {projectData.presentationUrl}
+                    [발표링크 바로가기]
                   </a>
                 </Box>
               </TextContainer>
@@ -227,7 +262,7 @@ function CommonModal() {
                     href={projectData.githubUrl}
                     target="blank"
                   >
-                    {projectData.githubUrl}
+                    [github 바로가기]]
                   </a>
                 </Box>
               </TextContainer>
@@ -239,4 +274,4 @@ function CommonModal() {
   );
 }
 
-export default CommonModal;
+export default React.memo(CommonModal);

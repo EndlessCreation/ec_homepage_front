@@ -53,7 +53,7 @@ function ProjectBox({ project }) {
   }
   return (
     <>
-      <div data-aos="flip-right" data-aos-duration="1000">
+      <div data-aos="fade-up" data-aos-duration="1000">
         <BoxforProject onClick={() => ClickEvent(project.id)}>
           <img
             src={project.imageUrl}
@@ -67,4 +67,4 @@ function ProjectBox({ project }) {
   );
 }
 
-export default ProjectBox;
+export default React.memo(ProjectBox);

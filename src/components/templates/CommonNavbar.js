@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useCallback } from "react";
 import styled, { css } from "styled-components";
 
 import _ from "loadsh";
@@ -78,7 +78,7 @@ function MainNavbar() {
   const active = state.NavState;
   const ScrollState = state.ScrollState;
 
-  const ScrollHandler = function () {
+  const ScrollHandler = useCallback(() => {
     const Scroll =
       document.documentElement.scrollTop || document.body.scrollTop;
     if (window.matchMedia("(max-width:767px)").matches) {
@@ -124,7 +124,7 @@ function MainNavbar() {
         }
       }
     }
-  };
+  }, []);
   /*
   const ScrollHandler = useCallback(
     function () {
@@ -177,11 +177,13 @@ function MainNavbar() {
     [ScrollState]
   );
 */
+
   useEffect(() => {
     window.addEventListener("scroll", _.throttle(ScrollHandler, 300), {
       passive: true,
     });
-  }, [ScrollState]);
+  }, [ScrollHandler]);
+
   return (
     <>
       <NavbarTemplate active={active} ScrollState={ScrollState}>

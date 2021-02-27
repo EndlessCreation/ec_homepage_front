@@ -9,4 +9,4 @@ function Member() {
   );
 }
 
-export default Member;
+export default React.memo(Member);

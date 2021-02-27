@@ -37,4 +37,4 @@ function MemberGraduate() {
   );
 }
 
-export default MemberGraduate;
+export default React.memo(MemberGraduate);

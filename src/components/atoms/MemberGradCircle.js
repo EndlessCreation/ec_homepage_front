@@ -12,6 +12,7 @@ const Text = styled.div`
   margin: 0 auto;
   text-align: center;
   flex: 1;
+  font-family: NanumSquareRegular;
   font: var(--unnamed-font-style-normal) normal normal 16px/28px
     var(--unnamed-font-family-nanumsquare);
   letter-spacing: var(--unnamed-character-spacing-0);
@@ -25,7 +26,7 @@ const Text = styled.div`
 
     margin: 0 auto;
 
-    font-family: NanumSquareR;
+    font-family: NanumSquareRegular;
     font-size: 0.875rem;
     font-weight: normal;
     font-stretch: normal;
@@ -40,7 +41,7 @@ const Text = styled.div`
     position: absolute;
 
     margin: 0 auto;
-
+    font-family: NanumSquareRegular;
     font: var(--unnamed-font-style-normal) normal normal 16px/28px
       var(--unnamed-font-family-nanumsquare);
     letter-spacing: var(--unnamed-character-spacing-0);
@@ -113,10 +114,9 @@ img {
 function MemberGradCircle({ grad }) {
   return (
     <>
-    <div data-aos="flip-right"  data-aos-duration="1000" >
-      <>
+    <div data-aos="fade-up"  data-aos-duration="1000" >
     <GradInfoBlock>
-      <img src={grad.imageUrl} alt="졸업생이미지"/>
+      <img src={grad.imageUrl} alt=" "/>
       <Text>
         {grad.name} {grad.generation}기
         <br />
@@ -124,10 +124,9 @@ function MemberGradCircle({ grad }) {
                 <div key={index}>{hash}</div>)}
       </Text>
     </GradInfoBlock>
-    </>
     </div>
     </>
   );
 }
 
-export default MemberGradCircle;
+export default React.memo(MemberGradCircle);

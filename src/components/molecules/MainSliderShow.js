@@ -3,8 +3,6 @@ import styled from "styled-components";
 import { useMediaQuery } from "react-responsive";
 
 import Loader from "../atoms/CommonLoader";
-
-import Size from "../../Size";
 import SliderBoxs from "./MainSliderBoxs";
 import SliderBox from "../atoms/MainSliderBox";
 import SliderButton from "../atoms/MainSliderButton";
@@ -42,7 +40,7 @@ function division(arr) {
   const len = arr.length;
   const cnt = Math.floor(len / 2);
   const tmp = [];
-  for (let i = 0; i <= cnt * 2 - 1; i++) {
+  for (let i = 0; i <= cnt * 2; i++) {
     tmp.push(arr.slice(i, i + 2));
     i++;
   }

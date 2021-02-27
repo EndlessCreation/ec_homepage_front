@@ -79,7 +79,7 @@ function MenuButton() {
     dispatch({
       type: "TOGGLE_NAVSTATE",
     });
-  }, [Active]);
+  }, [dispatch]);
   return (
     <Button active={Active} onClick={onToggle} ScrollState={ScrollState}>
       <span />

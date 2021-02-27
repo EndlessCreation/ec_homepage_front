@@ -37,7 +37,7 @@ function LinkItem({ children, to }) {
     dispatch({
       type: "TOGGLE_OFF",
     });
-  }, [active]);
+  }, [dispatch]);
 
   return (
     <LinkList active={active} onClick={OffToggle} ScrollState={ScrollState}>

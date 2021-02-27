@@ -37,4 +37,4 @@ function CommonContainer({ children, color }) {
   );
 }
 
-export default CommonContainer;
+export default React.memo(CommonContainer);
