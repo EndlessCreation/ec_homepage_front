@@ -274,15 +274,15 @@ function PhotoList() {
             <div className="photo-container">
               <PhotoBox>
                 <div className="photo-box">
-                  {photos.slice(1, photoNum / 2 + 1).map((photo) => (
-                    <Photo photo={photo} className="photo" />
+                  {photos.slice(1, photoNum / 2 + 1).map((photo,index) => (
+                    <Photo photo={photo} className="photo" key={index} />
                   ))}
                 </div>
               </PhotoBox>
               <PhotoBox>
                 <div className="photo-box">
-                  {photos.slice(photoNum / 2, photoNum).map((photo) => (
-                    <Photo photo={photo} className="photo" />
+                  {photos.slice(photoNum / 2, photoNum).map((photo, index) => (
+                    <Photo photo={photo} className="photo"  key={index}/>
                   ))}
                 </div>
               </PhotoBox>
