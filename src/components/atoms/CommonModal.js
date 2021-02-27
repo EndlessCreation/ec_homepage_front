@@ -1,14 +1,16 @@
 import React, { useEffect, useCallback } from "react";
 import styled from "styled-components";
-import { useGlobalState, useGlobalDispatch } from "../../Context/GlobalContext";
+import { useGlobalState, useGlobalDispatch } from "../../context/GlobalContext";
 import Loader from "./CommonLoader";
 import {
   useECState,
   useECDispatch,
   getProjectData,
-} from "../../Context/Context";
+} from "../../context/Context";
 const Block = styled.div`
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -23,7 +25,6 @@ const Block = styled.div`
 
 const ModalBlock = styled.div`
   width: 608px;
-  margin: 20px auto;
   background-color: #fff;
 
   @media screen and (max-width:767px)

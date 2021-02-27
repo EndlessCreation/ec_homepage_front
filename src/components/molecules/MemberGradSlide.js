@@ -13,7 +13,7 @@ import {
   useECState,
   useECDispatch,
   getGraduate,
-} from "../../Context/Context";
+} from "../../context/Context";
 
 const Block = styled.div`
   width: 848px;

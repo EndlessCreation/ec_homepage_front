@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-import { useGlobalState } from "../../Context/GlobalContext";
+import { useGlobalState } from "../../context/GlobalContext";
 import Linkitem from "../atoms/MainLinkItem";
 const MenuShow = styled.ul`
   display: flex;
@@ -25,7 +25,7 @@ const MenuShow = styled.ul`
         display: flex;
         flex-direction: column;
         font-size: 28px;
-        height: 50%;
+        height: 30%;
         li:nth-child(1) {
           padding-top: 130px;
         }
@@ -57,6 +57,11 @@ const MenuShow = styled.ul`
 const CommunutyLink = styled.li`
   list-style: none;
   color: #ffffff;
+  ${(props) =>
+    props.ScrollState &&
+    css`
+      color: black;
+    `}
   @media screen and (max-width: 1279px) {
     ${(props) =>
       props.active &&
@@ -78,12 +83,13 @@ const ArrowRightShow = styled.span`
 function NavbarMenu() {
   const state = useGlobalState();
   const active = state.NavState;
+  const ScrollState = state.ScrollState;
   return (
     <MenuShow active={active}>
       <Linkitem to={"/Activity"}>Activity</Linkitem>
       <Linkitem to={"/Project"}>Project</Linkitem>
       <Linkitem to={"/Member"}>Member</Linkitem>
-      <CommunutyLink active={active}>
+      <CommunutyLink active={active} ScrollState={ScrollState}>
         Community
         <ArrowRightShow>
           <img src="images/RightArrow.png" alt="RightArrow" />

@@ -10,8 +10,8 @@ import Main from "./components/pages/Main";
 import Activity from "./components/pages/Activity";
 import Project from "./components/pages/Project";
 import Member from "./components/pages/Member";
-import { ECProvider } from "./Context/Context";
-import { GlobalContext } from "./Context/GlobalContext";
+import { ECProvider } from "./context/Context";
+import { GlobalContext } from "./context/GlobalContext";
 
 const GlobalStyle = createGlobalStyle`
   body{

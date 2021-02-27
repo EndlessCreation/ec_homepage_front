@@ -5,8 +5,8 @@ import {
   useECState,
   useECDispatch,
   getExecutive,
-} from "../../Context/Context";
-import { Position } from "../../Context/PositionMapping";
+} from "../../context/Context";
+import { Position } from "../../context/PositionMapping";
 
 const Img = styled.img`
   position: relative;

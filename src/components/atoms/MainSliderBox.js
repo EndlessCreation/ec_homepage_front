@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
-import styled, { css } from "styled-components";
-import { useGlobalDispatch } from "../../Context/GlobalContext";
+import styled from "styled-components";
+import { useGlobalDispatch } from "../../context/GlobalContext";
 
 const SlideBlock = styled.div`
   width: 49.4%;
@@ -31,13 +31,13 @@ function SliderBox({ id, url }) {
       type: "CHANGE_ID",
       id,
     });
-  }, []);
+  }, [GlobalDispatch, id]);
 
   const openModal = useCallback(() => {
     GlobalDispatch({
       type: "MODAL_OPEN",
     });
-  }, []);
+  }, [GlobalDispatch]);
   function ClickEvent(id) {
     openModal();
     changeid(id);

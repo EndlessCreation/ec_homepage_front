@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import styled from "styled-components";
 import MemberItem from "../atoms/MainMemberItem";
 
-import { Position } from "../../Context/PositionMapping";
-import { useECState, useECDispatch, getExecutive } from "../../Context/Context";
+import { Position } from "../../context/PositionMapping";
+import { useECState, useECDispatch, getExecutive } from "../../context/Context";
 
 import Loader from "../atoms/CommonLoader";
 const MemberBlock = styled.div`
@@ -22,7 +22,7 @@ const MemberBlock = styled.div`
   }
   @media screen and (max-width: 767px) {
     max-width: 304px;
-    height: 100%;
+    height: auto;
     grid-template-columns: repeat(auto-fit, minmax(144px, 1fr));
     grid-template-rows: 144px 144px;
     grid-gap: 16px;
@@ -43,8 +43,8 @@ function MainMemberBox() {
 
   return (
     <MemberBlock>
-      {executive.map((Member) => (
-        <div data-aos="flip-right">
+      {executive.map((Member, index) => (
+        <div data-aos="flip-right" key={Member.name}>
           <MemberItem
             HashTag={Member.hashTags}
             name={Member.name}

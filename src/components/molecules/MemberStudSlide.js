@@ -13,7 +13,7 @@ import {
   useECState,
   useECDispatch,
   getStudent,
-} from "../../Context/Context";
+} from "../../context/Context";
 
 const Block = styled.div`
   width: 848px;
@@ -168,7 +168,12 @@ function MemberStudSlide() {
   useEffect(() => {
     getStudent(dispatch);
   }, [dispatch]);
-  if (loading) return <div><Loader/></div>;
+  if (loading)
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
   if (error) return <div>에러가 발생했습니다</div>;
   if (!student) return null;
 

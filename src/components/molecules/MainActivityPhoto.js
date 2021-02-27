@@ -6,7 +6,7 @@ import {
   useECState,
   useECDispatch,
   getMainactivty,
-} from "../../Context/Context";
+} from "../../context/Context";
 
 const PhotoBlock = styled.div`
   width: 498px;

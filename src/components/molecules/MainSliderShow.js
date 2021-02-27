@@ -1,12 +1,14 @@
 import React, { useEffect, useState, useRef } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { useMediaQuery } from "react-responsive";
+
 import Loader from "../atoms/CommonLoader";
 
+import Size from "../../Size";
 import SliderBoxs from "./MainSliderBoxs";
 import SliderBox from "../atoms/MainSliderBox";
 import SliderButton from "../atoms/MainSliderButton";
-import { useECState, useECDispatch, getEcpick } from "../../Context/Context";
+import { useECState, useECDispatch, getEcpick } from "../../context/Context";
 
 //동적으로 영역 너비 설정 완료
 const SlideBlock = styled.div`
@@ -51,14 +53,8 @@ function SliderShow() {
   const [currentSlide, setCurrentSlide] = useState(0); //현재 슬라이더 상태
   const slideRef = useRef(null); //슬라이더 위치 확인
 
-  const isPc = useMediaQuery({
-    query: "(min-width:1280px)",
-  });
   const isTablet = useMediaQuery({
     query: "(min-width:768px) and (max-width:1279px)",
-  });
-  const isMobile = useMediaQuery({
-    query: "(max-width:767px)",
   });
 
   //Provider로 데이터 받아오기
@@ -74,7 +70,12 @@ function SliderShow() {
       slideRef.current.style.transform = `translateX(-${MoveSlide}%)`; // 백틱을 사용하여 슬라이드로 이동하는 애니메이션을 만듭니다.
     }
   }, [dispatch, currentSlide]);
-  if (loading) return <div><Loader/></div>;
+  if (loading)
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
   if (error) return <div>에러가 발생했습니다</div>;
   if (!ecpick) return null;
 
@@ -104,7 +105,11 @@ function SliderShow() {
         {NewArrary.map((data, index) => (
           <SliderBoxs key={index}>
             {data.map((data) => (
-              <SliderBox id={data.id} url={data.imageUrl}></SliderBox>
+              <SliderBox
+                id={data.id}
+                key={data.id}
+                url={data.imageUrl}
+              ></SliderBox>
             ))}
           </SliderBoxs>
         ))}
@@ -114,6 +119,7 @@ function SliderShow() {
           <SliderButton
             currentSlide={currentSlide}
             id={Btn}
+            key={Btn}
             select={select}
           ></SliderButton>
         ))}

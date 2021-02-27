@@ -14,7 +14,7 @@ function MemberTemplate() {
         main="Member"
         intro="EC에는 여러분의 성장을 도와줄"
         intro2="든든한 운영진과 멋진 선배들이 있어요!"
-        Url={"images/MemberHeader.png"}
+        Url={"images/MemberHeader.jpg"}
       />
       <CommonContainer>
         <TextBox>Management</TextBox>

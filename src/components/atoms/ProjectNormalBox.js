@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import styled from "styled-components";
-import { useGlobalDispatch } from "../../Context/GlobalContext";
+import { useGlobalDispatch } from "../../context/GlobalContext";
 
 // import AOS from 'aos';
 import "aos/dist/aos.css";

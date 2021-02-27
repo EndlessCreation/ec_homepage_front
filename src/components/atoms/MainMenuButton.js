@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import styled, { css } from "styled-components";
 
-import { useGlobalState, useGlobalDispatch } from "../../Context/GlobalContext";
+import { useGlobalState, useGlobalDispatch } from "../../context/GlobalContext";
 
 const Button = styled.div`
   position: absolute;
@@ -19,6 +19,11 @@ const Button = styled.div`
     width: 30px;
     border-radius: 7px;
     background-color: #ffffff;
+    ${(props) =>
+      props.ScrollState &&
+      css`
+        background-color: black;
+      `}
     top: 0;
     transition: 0.3s;
   }
@@ -68,14 +73,15 @@ const Button = styled.div`
 function MenuButton() {
   const state = useGlobalState();
   const Active = state.NavState;
+  const ScrollState = state.ScrollState;
   const dispatch = useGlobalDispatch();
   const onToggle = useCallback(() => {
     dispatch({
       type: "TOGGLE_NAVSTATE",
     });
-  }, []);
+  }, [dispatch]);
   return (
-    <Button active={Active} onClick={onToggle}>
+    <Button active={Active} onClick={onToggle} ScrollState={ScrollState}>
       <span />
       <span />
       <span />
