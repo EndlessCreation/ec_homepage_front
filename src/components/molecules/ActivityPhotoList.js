@@ -17,12 +17,10 @@ import "aos/dist/aos.css";
 const ShowContainer = styled.div`
   width: 872px;
   overflow: hidden; // 선을 넘어간 이미지들은 보이지 않도록
-
   @media screen and (max-width: 1279px) {
     width: 624px;
     overflow: hidden; // 선을 넘어간 이미지들은 보이지 않도록
   }
-
   @media screen and (max-width: 767px) {
     width: 304px;
     overflow: hidden; // 선을 넘어간 이미지들은 보이지 않도록
@@ -100,14 +98,12 @@ const Button = styled.button`
   color: #a9a9a9;
   font-size: 24px;
   vertical-align: middle;
-
   &:hover {
     color: ${lighten(0.1, "black")};
   }
   &:active {
     color: ${darken(0.1, "black")};
   }
-
   @media screen and (max-width: 1279px) {
     font-size: 18px;
   }
@@ -132,10 +128,9 @@ const Page = styled.div`
     display:inline-block;
     vertical-align: middle;
   }
-
   @media screen and (max-width: 1279px) {
     float: right;
-    width: 150px;
+    width: 160px;
     height: 0px;
     color: #a9a9a9;
     font-size: 18px;
@@ -151,14 +146,22 @@ const Page = styled.div`
       vertical-align: middle;
     }
   }
-
   @media screen and (max-width: 767px) {
     float: right;
-    width: 140px;
+    width: 150px;
     height: 0px;
     color: #a9a9a9;
     font-size: 18px;
   
+    .group{
+      position: absolute;
+      margin-top : 0px;
+      top: -88px;
+    }
+    .page{
+      display:inline-block;
+      vertical-align: middle;
+    }
   }
 `;
 
