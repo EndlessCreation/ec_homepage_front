@@ -1,7 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { useMediaQuery } from "react-responsive";
-
 import LinkItem from "./MainLinkItem";
 import { useGlobalState } from "../../context/GlobalContext";
 /*네이게이션 바 EC 텍스트*/
@@ -12,6 +11,7 @@ const Text = styled.span`
   font-size: 24px;
   font-weight: bold;
   white-space: nowrap;
+
   @media screen and (max-width: 1279px) {
     font-size: 31px;
     ${(props) =>
@@ -30,6 +30,7 @@ function NavbarMain() {
     query: "(min-width:1280px)",
   });
   const NavbarEcText = isPC ? "Endless Creation" : "EC";
+
   return (
     <Text Active={Active}>
       <LinkItem to={"/"}>{NavbarEcText}</LinkItem>

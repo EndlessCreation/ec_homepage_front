@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import Size from "../../Size";
 import styled from "styled-components";
 
 const Top = styled.div`
   width: 100%;
   margin: 0 auto;
-  background: ${props=>props.color === "white" ? "#ffffff" : "#f2f2f2"};
+  background: ${(props) => (props.color === "white" ? "#ffffff" : "#f2f2f2")};
   opacity: 1;
 `;
 
@@ -30,14 +30,12 @@ const Box = styled.div`
   }
 `;
 
-function CommonContainer({children, color}){
-    return(
-        <Top color={color}>
-            <Box>
-                {children}
-            </Box>
-        </Top>
-    )
+function CommonContainer({ children, color }) {
+  return (
+    <Top color={color}>
+      <Box>{children}</Box>
+    </Top>
+  );
 }
 
 export default CommonContainer;

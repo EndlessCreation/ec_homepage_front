@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 const HeaderBlock = styled.div`
   width: 100%;
   height: 717px;
-  background-image: url("images/MainHeader.png");
+  background-image: url("images/MainHeader.jpg");
   background-size: cover;
   @media screen and (max-width: 1279px) {
     height: 689px;

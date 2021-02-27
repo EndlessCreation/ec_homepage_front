@@ -5,6 +5,7 @@ const TextBlock = styled.div`
   font-family: kanit;
   font-size: 24px;
   line-height: 35px;
+  font-weight: bold;
   ::after {
     content: "";
     display: block;

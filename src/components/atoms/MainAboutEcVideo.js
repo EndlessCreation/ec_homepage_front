@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 AOS.init();
 
 const VideoBlock = styled.div`
@@ -27,18 +27,18 @@ const VideoBlock = styled.div`
 
 function AboutEcVideo() {
   return (
-
-    <div data-aos="fade-up"  data-aos-duration="600" >
-    <VideoBlock>
-      <iframe
-        width="100%"
-        height="100%"
-        src="https://www.youtube.com/embed/6QosveEmeqg"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      />
-    </VideoBlock>
+    <div data-aos="fade-up" data-aos-duration="600">
+      <VideoBlock>
+        <iframe
+          title="EC홍보영상"
+          width="100%"
+          height="100%"
+          src="https://www.youtube.com/embed/6QosveEmeqg"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </VideoBlock>
     </div>
   );
 }

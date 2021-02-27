@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-const boxwidth = 3;
-const width = 100 / boxwidth + "%";
 const Box = styled.div`
   width: 100%;
   height: 100%;
