@@ -17,44 +17,109 @@ const StyledSlider = styled(Slider)`
    
     .slick-dots {
       position: absolute;
-      bottom: -60px;
+      bottom: -66px;
       display: block;
   
-      width:500px;
-      padding-left:350px;
+      width:850px;
+
+      @media screen and (min-width:768px) and (max-width:1279px){
+          bottom:-54px;
+          width:592px;
+      }
+
+      @media screen and (max-width:767px){
+          bottom:-32px;
+          width:288px;  
+      }
   
       list-style: none;
   
       text-align: right;
     }
-    
+  
+    .slick-dots li {
+      width: 18px;
+      height:6px;
+      margin-left:18px;
+      transition: 0.4s;
+
+      @media screen and (min-width:768px) and (max-width:1279px){
+          width:16px;
+          height:5px;
+          margin-left:12px;
+      }
+
+      @media screen and (max-width:767px){
+          width:18px;
+          height:4px;
+          margin-left:12px;
+      }
+    }
+  
+    .slick-dots .slick-active {
+        width:108px;
+        height:6px;
+    transtion:0.4s;
+
+    @media screen and (min-width:768px) and (max-width:1279px){
+      width: 72px;
+      height:5px;
+    }
+
+    @media screen and (max-width:767px){
+        width:52px;
+        height:4px;
+    }
+    }
+
     .ft-slick__dots--custom {
-      height: 8px;
+        height: 6px;
+        width: 100%;
+        background-color: #e5e7e9;
+        position: relative;
+        transition:0.4s;
+      }
+
+    .ft-slick__dots--custom--tablet{
       width: 100%;
+      height:5px;
       background-color: #e5e7e9;
       position: relative;
       transition:0.4s;
     }
+
+    .ft-slick__dots--custom--mobile {
+        height: 4px;
+        width: 100%;
+        background-color: #e5e7e9;
+        position: relative;
+        transition:0.4s;
+      }
   
-    .slick-dots li {
-      width: 5%;
-      height:6px;
-      margin-left:18px;
-      transition: 0.4s;
-    }
-  
-    .slick-dots .slick-active {
-      width: 20%;
-      transtion:0.4s;
-    }
-  
+
     .slick-dots .slick-active .ft-slick__dots--custom {
+        background-color:#232323;
+        width: 100%;
+        overflow: hidden;
+        transition:0.4s;
+      }
+
+      .slick-dots .slick-active .ft-slick__dots--custom--tablet {
+        background-color:#232323;
+        width: 100%;
+        height:5px;
+        overflow:hidden;
+        transition:0.4s;
+      }
+  
+  
+    .slick-dots .slick-active .ft-slick__dots--custom--mobile {
       background-color:#232323;
       width: 100%;
-      top: 2px;
       overflow: hidden;
       transition:0.4s;
     }
+}
     
 `;
 
@@ -62,15 +127,15 @@ const BlockforEcPick=styled.div`
 @media screen and (min-width:1280px){
     padding-left: 266px;
     width:879px;
-    padding-bottom:120px;
+    padding-bottom:192px;
     overflow:hidden;
 }
 @media screen and (min-width:768px) and (max-width:1279px){
-  padding-bottom:89px;
+  padding-bottom:148px;
   overflow:hidden;
 }
 @media screen and (max-width:767px){
-padding-bottom:64px;
+padding-bottom:100px;
 overflow:hidden;
 }
 `;
@@ -119,7 +184,7 @@ function ECPickContentBox({name}){
         arrows: false,
         centerMode: false,
         appendDots: (dots) => <ul>{dots}</ul>,
-    customPaging: (i) => <div className="ft-slick__dots--custom"></div>
+    customPaging: (i) => <div className="ft-slick__dots--custom--tablet"></div>
       };
 
       const settingsforMobile={
@@ -131,7 +196,7 @@ function ECPickContentBox({name}){
         arrows: false,
         centerMode: false,
         appendDots: (dots) => <ul>{dots}</ul>,
-        customPaging: (i) => <div className="ft-slick__dots--custom"></div>
+        customPaging: (i) => <div className="ft-slick__dots--custom--mobile"></div>
           };
 
     return (
@@ -139,21 +204,21 @@ function ECPickContentBox({name}){
             {isPc&&<StyledSlider {...settings}>
             {ecpick.map((data,index)=> {
               return (
-                  <EcPickBox project={data} key={index}/>
+                  <EcPickBox key={data.id} project={data} />
               );
             })}
           </StyledSlider>}
           {isTablet&&<StyledSlider {...settingsforTablet}>
             {ecpick.map((data,index) => {
               return (
-                  <EcPickBox project={data} key={index}/>
+                  <EcPickBox key={data.id} project={data} />
               );
             })}
           </StyledSlider>}
           {isMobile&&<StyledSlider {...settingsforMobile}>
             {ecpick.map((data,index) => {
               return (
-                  <EcPickBox project={data} key={index}/>
+                  <EcPickBox key={data.id} project={data} />
               );
             })}
           </StyledSlider>}
