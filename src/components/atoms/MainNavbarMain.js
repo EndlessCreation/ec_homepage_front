@@ -38,4 +38,4 @@ function NavbarMain() {
   );
 }
 
-export default NavbarMain;
+export default React.memo(NavbarMain);

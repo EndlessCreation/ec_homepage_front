@@ -44,7 +44,7 @@ function ContactContents() {
     <div data-aos="fade-up" data-aos-duration="1000">
       <ContentsBlock>
         <ContactInfo className="location">
-          <ContatcMainText>Location</ContatcMainText>
+          <ContatcMainText font="Kanit">Location</ContatcMainText>
           <ContactItem>서울특별시 노원구 공릉로 232</ContactItem>
           <ContactItem>서울과학기술대학교 미래관 313호</ContactItem>
         </ContactInfo>
@@ -63,4 +63,4 @@ function ContactContents() {
   );
 }
 
-export default ContactContents;
+export default React.memo(ContactContents);

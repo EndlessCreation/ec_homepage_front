@@ -48,7 +48,7 @@ function MainHeader() {
     <HeaderBlock>
       <HeaderContainer>
         <MainBanner />
-        <div data-aos="flip-up" data-aos-duration="500" data-aos-delay="300">
+        <div data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
           <FormBlock>
             <MainBannerForm />
           </FormBlock>
@@ -58,4 +58,4 @@ function MainHeader() {
   );
 }
 
-export default MainHeader;
+export default React.memo(MainHeader);

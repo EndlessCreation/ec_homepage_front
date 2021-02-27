@@ -19,7 +19,7 @@ const Title = styled.div`
     list-style: 21px;
     ::after {
       margin-top: 14px;
-      margin-bottom: 21px;
+      margin-bottom: 20px;
     }
   }
   @media screen and (max-width: 767px) {
@@ -33,4 +33,4 @@ function ActivityTitle({ children }) {
   return <Title>{children}</Title>;
 }
 
-export default ActivityTitle;
+export default React.memo(ActivityTitle);

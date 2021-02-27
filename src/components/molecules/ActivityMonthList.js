@@ -193,14 +193,14 @@ function MonthList() {
     {
       name: "January",
       detail1: "겨울 M.T.",
-      // detail2: "월별활동 설명글",
+      detail2: "임원진 선출",
       // detail3: "월별활동 설명글",
     },
 
     {
       name: "February",
       detail1: "졸업식",
-      // detail2: "월별활동 설명글",
+      detail2: "동아리방 대청소",
       // detail3: "월별활동 설명글",
     },
     {
@@ -217,8 +217,8 @@ function MonthList() {
     },
     {
       name: "May",
-      detail1: "파트별 스터디",
-      detail2: "스승의날 행사",
+      detail1: "파트 별 스터디",
+      detail2: "스승의 날 행사",
       // detail3: "월별활동 설명글",
     },
     {
@@ -229,7 +229,7 @@ function MonthList() {
     },
     {
       name: "July",
-      detail1: "어드밴스 팀빌딩",
+      detail1: "어드밴스 팀 빌딩",
       detail2: "교내 해커톤 개최",
       // detail3: "월별활동 설명글",
     },
@@ -238,31 +238,31 @@ function MonthList() {
       name: "August",
       detail1: "어드밴스 시작발표",
       detail2: "여름 M.T.",
-      detail3: "월별활동 설명글",
+      //detail3: "월별활동 설명글",
     },
     {
       name: "September",
-      detail1: "EC 창립기념일",
+      detail1: "EC 창립 기념일",
       detail2: "개강파티",
       detail3: "어드밴스  중간발표",
     },
     {
       name: "October",
       detail1: "중간고사",
-      // detail2: "월별활동 설명글",
+      detail2: "동아리방 대청소",
       // detail3: "월별활동 설명글",
     },
     {
       name: "November",
       detail1: "어드밴스 최종발표",
-      // detail2: "월별활동 설명글",
+      detail2: "동아리 활동 회고",
       // detail3: "월별활동 설명글",
     },
     {
       name: "December",
-      detail1: "동아리 해커톤",
-      detail2: "회장 선출",
-      // detail3: "월별활동 설명글",
+      detail1: "기말고사",
+      detail2: "동아리 해커톤",
+      detail3: "회장 선출",
     },
 ];
 
@@ -271,8 +271,8 @@ function MonthList() {
       <div data-aos="fade-up" data-aos-duration="2000">
         <FlexBox>
           <div className="box-container">
-            {months.map((month) => (
-              <Month month={month} className="month-elem" />
+            {months.map((month,index) => (
+              <Month month={month} className="month-elem" key={index} />
             ))}
           </div>
         </FlexBox>
@@ -281,4 +281,4 @@ function MonthList() {
   );
 }
 
-export default MonthList;
+export default React.memo(MonthList);

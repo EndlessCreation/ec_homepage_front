@@ -48,4 +48,4 @@ function ActivityContents() {
   );
 }
 
-export default ActivityContents;
+export default React.memo(ActivityContents);

@@ -99,6 +99,7 @@ const Button = styled.button`
   border: none;
   color: #a9a9a9;
   font-size: 24px;
+  vertical-align: middle;
 
   &:hover {
     color: ${lighten(0.1, "black")};
@@ -123,74 +124,41 @@ const Page = styled.div`
   color: #a9a9a9;
   font-size: 24px;
   position: relative;
-
-  .page {
-    margin-top: 616px;
+  
+  .group{
+    margin-top : 616px;
   }
-  .left {
-    position: absolute;
-    bottom: 5px;
-  }
-  .right {
-    position: absolute;
-    left: 70px;
-  }
-  span {
-    position: absolute;
-    left: 60px;
-    bottom: 6px;
+  .page{
+    display:inline-block;
+    vertical-align: middle;
   }
 
   @media screen and (max-width: 1279px) {
     float: right;
-    width: 120px;
+    width: 150px;
     height: 0px;
     color: #a9a9a9;
     font-size: 18px;
     position: relative;
-
-    .page {
-      margin-top: 0px;
-    }
-    .left {
+    
+    .group{
       position: absolute;
+      margin-top : 0px;
       top: -89px;
     }
-    .right {
-      position: absolute;
-      left: 60px;
-      top: -88.5px;
-    }
-    span {
-      position: absolute;
-      left: 50px;
-      top: -90px;
+    .page{
+      display:inline-block;
+      vertical-align: middle;
     }
   }
+
   @media screen and (max-width: 767px) {
     float: right;
-    width: 120px;
+    width: 140px;
     height: 0px;
     color: #a9a9a9;
     font-size: 18px;
-    position: relative;
-    .page {
-      margin-top: 0px;
-    }
-    .left {
-      position: absolute;
-      top: -80px;
-    }
-    .right {
-      position: absolute;
-      left: 60px;
-      top: -79.5px;
-    }
-    span {
-      position: absolute;
-      left: 50px;
-      top: -80px;
-    }
+  
   }
 `;
 
@@ -209,7 +177,7 @@ function Photo({ photo }) {
   );
 }
 
-export default function PhotoList() {
+function PhotoList() {
   const state = useECState(); // 상태 값 불러오기~
   const dispatch = useECDispatch();
 
@@ -255,14 +223,16 @@ export default function PhotoList() {
   return (
     <>
       <Page>
-        <div className="page">
-          <Button className="left" onClick={prevSlide}>
+        <div className = 'group'>
+          <Button onClick={prevSlide}>
             <AiOutlineLeft />
-            &ensp;{currentSlide + 1}
           </Button>
-          <span>/</span>
-          <Button className="right" onClick={nextSlide}>
+          <div className="page">
+            &ensp;{currentSlide + 1}
+            &ensp;/&ensp;
             {TOTAL_SLIDES + 1}&ensp;
+            </div>
+          <Button onClick={nextSlide}>
             <AiOutlineRight />
           </Button>
         </div>
@@ -274,15 +244,15 @@ export default function PhotoList() {
             <div className="photo-container">
               <PhotoBox>
                 <div className="photo-box">
-                  {photos.slice(1, photoNum / 2 + 1).map((photo) => (
-                    <Photo photo={photo} className="photo" />
+                  {photos.slice(1, photoNum / 2 + 1).map((photo,index) => (
+                    <Photo photo={photo} className="photo" key={index} />
                   ))}
                 </div>
               </PhotoBox>
               <PhotoBox>
                 <div className="photo-box">
-                  {photos.slice(photoNum / 2, photoNum).map((photo) => (
-                    <Photo photo={photo} className="photo" />
+                  {photos.slice(photoNum / 2, photoNum).map((photo, index) => (
+                    <Photo photo={photo} className="photo"  key={index}/>
                   ))}
                 </div>
               </PhotoBox>
@@ -293,3 +263,5 @@ export default function PhotoList() {
     </>
   );
 }
+
+export default React.memo(PhotoList);

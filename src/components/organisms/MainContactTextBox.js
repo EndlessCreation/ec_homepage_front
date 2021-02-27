@@ -26,4 +26,4 @@ function ContactTextBox() {
   );
 }
 
-export default ContactTextBox;
+export default React.memo(ContactTextBox);

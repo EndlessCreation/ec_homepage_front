@@ -20,4 +20,4 @@ function SliderBoxs({ children }) {
   return <Box>{children}</Box>;
 }
 
-export default SliderBoxs;
+export default React.memo(SliderBoxs);

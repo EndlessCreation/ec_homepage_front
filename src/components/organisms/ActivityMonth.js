@@ -17,4 +17,4 @@ function ActivityMonth() {
   );
 }
 
-export default ActivityMonth;
+export default React.memo(ActivityMonth);

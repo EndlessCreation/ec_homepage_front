@@ -88,4 +88,4 @@ function MainBanner() {
   );
 }
 
-export default MainBanner;
+export default React.memo(MainBanner);

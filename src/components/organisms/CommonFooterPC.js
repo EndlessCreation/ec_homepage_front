@@ -175,9 +175,8 @@ function FooterPC(){
       </ContainerInner>
       <ContainerInner>
         <Icon>
-            <div className="circle"><a href="https://www.facebook.com/groups/238730472850269">Facebook</a></div>
             <div className="circle"><a href='https://github.com/EndlessCreation'>Github</a></div>
-            <div className="circle"><a href='https://github.com/EndlessCreation'>KakaoTalk</a></div>
+            <div className="circle"><a href='https://open.kakao.com/o/sidItFZc'>KakaoTalk</a></div>
           </Icon>
       </ContainerInner>
       <ContainerInner>
@@ -191,4 +190,4 @@ function FooterPC(){
     ;
 }
 
-export default FooterPC;
+export default React.memo(FooterPC);

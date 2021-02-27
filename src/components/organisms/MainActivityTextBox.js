@@ -3,7 +3,7 @@ import styled from "styled-components";
 import MainText from "../atoms/MainText";
 import MainSubText from "../atoms/MainSubText";
 // import AOS from 'aos';
-import 'aos/dist/aos.css';
+import "aos/dist/aos.css";
 // AOS.init();
 
 const TextBlock = styled.div`
@@ -24,19 +24,17 @@ const TextBlock = styled.div`
   }
 `;
 
-
-
 function ActivityTextBox() {
   return (
     <TextBlock>
-      <div data-aos="fade-up"  data-aos-duration="1500" >
+      <div data-aos="fade-up" data-aos-duration="1500">
         <MainText url={"/Activity"}>Activity</MainText>
       </div>
-      <div data-aos="fade-up"  data-aos-duration="1500" >
+      <div data-aos="fade-up" data-aos-duration="1500">
         <MainSubText>EC에 오면 이런 활동을 할 수 있어요!</MainSubText>
       </div>
     </TextBlock>
   );
 }
 
-export default ActivityTextBox;
+export default React.memo(ActivityTextBox);

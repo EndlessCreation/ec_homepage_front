@@ -32,7 +32,7 @@ const TextBlock = styled.div`
   }
   div svg {
     position: absolute;
-    left: 85px;
+    left: 95px;
     top: 16px;
   }
   @media screen and (max-width: 1279px) {
@@ -44,7 +44,7 @@ const TextBlock = styled.div`
       top: -3px;
     }
     div svg {
-      left: 100px;
+      left: 95px;
       top: 13px;
     }
   }
@@ -59,7 +59,7 @@ const TextBlock = styled.div`
       top: -2px;
     }
     div svg {
-      left: 100px;
+      left: 95px;
       top: 9px;
     }
   }
@@ -81,4 +81,4 @@ function MainText({ children, url }) {
   );
 }
 
-export default MainText;
+export default React.memo(MainText);

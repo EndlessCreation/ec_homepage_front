@@ -21,4 +21,4 @@ function AboutEcImg({ url }) {
   );
 }
 
-export default AboutEcImg;
+export default React.memo(AboutEcImg);
