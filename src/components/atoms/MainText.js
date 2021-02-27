@@ -44,8 +44,7 @@ const TextBlock = styled.div`
       top: -3px;
     }
     div svg {
-      left: 85px;
-
+      left: 100px;
       top: 13px;
     }
   }
@@ -60,8 +59,7 @@ const TextBlock = styled.div`
       top: -2px;
     }
     div svg {
-      left: 85px;
-
+      left: 100px;
       top: 9px;
     }
   }
