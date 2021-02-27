@@ -9,21 +9,18 @@ const Container=styled.div`
 {
     max-width:1200px;
     margin:0 auto;
-    height:1038px;
     padding-bottom:160px;
 }
 
 @media screen and (min-width:768px) and (max-width:1279px){
     max-width:608px;
     margin:0 auto;
-    height: 750px;
     padding-bottom:120px;
 }
 
 @media screen and (max-width:767px){
     max-width:304px;
     margin:0 auto;
-    height:719px;
     padding-bottom:100px;
 }
 `;
