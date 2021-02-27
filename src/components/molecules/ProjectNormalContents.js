@@ -176,9 +176,7 @@ function ProjectContentBox() {
           <StyledSlider {...settings}>
             {project.map((data) => {
               return (
-                <>
-                  <ProjectBox project={data} key={data.id} />
-                </>
+                  <ProjectBox key={data.id} project={data} />
               );
             })}
           </StyledSlider>
@@ -186,7 +184,7 @@ function ProjectContentBox() {
         {isMobile && (
           <StyledSlider {...settingsforMobile}>
             {project.map((data) => {
-              return <ProjectBox project={data} key={data.id}></ProjectBox>;
+              return <ProjectBox key={data.id} project={data} ></ProjectBox>;
             })}
           </StyledSlider>
         )}
