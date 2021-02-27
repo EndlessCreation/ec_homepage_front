@@ -134,7 +134,7 @@ const Page = styled.div`
     width: 160px;
     height: 0px;
     color: #a9a9a9;
-    font-size: 18px;
+    font-size: 14px;
     position: relative;
     
     .group{
@@ -152,7 +152,7 @@ const Page = styled.div`
     width: 150px;
     height: 0px;
     color: #a9a9a9;
-    font-size: 18px;
+    font-size: 12px;
   
     .group{
       position: absolute;
