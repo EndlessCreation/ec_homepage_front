@@ -169,14 +169,12 @@ function Footer(){
     <Back>
     <Container>
       <ContainerInner>
-      <Logo>Endless Creation</Logo>
+        <Logo>Endless Creation</Logo>
       </ContainerInner>
-      <ContainerInner>
-        <Icon>
-            <div className="circle"><a href='https://github.com/EndlessCreation'>Github</a></div>
-            <div className="circle"><a href='https://github.com/EndlessCreation'>KakaoTalk</a></div>
-          </Icon>
-      </ContainerInner>
+      <Icon>
+          <div className="circle"><a href='https://github.com/EndlessCreation'>Github</a></div>
+          <div className="circle"><a href='https://open.kakao.com/o/sidItFZc'>KakaoTalk</a></div>
+        </Icon>
       <ContainerInner>
       <Name>
         <div className ='wrapper'>

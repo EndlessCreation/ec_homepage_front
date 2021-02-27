@@ -137,23 +137,23 @@ function ECPickContentBox({name}){
     return (
         <BlockforEcPick>
             {isPc&&<StyledSlider {...settings}>
-            {ecpick.map((data)=> {
+            {ecpick.map((data,index)=> {
               return (
-                  <EcPickBox project={data} />
+                  <EcPickBox project={data} key={index}/>
               );
             })}
           </StyledSlider>}
           {isTablet&&<StyledSlider {...settingsforTablet}>
-            {ecpick.map(data => {
+            {ecpick.map((data,index) => {
               return (
-                  <EcPickBox project={data} />
+                  <EcPickBox project={data} key={index}/>
               );
             })}
           </StyledSlider>}
           {isMobile&&<StyledSlider {...settingsforMobile}>
-            {ecpick.map(data => {
+            {ecpick.map((data,index) => {
               return (
-                  <EcPickBox project={data} />
+                  <EcPickBox project={data} key={index}/>
               );
             })}
           </StyledSlider>}
