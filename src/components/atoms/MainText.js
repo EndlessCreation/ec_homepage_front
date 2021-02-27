@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 // import AOS from 'aos';
-import 'aos/dist/aos.css';
+import "aos/dist/aos.css";
 // AOS.init({
 //   disable : 'mobile'
 // });
@@ -32,7 +32,8 @@ const TextBlock = styled.div`
   }
   div svg {
     position: absolute;
-    top: 14px;
+    left: 85px;
+    top: 16px;
   }
   @media screen and (max-width: 1279px) {
     width: 208px;
@@ -43,7 +44,8 @@ const TextBlock = styled.div`
       top: -3px;
     }
     div svg {
-      top: 11px;
+      left: 100px;
+      top: 13px;
     }
   }
 
@@ -57,23 +59,24 @@ const TextBlock = styled.div`
       top: -2px;
     }
     div svg {
-      top: 8px;
+      left: 100px;
+      top: 9px;
     }
   }
 `;
 function MainText({ children, url }) {
   return (
-    <div data-aos="fade-up"  data-aos-duration="1500" >
-    <TextBlock>
-      {children}
-      {url && (
-        <div>
-          <Link to={url}>
-            View Detail <BsArrowRight />
-          </Link>
-        </div>
-      )}
-    </TextBlock>
+    <div data-aos="fade-up" data-aos-duration="1500">
+      <TextBlock>
+        {children}
+        {url && (
+          <div>
+            <Link to={url}>
+              View Detail <BsArrowRight />
+            </Link>
+          </div>
+        )}
+      </TextBlock>
     </div>
   );
 }

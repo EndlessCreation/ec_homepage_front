@@ -1,13 +1,9 @@
-const size = {
-  moblie: "767px",
-  tablet: "1279px",
-  laptop: "1920px",
-};
+import { useMediaQuery } from "react-responsive";
 
 const device = {
-  moblie: `(max-width: ${size.moblie})`,
-  tablet: `(max-width: ${size.tablet})`,
-  laptop: `(max-width: ${size.laptop})`,
+  moblie: `(max-width: 767px)`,
+  tablet: `(max-width: 1279px)`,
+  laptop: `(max-width: 1920px)`,
 };
 
-export default { size, device };
+export default { device };

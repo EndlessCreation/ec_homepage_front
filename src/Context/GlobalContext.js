@@ -4,6 +4,7 @@ const initState = {
   NavState: false,
   ModalState: false,
   id: 1,
+  ScrollState: false,
 };
 
 function StateReducer(state, action) {
@@ -37,6 +38,16 @@ function StateReducer(state, action) {
         ...state,
         id: action.id,
       };
+    case "SCROLL_DOWN":
+      return {
+        ...state,
+        ScrollState: true,
+      };
+    case "SCROLL_UP":
+      return {
+        ...state,
+        ScrollState: false,
+      };
     default:
       throw new Error(`Unhanded action type : ${action.type}`);
   }
@@ -46,6 +57,7 @@ const GlobalStateContext = createContext(null);
 const GlobalDispatchContext = createContext(null);
 export function GlobalContext({ children }) {
   const [state, dispatch] = useReducer(StateReducer, initState);
+
   return (
     <GlobalStateContext.Provider value={state}>
       <GlobalDispatchContext.Provider value={dispatch}>
