@@ -251,6 +251,7 @@ function CommonModal() {
                     href={projectData.presentationUrl}
                     width="100%"
                     target="blank"
+                    rel="noreferrer"
                   >
                     [발표링크 바로가기]
                   </a>
@@ -263,6 +264,7 @@ function CommonModal() {
                     style={{ textDecoration: "none", color: "black" }}
                     href={projectData.githubUrl}
                     target="blank"
+                    rel="noreferrer"
                   >
                     [github 바로가기]]
                   </a>

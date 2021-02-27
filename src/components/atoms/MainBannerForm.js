@@ -35,6 +35,7 @@ function MainBannerForm() {
   return (
     <Form
       target="_blank"
+      rel="noreferrer"
       href="https://docs.google.com/forms/d/e/1FAIpQLSf8W2m6_gePmXg7fDbrj-Mmru5cj04MvNyNc2WL0ebkO5cPXw/closedform"
     >
       31기 지원
