@@ -6,6 +6,8 @@ const Photo = styled.div`
   height: 372px;
   background-color: #dddddd;
   margin-top: 32px;
+  box-shadow: 5px 5px 5px gray;
+
   img {
     width: 100%;
     height: 100%;
