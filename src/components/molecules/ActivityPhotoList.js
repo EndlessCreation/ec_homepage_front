@@ -209,7 +209,7 @@ function Photo({ photo }) {
   );
 }
 
-export default function PhotoList() {
+function PhotoList() {
   const state = useECState(); // 상태 값 불러오기~
   const dispatch = useECDispatch();
 
@@ -293,3 +293,5 @@ export default function PhotoList() {
     </>
   );
 }
+
+export default React.memo(PhotoList);

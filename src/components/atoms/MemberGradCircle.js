@@ -117,7 +117,7 @@ img {
 
 function MemberGradCircle({ grad }) {
   return (
-    <div data-aos="flip-right"  data-aos-duration="1000" >
+    <div data-aos="fade-up"  data-aos-duration="1000" >
     <GradInfoBlock>
       <img src={grad.imageUrl} />
       <Text>
