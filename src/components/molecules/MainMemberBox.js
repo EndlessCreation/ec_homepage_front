@@ -43,7 +43,7 @@ function MainMemberBox() {
 
   return (
     <MemberBlock>
-      {executive.map((Member, index) => (
+      {executive.map((Member) => (
         <div data-aos="flip-right" key={Member.name}>
           <MemberItem
             HashTag={Member.hashTags}
@@ -57,4 +57,4 @@ function MainMemberBox() {
   );
 }
 
-export default MainMemberBox;
+export default React.memo(MainMemberBox);

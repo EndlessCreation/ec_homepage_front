@@ -29,4 +29,4 @@ function PhotoBox({ url }) {
   );
 }
 
-export default PhotoBox;
+export default React.memo(PhotoBox);

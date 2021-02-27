@@ -16,4 +16,4 @@ function List({ Text }) {
   return <ListItem>{Text}</ListItem>;
 }
 
-export default List;
+export default React.memo(List);

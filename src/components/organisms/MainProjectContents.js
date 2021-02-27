@@ -30,4 +30,4 @@ function ProjectContents({ main }) {
   );
 }
 
-export default ProjectContents;
+export default React.memo(ProjectContents);

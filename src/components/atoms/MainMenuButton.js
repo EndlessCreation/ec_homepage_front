@@ -79,7 +79,7 @@ function MenuButton() {
     dispatch({
       type: "TOGGLE_NAVSTATE",
     });
-  }, [dispatch]);
+  }, [Active]);
   return (
     <Button active={Active} onClick={onToggle} ScrollState={ScrollState}>
       <span />
@@ -90,4 +90,4 @@ function MenuButton() {
   );
 }
 
-export default MenuButton;
+export default React.memo(MenuButton);

@@ -3,6 +3,7 @@ import MainTemplate from "../templates/MainTemplate";
 import CommonModal from "../atoms/CommonModal";
 
 function Main() {
+  console.log("MainComponent");
   return (
     <>
       <CommonModal />
@@ -11,4 +12,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default React.memo(Main);

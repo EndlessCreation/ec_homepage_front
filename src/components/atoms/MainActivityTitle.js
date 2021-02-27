@@ -33,4 +33,4 @@ function ActivityTitle({ children }) {
   return <Title>{children}</Title>;
 }
 
-export default ActivityTitle;
+export default React.memo(ActivityTitle);

@@ -29,4 +29,4 @@ function MemberContents() {
   );
 }
 
-export default MemberContents;
+export default React.memo(MemberContents);

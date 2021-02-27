@@ -37,7 +37,7 @@ function LinkItem({ children, to }) {
     dispatch({
       type: "TOGGLE_OFF",
     });
-  }, [dispatch]);
+  }, [active]);
 
   return (
     <LinkList active={active} onClick={OffToggle} ScrollState={ScrollState}>
@@ -48,4 +48,4 @@ function LinkItem({ children, to }) {
   );
 }
 
-export default LinkItem;
+export default React.memo(LinkItem);

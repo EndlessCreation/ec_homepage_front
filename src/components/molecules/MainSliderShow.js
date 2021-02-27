@@ -42,7 +42,7 @@ function division(arr) {
   const len = arr.length;
   const cnt = Math.floor(len / 2);
   const tmp = [];
-  for (var i = 0; i <= cnt * 2; i++) {
+  for (let i = 0; i <= cnt * 2 - 1; i++) {
     tmp.push(arr.slice(i, i + 2));
     i++;
   }
@@ -70,6 +70,7 @@ function SliderShow() {
       slideRef.current.style.transform = `translateX(-${MoveSlide}%)`; // 백틱을 사용하여 슬라이드로 이동하는 애니메이션을 만듭니다.
     }
   }, [dispatch, currentSlide]);
+
   if (loading)
     return (
       <div>
@@ -128,4 +129,4 @@ function SliderShow() {
   );
 }
 
-export default SliderShow;
+export default React.memo(SliderShow);

@@ -21,4 +21,4 @@ function AboutEcSubText({ children }) {
   return <TextBlock>{children}</TextBlock>;
 }
 
-export default AboutEcSubText;
+export default React.memo(AboutEcSubText);

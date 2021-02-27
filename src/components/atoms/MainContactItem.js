@@ -16,4 +16,4 @@ function ContactItem({ children }) {
   return <Item>{children}</Item>;
 }
 
-export default ContactItem;
+export default React.memo(ContactItem);

@@ -57,7 +57,12 @@ function ActivityPhoto() {
   useEffect(() => {
     getMainactivty(dispatch);
   }, [dispatch]);
-  if (loading) return <div><Loader/></div>;
+  if (loading)
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
   if (error) return <div>에러가 발생했습니다</div>;
   if (!mainactivity) return null;
 
@@ -72,4 +77,4 @@ function ActivityPhoto() {
   );
 }
 
-export default ActivityPhoto;
+export default React.memo(ActivityPhoto);

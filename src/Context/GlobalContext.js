@@ -1,4 +1,4 @@
-import React, { useReducer, createContext, useContext } from "react";
+import React, { useReducer, createContext, useContext, useMemo } from "react";
 
 const initState = {
   NavState: false,
