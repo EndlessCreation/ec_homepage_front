@@ -26,8 +26,8 @@ const Block = styled.div`
 const ModalBlock = styled.div`
   width: 608px;
   background-color: #fff;
-  height:700px;
-  overflow-y:scroll;
+  height: 700px;
+  overflow-y: scroll;
 
   &::-webkit-scrollbar {
     width: 10px;
@@ -37,16 +37,15 @@ const ModalBlock = styled.div`
   }
   &::-webkit-scrollbar-thumb {
     border-radius: 5px;
-    background-color: rgba(0,0,0, 0.25);
+    background-color: rgba(0, 0, 0, 0.25);
   }
   &::-webkit-scrollbar-button {
     width: 0;
     height: 0;
   }
-  
-  @media screen and (max-width:767px)
-  {
-    width:336px;
+
+  @media screen and (max-width: 767px) {
+    width: 336px;
   }
 `;
 const Header = styled.div`
@@ -98,8 +97,8 @@ const Header = styled.div`
 const Content = styled.div`
   padding: 24px;
 
-  @media screen and (max-width:767px){
-    padding:16px;
+  @media screen and (max-width: 767px) {
+    padding: 16px;
   }
 `;
 const ImgBlock = styled.div`
@@ -108,9 +107,9 @@ const ImgBlock = styled.div`
   background-color: #f2f2f2;
   margin-bottom: 21px;
 
-  @media screen and (max-width:767px){
-    width:304px;
-    height:228px;
+  @media screen and (max-width: 767px) {
+    width: 304px;
+    height: 228px;
   }
 
   img {
@@ -126,7 +125,6 @@ const Text = styled.div`
   letter-spacing: normal;
   text-align: left;
   color: #101010;
-
 `;
 const Box = styled.div`
   width: 456px;
@@ -135,25 +133,24 @@ const Box = styled.div`
   line-height: 1.71;
   color: #232323;
 
-
-  @media screen and (max-width:767px){
-    padding-top:16px;
+  @media screen and (max-width: 767px) {
+    padding-top: 16px;
     width: 100%;
   }
 `;
 
-const Textfor=styled.pre`
-{
-  width:100%;
-  height:100%;  
-  margin:0;
-  font-family: NanumSquareRegular;
-  font-size: 14px;
-  white-space: pre-wrap; /* CSS3*/
-  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
-  white-space: -pre-wrap; /* Opera 4-6 */
-  white-space: -o-pre-wrap; /* Opera 7 */
-  word-wrap: break-all; /* Internet Explorer 5.5+ */ 
+const Textfor = styled.pre`
+   {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-family: NanumSquareRegular;
+    font-size: 14px;
+    white-space: pre-wrap; /* CSS3*/
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-all; /* Internet Explorer 5.5+ */
   }
 `;
 
@@ -162,9 +159,9 @@ const TextContainer = styled.div`
   padding-bottom: 24px;
   display: flex;
 
-  @media screen and (max-width:767px){
-    width:304px;
-    display:block;
+  @media screen and (max-width: 767px) {
+    width: 304px;
+    display: block;
   }
 `;
 function CommonModal() {
@@ -183,9 +180,10 @@ function CommonModal() {
   const dispatch = useECDispatch();
   const { data: projectData, loading, error } = state.projectData;
   useEffect(() => {
-    getProjectData(dispatch, id);
+    if (ModalState === true) {
+      getProjectData(dispatch, id);
+    }
   }, [dispatch, id]);
-
   if (loading)
     return (
       <div>
@@ -215,7 +213,9 @@ function CommonModal() {
               </ImgBlock>
               <TextContainer>
                 <Text>작품설명</Text>
-                <Box><Textfor>{projectData.description}</Textfor></Box>
+                <Box>
+                  <Textfor>{projectData.description}</Textfor>
+                </Box>
               </TextContainer>
               <TextContainer>
                 <Text>참여인원</Text>
