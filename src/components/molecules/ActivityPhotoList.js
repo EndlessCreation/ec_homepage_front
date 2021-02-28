@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
+import { useMediaQuery } from "react-responsive";
 import { darken, lighten } from "polished";
 import Loader from "../atoms/CommonLoader";
 import {
@@ -139,8 +140,8 @@ const Page = styled.div`
     
     .group{
       position: absolute;
+      transform:translate(60px,-81px);
       margin-top : 0px;
-      top: -89px;
     }
     .page{
       display:inline-block;
@@ -156,8 +157,8 @@ const Page = styled.div`
   
     .group{
       position: absolute;
+      transform:translate(50px,-81px);
       margin-top : 0px;
-      top: -88px;
     }
     .page{
       display:inline-block;
@@ -189,6 +190,8 @@ function PhotoList() {
   const slideRef = useRef(null);
   const { data: photos, loading, error } = state.photos;
 
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+
   useEffect(() => {
     if (!photos) {
       getPhotos(dispatch);
@@ -198,14 +201,14 @@ function PhotoList() {
     }
   }, [dispatch, currentSlide,photos]);
 
-  
-
   if (loading) return <Loader/>;
   if (error) return <div>에러가 발생했습니다</div>;
   if (!photos) return null;
 
+
   const photoNum = photos.length;
-  const TOTAL_SLIDES = Math.floor(photoNum / 4) - 1;
+
+  const TOTAL_SLIDES = isMobile ?  Math.floor(photoNum / 2) -1 : Math.floor(photoNum / 4) - 1;
 
   const nextSlide = () => {
     if (currentSlide >= TOTAL_SLIDES) {
@@ -224,8 +227,6 @@ function PhotoList() {
     }
   };
 
-
-
   return (
     <>
       <Page>
@@ -234,9 +235,9 @@ function PhotoList() {
             <AiOutlineLeft />
           </Button>
           <div className="page">
-            &ensp;{currentSlide + 1}
+            {currentSlide + 1}
             &ensp;/&ensp;
-            {TOTAL_SLIDES + 1}&ensp;
+            {TOTAL_SLIDES + 1}
             </div>
           <Button onClick={nextSlide}>
             <AiOutlineRight />

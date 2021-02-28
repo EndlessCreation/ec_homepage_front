@@ -172,8 +172,8 @@ function Footer(){
         <Logo>Endless Creation</Logo>
       </ContainerInner>
       <Icon>
-          <div className="circle"><a href='https://github.com/EndlessCreation' target='_blank'>Github</a></div>
-          <div className="circle"><a href='https://open.kakao.com/o/sidItFZc' target='_blank'>KakaoTalk</a></div>
+          <div className="circle"><a href='https://github.com/EndlessCreation' target='_blank' rel="noreferrer">Github</a></div>
+          <div className="circle"><a href='https://open.kakao.com/o/sidItFZc' target='_blank' rel="noreferrer">KakaoTalk</a></div>
         </Icon>
       <ContainerInner>
       <Name>
