@@ -25,6 +25,7 @@ const NavbarTemplate = styled.div`
     props.ScrollState &&
     css`
       background: #fff;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
     `}
   .footer {
     width: 100%;

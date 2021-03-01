@@ -5,7 +5,6 @@ import { useMediaQuery } from "react-responsive";
 import { darken, lighten } from "polished";
 import Loader from "../atoms/CommonLoader";
 import { useECState, useECDispatch, getPhotos } from "../../context/Context";
-import ExifOrientationImg from "react-exif-orientation-img";
 
 // import AOS from "aos";
 import "aos/dist/aos.css";
@@ -68,6 +67,7 @@ const PhotoOne = styled.div`
   .photo {
     margin-right: 28px;
     margin-bottom: 28px;
+    image-orientation: from-image;
   }
   @media screen and (max-width: 1279px) {
     .photo {
@@ -153,7 +153,7 @@ const Page = styled.div`
 
     .group {
       position: absolute;
-      transform: translate(48px, -81px);
+      transform: translate(43px, -81px);
       margin-top: 0px;
     }
     .page {
@@ -166,7 +166,7 @@ const Page = styled.div`
 function Photo({ photo }) {
   return (
     <PhotoOne>
-      <ExifOrientationImg
+      <img
         src={photo.imageUrl}
         alt="이미지내용"
         width="408px"

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import ExifOrientationImg from "react-exif-orientation-img";
 
 const Text = styled.div`
   width: 188px;
@@ -40,6 +39,7 @@ const ItemBox = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 83px;
+    image-orientation: from-image;
   }
   :hover {
     ${Text} {
@@ -78,7 +78,7 @@ const ItemBox = styled.div`
 function MemberItem({ HashTag, name, imageUrl, position }) {
   return (
     <ItemBox>
-      <ExifOrientationImg src={imageUrl} alt={"임원진사진"} />
+      <img src={imageUrl} alt={"임원진사진"} />
       <Text>
         {name} <br /> {position} <br /> {HashTag[0]}
       </Text>
