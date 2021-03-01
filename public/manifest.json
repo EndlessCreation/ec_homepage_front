@@ -8,14 +8,30 @@
       "type": "image/x-icon"
     },
     {
-      "src": "favicon.ico",
+      "src": "apple-icon-57x57.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "57x57"
+    },
+
+    {
+      "src": "apple-icon-60x60.png",
+      "type": "image/png",
+      "sizes": "60x60"
     },
     {
-      "src": "favicon.ico",
+      "src": "apple-icon-72x72.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "72x72"
+    },
+    {
+      "src": "apple-icon-76x76.png",
+      "type": "image/png",
+      "sizes": "76x76"
+    },
+    {
+      "src": "apple-icon-114x114.png",
+      "type": "image/png",
+      "sizes": "114x114"
     }
   ],
   "start_url": ".",
