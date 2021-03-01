@@ -50,6 +50,13 @@ const ItemBox = styled.div`
   @media screen and (max-width: 1279px) {
     width: 140px;
     height: 140px;
+    border-radius: 56px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 56px;
+    }
   }
   @media screen and (max-width: 767px) {
     width: 144px;
