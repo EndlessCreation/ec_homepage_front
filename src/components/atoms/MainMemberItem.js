@@ -20,10 +20,12 @@ const Text = styled.div`
   @media screen and (max-width: 1279px) {
     width: 140px;
     height: 140px;
+    border-radius: 56px;
   }
   @media screen and (max-width: 767px) {
     width: 144px;
     height: 144px;
+    border-radius: 56px;
   }
 `;
 const ItemBox = styled.div`
