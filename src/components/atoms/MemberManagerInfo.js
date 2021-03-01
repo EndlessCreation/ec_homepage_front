@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 import Loader from "../atoms/CommonLoader";
-import ExifOrientationImg from "react-exif-orientation-img";
 
 import { useECState, useECDispatch, getExecutive } from "../../context/Context";
 import { Position } from "../../context/PositionMapping";
 
-const Img = styled.div`
+const Img = styled.img`
   position: relative;
   width: 180px;
   height: 180px;
@@ -327,9 +326,7 @@ function Managers({ mana }) {
             if (mana.part) return <Part>P</Part>;
           })()}
 
-          <Img>
-            <ExifOrientationImg src={mana.imageUrl}></ExifOrientationImg>
-          </Img>
+          <Img src={mana.imageUrl} />
           <TextBox>
             <>
               <Name>{mana.name}</Name>
