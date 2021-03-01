@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+@font-face {
+  font-family: "Kanit";
+  src: url("./fonts/Kanit-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "NanumSquareRegular";
+  src: url("./fonts/NanumSquareRegular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "NanumSqaureExtraBold";
+  src: url("./fonts/NanumSquareExtraBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Kanit-Regular";
+  src: url("./fonts/Kanit-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "NanumSquareBold";
+  src: url("./fonts/NanumSquareBold.ttf") format("truetype");
+}
