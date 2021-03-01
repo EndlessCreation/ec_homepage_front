@@ -4,16 +4,12 @@ import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 import { useMediaQuery } from "react-responsive";
 import { darken, lighten } from "polished";
 import Loader from "../atoms/CommonLoader";
-import {
-  useECState,
-  useECDispatch,
-  getPhotos,
-} from "../../context/Context";
+import { useECState, useECDispatch, getPhotos } from "../../context/Context";
+import ExifOrientationImg from "react-exif-orientation-img";
 
 // import AOS from "aos";
 import "aos/dist/aos.css";
 // AOS.init();
-
 
 //현재상태의 이미지만 보여줄 container
 const ShowContainer = styled.div`
@@ -122,12 +118,12 @@ const Page = styled.div`
   color: #a9a9a9;
   font-size: 24px;
   position: relative;
-  
-  .group{
-    margin-top : 616px;
+
+  .group {
+    margin-top: 616px;
   }
-  .page{
-    display:inline-block;
+  .page {
+    display: inline-block;
     vertical-align: middle;
   }
   @media screen and (max-width: 1279px) {
@@ -137,14 +133,14 @@ const Page = styled.div`
     color: #a9a9a9;
     font-size: 14px;
     position: relative;
-    
-    .group{
+
+    .group {
       position: absolute;
-      transform:translate(60px,-81px);
-      margin-top : 0px;
+      transform: translate(60px, -81px);
+      margin-top: 0px;
     }
-    .page{
-      display:inline-block;
+    .page {
+      display: inline-block;
       vertical-align: middle;
     }
   }
@@ -154,24 +150,23 @@ const Page = styled.div`
     height: 0px;
     color: #a9a9a9;
     font-size: 12px;
-  
-    .group{
+
+    .group {
       position: absolute;
-      transform:translate(50px,-81px);
-      margin-top : 0px;
+      transform: translate(48px, -81px);
+      margin-top: 0px;
     }
-    .page{
-      display:inline-block;
+    .page {
+      display: inline-block;
       vertical-align: middle;
     }
   }
 `;
 
-
 function Photo({ photo }) {
   return (
     <PhotoOne>
-      <img
+      <ExifOrientationImg
         src={photo.imageUrl}
         alt="이미지내용"
         width="408px"
@@ -199,16 +194,17 @@ function PhotoList() {
       slideRef.current.style.transition = "all 0.5s ease-in-out";
       slideRef.current.style.transform = `translateX(-${currentSlide}00%)`; // 백틱을 사용하여 슬라이드로 이동하는 애니메이션을 만듭니다.
     }
-  }, [dispatch, currentSlide,photos]);
+  }, [dispatch, currentSlide, photos]);
 
-  if (loading) return <Loader/>;
+  if (loading) return <Loader />;
   if (error) return <div>에러가 발생했습니다</div>;
   if (!photos) return null;
 
-
   const photoNum = photos.length;
 
-  const TOTAL_SLIDES = isMobile ?  Math.floor(photoNum / 2) -1 : Math.floor(photoNum / 4) - 1;
+  const TOTAL_SLIDES = isMobile
+    ? Math.floor(photoNum / 2) - 1
+    : Math.floor(photoNum / 4) - 1;
 
   const nextSlide = () => {
     if (currentSlide >= TOTAL_SLIDES) {
@@ -230,7 +226,7 @@ function PhotoList() {
   return (
     <>
       <Page>
-        <div className = 'group'>
+        <div className="group">
           <Button onClick={prevSlide}>
             <AiOutlineLeft />
           </Button>
@@ -238,7 +234,7 @@ function PhotoList() {
             {currentSlide + 1}
             &ensp;/&ensp;
             {TOTAL_SLIDES + 1}
-            </div>
+          </div>
           <Button onClick={nextSlide}>
             <AiOutlineRight />
           </Button>
@@ -250,7 +246,7 @@ function PhotoList() {
             <div className="photo-container">
               <PhotoBox>
                 <div className="photo-box">
-                  {photos.slice(1, photoNum / 2 + 1).map((photo,index) => (
+                  {photos.slice(0, photoNum / 2 + 1).map((photo, index) => (
                     <Photo photo={photo} className="photo" key={index} />
                   ))}
                 </div>
@@ -258,7 +254,7 @@ function PhotoList() {
               <PhotoBox>
                 <div className="photo-box">
                   {photos.slice(photoNum / 2, photoNum).map((photo, index) => (
-                    <Photo photo={photo} className="photo"  key={index}/>
+                    <Photo photo={photo} className="photo" key={index} />
                   ))}
                 </div>
               </PhotoBox>

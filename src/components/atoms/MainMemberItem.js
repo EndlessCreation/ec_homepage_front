@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import ExifOrientationImg from "react-exif-orientation-img";
+
 const Text = styled.div`
   width: 188px;
   height: 188px;
@@ -76,7 +78,7 @@ const ItemBox = styled.div`
 function MemberItem({ HashTag, name, imageUrl, position }) {
   return (
     <ItemBox>
-      <img src={imageUrl} alt={"임원진사진"} />
+      <ExifOrientationImg src={imageUrl} alt={"임원진사진"} />
       <Text>
         {name} <br /> {position} <br /> {HashTag[0]}
       </Text>
