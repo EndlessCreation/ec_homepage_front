@@ -146,14 +146,14 @@ const Page = styled.div`
   }
   @media screen and (max-width: 767px) {
     float: right;
-    width: 150px;
+    width: 160px;
     height: 0px;
     color: #a9a9a9;
     font-size: 12px;
 
     .group {
       position: absolute;
-      transform: translate(43px, -81px);
+      transform: translate(35px, -81px);
       margin-top: 0px;
     }
     .page {
