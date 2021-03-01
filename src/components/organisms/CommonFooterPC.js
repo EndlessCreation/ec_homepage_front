@@ -177,8 +177,8 @@ function FooterPC() {
             <div className="circle">
               <a
                 href="https://github.com/EndlessCreation"
-                rel="noreferrer"
                 target="_blank"
+                rel="noreferrer"
               >
                 Github
               </a>
@@ -186,9 +186,10 @@ function FooterPC() {
             <div className="circle">
               <a
                 href="https://open.kakao.com/o/sidItFZc"
-                rel="noreferrer"
                 target="_blank"
+                rel="noreferrer"
               >
+                {" "}
                 KakaoTalk
               </a>
             </div>

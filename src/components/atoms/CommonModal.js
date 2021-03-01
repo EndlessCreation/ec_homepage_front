@@ -180,7 +180,7 @@ function CommonModal() {
     if (ModalState === true) {
       getProjectData(dispatch, id);
     }
-  }, [dispatch, id]);
+  }, [dispatch, id, ModalState]);
   if (loading)
     return (
       <div>
