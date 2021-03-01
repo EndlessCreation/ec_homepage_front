@@ -6,6 +6,11 @@
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16 120x120 114x114 72x72 76x76 57x57 144x144 152x152 180x180",
       "type": "image/x-icon"
+    },
+    {
+      "src": "apple-icon-57x57",
+      "sizes": "57x57",
+      "type": "image/png"
     }
   ],
   "start_url": ".",
