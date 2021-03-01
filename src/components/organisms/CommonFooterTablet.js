@@ -136,15 +136,14 @@ const Icon = styled.div`
     font-size: 12px;
     font-weight: 300;
     height: 18px;
-    padding-left:18px;
+    padding-left: 18px;
     line-height: 1.5;
     letter-spacing: -0.24px;
     text-align: right;
 
-    a{
+    a {
       color: #d2d2d2;
     }
-    
   }
 `;
 
@@ -169,19 +168,37 @@ function Footer({ nav, left }) {
           <Logo>Endless Creation</Logo>
           <Name>
             <div className="wrapper">
-            <div className ='t1'>디자이너</div>
-            <div className ='t2'>프론트엔드</div>
-            <div className ='t3'>백엔드</div>
-            <div className='p1'>김재완 </div>
-            <div className='p2'>조인혁 &ensp; 김미성 &ensp; 김초희&ensp; 마경미 &ensp;오예진</div>
-            <div className='p3'>김건훈 &ensp; 김예림 &ensp; 이상진&ensp;</div>
+              <div className="t1">디자이너</div>
+              <div className="t2">프론트엔드</div>
+              <div className="t3">백엔드</div>
+              <div className="p1">김재완 </div>
+              <div className="p2">
+                조인혁 &ensp; 김미성 &ensp; 김초희&ensp; 마경미 &ensp;오예진
+              </div>
+              <div className="p3">김건훈 &ensp; 김예림 &ensp; 이상진&ensp;</div>
             </div>
           </Name>
         </ContainerInner>
         <ContainerInner>
           <Icon>
-            <div className="circle"><a href='https://github.com/EndlessCreation' target='_blank' rel="noreferrer">Github</a></div>
-            <div className="circle"><a href='https://open.kakao.com/o/sidItFZc' target='_blank' rel="noreferrer">KakaoTalk</a></div>
+            <div className="circle">
+              <a
+                href="https://github.com/EndlessCreation"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Github
+              </a>
+            </div>
+            <div className="circle">
+              <a
+                href="https://open.kakao.com/o/sidItFZc"
+                target="_blank"
+                rel="noreferrer"
+              >
+                KakaoTalk
+              </a>
+            </div>
           </Icon>
         </ContainerInner>
         <ContainerInner>

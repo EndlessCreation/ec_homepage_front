@@ -180,7 +180,7 @@ function CommonModal() {
     if (ModalState === true) {
       getProjectData(dispatch, id);
     }
-  }, [dispatch, id]);
+  }, [dispatch, id, ModalState]);
   if (loading)
     return (
       <div>
@@ -249,9 +249,9 @@ function CommonModal() {
                   <a
                     style={{ textDecoration: "none", color: "black" }}
                     href={projectData.presentationUrl}
+                    rel="noreferrer"
                     width="100%"
                     target="blank"
-                    rel="noreferrer"
                   >
                     [발표링크 바로가기]
                   </a>
@@ -263,8 +263,8 @@ function CommonModal() {
                   <a
                     style={{ textDecoration: "none", color: "black" }}
                     href={projectData.githubUrl}
-                    target="blank"
                     rel="noreferrer"
+                    target="blank"
                   >
                     [github 바로가기]]
                   </a>
