@@ -249,6 +249,7 @@ function CommonModal() {
                   <a
                     style={{ textDecoration: "none", color: "black" }}
                     href={projectData.presentationUrl}
+                    rel="noreferrer"
                     width="100%"
                     target="blank"
                   >
@@ -262,6 +263,7 @@ function CommonModal() {
                   <a
                     style={{ textDecoration: "none", color: "black" }}
                     href={projectData.githubUrl}
+                    rel="noreferrer"
                     target="blank"
                   >
                     [github 바로가기]]
