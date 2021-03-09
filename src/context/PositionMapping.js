@@ -1,4 +1,5 @@
 export const Position = {
+  KING: "지도교수",
   VICE_PRESIDENT: "부회장",
   ACADEMIC: "학술부장",
   PERSONNEL: "인사부장",

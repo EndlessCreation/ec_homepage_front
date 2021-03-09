@@ -84,6 +84,32 @@ const Part = styled.div`
   }
 `;
 
+const Crown = styled.img`
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  background: #232323;
+  border-radius: 83px;
+  opacity: 1;
+  z-index: 2;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  
+  @media screen and (min-width:768px) and (max-width:1279px) {
+    padding-left: 60px;
+    width: 130px;
+    height: 157px;
+  }
+
+  @media screen and (max-width:767px) {
+    padding-top: 25px;
+    padding-left: 19px;
+    width: 90px;
+    height: 107px;
+  }
+`;
+
 //하나의 항목의 block 스타일링
 const ManaInfoBlock = styled.div`
   width: 408px;
@@ -324,6 +350,10 @@ function Managers({ mana }) {
         <InfoBox>
           {(function () {
             if (mana.part) return <Part>P</Part>;
+          })()}
+
+          {(function () {
+            if (mana.position==="KING") return <Crown src={"./images/crown.png"}/>;
           })()}
 
           <Img src={mana.imageUrl} />
